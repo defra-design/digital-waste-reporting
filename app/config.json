@@ -1,3 +1,8 @@
 {
-  "serviceName": "Service name goes here"
+  "serviceName": "Digital waste tracking",
+  "plugins": {
+  "govuk-frontend": {
+	"rebrand": true
+  }
+}
 }
