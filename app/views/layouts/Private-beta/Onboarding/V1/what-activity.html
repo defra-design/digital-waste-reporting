@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action="/layouts/Private-beta/Onboarding/V1/what-activity-answer" method="post">
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                             What activity would you like to do first?
+                            </h1>
+                        </legend>
+                        <div id="contact-hint" class="govuk-hint">
+                            Select one option
+                        </div>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="pay-service-charge" name="what-activity" type="radio" value="Pay my annual service charge">
+                                <label class="govuk-label govuk-radios__label" for="pay-service-charge">
+                                    Pay my annual service charge
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="site-details" name="what-activity" type="radio" value="Add my site details">
+                                <label class="govuk-label govuk-radios__label" for="site-details">
+                                    Add my site details
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

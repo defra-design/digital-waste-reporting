@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/layouts/Private-beta/Onboarding/V1/site-details/permit-number" method="post" class="form">
+
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+            What are the contact details for the site? 
+          </h1>
+          </legend>
+
+          <div class="govuk-form-group govuk-!-margin-top-6">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="event-name">
+              Full name
+            </label>
+            </h2>
+            <input class="govuk-input" id="event-name" name="eventName" type="text">
+          </div>
+
+          <div class="govuk-form-group govuk-!-padding-top-6">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="event-name">
+              Email address
+            </label>
+            </h2>
+            <input class="govuk-input" id="event-name" name="eventName" type="text">
+          </div>
+
+          <div class="govuk-form-group govuk-!-padding-top-6">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="event-name">
+              Phone number
+            </label>
+            </h2>
+            <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text">
+          </div>
+
+          <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+          Continue
+          </button>
+
+        </form>
+
+      </div>
+    </fieldset>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+			
+						
+				Joe Bloggs |</li>
+
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <!-- Notification banner -->
+
+            <!-- Macro for showing the H1 and section -->
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-0 govuk-!-padding-bottom-4">Report receipt of waste account</h1>
+
+            <div class="govuk-inset-text">
+                Your service charge has not been paid.
+
+                <p class="govuk-body govuk-!-padding-top-6">
+                    <a class="govuk-link" href="/layouts/Private-beta/Onboarding/V1/payment/why-service-charge">
+                        About your annual service charge
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+
+
+        <div class="govuk-grid-column-two-thirds govuk-!-padding-top-4">
+
+            <form action="/layouts/Private-beta/Onboarding/V1/site-details/address-details" method="post">
+
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                Add your site details
+            </button>
+
+            </form>
+
+        </div>
+
+        <div class="govuk-grid-column-full"></div>
+    </div>
+
+{% endblock %}

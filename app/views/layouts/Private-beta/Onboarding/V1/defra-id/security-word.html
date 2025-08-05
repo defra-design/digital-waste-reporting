@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Enter the following three characters from your security word</h1>
+
+      <p>Your security word hint is: <span class="govuk-!-font-weight-bold">MemorableWord</span></p>
+
+      <form method="post" action="/layouts/Private-beta/Onboarding/V1/defra-id/verify-email">
+
+        <input type="hidden" id="status" name="status" value="">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl"></legend>
+
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="char1">3rd</label>
+                  <input class="govuk-input govuk-input--width-2" id="char1" name="char1">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="char2">7th</label>
+                  <input class="govuk-input govuk-input--width-2" id="char2" name="char2">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="char3">12th</label>
+                  <input class="govuk-input govuk-input--width-2" id="char3" name="char3">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <input type="hidden" id="status" name="status" value="">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        
+        </button>
+
+      </form>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">Need more help?</span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">Contact [Service name] by phone or email.</p>
+          <p class="govuk-body">Telephone:<br>
+                [Service telephone number]</p>
+          <p class="govuk-body">Email:<br>
+            <a href="#" class="govuk-link govuk-link--no-visited-state">[Service email]</a>
+          </p>
+          <p class="govuk-body">Service opening times:<br>
+                [Service Opening Hours], except public holidays</p>
+          <p class="govuk-body">
+            <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”">Find out about call charges (opens in new tab)</a>
+          </p>
+          <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+        </div>
+        <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+      </details>
+      
+    </div>
+
+  </div>
+
+{% endblock %}

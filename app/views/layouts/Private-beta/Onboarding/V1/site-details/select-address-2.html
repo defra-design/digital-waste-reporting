@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">
+ 
+      <h1 class="govuk-heading-l">Select your address</h1>
+
+      <div class="govuk-inset-text">
+        <p class="govuk-body">We found the following addresses for postcode <span class="govuk-!-font-weight-bold">SW19 5JA</span>.</p>
+        <p>
+          <a href="/register/address/postcode" class="govuk-link govuk-link--no-visited-state">Change postcode</a>
+        </p>
+      </div>
+
+      <form action="/layouts/Private-beta/Onboarding/V1/site-details/contact-details-2" method="post" class="form">
+
+        <!-- Business Account -->
+
+        <!-- Sole Trader -->
+
+        <div class="govuk-form-group">
+
+          <select class="govuk-select" id="" name="registrationSoleTraderAddress">
+
+            <option value="">1 addresses found</option>
+
+            <option value="Hoults Yard,&lt;br&gt; Walker Road,&lt;br&gt; Newcastle upon Tyne,&lt;br&gt; NE6 2HL">Hoults Yard, Walker Road, Newcastle upon Tyne NE6 2HL</option>
+
+          </select>
+
+        </div>
+
+        <!-- Individual Account -->
+
+        <div class="govuk-button-group">
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+          <a href="/layouts/Private-beta/Onboarding/V1/site-details/address-details" class="govuk-link govuk-link--no-visited-state">My address is not in the list</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

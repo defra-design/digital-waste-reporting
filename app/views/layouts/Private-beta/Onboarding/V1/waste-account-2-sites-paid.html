@@ -1,0 +1,129 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+			
+						
+				Joe Bloggs |</li>
+
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">Report receipt of waste account</h1>
+
+            <p class="govuk-body govuk-!-padding-bottom-6">
+                <a class="govuk-link" href="/layouts/Private-beta/Onboarding/V1/api-info">View API access credentials</a>
+            </p>
+
+
+        </div>
+
+        <div class="govuk-grid-column-full govuk-!-padding-top-4">
+
+    <form action="/layouts/Private-beta/Onboarding/V1/site-details/address-details-2" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Add new site details
+          </button>
+
+      </form>
+
+            <h2 class="govuk-heading-l govuk-!-margin-top-7">Your sites</h2>
+
+            <table class="govuk-table">
+
+                <caption class="govuk-table__caption govuk-visually-hidden">Accounts</caption>
+
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Address</th>
+
+                        <th scope="col" class="govuk-table__header">Permit number</th>
+
+                        <th scope="col" class="govuk-table__header">Date added</th>
+
+                        <th scope="col" class="govuk-table__header">Action</th>
+
+                    </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">1 Sample Street<br> Sample Town<br> Sampleshire<br> AB12 3CD</td>
+
+                        <td class="govuk-table__cell">ABX0123456</td>
+
+                        <td class="govuk-table__cell">14 August 2025</td>
+
+
+                        <td class="govuk-table__cell">
+
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Manage<span class="govuk-visually-hidden td-header"></span>
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+                <tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">6 Sample Street<br> Sample Town<br> Sampleshire<br> EF45 6GH</td>
+
+                        <td class="govuk-table__cell">CDX0789101</td>
+
+                        <td class="govuk-table__cell">14 August 2025</td>
+
+
+                        <td class="govuk-table__cell">
+
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Manage<span class="govuk-visually-hidden td-header"></span>
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+
+            </table>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Your API credentials for the Report Receipt of Waste service
+        </h1>
+
+        <div class="govuk-summary-card govuk-!-margin-bottom-8">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Your API company credentials
+            </h2>
+          </div>
+          <p class="govuk-body govuk-!-padding-left-4 govuk-!-padding-top-4  govuk-!-padding-right-4">These identify your organisation and authorise your API submissions.</P>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Client ID
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  ***-***-***-c4e
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Client secret
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  *******-***-***-c4e
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Your registered site IDs
+            </h2>
+          </div>
+          <p class="govuk-body govuk-!-padding-left-4 govuk-!-padding-top-4 govuk-!-padding-right-4">Each site you've registered has a unique ID. These must be included in your API submissions to match waste receipts to the correct location. Your waste management software should support this.</P>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Main Depot
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  bb31d5ac-fc3c-4b54-bcb6-d3d0eca6fe8c
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  North Warehouse
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  2f9d14a5-6e01-4c78-b11c-8e3f0d2c67b9
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Recycling MRF
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  5d8e7c6b-9a1f-40e3-b2d4-1c9a8b7e6f5d
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Commercial South Yard
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  e4b9c1d6-7a8f-43b5-9c1d-2e3f4a5b6c7d
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <p class="govuk-body govuk-!-margin-top-8 govuk-!-padding-bottom-6">
+          <a class="govuk-link" href="/layouts/Private-beta/Onboarding/V1/waste-account-2-sites-paid-api-viewed">Return to account</a>
+        </p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+			
+						
+				Joe Bloggs |</li>
+
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <!-- Notification banner -->
+
+            <!-- Macro for showing the H1 and section -->
+
+            <h1 class="govuk-heading-xl">Report receipt of waste account</h1>
+
+            <!-- Third party layout -->
+
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            
+            <form action="/layouts/Private-beta/Onboarding/V1/what-activity" method="post">
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+
+            </form>
+
+
+            {# <p>
+
+                <span class="govuk-!-font-weight-bold">Full name:</span> Jane Doe<br>
+
+                <span class="govuk-!-font-weight-bold">Email address:</span> jane.doe@gmail.com<br>
+
+                <span class="govuk-!-font-weight-bold">Telephone number:</span> 00700700788</p> #}
+
+            {# <p class="govuk-body">
+                <a href="/account/manage/update/individual/" class="govuk-link govuk-link--no-visited-state">Update details</a>
+            </p>
+            <p class="govuk-body">
+                <a href="/account/manage/reset-security-word/" class="govuk-link govuk-link--no-visited-state">Reset security word</a>
+            </p>
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Contact support ID
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    If you contact us, you will need your contact support ID, BA202452-V0-4703-P5-0409
+                </div>
+            </details> #}
+
+        </div>
+
+        <div class="govuk-grid-column-full">
+
+
+        </div>
+    </div>
+
+{% endblock %}

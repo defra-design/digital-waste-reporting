@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Application complete
+          </h1>
+        <div class="govuk-panel__body">
+            Your reference number<br>
+          <strong>HDJ2123F</strong>
+        </div>
+      </div>
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-4">Payment summary</h2>
+
+      <table class="govuk-table"></thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Payment for</td>
+          <td class="govuk-table__cell">Report receipt of waste annual service charge</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Total amount</td>
+          <td class="govuk-table__cell">£20.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-4">What happens next</h2>
+    <p class="govuk-body">
+      You can add any details of sites that have a permit to report receipt of waste
+    </p>
+    <p class="govuk-body">
+      Also you can view your API credentials for your company account.
+    </p>
+    
+    <p class="govuk-body govuk-!-padding-top-4"><a class="govuk-link" href="/layouts/Private-beta/Onboarding/V1/waste-account">Return to account</a>
+    </p>
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Annual report receipt of waste charge</h1>
+
+      <p class="govuk-body">Your business will have full access to the report receipt of waste service until <strong>11:59 pm on Wednesday 3 July 2025</strong> once you have paid this charge.</p>
+
+      <h2 class="govuk-heading-m">Review the payment amount</h2>
+
+      <table class="govuk-table"></thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total to pay</th>
+          <td class="govuk-table__cell">£20.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form class="form" action="/layouts/Private-beta/Onboarding/V1/payment/make-payment" method="post">
+
+      <div class="govuk-button-group govuk-!-padding-top-3 govuk-!-padding-bottom-3">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="#">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+
+{% endblock %}

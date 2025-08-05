@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+    <!-- Blank header with no service name for this page -->
+    {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">Create your GOV.UK One Login or sign in</h1>
+
+            <p>You'll need:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>an email address</li>
+                <li>a way to get security codes - this can be a mobile phone number or an authenticator app</li>
+            </ul>
+
+            <p class="govuk-body">
+                You can prove your identity after you've created your GOV.UK One Login. You only need to do this for some services.
+            </p>
+
+            <div class="govuk-inset-text">
+            You can also <a href="#">use GOV.UK One Login in Welsh &#40Cymraeg&#41</a>.
+            </div>
+
+            <form class="form" action="/layouts/Private-beta/Onboarding/V1/oneLogin/start-answer" method="post">
+
+
+            <div>
+                <button type="submit" class="govuk-button" data-module="govuk-button" id="create-account" name="create-or-sign-in" value="Create a GOV.UK One Login" for="create-or-sign-in" for="create-account"> 
+                    Create a GOV.UK One Login
+                </button>
+
+            </div>
+
+            <div>
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="sign-in-to-account" name="create-or-sign-in" value="Sign in" for="sign-in-to-account" for="create-account">
+                    Sign in
+                </button>
+            </div>
+            
+            <p class="govuk-body govuk-!-margin-top-4 govuk-!-padding-bottom-6">
+                <a class="govuk-link" href="#">
+                    Services you can use with GOV.UK One Login &#40opens in new tab&#41</a>
+            </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

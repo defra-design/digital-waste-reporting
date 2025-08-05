@@ -4,3 +4,176 @@
 // 
 
 // Add extra styles here
+
+
+@import "components/autocomplete";
+
+// @import "patterns/check-your-answers";
+// @import "patterns/table-test";
+@import "patterns/card";
+@import "patterns/idm";
+@import "patterns/login-nav";
+
+@import "components/loading-spinner";
+@import "components/filter";
+@import "components/pagination";
+@import "components/button-looks-like-link";
+
+// added for the waste management registration pages
+@import "patterns/login-nav";
+
+// extra styles
+@import "patterns/application-additions";
+
+// Extra Gov platform styles
+// @import "publisher";
+
+//Cookie banner $govuk-global-styles
+@import "cookies";
+
+// Third party components
+
+// NHS
+@import "components/contents-list";
+
+
+
+
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+.key {
+    background: #f3f2f1;
+    padding: 10px;
+}
+
+.mspace .govuk-form-group {
+    margin: 0;
+    padding: 0;
+}
+
+.js-enabled .govuk-tabs__panel  {
+    border: 0;
+    padding-left: 0;
+}
+
+.app-inset-text {
+    border-left-color: #1d70b8;
+}
+
+.govuk-header__navigation-item:last-child {
+    float: right;
+}
+
+.x-govuk-secondary-navigation__list-item {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.x-govuk-primary-navigation__item:last-child {
+    float: right;
+}
+
+.x-govuk-secondary-navigation__list-item {
+    float: right;
+}
+
+.x-govuk-secondary-navigation__list-item:first-child {
+    float: left;
+    margin-left: 0;
+}
+
+// not added into the prototype yet
+.error-dropdown {
+    border-width: 20px;
+    border-color: #d4351c;
+}
+
+
+// Landing page styles //
+
+.govuk-card {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #1d70b8;
+    box-sizing: border-box;
+}
+
+.govuk-card--contained {
+    background-color: #f3f2f1;
+    padding: 15px;
+}
+
+.card {
+    background-color: #f3f2f1;
+    padding: 30px 30px 10px 30px;
+}
+
+// Payment syles v1 //
+
+.pay-card {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-top: 3px solid #1d70b8;
+    box-sizing: border-box;
+}
+
+.payment-cards {
+    width: 210px;
+    height: 40px;
+    background-image: url("/public/images/credit-debit-cards.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 1em;
+}
+
+.name-on-card {
+    width: 439px;
+}
+
+.card-number {
+    width: 439px;
+}
+
+.month {
+    width: 110px;
+}
+
+.year {
+    width: 110px;
+}
+
+.security-code {
+    width: 150px;
+    height: 120px;
+    background-image: url("/public/images/security-code.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 1em;
+}
+
+.three-digit-code {
+    width: 110px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

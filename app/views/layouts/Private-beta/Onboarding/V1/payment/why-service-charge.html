@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Pay the annual report receipt of waste service charge</h1>
+
+      <p class="govuk-body">You need to pay the annual service charge to access the full report receipt of waste. <strong>The cost is £20 per year</strong> and gives access to all your admin and standard accounts linked to your business or organisation.</p>
+
+      <p class="govuk-body">It will allow these accounts to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>create and view new UK waste movement and Annex VII records</li>
+        <li>update and confirm UK waste movement records if you are a carrier or receiver</li>
+        <li>view and update Annex VII records that you have previously submitted</li>
+
+      </ul>
+
+      <p class="govuk-body">If you do not pay the service charge, you will only be able to view:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>records that you have previously created or updated</li>
+        <li>templates that you have previously created</li>
+
+      </ul>
+
+      <p class="govuk-body">To pay for the service charge, you will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>a credit or debit card that is authorised for  payments for your business or organisation</li>
+        <li>an email address to receive the payment confirmation</li>
+
+      </ul>
+      
+      <div class="govuk-warning-text">
+  
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You will not be able to create or confirm any records until you have paid the service charge.
+        </strong>
+      </div>
+
+      <form class="form" action="/layouts/Private-beta/Onboarding/V1/payment/why-service-charge-answer" method="post">
+      
+      <div class="govuk-button-group govuk-!-padding-top-3 govuk-!-padding-bottom-3">
+      
+        <button type="submit" id="Pay-charge" name="pay-charge"class="govuk-button" value="Pay service charge" data-module="govuk-button">
+          Pay service charge
+        </button>
+        
+        <button type="submit" id="not-paid" name="pay-charge" class="govuk-button govuk-button--secondary" value="Continue without paying" data-module="govuk-button">
+          Continue without paying
+        </button>
+      </div>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
