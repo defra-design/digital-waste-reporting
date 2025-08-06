@@ -48,6 +48,24 @@ router.post('/layouts/Private-beta/Onboarding/V1/oneLogin/start-answer', functio
 })
 
 
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V1/defra-id/verify-single-number-answer'
+router.post('/layouts/Private-beta/Onboarding/V1/defra-id/verify-single-number-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var verifyidentity = req.session.data['verify-your-identity']
+
+  // Check whether the variable matches
+  if (verifyidentity == "Text message"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V1/defra-id/verify-text')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V1/defra-id/verify-email')
+  }
+
+})
+
+
 // Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V1/what-activity-answer'
 router.post('/layouts/Private-beta/Onboarding/V1/what-activity-answer', function (req, res) {
 
