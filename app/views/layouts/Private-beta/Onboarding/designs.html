@@ -6,38 +6,34 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
-      <span class="govuk-caption-xl">Private Beta</span>
-      Onboarding / Registration
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
+        <span class="govuk-caption-xl">Private Beta</span>
+      Report receipt of waste
     </h1>
 
-    <p class="govuk-body-l govuk-!-padding-bottom-5">
-      <span class="govuk-body-l govuk-!-font-weight-bold">User group:</span>
+      <p class="govuk-body-l govuk-!-padding-bottom-5">
+        <span class="govuk-body-l govuk-!-font-weight-bold">User group:</span>
       Waste receivers
     </p>
 
+      <div class="card govuk-!-margin-top-4 govuk-!-margin-bottom-9">
 
+        {# <p class="govuk-body govuk-!-padding-bottom-0">Sprint 0</p> #}
 
-    <div class="card govuk-!-margin-top-4 govuk-!-margin-bottom-9">
+        <h2 class="govuk-heading-l govuk-!-padding-top-0 govuk-!-margin-bottom-0">Onboarding / Registration</h2>
 
-      {# <p class="govuk-body govuk-!-padding-bottom-0">Sprint 0</p> #}
-
-      <h2 class="govuk-heading-l govuk-!-padding-top-0 govuk-!-margin-bottom-0">Register a site</h2>
-
-      <strong class="first-capital govuk-tag govuk-tag--blue govuk-!-margin-top-4">
-        Not Tested
+        <strong class="first-capital govuk-tag govuk-tag--green govuk-!-margin-top-4">
+        Tested
       </strong>
 
-      <a href="/layouts/Private-beta/Onboarding/V1/start-page.html" class="govuk-heading-m govuk-link--no-visited-state govuk-!-padding-top-3 govuk-!-padding-bottom-2">Version
+        <a href="/layouts/Private-beta/Onboarding/V1/start-page.html" class="govuk-heading-m govuk-link--no-visited-state govuk-!-padding-top-3 govuk-!-padding-bottom-2">Version
         1</a>
 
-
-
-      {# <details class="govuk-details govuk-!-margin-bottom-9">
+        {# <details class="govuk-details govuk-!-margin-bottom-9">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
             Design iterations
@@ -61,24 +57,26 @@
         </div>
       </details> #}
 
+        <h3 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-2">What we tested</h3>
 
-      <h3 class="govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-2">What we tested</h3>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-padding-bottom-2">
 
-      <p class="govuk-body">TBC
-      </p>
-
-      <ul class="govuk-list govuk-list--bullet govuk-list--spaced govuk-!-padding-bottom-2">
-
-        <li>TBC
+          <li>to understand if waste receivers can register without support when they join the new digital waste tracking service, 
         </li>
 
-      </ul>
+          <li>to understand if they need to register each legal entity separately, and how they would expect to register these multiple legal entities.
+        </li>
+        
+          <li>to evaluate waste receivers' understanding of the guidance pages, and what additional guidance is required by waste receivers, to support them to join the private beta service.</li>
+
+          <li>understand the most suitable method for paying the service charge, and test the full onboarding process for getting set up to use the service both in private beta and beyond.</li>
+
+        </ul>
+
+      </div>
 
     </div>
 
   </div>
-
-</div>
-
 
 {% endblock %}
