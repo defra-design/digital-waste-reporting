@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }} #}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Confirm you want to enrol this organisation</h1>
+
+      <form action="/layouts/Private-beta/Onboarding/V2/defra-id/enrolment-complete" method="post">
+
+        <input type="hidden" id="status" name="status" value="">
+
+        <p class="govuk-body govuk-!-margin-bottom-7">Enrolling this organisation will allow you to represent them in Report receipt of waste.</p>
+
+        <div class="govuk-inset-text">
+          <p>Joe Waste &#38; Co Ltd</p>
+
+        </div>
+
+        <div class="govuk-button-group">
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Confirm and continue
+          </button>
+
+          <a class="govuk-link" href="/layouts/Private-beta/Onboarding/V2/defra-id/related-org">I want to enrol someone else</a>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+{% endblock %}

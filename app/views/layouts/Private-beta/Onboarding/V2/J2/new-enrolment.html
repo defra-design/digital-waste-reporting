@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- Error messaging  -->
+
+      <!-- // End of error messaging // -->
+
+      <h1 class="govuk-heading-xl">Who do you want to represent?</h1>
+
+      <form action="/layouts/Private-beta/Onboarding/V2/J2/new-enrolment-complete" method="post">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+            <div class="govuk-radios" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-to-represent-1" name="who-to-represent" type="radio" value="Joe Waste and Co Ltd">
+                <label class="govuk-label govuk-radios__label" for="who-to-represent-1">
+                  Joe Waste &#38; Co Ltd
+                </label>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-to-represent-2" name="who-to-represent" type="radio" value="J and D Receivers Sampleshire">
+                <label class="govuk-label govuk-radios__label" for="who-to-represent-2">
+                  J &#38; D Receivers
+              </label>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+
+        </div>
+
+        <input type="hidden" id="status" name="status" value="">
+        <div class="govuk-button-group">
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+          <a class="govuk-link" href="/authentication/new-enrolment">An organisation not listed</a>
+
+        </div>
+
+      </form>
+
+      <details class="govuk-details" data-module="govuk-details">
+
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">Need more help?</span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">Contact [Service name] by phone or email.</p>
+          <p class="govuk-body">Telephone:<br>
+                        [Service telephone number]</p>
+          <p class="govuk-body">Email:<br>
+            <a href="#" class="govuk-link govuk-link--no-visited-state">[Service email]</a>
+          </p>
+          <p class="govuk-body">Service opening times:<br>
+                        [Service Opening Hours], except public holidays</p>
+          <p class="govuk-body">
+            <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”">Find out about call charges (opens in new tab)</a>
+          </p>
+          <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+        </div>
+        <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+      </details>
+      <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+    </div>
+    <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”">
+
+
+    </a>
+  </div>
+
+{% endblock %}

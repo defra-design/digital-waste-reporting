@@ -1,0 +1,201 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row govuk-!-padding-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Enter card details</h1>
+
+      <div class="pay-card govuk-card--contained">
+
+        <h2 class="govuk-heading-m">
+          Payment summary
+        </h2>
+
+        <p class="govuk-body">Annual service charge</p>
+
+        <p class="govuk-body govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">Total amount</p>
+
+        <h3 class="govuk-heading-l govuk-!-padding-top-0 govuk-!-margin-bottom-0">
+          £20.00
+        </h3>
+
+      </div>
+
+      <div class="govuk-form-group govuk-!-padding-top-3">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="event-name">
+             Card number
+          </label>
+        </h3>
+        <div id="event-name-hint" class="govuk-hint">
+          Accepted credit and debit card types
+      </div>
+       <div class="payment-cards"></div>
+        <input class="govuk-input govuk-!-width-three-quarters" id="event-name" name="eventName" type="text" aria-describedby="event-name-hint">
+      </div>
+
+      <div class="govuk-form-group govuk-!-padding-top-3">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">
+              Expiry date
+          </h3>
+          </legend>
+          <div id="passport-issued-hint" class="govuk-hint">
+      For example, 10 26
+    </div>
+          <div class="govuk-date-input" id="passport-issued"></div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="govuk-form-group govuk-!-padding-top-3">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="event-name">
+              Name on card
+            </label>
+        </h3>
+        <input class="govuk-input govuk-!-width-three-quarters" id="event-name" name="eventName" type="text">
+      </div>
+
+      <div class="govuk-form-group govuk-!-padding-top-3">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="event-name">
+              Card security code
+            </label>
+        </h3>
+        <div id="event-name-hint" class="govuk-hint">
+            The last 3 digits on the back of the card 
+          </div>
+        <input class="govuk-input govuk-input--width-3" id="event-name" name="eventName" type="text">
+
+        <details class="govuk-details govuk-!-padding-top-3">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Where to find this?
+            </span>
+          </summary>
+            <div class="security-code"></div>
+        </details>
+        
+      </div>
+
+
+      
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-padding-top-4">
+
+      <fieldset class="govuk-fieldset govuk-!-margin-top-8">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading govuk-!-margin-bottom-2">
+            Billing address
+          </h3>
+          <div id="event-name-hint" class="govuk-hint">
+            This is the address associated with the card 
+          </div>
+        </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
+              Address line 1
+            </label>
+            <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-2">
+              Address line 2 (optional)
+            </label>
+            <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-county">
+              County (optional)
+            </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
+          </div>
+      </fieldset>
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-padding-top-4">
+
+        <div class="govuk-form-group govuk-!-margin-top-8">
+          <h3 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="event-name">
+              Contact details
+            </label>
+          </h3>
+          <div id="event-name-hint" class="govuk-hint">
+            We'll send your payment confirmation here 
+          </div>
+            <label class="govuk-label" for="address-postcode">
+              Email
+            </label>
+            <input class="govuk-input govuk-!-width-three-quarters" id="event-name" name="eventName" type="text">
+        </div>
+
+      <form class="form" action="/layouts/Private-beta/Onboarding/V2/J2/payment/review-payment" method="post">
+
+        <div class="govuk-button-group govuk-!-padding-top-3">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          
+        </div>
+
+        <a class="govuk-link" href="#">Cancel payment</a>
+
+      </form>
+    </div>
+
+  {% endblock %}

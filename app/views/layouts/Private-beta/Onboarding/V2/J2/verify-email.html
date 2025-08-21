@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }} #}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">We will send the verification code to this email address</h1>
+
+      <div class="govuk-inset-text">
+        <span class="govuk-!-font-weight-bold">con****@************kit.net</span>
+      </div>
+
+      <form action="/layouts/Private-beta/Onboarding/V2/J2/get-code-email" method="post">
+
+        <input type="hidden" id="status" name="status" value="">
+
+        <div class="govuk-button-group">
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Confirm and send code
+          </button>
+
+          <a class="govuk-link" href="/authentication/no-access">I do not have access to this email address</a>
+
+        </div>
+
+      </form>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Need more help?</span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">Contact [Service name] by phone or email.</p>
+              <p class="govuk-body">Telephone:<br>
+                            [Service telephone number]</p>
+              <p class="govuk-body">Email:<br>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">[Service email]</a>
+              </p>
+              <p class="govuk-body">Service opening times:<br>
+                            [Service Opening Hours], except public holidays</p>
+              <p class="govuk-body">
+                <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”">Find out about call charges (opens in new tab)</a>
+              </p>
+              <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+            </div>
+            <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+          </details>
+          <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+        </div>
+        <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+      </div>
+      <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+    </div>
+    <a href="https://www.gov.uk/call-charges" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="”_blank”"></a>
+  </div>
+
+{% endblock %}

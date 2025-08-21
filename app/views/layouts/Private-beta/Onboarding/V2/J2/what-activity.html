@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action="/layouts/Private-beta/Onboarding/V2/J2/what-activity-answer" method="post">
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                             Do you want to add another business or organisation?
+                            </h1>
+                        </legend>
+
+                        <details class="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Help with adding more businesses and organisations?
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <p class="govuk-body">
+                                    You can add related businesses and organisations to your account.
+                                </p>
+
+                                <p class="govuk-body">
+                                    For example, subsidiaries or partner organisations. This link will take you to the Defra account page.                        
+                                </p>
+
+                                <p class="govuk-body">
+                                    After you add the details, you can return to this service.
+                                </p>
+                            </div>
+                        </details>
+
+                        <p class="govuk-body">
+                            Select an option                        
+                        </p>
+
+                        <div class="govuk-radios govuk-!-padding-top-2" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="what-activity-1" name="what-activity" type="radio" value="Yes to my defra account">
+                                <label class="govuk-label govuk-radios__label" for="what-activity-1">
+                                    Yes, take me to my Defra account
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="what-activity-2" name="what-activity" type="radio" value="No continue">
+                                <label class="govuk-label govuk-radios__label" for="what-activity-2">
+                                    No, I want to continue with this business or organisation
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

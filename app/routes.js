@@ -154,3 +154,164 @@ router.post('/layouts/Private-beta/Onboarding/V1/check-site-details-additional-s
   }
 
 })
+
+
+// Private Beta V2 routes //
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/defra-id/sign-in-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/defra-id/sign-in-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var oneorgovgateway = req.session.data['one-or-gov-gateway']
+
+  // Check whether the variable matches
+  if (oneorgovgateway == "Sign in with One Login"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V2/oneLogin/start')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V2/gov-gateway/start')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/defra-id/verify-single-number-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/defra-id/verify-single-number-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var verifyidentity = req.session.data['verify-your-identity']
+
+  // Check whether the variable matches
+  if (verifyidentity == "Text message"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/verify-text')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/security-word')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/defra-id/related-org-address-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-address-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var relatedorgaddress = req.session.data['relatedCompanySameAddress']
+
+  // Check whether the variable matches
+  if (relatedorgaddress == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-contact-details')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-postcode')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/defra-id/related-org-contact-details-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-contact-details-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var relatedorgcontact = req.session.data['relatedCompanySameContact']
+
+  // Check whether the variable matches
+  if (relatedorgcontact == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-check-details')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-new-contact-details')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/what-activity-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/what-activity-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var whatactivity = req.session.data['what-activity']
+
+  // Check whether the variable matches
+  if (whatactivity == "Yes to my defra account"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/id-account')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V2/waste-account')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/J2/verify-single-number-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/J2/verify-single-number-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var verifyidentity = req.session.data['verify-your-identity']
+
+  // Check whether the variable matches
+  if (verifyidentity == "Text message"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V2/J2/verify-text')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V2/J2/security-word')
+  }
+
+})
+
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/site-details/check-site-details-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/site-details/check-site-details-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var addanothersite = req.session.data['add-another-site']
+
+  // Check whether the variable matches
+  if (addanothersite == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V2/site-details/site-name-2')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V2/payment/service-charge')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/J2/what-activity-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/J2/what-activity-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var whatactivity = req.session.data['what-activity']
+
+  // Check whether the variable matches
+  if (whatactivity == "Yes to my defra account"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/id-account-2-accounts')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V2/J2/payment/service-charge')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/payment/service-charge-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/payment/service-charge-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var servicecharge = req.session.data['service-charge']
+
+  // Check whether the variable matches
+  if (servicecharge == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V2/J2/payment/why-service-charge')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V2/waste-account-2')
+  }
+
+})

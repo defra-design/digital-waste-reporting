@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+    {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }} #}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+			
+						
+				Joe Bloggs |</li>
+
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+		
+    
+    <span class="govuk-caption-xl">
+        <span class="govuk-visually-hidden">This section is: </span>Add related organisation
+    </span>
+    <h1 class="govuk-heading-xl">Is their address the same as the parent organisation?</h1>
+  
+
+
+<!-- Inset text -->
+		<div class="govuk-inset-text">
+  1 Sample street<br>
+  Sample town<br>
+  Sampleshire<br>
+  AB23 4CD
+</div>
+
+    	<form method="post" action="/layouts/Private-beta/Onboarding/V2/defra-id/related-org-address-answer">
+
+        	
+
+
+
+<div class="govuk-form-group">
+
+  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+    
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="relatedCompanySameAddress" name="relatedCompanySameAddress" type="radio" value="Yes">
+      <label class="govuk-label govuk-radios__label" for="relatedCompanySameAddress">
+        Yes
+      </label>
+      
+    </div>
+    
+  
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="relatedCompanySameAddress-2" name="relatedCompanySameAddress" type="radio" value="No~/account/manage/related/postcode">
+      <label class="govuk-label govuk-radios__label" for="relatedCompanySameAddress-2">
+        No
+      </label>
+      
+    </div>
+    
+  
+    
+    
+  </div>
+
+</div>
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+      	</form>
+
+  	</div>
+</div>
+
+{% endblock %}

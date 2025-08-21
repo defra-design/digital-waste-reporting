@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+    {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }} #}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+			
+						
+				Joe Bloggs |</li>
+
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+		
+    
+    <h1 class="govuk-heading-xl">Select their address</h1>
+ 
+<!-- 
+    	<p class="govuk-body">Postcode: <span class="govuk-!-font-weight-bold"></span>&nbsp;&nbsp; <a href="/account/manage/related/company-postcode" class="govuk-link">Change<span class="govuk-visually-hidden"> postcode</span></a></p> -->
+
+		<div class="govuk-inset-text">
+			<p>We found the following addresses for postcode <span class="govuk-!-font-weight-bold"></span>.</p>
+			
+			<a href="/account/manage/related/postcode" class="govuk-link">Change postcode<span class="govuk-visually-hidden"> postcode</span></a>
+		</div>
+
+
+      	<form action="/layouts/Private-beta/Onboarding/V2/defra-id/related-org-check-details" method="post">
+    
+
+    		
+
+
+
+<div class="govuk-form-group">
+  
+
+
+
+  <select class="govuk-select" id="addressList" name="addressList">
+  
+    
+    <option value="" selected="">2 addresses found</option>
+    
+  
+    <option value="">1 Sample street, Sample town, Sampleshire AB23 4CD</option>
+    
+    
+    <option value="">4 Sample street, Sample town, Sampleshire, EF56 7GH</option>
+    
+  
+  </select>
+
+</div>
+
+
+
+		<div class="govuk-button-group">
+      		
+  
+    
+  
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+		
+      		<p class="govuk-body"><a href="/account/manage/related/manual-address">The address is not on the list</a></p>
+  		</div></form>
+
+	</div>
+</div>
+
+{% endblock %}
