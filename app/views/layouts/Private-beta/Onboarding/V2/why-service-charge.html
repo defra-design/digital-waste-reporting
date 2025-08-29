@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Pay the annual report receipt of waste service charge</h1>
+
+      <p class="govuk-body">You need to pay the annual service charge to access the full report receipt of waste service.
+       
+        <p class="govuk-body"><strong>The cost is £20 per year</strong> per individual legal entity, and gives the company the ability to report waste movements to DEFRA.</p>
+
+
+      <p class="govuk-body">To pay for the service charge, you will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>a credit or debit card that is authorised for payments for your business or organisation</li>
+
+        <li>an email address to receive the payment confirmation</li>
+
+      </ul>
+      
+      <div class="govuk-warning-text govuk-!-padding-top-6">
+  
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You will not be able to create or amend waste records until you have paid the service charge.
+        </strong>
+      </div>
+
+      <form class="form" action="/layouts/Private-beta/Onboarding/V2/J2/payment/pay-service-charge" method="post">
+      
+        <button type="submit" id="Pay-charge" name="pay-charge"class="govuk-button" value="Pay service charge" data-module="govuk-button">
+          Pay service charge
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

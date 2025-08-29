@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Government Gateway
+{% endset%}
+
+{% block beforeContent %}
+
+    {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }} #}
+
+    <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Enter your email address</h1>
+
+            <form action="#" method="post">
+
+                <input type="hidden" name="tes" value="csrfToken,emailAddress,profile:6987721374162713513::uOqpQaF+RIv3KYSKvuWyJG+2t4OgUmGZ501czk1yrKA1XgoeQTwMmFVVY9ak0VqxEcXQHSLv4oBeicghr13GXw==">
+                <input type="hidden" name="csrfToken" value="62e3e8d0d04990b89987583b04c8cd2cf577ba6c-1755870702402-4f09c305b26e8273c7782fc0">
+                <p class="govuk-body">This will only be used to send you security updates or if you need to recover your sign in details.</p>
+                <p class="govuk-body">To confirm it is your email address we will send you a code.</p>
+                <div class="govuk-form-group">
+                    <label for="emailAddress" class="govuk-label govuk-label--m"> Email address </label>
+                    <input type="text" name="emailAddress" id="emailAddress" class="govuk-input govuk-!-width-three-quarters" value="" autocomplete="email">
+                </div>
+                <button type="submit" id="continue" class="govuk-button" formnovalidate="" data-module="govuk-button" data-prevent-double-click="true" data-govuk-button-init="">Continue</button>
+                <iframe hidden="" id="webrtciframe" sandbox="allow-same-origin"></iframe>
+                <input type="hidden" name="profile">
+                <script src="/assets/javascripts/device-profile.js"></script>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

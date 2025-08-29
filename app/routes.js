@@ -162,36 +162,18 @@ router.post('/layouts/Private-beta/Onboarding/V1/check-site-details-additional-s
 router.post('/layouts/Private-beta/Onboarding/V2/defra-id/sign-in-answer', function (req, res) {
 
   // Make a variable and give it the value
-  var oneorgovgateway = req.session.data['one-or-gov-gateway']
+  var signin = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (oneorgovgateway == "Sign in with One Login"){
+  if (signin == "One Login"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/Onboarding/V2/oneLogin/start')
+    res.redirect('/layouts/Private-beta/Onboarding/V2/oneLogin/sign-in')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V2/gov-gateway/start')
   }
 
 })
-
-// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/defra-id/verify-single-number-answer'
-router.post('/layouts/Private-beta/Onboarding/V2/defra-id/verify-single-number-answer', function (req, res) {
-
-  // Make a variable and give it the value
-  var verifyidentity = req.session.data['verify-your-identity']
-
-  // Check whether the variable matches
-  if (verifyidentity == "Text message"){
-    
-  // Send user to
-    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/verify-text')
-  } else {
-    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/security-word')
-  }
-
-})
-
 
 // Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/defra-id/related-org-address-answer'
 router.post('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-address-answer', function (req, res) {
@@ -241,28 +223,28 @@ router.post('/layouts/Private-beta/Onboarding/V2/what-activity-answer', function
   // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/id-account')
   } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V2/service-charge')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/service-charge-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/service-charge-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var servicecharge = req.session.data['service-charge']
+
+  // Check whether the variable matches
+  if (servicecharge == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V2/why-service-charge')
+  } else {
     res.redirect('/layouts/Private-beta/Onboarding/V2/waste-account')
   }
 
 })
-
-// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/J2/verify-single-number-answer'
-router.post('/layouts/Private-beta/Onboarding/V2/J2/verify-single-number-answer', function (req, res) {
-
-  // Make a variable and give it the value
-  var verifyidentity = req.session.data['verify-your-identity']
-
-  // Check whether the variable matches
-  if (verifyidentity == "Text message"){
-    
-  // Send user to
-    res.redirect('/layouts/Private-beta/Onboarding/V2/J2/verify-text')
-  } else {
-    res.redirect('/layouts/Private-beta/Onboarding/V2/J2/security-word')
-  }
-
-})
-
 
 
 // Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/site-details/check-site-details-answer'
@@ -277,7 +259,7 @@ router.post('/layouts/Private-beta/Onboarding/V2/site-details/check-site-details
   // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V2/site-details/site-name-2')
   } else {
-    res.redirect('/layouts/Private-beta/Onboarding/V2/payment/service-charge')
+    res.redirect('/layouts/Private-beta/Onboarding/V2/service-charge')
   }
 
 })
@@ -292,15 +274,15 @@ router.post('/layouts/Private-beta/Onboarding/V2/J2/what-activity-answer', funct
   if (whatactivity == "Yes to my defra account"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/id-account-2-accounts')
+    res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/id-account-2-accounts-+-service')
   } else {
-    res.redirect('/layouts/Private-beta/Onboarding/V2/J2/payment/service-charge')
+    res.redirect('/layouts/Private-beta/Onboarding/V2/J2/service-charge')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/payment/service-charge-answer'
-router.post('/layouts/Private-beta/Onboarding/V2/payment/service-charge-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V2/J2/service-charge-answer'
+router.post('/layouts/Private-beta/Onboarding/V2/J2/service-charge-answer', function (req, res) {
 
   // Make a variable and give it the value
   var servicecharge = req.session.data['service-charge']
@@ -309,9 +291,9 @@ router.post('/layouts/Private-beta/Onboarding/V2/payment/service-charge-answer',
   if (servicecharge == "Yes"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/Onboarding/V2/J2/payment/why-service-charge')
+    res.redirect('/layouts/Private-beta/Onboarding/V2/J2/why-service-charge')
   } else {
-    res.redirect('/layouts/Private-beta/Onboarding/V2/waste-account-2')
+    res.redirect('/layouts/Private-beta/Onboarding/V2/waste-account-2-+-service')
   }
 
 })

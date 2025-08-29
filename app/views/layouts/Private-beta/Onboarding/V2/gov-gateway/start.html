@@ -4,6 +4,7 @@
   Government Gateway
 {% endset%}
 
+
 {% block beforeContent %}
 
   {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
@@ -25,8 +26,8 @@
             <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
                 <div class="govuk-notification-banner__header">
                     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Keep your information secure
-    </h2>
+                        Keep your information secure
+                    </h2>
                 </div>
                 <div class="govuk-notification-banner__content">
 
@@ -37,11 +38,9 @@
 
             <h1 class="govuk-heading-xl">Sign in using Government Gateway</h1>
 
-            <!-- // Registration Flow // -->
 
             <form action="/layouts/Private-beta/Onboarding/V2/what-activity" method="post">
 
-                <!-- // Authentication Flow // -->
 
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="GovGateId">
@@ -73,7 +72,7 @@
 
             <h2 class="govuk-heading-m">New users of Government Gateway</h2>
             <p>
-                <a href="/gov-gateway/email-address" class="govuk-link govuk-link--no-visited-state">Create sign in details</a>
+                <a href="/layouts/Private-beta/Onboarding/V2/gov-gateway/email" class="govuk-link govuk-link--no-visited-state">Create sign in details</a>
             </p>
 
             <h2 class="govuk-heading-m">Problems signing in</h2>

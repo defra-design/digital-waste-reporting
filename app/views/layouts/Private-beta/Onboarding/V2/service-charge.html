@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/layouts/Private-beta/Onboarding/V2/service-charge-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you want to pay your service charge now?
+              </h1>
+            </legend>
+
+            <p class="govuk-body">
+                You can pay your annual service charge of £20 per legal entity now or later.
+              </p>
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    What is a legal entity?
+                  </span>
+              </summary>
+
+              <div class="govuk-details__text">
+
+                <p class="govuk-body">
+                  Examples of legal entities include:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+
+                  <li>a sole trader </li>
+                  <li>a company </li>
+                  <li>a partnership </li>
+                  <li>a limited liability partnership (LLP)</li>
+                  <li>large businesses</li>
+
+                </ul>
+
+                <p class="govuk-body">
+                  In large businesses made up of multiple companies or other bodies, each individual limited company or body that has control over a permitted waste operation that receives controlled waste must pay the fee individually. 
+                </p>
+
+                <p class="govuk-body">
+                  If you have multiple legal entities, you can go back and add them to your business or organisation.
+                </p>
+
+              </div>
+            </details>
+
+            <p class="govuk-body govuk-!-padding-bottom-6">
+              Until you pay the charge, your registration is not complete and you will not be able to report receipt of waste.            
+            </p>
+
+
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="service-charge-yes" name="service-charge" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="service-charge-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="service-charge-no" name="service-charge" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="service-charge-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+{% endblock %}
