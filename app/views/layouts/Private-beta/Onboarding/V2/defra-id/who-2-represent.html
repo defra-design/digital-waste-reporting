@@ -6,14 +6,20 @@
 
 {% block beforeContent %}
 
-  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+			
+						
+				Joe Bloggs |</li>
 
-  {{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype. It is not a real service.'
-}) }}
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/Onboarding/V2/defra-id/id-account-2-accounts-+-service" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
 
 {% endblock %}
 
