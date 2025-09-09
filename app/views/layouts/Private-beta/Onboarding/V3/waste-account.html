@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+						
+				Joe Bloggs |</li>
+
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/Onboarding/V2/defra-id/id-account" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Defra account</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+            <span class="govuk-caption-xl">
+            <span class="govuk-visually-hidden">This section is: </span>Account for
+            </span>
+    
+            <h1 class="govuk-heading-xl">Joe Waste &#38; Co Ltd</h1>
+
+
+            <p>
+                <span class="govuk-!-font-weight-bold">Full name:</span> Joe Bloggs
+            <br>
+                <span class="govuk-!-font-weight-bold">Email address:</span> joebloggs@hotmail.com
+            <br>
+                <span class="govuk-!-font-weight-bold">Telephone number:</span> 00700700788</p>
+
+            <p class="govuk-body govuk-!-padding-top-2"><strong>Service registration:</strong> <span class="govuk-tag govuk-tag--blue">Incomplete</span></p>
+
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-padding-top-6">
+
+            {# <form action="/layouts/Private-beta/Onboarding/V1/site-details/postcode" method="post"> #}
+
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                Pay service charge
+            </button>
+
+            {# </form> #}
+
+        </div>
+
+        <div class="govuk-grid-column-full"></div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+    {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }} #}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+			
+						
+				Joe Bloggs |</li>
+
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+		
+    
+    <span class="govuk-caption-xl">
+        <span class="govuk-visually-hidden">This section is: </span>Add related organisation
+    </span>
+    <h1 class="govuk-heading-xl">What are their contact details?</h1>
+ 
+
+    	<form method="post" action="/layouts/Private-beta/Onboarding/V2/defra-id/related-org-check-details">
+
+        	
+
+
+
+  
+<div class="govuk-form-group">
+  <label class="govuk-label" for="relatedCompanyTelephone">
+    Telephone number
+  </label>
+
+
+  <input class="govuk-input govuk-input--width-20" id="relatedCompanyTelephone" name="relatedCompanyTelephone" type="text">
+
+</div>
+
+<!-- 
+			,
+          		type: "tel",
+				  errorMessage: {
+					text: "Enter a telephone number"} -->
+
+        	
+
+
+
+  
+<div class="govuk-form-group">
+  <label class="govuk-label" for="relatedCompanyEmail">
+    Email address
+  </label>
+
+
+  <input class="govuk-input govuk-input--width-20" id="relatedCompanyEmail" name="relatedCompanyEmail" type="text">
+
+</div>
+
+
+			<!-- ,
+          		type: "email",
+				  errorMessage: {
+					text: "Enter an email address"} -->
+
+        	
+  
+    
+  
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+      	</form>
+
+  	</div>
+</div>
+
+{% endblock %}

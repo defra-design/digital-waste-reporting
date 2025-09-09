@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }} #}
+
+  <div class="login-nav">
+    <ul class="login-nav__list">
+      <li class="login-nav__list-item">
+			
+						
+				Joe Bloggs |</li>
+
+      <li class="login-nav__list-item">
+        <a href="/layouts/Private-beta/Onboarding/V2/defra-id/id-account-2-accounts" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+      <li class="login-nav__list-item">
+        <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+      </li>
+    </ul>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">J &#38; D Receivers</h1>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+
+        <ul class="govuk-tabs__list" role="tablist">
+
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
+            <a class="govuk-tabs__tab" href="#past-day" id="tab_past-day" role="tab" aria-controls="past-day" aria-selected="true" tabindex="0">
+        Organisation address
+      </a>
+          </li>
+
+          <li class="govuk-tabs__list-item" role="presentation">
+            <a class="govuk-tabs__tab" href="#past-week" id="tab_past-week" role="tab" aria-controls="past-week" aria-selected="false" tabindex="-1">
+        Billing details
+      </a>
+          </li>
+
+          <li class="govuk-tabs__list-item" role="presentation">
+            <a class="govuk-tabs__tab" href="#past-month" id="tab_past-month" role="tab" aria-controls="past-month" aria-selected="false" tabindex="-1">
+        Related organisations
+      </a>
+          </li>
+
+        </ul>
+
+        <div class="govuk-tabs__panel" id="past-day" role="tabpanel" aria-labelledby="tab_past-day">
+
+          <h2 class="govuk-heading-l">Organisation address</h2>
+          <div class="govuk-card govuk-card--contained">
+            <div class="govuk-card__content">
+              <p class="govuk-body">
+                <span class="govuk-!-font-weight-bold">Address:</span> 1 Sample street, Sample town, Sampleshire AB23 4CD</p>
+              <p class="govuk-body">
+                <span class="govuk-!-font-weight-bold">Companies House number:</span> 01234568<br></p>
+              <p class="govuk-body">
+                <span class="govuk-!-font-weight-bold">Telephone:</span> 00700700788 
+                        <br>
+                <span class="govuk-!-font-weight-bold">Email:</span> joebloggs@hotmail.com</p>
+            </div>
+            <div class="govuk-card__actions">
+              <ul class="govuk-list govuk-!-mb-r0">
+                <li>
+                  <a id="link-update-details" href="#" class="govuk-link govuk-link--no-visited-state">Update details</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week" role="tabpanel" aria-labelledby="tab_past-week">
+
+          <h2 class="govuk-heading-l">Billing details</h2>
+
+          <p class="govuk-body govuk-!-margin-bottom-7">No billing details have been provided for this organisation.</p>
+          <form method="post" action="/account/manage/billing/">
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+      Add details
+    </button>
+
+          </form>
+
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month" role="tabpanel" aria-labelledby="tab_past-month">
+
+          <h2 class="govuk-heading-l">Related organisations</h2>
+          <p class="govuk-body">You can add related organisations to this account and manage all team members from the account dashboard.</p>
+          <details class="govuk-details" role="group">
+            <summary class="govuk-details__summary" role="button" aria-controls="details-content-cb7f93ae-7e52-4034-b397-b0ad9c26fa56" aria-expanded="false">
+              <span class="govuk-details__summary-text">
+                    What are related organisations?
+                  </span>
+            </summary>
+            <div class="govuk-details__text" id="details-content-cb7f93ae-7e52-4034-b397-b0ad9c26fa56" aria-hidden="true">
+              <p>If your organisation is linked to another branch or division, you can add it to this account as a related organisation. This allows you to manage each part of your organisation individually, but under the same account.</p>
+              <p>If you're an <strong>Only Representative</strong>, you can add the non-EU manufacturers and importers that you represent.</p>
+            </div>
+          </details>
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+              Add a related organisation
+            </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% endblock %}

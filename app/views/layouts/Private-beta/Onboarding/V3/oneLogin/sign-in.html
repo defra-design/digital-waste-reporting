@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        
+    
+    <h1 class="govuk-heading-xl">Create a GOV.UK One Login or sign in</h1>
+
+
+        <p>You’ll need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>an email address</li>
+            <li>a way to get security codes - this can be a mobile phone number or an authenticator app</li>
+        </ul>
+
+        <div class="govuk-inset-text">
+            You can also <a href="#">use GOV.UK One Login in Welsh (Cymraeg)</a>.
+        </div>
+
+        
+            
+           <div class="govuk-button-group">
+
+            
+  
+    
+  
+
+<a href="/oneLogin/create/email-address" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Create a GOV.UK One Login
+</a>
+                                
+
+            
+  
+
+  
+    
+  
+
+<a href="/oneLogin/email-address" role="button" draggable="false" class="govuk-button govuk-button--secondary govuk" data-module="govuk-button">
+  Sign in
+</a>
+                          
+            
+        </div> 
+
+            
+
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                About GOV.UK One Login
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+                <p>GOV.UK One Login is new. At the moment you can only use it to access some government services.</p>                
+                <p>It does not work with all government accounts or services yet (for example Government Gateway or Universal Credit).</p>
+                <p>In the future, you’ll be able to use your GOV.UK One Login to access most services on GOV.UK</p>
+                
+            </div>
+          </details>
+
+
+
+       
+    </div>
+</div>
+
+{% endblock %}

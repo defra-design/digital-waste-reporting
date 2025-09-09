@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Why you need to register to report receipt of waste</h1>
+
+      <p class="govuk-body">From <strong>October 2026</strong>, all waste receiving sites that require a permit or license must record every load of waste they receive to be compliant with existing duty of care regulations.</p>
+
+      <p class="govuk-body">As a receiver of controlled waste, you're responsible for ensuring accurate tracking of that waste. Being registered with the Receipt of Waste service allows you setup your sites for reporting waste receipts via your existing Waste Management software (or via an Excel based alternative). </p>
+
+      <p class="govuk-body">Once in the service you will be able to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Pay your service charge</li>
+        <li>Set up your sites</li>
+        <li>Access API Credentials</li>
+      </ul> 
+
+
+      <form class="form" action="/layouts/Private-beta/Onboarding/V1/register-site" method="post">
+
+      <button type="submit" class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+        Continue
+      </button>
+
+        {# <h2 class="govuk-heading-m">Before you start</h2>
+        <p class="govuk-body">Vivamus efficitur turpis arcu, id hendrerit turpis convallis et. Sed massa sapien, scelerisque id nunc vitae, porta consequat lorem.</p>
+
+        <h3 class="govuk-heading-s">If you need help using the service</h3>
+        <p class="govuk-body">Vestibulum a orci ac <a href="#">nunc ultricies fringilla</a> sit amet eget massa.</p> #}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+    {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }} #}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+			
+						
+				Joe Bloggs |</li>
+
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/Onboarding/V2/defra-id/id-account" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+
+			<span class="govuk-caption-xl">
+				<span class="govuk-visually-hidden">This section is: </span>Add related organisation
+    </span>
+			<h1 class="govuk-heading-xl">Check your answers</h1>
+
+			<form method="post" action="/layouts/Private-beta/Onboarding/V2/defra-id/related-org-account-added">
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">Name</dt>
+						<dd class="govuk-summary-list__value">J &#38; D Receivers</dd>					
+									
+				</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link govuk-link--no-visited-state" href="/layouts/Private-beta/Onboarding/V2/no-design-yet">Change<span class="govuk-visually-hidden"> organisation name</span></a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">Address</dt>
+						<dd class="govuk-summary-list__value">					
+					4 Sample street<br>Sample town<br> Sampleshire<br> EF56 7GH
+				</dd>
+						<dd class="govuk-summary-list__actions">
+							<!-- note for dev: the change link goes back to where they selected yes or input the correct details -->
+							<a class="govuk-link govuk-link--no-visited-state" href="/layouts/Private-beta/Onboarding/V2/no-design-yet">Change<span class="govuk-visually-hidden"> address</span></a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">Contact details</dt>
+						<dd class="govuk-summary-list__value">					
+					012345678910<br>
+          			j.doe@gmail.com				
+				</dd>
+						<dd class="govuk-summary-list__actions">
+							<!-- note for dev: the change link goes back to where they selected yes or input the correct details -->
+							<a class="govuk-link govuk-link--no-visited-state" href="/layouts/Private-beta/Onboarding/V2/no-design-yet">Change<span class="govuk-visually-hidden"> contact details</span></a>
+						</dd>
+					</div>
+
+				</dl>
+
+				<button type="submit" class="govuk-button" data-module="govuk-button">
+    				Confirm and continue
+				</button>
+
+			</form>
+
+		</div>
+	</div>
+
+{% endblock %}

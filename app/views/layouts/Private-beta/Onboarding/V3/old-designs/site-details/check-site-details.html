@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/layouts/Private-beta/Onboarding/V2/site-details/check-site-details-answer" method="post">
+
+      <h1 class="govuk-heading-l">Check your site details</h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Company name
+            </dt>
+          <dd class="govuk-summary-list__value">
+              TBC
+            </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+          <dd class="govuk-summary-list__value">
+              Joe Bloggs
+            </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+          <dd class="govuk-summary-list__value">
+              joe.bloggs@gmail.com
+            </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Phone number
+            </dt>
+          <dd class="govuk-summary-list__value">
+              01234567890
+            </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+          </dd>
+        </div>
+        {# <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Permit authorisation number
+            </dt>
+          <dd class="govuk-summary-list__value">
+              ABX0123456
+            </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+          </dd>
+        </div> #}
+      </dl>
+
+      <div class="govuk-form-group govuk-!-padding-top-6">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Would you like to add another site?
+            </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yes-another-site" name="add-another-site" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="yes-another-site">
+                  Yes
+                </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-more-sites" name="add-another-site" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="no-more-sites">
+                  No
+                </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

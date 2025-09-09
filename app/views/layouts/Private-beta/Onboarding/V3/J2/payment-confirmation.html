@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Registration complete
+          </h1>
+        <div class="govuk-panel__body">
+            Your organisation number<br>
+          <strong>1234567891012345</strong>
+        </div>
+      </div>
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-4">Payment summary</h2>
+
+      <table class="govuk-table"></thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Payment for</th>
+          <td class="govuk-table__cell">Report receipt of waste annual service charge</td>
+        </tr>
+
+        <th scope="row" class="govuk-table__header">Company name</th>
+        <td class="govuk-table__cell">Waste Bros</td>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total amount</th>
+          <td class="govuk-table__cell">£20.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-4">What happens next</h2>
+
+    <p class="govuk-body">
+      You can view your Organisation number.
+    </p>
+
+    <p class="govuk-body">
+      You will need to share your organisation number with your software developer to continue reporting your receipt of waste using this service.    
+      </p>
+
+    <p class="govuk-body">
+        You will need to pay the annual service charge again a year from now.
+        </p>
+
+    <p class="govuk-body govuk-!-padding-top-4">
+      <a class="govuk-link" href="/layouts/Private-beta/Onboarding/V2/J2/waste-account-1-site-paid">Return to account</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
