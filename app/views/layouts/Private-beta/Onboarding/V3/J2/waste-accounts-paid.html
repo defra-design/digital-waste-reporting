@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+						
+				Joe Bloggs |</li>
+
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/Onboarding/V2/defra-id/id-account" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Defra account</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-!-margin-bottom-6 govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">Your Report receipt of waste account</h1>
+
+            <p>
+                <span class="govuk-!-font-weight-bold">Full name:</span> Joe Bloggs
+            <br>
+                <span class="govuk-!-font-weight-bold">Email address:</span> joebloggs@hotmail.com
+            <br>
+                <span class="govuk-!-font-weight-bold">Telephone number:</span> 00700700788</p>
+
+        </div>
+
+        <div class="govuk-grid-column-full govuk-!-padding-top-6">
+
+            <form class="form" action="/layouts/Private-beta/Onboarding/V3/waste-account-2-answer" method="post">
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Add a legal entity
+            </button>
+
+            </form>
+
+            <h2 class="govuk-heading-l govuk-!-margin-top-7">Your sites</h2>
+
+            <table class="govuk-table">
+
+                <caption class="govuk-table__caption govuk-visually-hidden">Accounts</caption>
+
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Legal entity</th>
+
+                        <th scope="col" class="govuk-table__header">Date added</th>
+
+                        <th scope="col" class="govuk-table__header">Registration</th>
+
+                        <th scope="col" class="govuk-table__header">Action</th>
+
+                    </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">Joe Waste &#38; Co Ltd</td>
+
+                        <td class="govuk-table__cell">10 September 2025</td>
+
+                        <td class="govuk-table__cell">Complete</td>
+
+                        <td class="govuk-table__cell">
+
+                            <a href="/layouts/Private-beta/Onboarding/V3/J2/legal-1-manage" class="govuk-link govuk-link--no-visited-state">Manage<span class="govuk-visually-hidden td-header"></span>
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+                                <tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">A &#38; B Receivers</td>
+
+                        <td class="govuk-table__cell">10 September 2025</td>
+
+                        <td class="govuk-table__cell">Complete</td>
+
+                        <td class="govuk-table__cell">
+
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Manage<span class="govuk-visually-hidden td-header"></span>
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

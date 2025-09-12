@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+      </span>
+      <h1 class="govuk-heading-l">What's your company registration number?</h1>
+
+      <p>You can <a class="govuk-link" href="/layouts/Private-beta/Onboarding/V3/defra-id/no-design-yet" target="_blank">search Companies House for your company registration number (opens in new tab)</a>.</p>
+
+      <form method="post" action="/layouts/Private-beta/Onboarding/V3/defra-id/companies-house-confirm">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-visually-hidden" for="registrationCompanyNumber">
+            What's your company registration number?
+          </label>
+
+          <div id="registrationCompanyNumber-hint" class="govuk-hint">
+            It is 8 characters. For example, 01234567 or AC012345.
+          </div>
+
+          <input class="govuk-input govuk-input--width-10" id="registrationCompanyNumber" name="registrationCompanyNumber" type="text" aria-describedby="registrationCompanyNumber-hint">
+
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

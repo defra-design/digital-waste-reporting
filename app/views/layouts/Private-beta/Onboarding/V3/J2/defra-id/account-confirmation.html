@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">        
+
+        <div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Account has been added
+  </h1>
+  
+</div>
+
+
+        <p class="govuk-body">The account A &#38; B Receivers has been added and will now be shown on Your Defra account page.</p>
+
+        <h3 class="govuk-heading-m">What you can do next</h3>
+
+        <p class="govuk-body">The following services are available for you to register this account with.</p>
+        <ul class="govuk-list">
+            <li><a class="govuk-link" href="/layouts/Private-beta/Onboarding/V3/J2/legal-entities-1">Report receipt of waste</a></li>
+        </ul>
+
+        <p class="govuk-body"><a href="/layouts/Private-beta/Onboarding/V3/J2/defra-id/new-orgs" class="govuk-link">Continue without registering a service</a></p>
+ 
+
+  </div>
+</div>
+
+{% endblock %}

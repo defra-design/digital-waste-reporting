@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Your organisational API ID</h1>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              2f9d14a5-6e01-4c78-b11c-8e3f0d2c67b9
+            </h2>
+          </div>
+        </div>
+
+        <p class="govuk-body">
+      You will need to share your organisation number with your software developer to continue reporting your receipt of waste using this service.    
+      </p>
+
+        <form method="post" action="/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-answer">
+
+          <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-!-margin-top-6 govuk-fieldset__heading">
+                Do you need to request an additional API ID for another software provider?
+              </h2>
+            </legend>
+
+                        <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Why might I need to do this?
+                  </span>
+              </summary>
+
+              <div class="govuk-details__text">
+
+                <p class="govuk-body">
+                  TBC</p>
+
+                {# <ul class="govuk-list govuk-list--bullet">
+
+                  <li>a sole trader </li>
+                  <li>a company </li>
+                  <li>a partnership </li>
+                  <li>a limited liability partnership &#40;LLP&#41;</li>
+                  <li>large businesses</li>
+
+                </ul>
+
+                <p class="govuk-body">
+                  In large businesses made up of multiple companies or other bodies, each individual limited company or body that has control over a permitted waste operation that receives controlled waste must pay the fee individually. 
+                </p>
+
+                <p class="govuk-body">
+                  We use the term 'legal entity' interchangeably with 'business or organisation' in this service.                
+                </p> #}
+
+              </div>
+            </details>
+
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="registrationAccountType-1" name="registrationAccountType" type="radio" value="Yes create an account">
+                <label class="govuk-label govuk-radios__label" for="registrationAccountType-Yes-1">
+          Yes
+        </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="registrationAccountType-Yes-2" name="registrationAccountType" type="radio" value="No I don't have permission">
+                <label class="govuk-label govuk-radios__label" for="registrationAccountType-Yes-2">
+          No
+        </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="govuk-!-margin-top-6 govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+        </div>
+      </form>
+
+    </div>
+
+  {% endblock %}

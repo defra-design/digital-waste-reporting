@@ -297,3 +297,269 @@ router.post('/layouts/Private-beta/Onboarding/V2/J2/service-charge-answer', func
   }
 
 })
+
+
+// Private Beta V3 routes //
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/defra-id/sign-in-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/defra-id/sign-in-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var signin = req.session.data['signIn']
+
+  // Check whether the variable matches
+  if (signin == "One Login"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/oneLogin/sign-in')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/gov-gateway/start')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/defra-id/account-type-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/defra-id/account-type-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var registrationAccountType = req.session.data['registrationAccountType']
+
+  // Check whether the variable matches
+  if (registrationAccountType == "Yes create an account"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/uk-org')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/postcode')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/defra-id/uk-org-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/defra-id/uk-org-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var registrationAccountType = req.session.data['registrationAccountType']
+
+  // Check whether the variable matches
+  if (registrationAccountType == "Yes create an account"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/companies-house')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/business-name')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/defra-id/companies-house-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/defra-id/companies-house-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var companiesHouse = req.session.data['companiesHouse']
+
+  // Check whether the variable matches
+  if (companiesHouse == "Yes Companies House number"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/companies-house-number')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/sole-trader-or-charity')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/legal-entities-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/legal-entities-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var legalentities = req.session.data['legalentities']
+
+  // Check whether the variable matches
+  if (legalentities == "Yes add another"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/id-account')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/waste-account')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/waste-account-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/waste-account-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var buttonChoice = req.session.data['buttonChoice']
+
+  // Check whether the variable matches
+  if (buttonChoice == "Pay service charge"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/why-service-charge')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var registrationAccountType = req.session.data['registrationAccountType']
+
+  // Check whether the variable matches
+  if (registrationAccountType == "Yes create an account"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/postcode')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var registrationAccountType = req.session.data['registrationAccountType']
+
+  // Check whether the variable matches
+  if (registrationAccountType == "Yes create an account"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/business-name')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var companiesHouse = req.session.data['companiesHouse']
+
+  // Check whether the variable matches
+  if (companiesHouse == "Yes Companies House number"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house-number')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/sole-trader-or-charity')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/J2/legal-entities-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/J2/legal-entities-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var legalentities = req.session.data['legalentities']
+
+  // Check whether the variable matches
+  if (legalentities == "Yes add another"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/waste-account-1')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var registrationAccountType = req.session.data['registrationAccountType']
+
+  // Check whether the variable matches
+  if (registrationAccountType == "Yes create an account"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3//J2/defra-id/postcode')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var registrationAccountType = req.session.data['registrationAccountType']
+
+  // Check whether the variable matches
+  if (registrationAccountType == "Yes create an account"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2defra-id/companies-house')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2defra-id/business-name')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var companiesHouse = req.session.data['companiesHouse']
+
+  // Check whether the variable matches
+  if (companiesHouse == "Yes Companies House number"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house-number')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/sole-trader-or-charity')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/J2/legal-entities-1-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/J2/legal-entities-1-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var legalentities = req.session.data['legalentities']
+
+  // Check whether the variable matches
+  if (legalentities == "Yes add another"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-1')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/waste-account-2')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Onboarding/V3/waste-account-2-answer'
+router.post('/layouts/Private-beta/Onboarding/V3/waste-account-2-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var buttonChoice = req.session.data['buttonChoice']
+
+  // Check whether the variable matches
+  if (buttonChoice == "Pay service charge"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/why-service-charge')
+  } else {
+    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type')
+  }
+
+})

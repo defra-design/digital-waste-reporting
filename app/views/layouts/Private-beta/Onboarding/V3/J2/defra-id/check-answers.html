@@ -1,0 +1,221 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+    </span>
+      <h1 class="govuk-heading-l">Check your answers</h1>
+
+      <div class="govuk-summary-card govuk-!-margin-bottom-7">
+        <div class="govuk-summary-card__title-wrapper">
+
+          <h2 class="govuk-summary-card__title">
+            Defra account
+          </h2>
+
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Account type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Business
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-summary-card govuk-!-margin-bottom-7">
+        <div class="govuk-summary-card__title-wrapper">
+
+          <h2 class="govuk-summary-card__title">
+            Business details
+          </h2>
+
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+              <dt class="govuk-summary-list__key">
+              Type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Limited company
+            </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                A &#38; B Receivers
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Company number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                34567890 
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/company-contact?flowType=check">Change<span class="govuk-visually-hidden"> age (Business details)</span></a>
+
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+              <dt class="govuk-summary-list__key">
+                Registered address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                6 Sample Street, Sample Tow, Sampleshire, United Kingdom EF45 6GH
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Telephone number
+              </dt>
+              <dd class="govuk-summary-list__value">08957626534</dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/company-contact?flowType=check">Change<span class="govuk-visually-hidden"> the business's telephone number &#40;Business details&#41;</span></a>
+
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">joe.bloggs@hotmail.com</dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/company-contact?flowType=check">Change<span class="govuk-visually-hidden"> the business’s email address (Business details)</span></a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-summary-card govuk-!-margin-bottom-7">
+        <div class="govuk-summary-card__title-wrapper">
+
+          <h2 class="govuk-summary-card__title">
+            Your details
+          </h2>
+
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value"></dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/personal-name?link=change">Change<span class="govuk-visually-hidden"> your name (Your details)</span></a>
+
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Telephone number
+              </dt>
+              <dd class="govuk-summary-list__value"></dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/personal-contact?link=change">Change<span class="govuk-visually-hidden"> your telephone number (Your details)</span></a>
+
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Memorable word
+              </dt>
+              <dd class="govuk-summary-list__value"></dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/personal-security?link=change">Change<span class="govuk-visually-hidden"> your memorable word (Your details)</span></a>
+
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hint question
+              </dt>
+              <dd class="govuk-summary-list__value"></dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/personal-security?link=change">Change<span class="govuk-visually-hidden"> your hint question (Your details)</span></a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <form method="post" action="/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-confirmation">
+
+        <input type="hidden" id="registrationStatus" name="registrationStatus" value="Enrolled">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Confirm and complete registration
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

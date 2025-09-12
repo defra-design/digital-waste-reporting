@@ -1,0 +1,231 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+
+{% block beforeContent %}
+
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+        text: "Prototype"
+        },
+        html: 'This is a prototype. It is not a real service.'
+        }) }}
+
+{% endblock %}
+
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action="/layouts/Private-beta/Onboarding/V3/defra-id/sign-in" method="post">
+
+                <h1 class="govuk-heading-l">How to use the Report receipt of waste service</h1>
+
+                <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+                    Contents
+                </h2>
+
+                <ol class="govuk-!-padding-bottom-4 govuk-prototype-kit-common-templates-contents-list__list">
+                    <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+                        <a href="#get-started">
+                            Get started
+                        </a>
+                    </li>
+                    <li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                        <a href="#initial-setup">
+                            Initial sign-up
+                        </a>
+                    </li>
+                    <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                        <a href="#extra-businesses">
+                            Add extra businesses or organisations 
+                        </a>
+                    </li>
+                    <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                        <a href="#extra-team">
+                            Add team members 
+                        </a>
+                    </li>
+                </ol>
+
+                <h3 id="get-started"class="govuk-!-margin-top-8 govuk-heading-m">Get started</h3>
+
+                <p class="govuk-body">When you start registering your business or organisation on this service, part of the process requires you to use Defra account registration.  
+                </p>
+
+                <p class="govuk-body">For example, when you start your <a href="#initial-setup" class="govuk-link">initial sign-up for your first business or organisation</a> , your Defra account will guide you through the process of collecting details of your name, contact details and business or organisation details.
+                </p>
+
+                <p class="govuk-body">To <a href="#" class="govuk-link">add extra businesses or organisations</a>, you must enter their details in your Defra account too.</a>
+                </p>
+
+                <p class="govuk-body">You can also use the 'Manage' link on 'Your Defra account' page to <a href="#extra-team" class="govuk-link">add team members to your account</a> and manage their permissions.    
+                </p>
+
+                <p class="govuk-body">At the end of the Defra account registration, you can return to Report receipt of waste service to pay the annual service charge and start reporting receipt of waste at your site/s.  
+                </p>
+
+                <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                        <span class="govuk-visually-hidden">Warning</span>
+                        Bookmark this page or keep it open on a separate tab to refer to during your registration.
+                    </strong>
+                </div>
+
+                <p class="govuk-body">View the<a href="#" class="govuk-link"> How to use the report receipt of waste service</a>. Opens in a new browser tab.</p>
+
+
+                <h2 id="initial-setup" class="govuk-!-margin-top-8 govuk-heading-m">Initial sign-up</h2>
+
+                <p class="govuk-body">This section explains the process for creating and managing a Report receipt of waste account, using this service and the Defra account service. It covers the details required, verification and next steps.</p>
+
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Read more about signing up
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <ol class="govuk-list govuk-list--number">
+                            <li>
+                                <p class="govuk-body">Sign in to Defra account using either GOV.UK One Login or Government Gateway. If you work as part of an organisation that already has a Defra account set up on GOV.UK One Login or Government Gateway &#40;where your organisation is already using another Defra service&#41;, it is important to know who the administrator for that account is.</p>
+                                <p class="govuk-body">The Defra account administrator in your organisation will need to approve your access to give access to Report receipt of waste. If you don't have a GOV.UK One Login or Government Gateway account for your business or organisation already, we will explain how to set it up.</p>
+                            </li>
+                            <li>Verify your identity by text or email.</li>
+                            <li>Read and accept the terms and conditions.</li>
+                            <li>
+                                <p class="govuk-body">You will then be asked what type of account you want to create. You can select either <strong>A business or organisation</strong> or <strong>An individual</strong> depending on your registration needs.</p>
+                                <p class="govuk-body">Select <strong>A business or organisation</strong> if you represent a business or organisation that wants to use this service &#40;including sole traders and charities&#41; and you have permission to create an account for them. Select <strong>An individual</strong> if you want to use this service for your own personal use.</p>
+                            </li>
+                            <li>
+                                <p class="govuk-body">For <strong>A business or organisation</strong> account, select 'A business or organisation' then click Continue. You will then be asked to select the type of business or organisation you own or represent.</p>
+                                <p class="govuk-body">Select one of the following options:</p>
+
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Sole trader</li>
+                                    <li>Limited company</li>
+                                    <li>Public limited company</li>
+                                    <li>Limited liability partnership</li>
+                                    <li>Organisation that is not registered in the UK</li>
+                                    <li>Charity</li>
+                                </ul>
+
+                                <p class="govuk-body">Then select Continue. Complete the requested details, including your business or organisation's name, address and contact details, taking each section in turn.</p>
+
+                                <p class="govuk-body">If you select Limited company, Public limited company or Limited liability partnership, you will need to provide your Companies House number &#40;which should be on your Certificate of Incorporation&#41;.</p>
+
+                                <p class="govuk-body">Part of the verification process will check these details with Companies House. If Companies House does not retrieve your data during the verification process, please check your details registered with Companies House are up to date before continuing with your registration.</p>
+
+                            </li>
+
+                            <li>
+                                <p class="govuk-body">Sole traders, charities and businesses not registered in the UK are not registered with Companies House, so if you select one of those options you won’t be asked for that information.</p>
+
+                                <p class="govuk-body">For local authorities and government departments, please choose 'Sole Trader' as business type.</p>
+
+                                <p class="govuk-body">For charities, you will need to enter the following information:</p>
+
+                                <p class="govuk-body">Select which country the charity is registered in:</p>
+
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>England</li>
+                                    <li>Scotland</li>
+                                    <li>Wales</li>
+                                    <li>&#40;Northern Ireland? - <strong>Mike</strong>&#41; </li>
+                                </ul>
+
+                                <p class="govuk-body">You will also be asked for your registered charity number, charity name, address and contact details.</p>
+
+                            </li>
+
+                            <li>
+                                <p class="govuk-body">When you have finished completing this information, each section will be marked as COMPLETED. You must then select 'Check your answers' which will take you to a page displaying your answers. From this page you can change any of the answers you have entered.</p>
+                                <p class="govuk-body">If there is a reCAPTCHA verification box at the bottom of the page, you will need to tick the 'I'm not a robot' box within the reCAPTCHA before you can select Continue.</p>
+                            </li>
+
+                            <li>You will see a confirmation screen stating: 'Your account has been added'. You now have the option to add services to your account, including the 'Report receipt of waste' service.</li>
+
+                            <li>Next, you have the option to add another legal entity, for example if there are related businesses or organisations under the parent company. If you select 'Yes', you will go to <a href="#" class="govuk-link">Add an extra businesse or organisation</a> &#40;see below&#41;. If you select 'No', you will go to 'Your Defra account' page.</li>
+
+                            <li>On the 'Your Defra account' page, your business will now appear in the 'Your accounts' section with the services you have selected for it.</li>
+
+                            <li>From the 'Your Defra account' page, you can return to the 'Report receipt of waste' service.</li>
+
+                        </ol>
+                    </div>
+                </details>
+
+                <h3 id="extra-businesses" class="govuk-!-margin-top-8 govuk-heading-m">Add extra businesses or organisations</h3>
+
+                <p class="govuk-body">You can use your Defra account to add more businesses or organisations. After entering and confirming the new organisation's details, the additional entry appears on the 'Your Defra account' page. From here, you can access the 'Report receipt of waste' service and select one organisation to represent at a time.</p>
+
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Read more about how to add an extra business or organisation 
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <ol class="govuk-list govuk-list--number">
+                            <li>Sign in to Defra account using either GOV.UK One Login or Government Gateway.</li>
+                            <li>
+                                <p class="govuk-body">The service will ask: 'Would you like to add any more legal entities to your account?'</p>
+                                <p class="govuk-body">If you select 'No', you will proceed with the organisation/s you have already registered.</p>
+                                <p class="govuk-body">If you select 'Yes', Defra account will help you to register your additional businesses or organisations.</p>
+
+                            </li>
+                            <li>
+                                <p class="govuk-body">To add another business or organisation, start on the 'Your Defra account' page.</p>
+                                <p class="govuk-body">Select the 'Register a new account' link below the list of 'Your accounts'.</p>
+                                <p class="govuk-body">The service will ask you for the business or organisation's name, address and contact details and ask you to confirm these details.</p>
+                            </li>
+                            <li>Your answers will be displayed on a 'Check your answers' page. You can either confirm your answers or edit them individually and then re-save.</li>
+                            <li>You'll then return to the 'Your Defra account' page where you'll see the new entry for your additional business or organisation.</li>
+                            <li>From the 'Your Defra account' page, you can return to the 'Report receipt of waste' service. If you select this, you will be asked which business or organisation you want to represent. You can only represent one business or organisation at a time in 'Report receipt of waste'.</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <h3 id="extra-team" class="govuk-!-margin-top-8 govuk-heading-m">Add team members</h3>
+
+                <p class="govuk-body">As the admin user, you can add and manage team members for each legal entity that you register.</p>
+
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Read more about adding team members 
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <ol class="govuk-list govuk-list--number">
+                            <li>When you create a new business account, you will automatically be the admin user and can manage who is able to access the business and its related services.</li>
+                            <li>On 'Your Defra account', select 'Manage' next to an organisation.</li>
+                            <li>This takes you to your company dashboard, where you can add a team member, inviting someone to join. This will send them an email to invite them.</li>
+                            <li>Once they have joined, you can select their name to open up the available options.</li>
+                            <li>Selecting 'Change account role' will give an option to add or remove admin user access.</li>
+                            <li>Selecting 'Change service role' will allow you to choose a service to give them access to.</li>
+                            <li>Additionally, you can Remove access where required.</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <button type="submit" class="govuk-!-margin-top-8  govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

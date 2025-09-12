@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="/layouts/Private-beta/Onboarding/V3/J2/legal-entities-answer">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Would you like to add any more legal entities to your account?
+              </h1>
+            </legend>
+
+            <details class="govuk-!-padding-top-4 govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    What is a legal entity?
+                  </span>
+              </summary>
+
+              <div class="govuk-details__text">
+
+                <p class="govuk-body">
+                  Examples of legal entities include:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+
+                  <li>a sole trader </li>
+                  <li>a company </li>
+                  <li>a partnership </li>
+                  <li>a limited liability partnership (LLP)</li>
+                  <li>large businesses</li>
+
+                </ul>
+
+                <p class="govuk-body">
+                  In large businesses made up of multiple companies or other bodies, each individual limited company or body that has control over a permitted waste operation that receives controlled waste must pay the fee individually. 
+                </p>
+
+                <p class="govuk-body">
+                  If you have multiple legal entities, you can go back and add them to your business or organisation.
+                </p>
+
+              </div>
+            </details>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="legalentities-1" name="legalentities" type="radio" value="Yes add another" aria-describedby="signIn-item-hint">
+                <label class="govuk-label govuk-radios__label" for="legalentities-1">
+                  Yes &#8211; I want to add another legal entity to my account
+                </label>
+
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="legalentities-2" name="legalentities" type="radio" value="No don't add another" aria-describedby="signIn-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="legalentities-2">
+                  No &#8211; I'd like to continue with this legal entity only
+                </label>
+
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </div>
+    </form>
+
+  </div>
+
+{% endblock %}

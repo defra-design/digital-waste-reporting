@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-form-group">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+        </span>
+
+
+      <form method="post" action="/layouts/Private-beta/Onboarding/V3/defra-id/companies-house-answer">
+
+
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+        Do you have a company registration number?
+      </h1>
+        </legend>
+
+        <p class="govuk-!-padding-top-4 govuk-!-padding-bottom-2">Companies House may have sent this to you when you registered with them.</p>
+
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="companiesHouse-1" name="companiesHouse" type="radio" value="Yes Companies House number">
+            <label class="govuk-label govuk-radios__label" for="companiesHouse-1">
+          Yes
+        </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="companiesHouse-2" name="companiesHouse" type="radio" value="No Companies House number">
+            <label class="govuk-label govuk-radios__label" for="companiesHouse-2">
+          No
+        </label>
+          </div>
+        </div>
+      </fieldset>
+
+        <button type="submit" class="govuk-!-margin-top-6 govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+    </div>
+  </form>
+
+
+
+</div>
+
+{% endblock %}
