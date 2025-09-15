@@ -34,9 +34,22 @@
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
-              af552bd3-f929-4924-a86d-d8e4f0cb8d61
+              Joe Waste &#38; Co Ltd
             </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <p class="govuk-body govuk-!-margin-bottom-0">
+                    <strong>af552bd3-f929-4924-a86d-d8e4f0cb8d61</strong>
+                  </p>
 
+                <dd class="govuk-summary-list__actions">
+                  {# <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> whether details are known (Person 3)</span></a> #}
+                </dd>
+              </div>
+
+            </dl>
           </div>
         </div>
 
@@ -45,13 +58,13 @@
                 Copy API code
             </button>
         </div>
+        
+        
+        <h3 class="govuk-!-padding-top-8 govuk-!-margin-top-6 govuk-heading-m">Do you need to create a new API code?</h3>
 
-        <form method="post" action="/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-answer">
-
-          <fieldset class="govuk-!-margin-top-6 govuk-fieldset" aria-describedby="changedName-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-!-margin-top-6 govuk-!-padding-top-4 govuk-fieldset__heading">
-                Do you need to request an additional API ID for another software provider?
+              <h2 class=" govuk-fieldset__heading">
+                
               </h2>
             </legend>
 
@@ -65,39 +78,19 @@
               <div class="govuk-details__text">
 
                 <p class="govuk-body">
-                  If you work with multiple software providers, you can request multiple API codes.                
-                </p>
-
-                <p class="govuk-body">
-                  Each software provider must have a different code to ensure your reports are correctly matched to your software records.                
+                  You can create multiple API codes. For example, if you work with multiple software providers, each will need its own code.
                 </p>
 
               </div>
             </details>
 
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="registrationAccountType-1" name="registrationAccountType" type="radio" value="Yes create an account">
-                <label class="govuk-label govuk-radios__label" for="registrationAccountType-Yes-1">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="registrationAccountType-Yes-2" name="registrationAccountType" type="radio" value="No I don't have permission">
-                <label class="govuk-label govuk-radios__label" for="registrationAccountType-Yes-2">
-                  No
-              </label>
-              </div>
-            </div>
-          </fieldset>
+            <button type="submit" class=" govuk-button govuk-button--secondary" data-module="govuk-button">
+              Create a new API code
+            </button>
 
-          <button type="submit" class="govuk-!-margin-top-6 govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+          </div>
+        </form>
 
-        </div>
-      </form>
+      </div>
 
-    </div>
-
-  {% endblock %}
+    {% endblock %}
