@@ -47,13 +47,15 @@
 
         </div>
 
-        <div class="govuk-grid-column-full govuk-!-padding-top-6">
+        <div class="govuk-grid-column-two-thirds govuk-!-padding-top-6">
+
+            <p class="govuk-!-padding-bottom-4 govuk-body">You can access your API code/s when you pay the service charge/s for all your legal entities.</p>
 
             <form class="form" action="/layouts/Private-beta/Onboarding/V3/waste-account-2-answer" method="post">
 
                 <div class="govuk-button-group">
                     <button type="submit" class="govuk-button" id="Payservice" name="buttonChoice" value="Pay service charge" data-module="govuk-button">
-                    Register
+                    Pay service charge
                 </button>
                     <button type="submit" class="govuk-button govuk-button--secondary"  id="AddlegalEntity" name="buttonChoice"  value="Add anaother legal entity" data-module="govuk-button">
                     Add a legal entity
@@ -61,8 +63,11 @@
                 </div>
 
             </form>
+        </div>
 
-            <h2 class="govuk-heading-l govuk-!-margin-top-7">Your sites</h2>
+        <div class="govuk-grid-column-full govuk-!-padding-top-4">
+
+            <h2 class="govuk-heading-l govuk-!-margin-top-7">Your legal entities</h2>
 
             <table class="govuk-table">
 
@@ -73,11 +78,11 @@
 
                         <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Legal entity</th>
 
-                        <th scope="col" class="govuk-table__header">Date added</th>
+                        <th scope="col" class="govuk-table__header">Service charge</th>
 
-                        <th scope="col" class="govuk-table__header">Registration</th>
+                        <th scope="col" class="govuk-table__header">Renewal date</th>
 
-                        <th scope="col" class="govuk-table__header">Action</th>
+                        <th scope="col" class="govuk-table__header">API code</th>
 
                     </tr>
                 </thead>
@@ -88,41 +93,40 @@
 
                         <td class="govuk-table__cell">Joe Waste &#38; Co Ltd</td>
 
-                        <td class="govuk-table__cell">10 September 2025</td>
-
-                        <td class="govuk-table__cell">Incomplete</td>
-
                         <td class="govuk-table__cell">
-
-                            {# <a href="#" class="govuk-link govuk-link--no-visited-state">Manage<span class="govuk-visually-hidden td-header"></span>
-                            </a> #}
-
+                            <strong class="govuk-tag govuk-tag--blue">
+                                Unpaid
+                            </strong>
                         </td>
+
+                        <td class="govuk-table__cell">10 September 2026</td>
+
+                        <td class="govuk-table__cell">Unavailable</td>
 
                     </tr>
 
                 </tbody>
 
-                                <tbody class="govuk-table__body">
+                <tbody class="govuk-table__body">
 
                     <tr class="govuk-table__row">
 
                         <td class="govuk-table__cell">A &#38; B Receivers</td>
 
-                        <td class="govuk-table__cell">10 September 2025</td>
-
-                        <td class="govuk-table__cell">Incomplete</td>
-
                         <td class="govuk-table__cell">
-
-                            {# <a href="#" class="govuk-link govuk-link--no-visited-state">Manage<span class="govuk-visually-hidden td-header"></span>
-                            </a> #}
-
+                            <strong class="govuk-tag govuk-tag--blue">
+                                Unpaid
+                            </strong>
                         </td>
+
+                        <td class="govuk-table__cell">10 September 2026</td>
+
+                        <td class="govuk-table__cell">Unavailable</td>
 
                     </tr>
 
                 </tbody>
+
             </table>
         </div>
     </div>
