@@ -331,7 +331,7 @@ router.post('/layouts/Private-beta/Onboarding/V3/defra-id/account-type-answer', 
   // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/uk-org')
   } else {
-    res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/postcode')
+    res.redirect('/layouts/Private-beta/Onboarding/V3/no-design-yet')
   }
 
 })
@@ -349,7 +349,7 @@ router.post('/layouts/Private-beta/Onboarding/V3/defra-id/uk-org-answer', functi
   // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/companies-house')
   } else {
-    res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/business-name')
+    res.redirect('/layouts/Private-beta/Onboarding/V3/no-design-yet')
   }
 
 })
@@ -420,7 +420,7 @@ router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-answer
   // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org')
   } else {
-    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/postcode')
+    res.redirect('/layouts/Private-beta/Onboarding/V3/no-design-yet')
   }
 
 })
@@ -438,7 +438,7 @@ router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org-answer', fun
   // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house')
   } else {
-    res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/business-name')
+    res.redirect('/layouts/Private-beta/Onboarding/V3/no-design-yet')
   }
 
 })
