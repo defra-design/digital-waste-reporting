@@ -36,16 +36,43 @@
             <h2 class="govuk-summary-card__title">
               A &#38; B Receivers
             </h2>
-            </div>
-            <div class="govuk-summary-card__content">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <p class="govuk-body govuk-!-margin-bottom-0">
-                    <strong>ch192bd4-h929-4924-a86d-d8e4f0cb8d61</strong>
-                  </p>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
 
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  API code
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  ch192bd4-h929-4924-a86d-d8e4f0cb8d61
+                </dd>
                 <dd class="govuk-summary-list__actions">
-                  {# <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> whether details are known (Person 3)</span></a> #}
+                  {# <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> whether details are known (Person 2)</span></a> #}
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Reference
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  A &#38; B Receivers code 1
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/layouts/Private-beta/Onboarding/V3/J2/change-ref">Change<span class="govuk-visually-hidden"> the reference for the API code</span></a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date created
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  26 September 2025
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  {# <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> relationship to lead tenant (Person 2)</span></a> #}
                 </dd>
               </div>
 
@@ -58,39 +85,35 @@
                 Copy API code
             </button>
         </div>
-        
-        
-        <h3 class="govuk-!-padding-top-8 govuk-!-margin-top-6 govuk-heading-m">Do you need to create a new API code?</h3>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class=" govuk-fieldset__heading">
-                
-              </h2>
-            </legend>
+        <h3 class="govuk-!-padding-top-8 govuk-!-margin-top-6 govuk-heading-m">Do you need to create an additional API code?</h3>
 
-            <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class=" govuk-fieldset__heading"></h2>
+        </legend>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
                     Why might I need to do this?
                   </span>
-              </summary>
+          </summary>
 
-              <div class="govuk-details__text">
+          <div class="govuk-details__text">
 
-                <p class="govuk-body">
+            <p class="govuk-body">
                   You can create multiple API codes. For example, if you work with multiple software providers, each will need its own code.
                 </p>
 
-              </div>
-            </details>
-
-            <button type="submit" class=" govuk-button govuk-button--secondary" data-module="govuk-button">
-              Create a new API code
-            </button>
-
           </div>
-        </form>
+        </details>
 
+        <button type="submit" class=" govuk-button govuk-button--secondary" data-module="govuk-button">
+              Create an additional API code
+            </button>
       </div>
+    </form>
 
-    {% endblock %}
+  </div>
+
+{% endblock %}
