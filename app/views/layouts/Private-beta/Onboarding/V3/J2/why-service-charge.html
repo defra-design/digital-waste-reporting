@@ -31,34 +31,35 @@
 
       <h1 class="govuk-heading-l">Pay the annual report receipt of waste service charge</h1>
 
-      <p class="govuk-body">You need to pay the annual service charge to access the full report receipt of waste service.
+      <div class="govuk-warning-text govuk-!-padding-top-2">
+  
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You will need to pay the annual service charge to report your waste movements.
+        </strong>
+      </div>
+
+      <p class="govuk-body">
        
-        <p class="govuk-body"><strong>The cost is £20 per year</strong> per individual legal entity, and gives the company the ability to report waste movements to DEFRA.</p>
+        <p class="govuk-body"><strong>The cost is £20</strong> per legal entity.</p>
 
 
       <p class="govuk-body">To pay for the service charge, you will need:</p>
 
       <ul class="govuk-list govuk-list--bullet">
 
-        <li>a credit or debit card that is authorised for payments for your business or organisation</li>
+        <li>a credit or debit card</li>
 
         <li>an email address to receive the payment confirmation</li>
 
       </ul>
       
-      <div class="govuk-warning-text govuk-!-padding-top-6">
-  
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-visually-hidden">Warning</span>
-          You will not be able to create or amend waste records until you have paid the service charge.
-        </strong>
-      </div>
 
       <form class="form" action="/layouts/Private-beta/Onboarding/V3/J2/pay-service-charge" method="post">
       
-        <button type="submit" id="Pay-charge" name="pay-charge"class="govuk-button" value="Pay service charge" data-module="govuk-button">
+        <button type="submit" id="Pay-charge" name="pay-charge"class="govuk-!-margin-top-6 govuk-button" value="Pay service charge" data-module="govuk-button">
           Pay service charge
         </button>
 

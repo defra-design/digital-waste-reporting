@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="event-name">
+      Change the reference for the API code
+    </label>
+        </h1>
+        <input class="govuk-input govuk-!-width-three-quarters" id="event-name" name="eventName" type="text" value="A &#38; B Receivers_Code 1">
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
