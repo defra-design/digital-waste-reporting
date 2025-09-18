@@ -385,7 +385,7 @@ router.post('/layouts/Private-beta/Onboarding/V3/legal-entities-answer', functio
   // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/id-account')
   } else {
-    res.redirect('/layouts/Private-beta/Onboarding/V3/waste-account')
+    res.redirect('/layouts/Private-beta/Onboarding/V3/waste-account-1')
   }
 
 })
