@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/layouts/Private-beta/Onboarding/V3/defra-id/defra-id-what-we-need" method="post">
+
+        <h1 class="govuk-heading-l">Our Application Programming Interface &#40;API&#41; terms and conditions</h1>
+
+        <h2 class="govuk-heading-m">Who are we</h2>
+        <p class="govuk-body">TBC</p>
+
+        <h2 class="govuk-heading-m">How to use this API responsibly</h2>
+        <p class="govuk-body">TBC</p>
+
+        <p class="govuk-body">When providing or receiving security information, you agree:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>TBC</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Your interaction and actions with the API</h2>
+        <p class="govuk-body">By using this site, you agree that you will not engage in any behavior or activity or put any information on the site that is:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>TBC</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Obligation to provide correct and accurate information</h2>
+        <p class="govuk-body">TBC</p>
+
+        <h2 class="govuk-heading-m">Obligation to notify of change in status</h2>
+        <p class="govuk-body">TBC</p>
+
+        <h2 class="govuk-heading-m">Breach of terms and conditions</h2>
+        <p class="govuk-body">TBC</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>TBC</li>
+        </ul>
+        <p class="govuk-body">We exclude our liability for all action we may take in response to a breach of terms and conditions.</p>
+
+        <h2 class="govuk-heading-m">Copyright and intellectual property</h2>
+        <p class="govuk-body">TBC</p>
+
+        <h2 class="govuk-heading-m">Disclaimer</h2>
+        <p class="govuk-body">TBC</p>
+
+        <h2 class="govuk-heading-m">In the event of dispute</h2>
+        <p class="govuk-body">TBC</p>
+
+        <h2 class="govuk-heading-m">Contact details</h2>
+        <p class="govuk-body">Email us at <a href="mailto:customer.identity-Support@defra.gov.uk" class="govuk-link">TBC</a> for further information.</p>
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body govuk-body-s">This was last updated on [Day] [Month] [Year]</p>
+        </div>
+
+        <form method="post" action="/register/what-we-need">
+
+          <input type="hidden" id="termsAndConditions" name="termsAndConditions" value="Viewed">
+
+          <button type="submit" class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+            Accept and continue
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+  {% endblock %}
