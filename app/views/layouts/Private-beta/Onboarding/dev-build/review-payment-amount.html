@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">Review payment amount</h1>
+
+      <p class="govuk-body govuk-!-padding-bottom-4">You will be able to report waste movements for the following businesses or organisations until <strong>11:59pm on Wednesday 10 September 2026</strong>.</p>
+
+      <div class="govuk-!-margin-top-2 govuk-summary-card govuk-!-margin-bottom-7">
+        <div class="govuk-summary-card__title-wrapper">
+
+          <h2 class="govuk-summary-card__title">
+            Legal entity 1
+          </h2>
+
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+              <dt class="govuk-summary-list__key">
+                Company name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Joe Waste &#38; Co Ltd
+            </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+              <dt class="govuk-summary-list__key">
+                Total cost
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £20.00
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+    </div>
+
+      <div class="govuk-!-margin-top-2 govuk-summary-card govuk-!-margin-bottom-7">
+        <div class="govuk-summary-card__title-wrapper">
+
+          <h2 class="govuk-summary-card__title">
+            Legal entity 2
+          </h2>
+
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+              <dt class="govuk-summary-list__key">
+                Company name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                A &#38; B Receivers
+            </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+              <dt class="govuk-summary-list__key">
+                Total cost
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £20.00
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key"></dt>
+          <dd class="govuk-summary-list__value"></dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-!-padding-left-4 govuk-summary-list__key">
+      Total to pay
+    </dt>
+          <dd class="govuk-summary-list__value">
+      £40.00
+    </dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+      </dl>
+
+      <form class="form" action="/layouts/Private-beta/Onboarding/V3/J2/make-payment" method="post">
+
+        <div class="govuk-button-group govuk-!-padding-top-3 govuk-!-padding-bottom-3">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+          <a class="govuk-link" href="#">Cancel</a>
+        </div>
+
+      </form>
+    </div>
+
+  {% endblock %}

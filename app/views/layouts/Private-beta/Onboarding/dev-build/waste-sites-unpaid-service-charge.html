@@ -22,7 +22,7 @@
 				Joe Bloggs |</li>
 
             <li class="login-nav__list-item">
-                <a href="/layouts/Private-beta/Onboarding/V3/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Manage account</a>|</li>
+                <a href="/layouts/Private-beta/Onboarding/V3/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Defra account</a>|</li>
             <li class="login-nav__list-item">
                 <a href="/layouts/Private-beta/Onboarding/V3/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
             </li>
@@ -34,29 +34,17 @@
 {% block content %}
 
     <div class="govuk-!-margin-bottom-6 govuk-grid-row">
-
         <div class="govuk-grid-column-two-thirds">
 
-            <h1 class="govuk-heading-xl">Your Report receipt of waste account</h1>
+            <h1 class="govuk-heading-xl">Your waste receiving sites</h1>
 
-            <p>
-                <span class="govuk-!-font-weight-bold">Full name:</span> Joe Bloggs
-            <br>
-                <span class="govuk-!-font-weight-bold">Email address:</span> joebloggs@hotmail.com
-            <br>
-                <span class="govuk-!-font-weight-bold">Telephone number:</span> 00700700788</p>
-
-        </div>
-
-        <div class="govuk-grid-column-two-thirds govuk-!-padding-top-6">
-
-            {# <p class="govuk-!-padding-bottom-4 govuk-body">You can access your API code/s when you pay the service charge/s for all your legal entities.</p> #}
-
-            <form class="form" action="/layouts/Private-beta/Onboarding/V3/waste-account-2-answer" method="post">
+            <form class="form" action="/layouts/Private-beta/Onboarding/V3/waste-account-answer" method="post">
 
                 <div class="govuk-button-group">
-
-                    <button type="submit" class="govuk-button"  id="AddlegalEntity" name="buttonChoice"  value="Add anaother legal entity" data-module="govuk-button">
+                    <button type="submit" class="govuk-button" id="Payservice" name="buttonChoice" value="Pay service charge" data-module="govuk-button">
+                    Pay service charge
+                </button>
+                    <button type="submit" class="govuk-button govuk-button--secondary"  id="AddlegalEntity" name="buttonChoice"  value="Add anaother legal entity" data-module="govuk-button">
                     Add a legal entity
                 </button>
                 </div>
@@ -66,8 +54,6 @@
 
         <div class="govuk-grid-column-full govuk-!-padding-top-4">
 
-            <h2 class="govuk-heading-l govuk-!-margin-top-7">Your legal entities</h2>
-            
             <table class="govuk-table">
 
                 <caption class="govuk-table__caption govuk-visually-hidden">Accounts</caption>
@@ -79,7 +65,7 @@
 
                         <th scope="col" class="govuk-table__header">Service charge</th>
 
-                        <th scope="col" class="govuk-table__header">Payment due</th>
+                        <th scope="col" class="govuk-table__header">Next payment</th>
 
                         <th scope="col" class="govuk-table__header">API code</th>
 
@@ -93,24 +79,20 @@
                         <td class="govuk-table__cell">Joe Waste &#38; Co Ltd</td>
 
                         <td class="govuk-table__cell">
-                            <strong class="govuk-tag govuk-tag--green">
-                                Paid
+                            <strong class="govuk-tag govuk-tag--blue">
+                                Unpaid
                             </strong>
                         </td>
 
                         <td class="govuk-table__cell">10 September 2026</td>
 
-                        <td class="govuk-table__cell"><a href="/layouts/Private-beta/Onboarding/V3/J2/legal-1-view" class="govuk-link">View</a></td>
+                        <td class="govuk-table__cell">Unavailable</td>
 
                     </tr>
 
                 </tbody>
-
-
-
             </table>
         </div>
-
     </div>
 
 </div>

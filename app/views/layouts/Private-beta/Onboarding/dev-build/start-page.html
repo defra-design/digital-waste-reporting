@@ -7,9 +7,9 @@
 
 {% block beforeContent %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
-{{ govukPhaseBanner({
+  {{ govukPhaseBanner({
   tag: {
     text: "Beta"
   },
@@ -28,14 +28,14 @@
       </h1>
 
       <p class="govuk-body">
-        If you operate a permitted or licensed site which receives waste in the UK, you can use this service to:</p>
+        If you operate a licensed site that receives waste, you can use this service to:</p>
 
       <ul class="govuk-list govuk-list--bullet">
 
-        <li>register your business or organisation to report receipt of waste</li>
-        <li>access the alternative report receipt of waste method</li>
-        <li>sign your Receipt of waste declarations</li>
-        <li>pay your Report receipt of waste service charge</li>
+        <li>register for a Defra account</li>
+        <li>add businesses or organisations to your account</li>
+        <li>pay the annual service charge</li>
+        <li>get an API code to send us your waste movements</li>
 
       </ul>
 
@@ -44,143 +44,39 @@
       </h2>
 
       <p class="govuk-body">
-        Before you can use this service, you must:
-      </p>
+        You must check if your business or organisation's software can use our APIs. Contact your software provider if you are unsure.</p>
+
+      <p class="govuk-body">
+        You will also need to:</p>
 
       <ul class="govuk-list govuk-list--number">
 
-        <li>Sign in or create a Government Gateway or OneLogin account for your business or organisation if you do not have one yet.</li>
+        <li>Sign in or create a Government Gateway or OneLogin account for your business or organisation.</li>
 
-        <div class="govuk-inset-text">
-          Do not use a Government Gateway account created to access your personal information.
-        </div>
+        <li>Use your business or organisation's Government Gateway or OneLogin ID to register for a Defra account.</li>
 
-        <li>Sign in or register for a business or organisation Defra account using this Government Gateway or OneLogin ID if you do not have one yet</li>
+        <li>Provide the address, contact details and company registration number &#40;if it is a limited company&#41; of your business or organisation.</li>
 
       </ul>
 
-      <p>
-        Because you're registering on behalf of a business or organisation, you'll also need:      
-        </p>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+            Do not use a personal Government Gateway account for this service.
+  </strong>
+      </div>
 
-      <ul class="govuk-list govuk-list--bullet">
+      {# <div class="govuk-inset-text">
+      </div> #}
 
-        <li>the main contact details for your business or organisation &#40for example, head office contact details&#41</li>
-        <li>the Companies House number if the business or organisation is a limited company</li>
-
-      </ul>
-
-      <h2 class="govuk-heading-m">
-        Setting up your admin account
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">
+        Cost
       </h2>
 
-      <p clas="govuk-body">The first account that you create for your business or organisation will automatically be an 'admin account'. This account can be used to create and approve additional users within the same business or organisation.
-      </p>
-
-      <p clas="govuk-body">You can also add other users from your business or organisation to each account.
-      </p>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-                    Read more about adding users to your account
-                  </span>
-        </summary>
-
-        <div class="govuk-details__text">
-
-          <p class="govuk-body">
-              If you need extra users for multiple legal entities, you can manage each legal entity's set of users individually inside your Defra account.
-          </p>
-
-          <p class="govuk-body">
-              At least one user must be the person who is legally responsible for reporting the receipt of waste, usually the person who is currently responsible for managing your paper waste transfer notes or consignment notes.
-          </p>
-
-        </div>
-      </details>
-
-      <p>
-        <strong>The cost is £20 per year</strong> per individual legal entity, and gives the company the ability to report waste movements to Defra.
+      <p class="govuk-body">
+        It costs £20 a year for every business or organisation on your account. You will need a debit or credit card to make your payment online.
         </p>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-                    What is a legal entity?
-                  </span>
-        </summary>
-
-        <div class="govuk-details__text">
-
-          <p class="govuk-body">
-                  Examples of legal entities include:</p>
-
-          <ul class="govuk-list govuk-list--bullet">
-
-            <li>a sole trader </li>
-            <li>a company </li>
-            <li>a partnership </li>
-            <li>a limited liability partnership &#40;LLP&#41;</li>
-            <li>large businesses</li>
-
-          </ul>
-
-          <p class="govuk-body">
-                  In large businesses made up of multiple companies or other bodies, each individual limited company or body that has control over a permitted waste operation that receives controlled waste must pay the fee individually. 
-                </p>
-
-          <p class="govuk-body">
-                  We use the term 'legal entity' interchangeably with 'business or organisation' in this service.                
-                </p>
-
-        </div>
-      </details>
-
-      <p class="govuk-body">
-          You'll need a debit or credit card to make your payment online.
-          </p>
-
-      <p class="govuk-body">
-        When you have paid your annual service charge/s, we'll give you your API code, which will allow your software provider to set up the API.             
-      </p>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-                    What is an API?
-                  </span>
-        </summary>
-
-        <div class="govuk-details__text">
-
-          <p class="govuk-body">
-            Our new waste tracking service uses an API &#40;Application Programming Interface&#41;. This is a set of rules that allow different software applications to talk to each other.   
-          </p>
-
-          <p class="govuk-body">
-            For example, you might already use your Google ID to sign into other apps and services. Or you might use PayPal to pay a bill. It's a convenient feature which uses APIs to authenticate users without asking them to create a new profile for every application. 
-          </p>
-
-          <p class="govuk-body">
-            Our API allows your waste reporting software to talk to our waste tracking software. 
-          </p>
-
-          <p class="govuk-body">
-            If you work with multiple software providers, there's an option to request multiple API codes. 
-          </p>
-
-          <p class="govuk-body">
-            Check with your software provider how to give them the API code, for example will they need it emailing or inputting directly into their app? 
-          </p>
-
-          <p class="govuk-body">
-            If you don't want to use the API code, you can use our alternative, spreadsheet-based reporting method. We'll add more details about this soon. 
-          </p>
-
-        </div>
-      </details>
-
 
       <a href="/layouts/Private-beta/Onboarding/V3/defra-id/sign-in" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-5" data-module="govuk-button">
           Start now<svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
@@ -189,11 +85,11 @@
       </a>
 
       <h2 class="govuk-heading-m govuk-!-margin-top-6">
-        Get help with a technical issue
+        Get help
         </h2>
 
       <p class="govuk-body">
-        Contact the service support team if you need help with a technical issue, such as problems accessing the service.
+        Contact the support team if you are having problems using the service.
         </p>
 
       <p class="govuk-body">
@@ -203,43 +99,6 @@
       <p class="govuk-body">
         Telephone: 0800 876 6458
         </p>
-
-      <p class="govuk-body">
-        The service support team will not be able to answer regulatory questions.
-        </p>
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-6">
-        Get help with a regulatory issue
-        </h2>
-
-      <p class="govuk-body">
-        If you need help from a regulator to complete a receipt of waste record, you can contact your relevant regulatory team. They will not be able to answer technical questions about service problems.
-        </p>
-
-      <p class="govuk-body">
-        For more regulatory guidance you can also visit:
-        </p>
-
-      <ul class="govuk-list govuk-list--bullet">
-
-        <li class="govuk-!-padding-bottom-2">
-          <p class="govuk-body govuk-!-margin-bottom-0">England</p>
-          <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link">EA &#40Environment Agency&#41 business waste and environmental impact</a>
-        </li>
-        <li class="govuk-!-padding-bottom-2">
-          <p class="govuk-body govuk-!-margin-bottom-0">Scotland</p>
-          <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link">SEPA &#40Scottish Environment Protection Agency&#41 waste information</a>
-        </li>
-        <li class="govuk-!-padding-bottom-2">
-          <p class="govuk-body govuk-!-margin-bottom-0">Wales</p>
-          <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link">Business Cymru Waste Legislation</a>
-        </li>
-        <li class="govuk-!-padding-bottom-2">
-          <p class="govuk-body govuk-!-margin-bottom-0">Northern Ireland</p>
-          <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link">DAERA &#40Department of Agriculture, Environment and Rural Affairs&#41 waste policy tracker</a>
-        </li>
-
-      </ul>
 
     </div>
 

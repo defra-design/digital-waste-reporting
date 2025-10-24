@@ -22,113 +22,44 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Annual Report receipt of waste charge</h1>
+      <h1 class="govuk-heading-l">Pay service charge</h1>
 
-      <p class="govuk-body">Once you have paid the service charge, your legal entities will have full access to report waste movements until <strong>11:59pm on Wednesday 10 September 2026</strong>.</p>
-
-      <h2 class="govuk-!-padding-bottom-2 govuk-heading-m">Review the payment amount</h2>
-
-      <div class="govuk-!-margin-top-2 govuk-summary-card govuk-!-margin-bottom-7">
-        <div class="govuk-summary-card__title-wrapper">
-
-          <h2 class="govuk-summary-card__title">
-            Legal entity 1
-          </h2>
-
-        </div>
-
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-              <dt class="govuk-summary-list__key">
-                Company name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Joe Waste &#38; Co Ltd
-            </dd>
-
-            </div>
-
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-              <dt class="govuk-summary-list__key">
-                Total cost
-              </dt>
-              <dd class="govuk-summary-list__value">
-                £20.00
-              </dd>
-
-            </div>
-
-          </dl>
-        </div>
-    </div>
-
-      <div class="govuk-!-margin-top-2 govuk-summary-card govuk-!-margin-bottom-7">
-        <div class="govuk-summary-card__title-wrapper">
-
-          <h2 class="govuk-summary-card__title">
-            Legal entity 2
-          </h2>
-
-        </div>
-
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-              <dt class="govuk-summary-list__key">
-                Company name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                A &#38; B Receivers
-            </dd>
-
-            </div>
-
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-              <dt class="govuk-summary-list__key">
-                Total cost
-              </dt>
-              <dd class="govuk-summary-list__value">
-                £20.00
-              </dd>
-
-            </div>
-
-          </dl>
-        </div>
+      <div class="govuk-warning-text govuk-!-padding-top-2">
+  
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You will need to pay the annual service charge to report your waste movements.
+        </strong>
       </div>
 
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key"></dt>
-          <dd class="govuk-summary-list__value"></dd>
-          <dd class="govuk-summary-list__actions"></dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-!-padding-left-4 govuk-summary-list__key">
-      Total to pay
-    </dt>
-          <dd class="govuk-summary-list__value">
-      £40.00
-    </dd>
-          <dd class="govuk-summary-list__actions"></dd>
-        </div>
-      </dl>
+      <p class="govuk-body">
+       
+        <p class="govuk-body"><strong>The cost is £20</strong> per legal entity.</p>
 
-      <form class="form" action="/layouts/Private-beta/Onboarding/V3/J2/make-payment" method="post">
 
-        <div class="govuk-button-group govuk-!-padding-top-3 govuk-!-padding-bottom-3">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-          Continue
+      <p class="govuk-body">To pay for the service charge, you will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>a credit or debit card</li>
+
+        <li>an email address to receive the payment confirmation</li>
+
+      </ul>
+      
+
+      <form class="form" action="/layouts/Private-beta/Onboarding/V3/J2/pay-service-charge" method="post">
+      
+        <button type="submit" id="Pay-charge" name="pay-charge"class="govuk-!-margin-top-6 govuk-button" value="Pay service charge" data-module="govuk-button">
+          Pay service charge
         </button>
-          <a class="govuk-link" href="#">Cancel</a>
-        </div>
 
       </form>
     </div>
+  </div>
 
-  {% endblock %}
+{% endblock %}
