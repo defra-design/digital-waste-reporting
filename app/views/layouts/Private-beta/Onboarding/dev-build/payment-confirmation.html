@@ -11,14 +11,15 @@
 
 {% block beforeContent %}
 
-  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
-  {{ govukPhaseBanner({
+{{ govukPhaseBanner({
   tag: {
-    text: "Prototype"
+    text: "Beta"
   },
-  html: 'This is a prototype. It is not a real service.'
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
 }) }}
+
 {% endblock %}
 
 {% block content %}
