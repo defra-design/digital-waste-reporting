@@ -1,0 +1,99 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "/layouts/Private-beta/Web-form/Idea-B/J1/waste-account",
+      text: "Waste receivers account"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action="/layouts/Private-beta/Web-form/Idea-B/J1/save-template-answer" method="post">
+
+
+                <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+              Do you want to save this waste movement as a template?
+            </h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+            Select one option
+          </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="saveTemplate-1" name="saveTemplate" type="radio" value="Yes" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="saveTemplate-1">
+                    Yes
+                  </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                  Enter name of template
+                </label>
+                  <input class="govuk-input  govuk-input--width-20" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="saveTemplate-2" name="saveTemplate" type="radio" value="No" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="saveTemplate-2">
+                No
+              </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-phone"></label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+      </div>
+    </div>
+
+  {% endblock %}

@@ -631,26 +631,30 @@ router.post('/layouts/Private-beta/Web-form/Idea-A/J2/manage-business-movements-
 
 // J1 //
 
-// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-B/J1/man-what-format-answer'
-router.post('/layouts/Private-beta/Web-form/Idea-B/J1/man-what-format-answer', function (req, res) {
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-B/J1/save-template-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-B/J1/save-template-answer', function (req, res) {
 
   // Make a variable and give it the value
-  var format = req.session.data['format']
+  var saveTemplate = req.session.data['saveTemplate']
 
   // Check whether the variable matches
-  if (format == "Spreadsheet"){
+  if (saveTemplate == "Yes"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/no-design-yet')
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/your-templates-1')
   } else {
-    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/company-waste-movements')
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/your-waste-movements')
   }
 
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-B/J1/manage-template-answer'
-router.post('/layouts/Private-beta/Web-form/Idea-B/J1/manage-template-answer', function (req, res) {
+// J2 //
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-B/J2/manage-template-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-B/J2/manage-template-answer', function (req, res) {
 
   // Make a variable and give it the value
   var manageTemplate = req.session.data['manageTemplate']
@@ -659,9 +663,81 @@ router.post('/layouts/Private-beta/Web-form/Idea-B/J1/manage-template-answer', f
   if (manageTemplate == "Use to send waste movement"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/use-for-same-waste')
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/use-for-same-waste')
   } else {
-    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/edit-template')
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/edit-template')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-B/J2/save-template-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-B/J2/save-template-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var saveTemplate = req.session.data['saveTemplate']
+
+  // Check whether the variable matches
+  if (saveTemplate == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/your-templates-2')
+  } else {
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/your-waste-movements-2')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-B/J2/save-template-2-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-B/J2/save-template-2-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var saveTemplate = req.session.data['saveTemplate']
+
+  // Check whether the variable matches
+  if (saveTemplate == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/your-templates-3')
+  } else {
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/your-waste-movements-3')
+  }
+
+})
+
+
+// J3 //
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-B/J3/previous-movement-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-B/J3/previous-movement-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var previousWaste = req.session.data['previousWaste']
+
+  // Check whether the variable matches
+  if (previousWaste == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J3/same-waste')
+  } else {
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J3/different-waste')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-B/J3/save-template-2-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-B/J3/save-template-2-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var saveTemplate = req.session.data['saveTemplate']
+
+  // Check whether the variable matches
+  if (saveTemplate == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J3/your-templates-3')
+  } else {
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J3/your-waste-movements-3')
   }
 
 })

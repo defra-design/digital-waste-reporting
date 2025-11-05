@@ -1,0 +1,539 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "/layouts/Private-beta/Web-form/Idea-B/J1/waste-account",
+      text: "Waste receivers account"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-!-margin-bottom-6 govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>Web form:</strong></p>
+
+      <span class="govuk-caption-xl">Joe Waste &#38; Co Ltd</span>
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-top-6">Waste movement details</h1>
+
+      {# <h2 class="govuk-heading-l">Enter your business details</h2>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="phone-number">
+      UK phone number
+    </label>
+        </h3>
+      </label>
+      <input class="govuk-input govuk-input--width-20" id="phone-number" name="phoneNumber" type="tel" autocomplete="tel">
+    </div>
+
+    <div class="govuk-form-group govuk-!-padding-top-5">
+      <h3 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="email">
+      Email address
+    </label>
+      </h3>
+      <div id="email-hint" class="govuk-hint">
+    We'll only use this to ... TBC?
+  </div>
+      <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+    </div>
+
+    <div class="govuk-form-group govuk-!-padding-top-5">
+      <h3 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="authorisation-number">
+      Authorisation number
+    </label>
+      </h3>
+      <div id="national-insurance-number-hint" class="govuk-hint">
+    This is the site's authorisation &#40;permit or exemption&#41; number that allows it to accept waste for intended recovery and disposal operation.
+  </div>
+      <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
+    </div>
+
+    <div class="govuk-form-group govuk-!-padding-top-5">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+        Do you have a Regulatory Position Statement &#40;RPS&#41;?
+      </h3>
+        </legend>
+        <div id="changedName-hint" class="govuk-hint">
+      This that allows you to carry out an activity without an environmental permit for a waste operation.
+    </div>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group govuk-!-padding-top-5">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+        What is the weight unit of measurement?
+      </h3>
+        </legend>
+        <div id="changedName-hint" class="govuk-hint">
+This is the unit for measurements of waste being accepted either Grams, Kilograms or Tonnes    
+</div>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="changedName">
+          Grams
+        </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changedName-2">
+          Kilograms
+        </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changedName-2">
+          Tonnes
+        </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group govuk-!-padding-top-5">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+        Is the weight estimated?
+      </h3>
+        </legend>
+
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+          </div>
+        </div>
+      </fieldset>
+    </div> #}
+
+    <h2 class="govuk-heading-l govuk-!-padding-top-8">Waste details</h2>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+        What date did you receive the waste?
+      </h3>
+        </legend>
+        <div id="passport-issued-hint" class="govuk-hint">
+      For example, 27 3 2024
+    </div>
+        <div class="govuk-date-input" id="passport-issued">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" value="24"inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" value="10" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" value="2025" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+            <div class="govuk-form-group govuk-!-padding-top-5">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+        What time did you receive the waste?
+      </h2>
+          </legend>
+          <div id="passport-issued-hint" class="govuk-hint">
+      For example, 14:30
+    </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Hours
+          </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text"  value="10" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Mins
+          </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text"  value="45" inputmode="numeric">
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+
+    <div class="govuk-form-group govuk-!-padding-top-5">
+      <h3 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="more-detail">
+      What type of waste do you receive?
+    </label>
+      </h3>
+      <div id="more-detail-hint" class="govuk-hint">
+    A detailed description of a specific waste material, including its physical characteristics, composition, and any potential hazards associated with it. It's essentially a classification of the waste that helps determine how it should be managed and disposed of safely.
+  </div>
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" type="text" value="45" aria-describedby="more-detail-hint"> </textarea>
+    </div>
+
+    <div class="govuk-form-group govuk-!-padding-top-5">
+      <h3 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="authorisation-number">
+          What type of EWC &#40;European Waste Catalogue&#41; code would you catergorise the waste under?
+        </label>
+      </h3>
+      <div id="more-detail-hint" class="govuk-hint">
+        An EWC code is a 6 digit code listed in the European Waste Catalogue &#40;EWC&#41;. The EWC is a list of waste types which categorises waste based on a combination of what they are, and the process or activity that produces them.
+      </div>
+
+      <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="nationalInsuranceNumber" type="text"  value="010306" spellcheck="false" aria-describedby="national-insurance-number-hint">
+
+    </div>
+
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add another EWC code
+    </button>
+
+    <div class="govuk-form-group govuk-!-padding-top-5">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            Does the waste require any special handling requirements?
+          </h3>
+        </legend>
+
+        <div id="more-detail-hint" class="govuk-hint">
+          This is required for waste that might contain harmful chemical, biological or physical characteristics. These may require some special handling to prevent harm.  </div>
+
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="changedName">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changedName-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group govuk-!-padding-top-5">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            What is the physical form of the waste?
+          </h3>
+        </legend>
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="changedName">
+              Gas
+            </label>
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changedName">
+                Liquid
+              </label>
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="changedName">
+                  Solid
+                </label>
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="changedName">
+                    Powder
+                  </label>
+                </div>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="changedName">
+                      Sludge
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="changedName-2">
+                      Mixed
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <h2 class="govuk-heading-l govuk-!-padding-top-8">Storage of the waste</h2>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h3 class="govuk-fieldset__heading">
+                    What type of containers was the waste stored in?
+                  </h3>
+                </legend>
+
+                <div id="more-detail-hint" class="govuk-hint">
+                  Containers are receptacles used for storing, transporting, and disposing of waste materials. They come in various sizes and types, ranging from small desk-side bins to large industrial skips.</div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="changedName">
+                      Bags
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="changedName-2">
+                      Barrels
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="changedName-2">
+                      Skips
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="changedName-2">
+                      Other
+                    </label>
+                  </div>  
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group govuk-!-padding-top-5">
+              <h3 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="authorisation-number">
+                  How many containers held the waste?
+                </label>
+              </h3>
+
+              <div id="more-detail-hint" class="govuk-hint">
+                Number of containers for storing, transporting and disposing of waste materials
+              </div>
+
+              <input class="govuk-input govuk-input--width-5" id="national-insurance-number" name="nationalInsuranceNumber" type="text" value="5" spellcheck="false" aria-describedby="national-insurance-number-hint">
+            </div>
+
+            <div class="govuk-form-group govuk-!-padding-top-5">
+              <h3 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="weight">
+                  What was the weight of the container?
+                </label>
+              </h3>
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" value="150" spellcheck="false">
+                <div class="govuk-input__suffix" aria-hidden="true">kg</div>
+              </div>
+            </div>
+
+            <div class="govuk-form-group govuk-!-padding-top-5">
+              <h3 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="authorisation-number">
+                  What Disposal or Recovery code did you use for the waste?
+                </label>
+              </h3>
+              <div id="more-detail-hint" class="govuk-hint">Waste disposal and recovery codes are for categorising waste and determining the most appropriate treatment and recovery options. For each EWC &#40;choose one or more R/D codes per EWC and weight/quantity for each code&#41;.
+              </div>
+
+              <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="nationalInsuranceNumber" type="text"  value="R1, D1" spellcheck="false" aria-describedby="national-insurance-number-hint">
+
+            </div>
+
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Add another Disposal or Recovery code
+            </button>
+
+            <div class="govuk-form-group govuk-!-padding-top-5">
+              <h3 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="weight">
+                  What was the weight of the waste for this code?
+                </label>
+              </h3>
+
+              <div id="more-detail-hint" class="govuk-hint">Total weight of the waste for this disposal or recover code.
+
+              </div>
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text"  value="75" spellcheck="false">
+                <div class="govuk-input__suffix" aria-hidden="true">kg</div>
+              </div>
+            </div>
+            <div>
+
+              <h2 class="govuk-heading-l govuk-!-padding-top-8">Your persistent organic pollutants &#40;POPs&#41; waste</h2>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h3 class="govuk-fieldset__heading">
+                      Does the waste contain POPs?
+                    </h3>
+                  </legend>
+
+                  <div id="more-detail-hint" class="govuk-hint">
+                    POPs are chemical substances that do not break down in the environment. They are a danger to human health and the environment. POPs can be present in hazardous and non-hazardous waste.</div>
+
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="changedName">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="changedName-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <h2 class="govuk-heading-l govuk-!-padding-top-8">Hazardous waste</h2>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h3 class="govuk-fieldset__heading">
+                      Does the waste contain hazardous material?
+                    </h3>
+                  </legend>
+
+                  <div id="more-detail-hint" class="govuk-hint">
+                    Hazardous waste is any waste that is potentially harmful to human health or the environment.</div>      
+
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="changedName">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="changedName-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div>
+
+
+                <form class="form" action="/layouts/Private-beta/Web-form/Idea-B/J3/check-answers" method="post">
+
+                  <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+                    Save and continue
+                  </button>
+
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        {% endblock %}
