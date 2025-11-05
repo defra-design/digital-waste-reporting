@@ -1,0 +1,355 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#",
+      text: "Waste receivers account"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>Web form:</strong></p>
+
+      <span class="govuk-caption-l">Joe Waste &#38; Co Ltd</span>
+      <h1 class="govuk-heading-l govuk-!-margin-top-4">Confirm your waste movement details</h1>
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <div class="govuk-summary-card govuk-!-margin-bottom-7">
+        <div class="govuk-summary-card__title-wrapper">
+
+          <h2 class="govuk-summary-card__title">
+            Waste details
+          </h2>
+
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Waste
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Basic mixed construction and demolition waste, this includes recyclable house bricks, gypsum plaster and slates.
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                EWC codes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                10306, 010306
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Special handling requirements
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes<br>
+                <p class="govuk-body govuk-">The waste must be fully inspected by the waste handler according to the Hazardous waste consignment and or EWC codes provided.</p>
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Physical form
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Solid
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-summary-card govuk-!-margin-bottom-7">
+        <div class="govuk-summary-card__title-wrapper">
+
+          <h2 class="govuk-summary-card__title">
+            Storage of the waste
+          </h2>
+
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Type of container
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Skip
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Number of containers
+              </dt>
+              <dd class="govuk-summary-list__value">
+                5
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                weight of container
+              </dt>
+              <dd class="govuk-summary-list__value">
+                150Kg
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Disposal or Recovery codes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                R1, D1
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Weight for each code
+              </dt>
+              <dd class="govuk-summary-list__value">
+                75kg, 81kg
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-summary-card govuk-!-margin-bottom-7">
+        <div class="govuk-summary-card__title-wrapper">
+
+          <h2 class="govuk-summary-card__title">
+            Persistent organic pollutants &#40;POPs&#41; waste
+          </h2>
+
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Contains POPs
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-summary-card govuk-!-margin-bottom-7">
+        <div class="govuk-summary-card__title-wrapper">
+
+          <h2 class="govuk-summary-card__title">
+            Hazardous waste
+          </h2>
+
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Contains hazardous waste
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/register/change-account-type">Change<span class="govuk-visually-hidden"> type of account (Defra account)</span></a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+            <div class="govuk-form-group govuk-!-padding-top-5">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+        What date did you receive the waste?
+      </h2>
+          </legend>
+          <div id="passport-issued-hint" class="govuk-hint">
+      For example, 27 3 2024
+    </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group govuk-!-padding-top-5">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="authorisation-number">
+      What time did you receive the waste?
+    </label>
+        </h2>
+
+        <input class="govuk-input govuk-input--width-5" id="national-insurance-number" name="nationalInsuranceNumber" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
+      </div>
+
+      <div class="govuk-form-group govuk-!-padding-top-5">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="weight">
+      What was the weight of the container?
+    </label>
+        </h2>
+        <div class="govuk-input__wrapper">
+          <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">kg</div>
+        </div>
+      </div>
+
+        <form method="post" action="/layouts/Private-beta/Web-form/Idea-A/J1/your-waste-2-movements">
+
+          <input type="hidden" id="registrationStatus" name="registrationStatus" value="Enrolled">
+
+          <button type="submit" class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+          Send waste movement
+        </button>
+
+        </form>
+
+      </div>
+    </div>
+
+  {% endblock %}

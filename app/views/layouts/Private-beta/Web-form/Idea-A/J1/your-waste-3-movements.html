@@ -1,0 +1,149 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#",
+      text: "Waste receivers account"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  {# <a class="govuk-back-link" href="javascript:history.back()">Back</a> #}
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-!-margin-bottom-6 govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Joe Waste &#38; Co Ltd</span>
+
+            <h1 class="govuk-heading-l">Your waste movements</h1>
+
+            <form class="form" action="/layouts/Private-beta/Onboarding/V3/waste-account-2-answer" method="post">
+
+                <div class="govuk-button-group">
+
+                    <button type="submit" class="govuk-button"  id="AddlegalEntity" name="buttonChoice"  value="Add anaother legal entity" data-module="govuk-button">
+                    Add a waste movement
+                </button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="govuk-grid-column-full govuk-!-padding-top-4">
+
+            <table class="govuk-table">
+
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-half">Waste</th>
+
+                        <th scope="col" class="govuk-table__header">Physical form</th>
+
+                        <th scope="col" class="govuk-table__header">EWC code</th>
+
+                        <th scope="col" class="govuk-table__header">Weight</th>
+
+                        <th scope="col" class="govuk-table__header">Action</th>
+
+                    </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">Basic mixed construction and demolition waste...</td>
+
+                        <td class="govuk-table__cell">Solid</td>
+
+                        <td class="govuk-table__cell">010306</td>
+
+                        <td class="govuk-table__cell">150kg</td>
+
+                        <td class="govuk-table__cell">
+                            <a href="/layouts/Private-beta/Web-form/Idea-A/J1/previous-movement" class="govuk-link">View</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+                                <tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">Basic mixed construction and demolition waste...</td>
+
+                        <td class="govuk-table__cell">Solid</td>
+
+                        <td class="govuk-table__cell">010306</td>
+
+                        <td class="govuk-table__cell">250kg</td>
+
+                        <td class="govuk-table__cell">
+                            <a href="/layouts/Private-beta/Web-form/Idea-A/J1/previous-movement" class="govuk-link">View</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+
+                <tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">Plastic packaging waste...</td>
+
+                        <td class="govuk-table__cell">Solid</td>
+
+                        <td class="govuk-table__cell">170203</td>
+
+                        <td class="govuk-table__cell">225kg</td>
+
+                        <td class="govuk-table__cell">
+                            <a href="/layouts/Private-beta/Web-form/Idea-A/J1/previous-movement" class="govuk-link">View</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

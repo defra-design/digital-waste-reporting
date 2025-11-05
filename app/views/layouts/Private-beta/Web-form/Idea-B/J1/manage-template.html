@@ -1,0 +1,87 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#",
+      text: "Waste receivers account"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action="/layouts/Private-beta/Web-form/Idea-B/J1/manage-template-answer" method="post">
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What would you like to do with this waste movement template?
+              </h1>
+            </legend> 
+            
+            <div id="contact-hint" class="govuk-hint">
+              Select one option
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="manageTemplate-1" name="manageTemplate" type="radio" value="Use to send waste movement" aria-describedby="signIn-item-hint">
+                <label class="govuk-label govuk-radios__label" for="manageTemplate-1">
+                  Use to send a waste movement
+                </label>
+
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="manageTemplate-2" name="manageTemplate" type="radio" value="Edit the template" aria-describedby="signIn-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="manageTemplate-2">
+                  Edit the template
+                </label>
+
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </div>
+    </div>
+
+  {% endblock %}

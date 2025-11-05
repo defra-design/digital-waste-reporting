@@ -1,0 +1,138 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "/layouts/Private-beta/Web-form/Idea-B/J1/waste-sites-paid",
+      text: "Waste receivers account"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  {# <a class="govuk-back-link" href="javascript:history.back()">Back</a> #}
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-!-margin-bottom-6 govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <span class="govuk-caption-l">Joe Waste &#38; Co Ltd</span>
+
+            <h1 class="govuk-heading-l govuk-!-margin-top-4">Waste movements</h1>
+{# 
+            <form class="form" action="#" method="post">
+
+                <div class="govuk-button-group">
+
+                    <button type="submit" class="govuk-button"  id="AddlegalEntity" name="buttonChoice"  value="Add anaother legal entity" data-module="govuk-button">
+                    Add a business or organisation
+                </button>
+                </div> #}
+
+        </div>
+
+            <div class="govuk-grid-column-full">
+
+                <div class="govuk-grid-row">
+
+                    <div class="govuk-grid-column-one-third">
+                        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+                            <a href=""></a>
+                            <div class="govuk-card__content">
+                                <h3 class="govuk-heading-m">
+                                    <a href="/account/manage/team/" class="govuk-link--no-visited-state">Templates</a>
+                                </h3>
+                                <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-font-weight-bold">0</p>
+                            </div>
+                            <div class="govuk-card__actions">
+                                <ul class="govuk-list govuk-!-mb-r0">
+                                    <li>
+                                        <a href="/layouts/Private-beta/Web-form/Idea-B/J1/your-templates" class="govuk-link--no-visited-state">Manage your templates</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="govuk-grid-column-one-third ">
+                        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+                            <a href=""></a>
+                            <div class="govuk-card__content">
+                                <h3 class="govuk-heading-m">
+                                    <a href="/account/manage/intermediary/" class="govuk-link--no-visited-state">Waste movements </a>
+                                </h3>
+                                <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-font-weight-bold">0</p>
+                            </div>
+                            <div class="govuk-card__actions">
+                                <ul class="govuk-list govuk-!-mb-r0">
+                                    <li>
+                                        <a href="" class="govuk-link--no-visited-state">View your submissions</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# <div class="govuk-grid-column-one-third ">
+                        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+                            <a href=""></a>
+                            <div class="govuk-card__content">
+                                <h3 class="govuk-heading-m">
+                                    <a href="/account/manage/organisation-details" class="govuk-link--no-visited-state">Manage your organisation</a>
+                                </h3>
+
+                                <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-font-weight-bold">1</p>
+
+                            </div>
+
+                            <div class="govuk-card__actions">
+                                <ul class="govuk-list govuk-!-mb-r0">
+                                    <li>
+                                        <a href="" class="govuk-link--no-visited-state">Add related organisation</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div> #}
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

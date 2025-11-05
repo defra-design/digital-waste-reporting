@@ -563,3 +563,105 @@ router.post('/layouts/Private-beta/Onboarding/V3/waste-account-2-answer', functi
   }
 
 })
+
+// Web form V1 – Idea A //
+
+// J1 //
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-A/J1/man-what-format-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-A/J1/man-what-format-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var format = req.session.data['format']
+
+  // Check whether the variable matches
+  if (format == "Spreadsheet"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Web-form/Idea-A/J1/no-design-yet')
+  } else {
+    res.redirect('/layouts/Private-beta/Web-form/Idea-A/J1/waste-activities')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-A/J1/previous-movement-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-A/J1/previous-movement-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var previousWaste = req.session.data['previousWaste']
+
+  // Check whether the variable matches
+  if (previousWaste == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Web-form/Idea-A/J1/same-waste')
+  } else {
+    res.redirect('/layouts/Private-beta/Web-form/Idea-A/J1/different-waste')
+  }
+
+})
+
+
+// Web form V1 – Idea A //
+
+// J2 //
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-A/J2/manage-business-movements-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-A/J2/manage-business-movements-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var manageMovements = req.session.data['manageMovements']
+
+  // Check whether the variable matches
+  if (manageMovements == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Web-form/Idea-A/J2/how-to-send-waste-movements')
+  } else {
+    res.redirect('/layouts/Private-beta/Web-form/Idea-A/J2/your-waste-movements')
+  }
+
+})
+
+
+
+
+// Web form V1 – Idea B //
+
+// J1 //
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-B/J1/man-what-format-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-B/J1/man-what-format-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var format = req.session.data['format']
+
+  // Check whether the variable matches
+  if (format == "Spreadsheet"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/no-design-yet')
+  } else {
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/company-waste-movements')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Web-form/Idea-B/J1/manage-template-answer'
+router.post('/layouts/Private-beta/Web-form/Idea-B/J1/manage-template-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var manageTemplate = req.session.data['manageTemplate']
+
+  // Check whether the variable matches
+  if (manageTemplate == "Use to send waste movement"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/use-for-same-waste')
+  } else {
+    res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/edit-template')
+  }
+
+})

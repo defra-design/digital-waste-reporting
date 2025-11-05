@@ -1,0 +1,242 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#",
+      text: "Waste receivers account"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>Web form:</strong></p>
+
+      <span class="govuk-caption-l">Joe Waste &#38; Co Ltd</span>
+      <h1 class="govuk-heading-l govuk-!-margin-top-4">Waste details</h1>
+
+      <div class="govuk-form-group govuk-!-padding-top-5">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+        What date did you receive the waste?
+      </h2>
+          </legend>
+          <div id="passport-issued-hint" class="govuk-hint">
+      For example, 27 3 2024
+    </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+            <div class="govuk-form-group govuk-!-padding-top-5">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+        What time did you receive the waste?
+      </h2>
+          </legend>
+          <div id="passport-issued-hint" class="govuk-hint">
+      For example, 14:30
+    </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Hours
+          </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Mins
+          </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+
+      <div class="govuk-form-group govuk-!-padding-top-5">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="more-detail">
+      What type of waste did you receive?
+    </label>
+        </h2>
+        <div id="more-detail-hint" class="govuk-hint">
+     Give a detailed description of the waste, including physical characteristics, composition and if it's potentially hazardous.  
+  </div>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+      <div class="govuk-form-group govuk-!-padding-top-5">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="authorisation-number">
+            What is the European Waste Catalogue &#40;EWC&#41; code? 
+    </label>
+        </h2>
+        <div id="more-detail-hint" class="govuk-hint">
+This is a 6-digit code that classifies and describes the waste.
+  </div>
+
+        <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="nationalInsuranceNumber" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
+
+      </div>
+
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Add another EWC code
+</button>
+
+      <div class="govuk-form-group govuk-!-padding-top-5">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+        Does the waste require any special handling?
+      </h2>
+          </legend>
+
+          <div id="more-detail-hint" class="govuk-hint">
+This includes waste that may have any chemical, biological or physical characteristics.    </div>
+
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      <div class="govuk-form-group govuk-!-padding-top-5">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+        What is the physical form of the waste?
+      </h2>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changedName">
+          Gas
+        </label>
+            </div>          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changedName">
+          Liquid
+        </label>
+            </div>          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changedName">
+          Solid
+        </label>
+            </div>          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changedName">
+          Powder
+        </label>
+            </div>          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changedName">
+          Sludge
+        </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changedName-2">
+          Mixed
+        </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div>
+
+        <button type="submit" class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+            Save and continue
+          </button>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

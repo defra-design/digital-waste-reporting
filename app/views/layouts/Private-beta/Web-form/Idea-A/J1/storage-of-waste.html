@@ -1,0 +1,132 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#",
+      text: "Waste receivers account"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body-l govuk-!-margin-bottom-0"><strong>Web form:</strong></p>
+
+      <span class="govuk-caption-l">Joe Waste &#38; Co Ltd</span>
+      <h1 class="govuk-heading-l govuk-!-margin-top-4">Storage details</h1>
+
+<div class="govuk-form-group govuk-!-padding-top-5">
+  <h2 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="event-name">
+      What type of container did you use to store the waste? 
+    </label>
+  </h2>
+  <input class="govuk-input govuk-input--width-10" id="event-name" name="eventName" type="text">
+</div>
+
+      <div class="govuk-form-group govuk-!-padding-top-5">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="authorisation-number">
+      How many containers did you use?
+    </label>
+        </h2>
+{# 
+        <div id="more-detail-hint" class="govuk-hint">
+            Number of containers for storing, transporting and disposing of waste materials
+          </div> #}
+
+        <input class="govuk-input govuk-input--width-5" id="national-insurance-number" name="nationalInsuranceNumber" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
+      </div>
+
+      <div class="govuk-form-group govuk-!-padding-top-5">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="weight">
+      What was the weight of each container?
+    </label>
+        </h2>
+        <div class="govuk-input__wrapper">
+          <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">kg</div>
+        </div>
+      </div>
+
+        <div class="govuk-form-group govuk-!-padding-top-5">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="authorisation-number">
+      What is the R or D code?
+    </label>
+          </h2>
+          <div id="more-detail-hint" class="govuk-hint">Recovery or disposal codes determine the most appropriate treatment and recovery options for your waste. Choose one or more for each EWC code.
+  </div>
+
+          <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="nationalInsuranceNumber" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
+
+        </div>
+
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Add another R and D code
+</button>
+
+      <div class="govuk-form-group govuk-!-padding-top-5">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="weight">
+      What was the total weight for this code? 
+    </label>
+        </h2>
+        
+        {# <div id="more-detail-hint" class="govuk-hint">Total weight of the waste for this disposal or recover code.
+
+  </div> #}
+        <div class="govuk-input__wrapper">
+          <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">kg</div>
+        </div>
+      </div>
+      <div>
+
+        <div>
+          <button type="submit" class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+            Save and continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
