@@ -16,7 +16,8 @@
   navigation: [
     {
       href: "#",
-      text: "Waste receivers account"
+      text: "Waste receivers account",
+        active: true
     }
   ]
 }) }}
@@ -32,7 +33,7 @@
   tag: {
     text: "Beta"
   },
-  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Web-form/Idea-A/J1/waste-sites-paid">give your feedback (opens in new tab)</a>.'
 }) }}
 
 {% endblock %}
@@ -43,14 +44,14 @@
 
         <div class="govuk-grid-column-two-thirds">
 
-            <h1 class="govuk-heading-l">Your waste receiving businesses or organisations</h1>
+            <h1 class="govuk-heading-l">Your waste receivers</h1>
 
             <form class="form" action="#" method="post">
 
                 <div class="govuk-button-group">
 
                     <button type="submit" class="govuk-button"  id="AddlegalEntity" name="buttonChoice"  value="Add anaother legal entity" data-module="govuk-button">
-                    Add a business or organisation
+                    Add a waste receiver
                 </button>
                 </div>
 
