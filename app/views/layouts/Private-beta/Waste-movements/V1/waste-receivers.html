@@ -1,0 +1,105 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#",
+      text: "",
+        active: true
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Web-form/Idea-A/J1/waste-sites-paid">give your feedback (opens in new tab)</a>.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-!-margin-bottom-6 govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">Your waste receivers</h1>
+
+            <form class="form" action="#" method="post">
+
+                <div class="govuk-button-group">
+
+                    <button type="submit" class="govuk-button"  id="AddlegalEntity" name="buttonChoice"  value="Add anaother legal entity" data-module="govuk-button">
+                    Add a waste receiver
+                </button>
+                </div>
+
+        </div>
+
+        <div class="govuk-grid-column-full govuk-!-padding-top-4">
+            
+            <table class="govuk-table">
+
+                <caption class="govuk-table__caption govuk-visually-hidden">Accounts</caption>
+
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-half">Waste receiver name</th>
+
+                        <th scope="col" class="govuk-table__header">Service charge</th>
+
+                        <th scope="col" class="govuk-table__header">Next payment</th>
+
+                    </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell"><a href="/layouts/Private-beta/Web-form/Idea-A/J1/how-to-send-waste-movements" class="govuk-link">Joe Waste &#38; Co Ltd</a></td>
+
+                        <td class="govuk-table__cell">
+                            <strong class="govuk-tag govuk-tag--green">
+                                Paid
+                            </strong>
+                        </td>
+
+                        <td class="govuk-table__cell">10 September 2026</td>
+
+                    </tr>
+
+                </tbody>
+
+
+
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
