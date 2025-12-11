@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Web-form/Idea-A/J1/waste-sites-paid">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="event-name">
+            Change API reference 
+          </label>
+        </h1>
+
+        <p class="govuk-body">You can change the name of the API reference by overwriting the existing one.  </p>
+
+        <input class="govuk-input govuk-!-width-three-quarters" id="event-name" name="eventName" type="text" value="Joe Waste &#38; Co Ltd_Code 1">
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

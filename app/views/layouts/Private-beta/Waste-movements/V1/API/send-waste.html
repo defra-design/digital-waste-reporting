@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Web-form/Idea-A/J1/waste-sites-paid">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/layouts/Private-beta/Waste-movements/V1/API/send-waste-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Waste receiver name 1</span>
+              <h1 class="govuk-fieldset__heading">
+                How do you want to send your waste movements?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="send-waste-1" name="sendWaste" type="radio" value="Automatically" aria-describedby="signIn-item-hint">
+                <label class="govuk-label govuk-radios__label" for="send-waste-1">
+                  API
+                </label>
+
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="send-waste-2" name="sendWaste" type="radio" value="Manually" aria-describedby="signIn-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="send-waste-2">
+                  Spreadsheet
+                </label>
+
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="send-waste-3" name="sendWaste" type="radio" value="Combination of both" aria-describedby="signIn-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="send-waste-3">
+                  API and spreadsheet
+                </label>
+
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </div>
+    </div>
+
+  {% endblock %}

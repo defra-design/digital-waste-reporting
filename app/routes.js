@@ -736,8 +736,91 @@ router.post('/layouts/Private-beta/Web-form/Idea-B/J3/save-template-2-answer', f
     
   // Send user to
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J3/your-templates-3')
+    
   } else {
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J3/your-waste-movements-3')
+  }
+
+})
+
+
+// Send waste movements V1 //
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Waste-movements/V1/API/send-waste-answer'
+router.post('/layouts/Private-beta/Waste-movements/V1/API/send-waste-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var sendWaste = req.session.data['sendWaste']
+  
+  // Check whether the variable matches
+
+  if (sendWaste == "Automatically"){
+   
+  // Send user to
+  res.redirect('/layouts/Private-beta/Waste-movements/V1/API/API-terms')
+
+  } else if (sendWaste == "Manually"){
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/POPs')
+    
+  } else {
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/both')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Waste-movements/V1/Spreadsheet/next-activity-answer'
+router.post('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/next-activity-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var Nextactivity = req.session.data['Next activity']
+  
+  // Check whether the variable matches
+
+  if (Nextactivity == "Upload spreadsheet"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/spreadsheet-upload')
+
+  } else if (Nextactivity == "Download spreadsheet template"){
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/spreadsheet-download')
+
+  } else {
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/send-waste')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Waste-movements/V1/Both/next-activity-answer'
+router.post('/layouts/Private-beta/Waste-movements/V1/Both/next-activity-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var APIorSpreadsheet = req.session.data['API or Spreadsheet']
+  
+  // Check whether the variable matches
+
+  if (APIorSpreadsheet == "View my API details"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/API-terms')
+
+  } else if (APIorSpreadsheet == "Upload spreadsheet"){
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/spreadsheet-upload')
+
+  } else if (APIorSpreadsheet == "Download spreadsheet template"){
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/spreadsheet-download')
+
+  } else {
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/send-waste')
   }
 
 })

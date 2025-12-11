@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Web-form/Idea-A/J1/waste-sites-paid">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Waste receiver name 1</span>
+        <h1 class="govuk-heading-l">Defra's Digital Waste Tracking API: terms</h1>
+
+        <p class="govuk-body">
+            If you want [Waste receiver name 1] to use Defra's Digital Waste Tracking  &#40;DWT&#41;  API, you must accept the following terms.
+                    </p>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+              You may lose your access and face fines or legal action if you misuse the API.
+
+          </strong>
+        </div>
+
+        <h2 class="govuk-heading-m govuk-!-padding-top-2">Your responsibilities</h2>
+
+        <h3 class="govuk-heading-s">You must:</h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>only collect and process data for the operation of your waste service and compliance with waste tracking regulations</li>
+          <li>notify the Information Commissioner's Office &#40;ICO&#41; and affected individuals if there is a breach involving personal data obtained via the API</li>
+          <li>ensure your software remains compatible with the latest version of the API</li>
+        </ul>
+
+        <h3 class="govuk-heading-s">You must not:</h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>misuse any data obtained through the API</li>
+          <li>share your API code with anyone you do not trust</li>
+        </ul>
+
+        <h2 class="govuk-heading-m govuk-!-padding-top-6">Defra's role and responsibilities</h2>
+
+        <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-4">
+          <li>may update the API and these terms at any time</li>
+          <li>will keep a record of the API code that identifies your waste receiver within the DWT service</li>
+          <li>reserves the right to revoke access to the API at any time for breach of these terms or for operational reasons</li>
+        </ul>
+
+        <form class="form" action="/layouts/Private-beta/Waste-movements/V1/API/view-your-API" method="post">
+
+          <button type="submit" class=" govuk-button" data-module="govuk-button">
+            Accept and continue
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

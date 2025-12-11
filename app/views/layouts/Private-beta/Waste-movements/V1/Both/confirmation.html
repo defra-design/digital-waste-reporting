@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Spreadsheet upload successful
+          </h1>
+      </div>
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-4">What happens next</h2>
+
+      <p class="govuk-body">We've created an API code for each of your legal entities.</p>
+
+      <p class="govuk-body">You can view your API codes in your account and you can create additional codes, if you need them.</p>
+
+      <p class="govuk-body">
+      You will need to give the API codes to your software provider.
+    </p>
+
+      <p class="govuk-body">
+      Your software provider will advise you on how to apply the API codes to your waste movements.
+    </p>
+
+      <form class="form" action="/layouts/Private-beta/Waste-movements/V1/Spreadsheet/confirmation" method="post">
+
+        <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+            Download your file
+          </button>
+
+      </form>
+
+      <p class="govuk-body govuk-!-padding-top-4">
+        <a href="/layouts/Private-beta/Waste-movements/V1/Both/waste-receivers-complete" class="govuk-link govuk-link--no-visited-state">Return to your waste receivers</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Web-form/Idea-A/J1/waste-sites-paid">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Waste receiver name 2</span>
+        <h1 class="govuk-heading-l">Download your Receipt of waste spreadsheet</h1>
+
+        <p class="govuk-body">Use our spreadsheet to report every receipt of waste.</p>
+
+        <p class="govuk-body">You have two working days from the day after receiving the waste to submit your completed spreadsheet.</p>
+
+        <p class="govuk-body">Your file must be saved as one of the following formats:</p>
+
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
+          <li>Format type 1</li>
+          <li>Format type 2</li>
+          <li>Format type 3</li>
+        </ul>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+              If your file is not in this format, it will be rejected.
+          </strong>
+        </div>
+        
+        <form class="form" action="/layouts/Private-beta/Waste-movements/V1/API/view-your-API" method="post">
+
+          <button type="submit" class=" govuk-button govuk-uk-padding-top govuk-!-margin-top-4" data-module="govuk-button">
+            Download
+          </button>
+
+        </form>
+
+        <p class="govuk-body govuk-!-padding-top-4">
+          <a href="/layouts/Private-beta/Waste-movements/V1/Spreadsheet/waste-receivers-complete" class="govuk-link govuk-link--no-visited-state">Return to your waste receivers</a>
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

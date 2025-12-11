@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Web-form/Idea-A/J1/waste-sites-paid">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+        
+        <span class="govuk-caption-l">Waste receiver name 1</span>    
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Your API code</h1>
+
+      </div>
+
+      <div class="govuk-grid-column-full">
+        
+        <p class="govuk-body govuk-!-margin-top-4">You have no API codes </p> 
+
+        <button type="submit" class=" govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+            Create new code
+        </button>
+        
+        <p class="govuk-body govuk-!-padding-top-4">
+          <a href="/layouts/Private-beta/Waste-movements/V1/Spreadsheet/waste-receivers" class="govuk-link govuk-link--no-visited-state">Return to your waste receivers</a>
+        </p>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
