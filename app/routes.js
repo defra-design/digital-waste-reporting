@@ -824,3 +824,28 @@ router.post('/layouts/Private-beta/Waste-movements/V1/Both/next-activity-answer'
   }
 
 })
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Waste-movements/V1/change-format/send-waste-answer'
+router.post('/layouts/Private-beta/Waste-movements/V1/change-format/send-waste-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var sendWaste2 = req.session.data['sendWaste2']
+  
+  // Check whether the variable matches
+
+  if (sendWaste2 == "Api"){
+   
+  // Send user to
+  res.redirect('/layouts/Private-beta/Waste-movements/V1/change-format/API-terms')
+
+  } else if (sendWaste == "Manually"){
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/POPs')
+    
+  } else {
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/both')
+  }
+
+})

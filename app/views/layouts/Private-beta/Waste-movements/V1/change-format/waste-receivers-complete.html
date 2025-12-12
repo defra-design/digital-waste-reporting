@@ -2,15 +2,15 @@
 {% extends "/layouts/main.html" %}
 
 {% block header %}
-    {% from "govuk/components/header/macro.njk" import govukHeader %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
 
-    {{ govukHeader({
+  {{ govukHeader({
   homepageUrl: "#"
 }) }}
 
-    {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-    {{ govukServiceNavigation({
+  {{ govukServiceNavigation({
     classes: "govuk-!-margin-bottom-2",
     serviceName: "Report receipt of waste",
     serviceUrl: "#"
@@ -20,9 +20,9 @@
 
 {% block beforeContent %}
 
-    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
-    {{ govukPhaseBanner({
+  {{ govukPhaseBanner({
   tag: {
     text: "Beta"
   },
@@ -42,7 +42,6 @@
             </li>
         </ul>
     </div>
-
 {% endblock %}
 
 {% block content %}
@@ -91,9 +90,9 @@
                             <td class="govuk-table__cell">Waste receiver name
                             </td>
 
-                            <td class="govuk-table__cell">
+                            <td class="govuk-table__cell">                                
                                 <a href="/layouts/Private-beta/Waste-movements/V1/API/send-waste" class="govuk-link">Select</a>
-                            </td>
+                                </td>
 
                             <td class="govuk-table__cell">
                                 <strong class="govuk-tag govuk-tag--green">
@@ -108,47 +107,47 @@
                         <tr class="govuk-table__row">
 
                             <td class="govuk-table__cell">Waste receiver name</a>
-                        </td>
+                            </td>
 
-                        <td class="govuk-table__cell">
-                            <a href="/layouts/Private-beta/Waste-movements/V1/API/send-waste" class="govuk-link">Select</a>
-                        </td>
+                            <td class="govuk-table__cell">
+                                <a href="/layouts/Private-beta/Waste-movements/V1/change-format/send-waste" class="govuk-link">Spreadsheet</a>
+                                </td>
 
-                        <td class="govuk-table__cell">
-                            <strong class="govuk-tag govuk-tag--green">
+                            <td class="govuk-table__cell">
+                                <strong class="govuk-tag govuk-tag--green">
                                 Paid
                             </strong>
-                        </td>
+                            </td>
 
-                        <td class="govuk-table__cell">10 September 2026</td>
+                            <td class="govuk-table__cell">10 September 2026</td>
 
-                    </tr>
+                        </tr>
 
-                    <tr class="govuk-table__row">
+                        <tr class="govuk-table__row">
 
-                        <td class="govuk-table__cell">Waste receiver name</td>
+                            <td class="govuk-table__cell">Waste receiver name</td>
 
-                        <td class="govuk-table__cell">
-                            <a href="/layouts/Private-beta/Waste-movements/V1/API/send-waste" class="govuk-link">Select</a>
-                        </td>
+                            <td class="govuk-table__cell">                                
+                                <a href="/layouts/Private-beta/Waste-movements/V1/Both/send-waste" class="govuk-link">Select</a>
+                                </td>
 
-                        <td class="govuk-table__cell">
-                            <strong class="govuk-tag govuk-tag--green">
+                            <td class="govuk-table__cell">
+                                <strong class="govuk-tag govuk-tag--green">
                                 Paid
                             </strong>
-                        </td>
+                            </td>
 
-                        <td class="govuk-table__cell">10 September 2026</td>
+                            <td class="govuk-table__cell">10 September 2026</td>
 
-                    </tr>
+                        </tr>
 
-                </tbody>
+                    </tbody>
 
-            </table>
+                </table>
+            </div>
+
         </div>
 
     </div>
-
-</div>
 
 {% endblock %}
