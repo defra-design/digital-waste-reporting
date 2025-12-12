@@ -29,8 +29,19 @@
   html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Web-form/Idea-A/J1/waste-sites-paid">give your feedback (opens in new tab)</a>.'
 }) }}
 
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+						
+				Joe Bloggs |</li>
 
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/Onboarding/V3/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Defra account</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/Onboarding/V3/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}
 
 {% block content %}
@@ -99,7 +110,7 @@
                             </td>
 
                             <td class="govuk-table__cell">
-                                <a href="/layouts/Private-beta/Waste-movements/V1/Spreadsheet/send-waste" class="govuk-link">Not selected</a>
+                                <a href="/layouts/Private-beta/Waste-movements/V1/Spreadsheet/send-waste" class="govuk-link">Select</a>
                                 </td>
 
                             <td class="govuk-table__cell">
@@ -117,7 +128,7 @@
                             <td class="govuk-table__cell">Waste receiver name 3</td>
 
                             <td class="govuk-table__cell">                                
-                                <a href="/layouts/Private-beta/Waste-movements/V1/Both/send-waste" class="govuk-link">Not selected</a>
+                                <a href="/layouts/Private-beta/Waste-movements/V1/Both/send-waste" class="govuk-link">Select</a>
                                 </td>
 
                             <td class="govuk-table__cell">
