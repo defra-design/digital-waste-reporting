@@ -38,44 +38,39 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/layouts/Private-beta/Waste-movements/V1/Both/POPs" method="post">
+      <form class="form" action="/layouts/Private-beta/Waste-movements/V1/API/next-activity-answer" method="post">
 
-      <span class="govuk-caption-l">Waste receiver name 3</span>
+      <span class="govuk-caption-l">Waste receiver name</span>
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          name: "send-waste",
-          value: data['send-waste'],
+          name: "Next activity",
+          value: data['Next activity'],
           fieldset: {
           legend: {
-          text: "How do you want to report your receipt of waste?",
+          text: "What would you like to do next?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
           }
           },
           items: [
           {
-            value: "API",
-            text: "API"
+            value: "View my API details",
+            text: "View my API details"
             },
             {
-              value: "Spreadsheet",
-              text: "Spreadsheet"
-              },
-              {
-                value: "API and Spreadsheet",
-                text: "API and Spreadsheet"
-                }
-                ]
-                }) }}
+              value: "Change how I report my receipt of waste ",
+              text: "Change how I report my receipt of waste "
+              }
+              ]
+              }) }}
 
         {{ govukButton({
                   text: "Continue"
                   }) }}
-      </form>
 
+      </div>
     </div>
-  </div>
 
-{% endblock %}
+  {% endblock %}

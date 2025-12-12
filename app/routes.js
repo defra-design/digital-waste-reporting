@@ -849,3 +849,47 @@ router.post('/layouts/Private-beta/Waste-movements/V1/change-format/send-waste-a
   }
 
 })
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Waste-movements/V1/API/next-activity-answer'
+router.post('/layouts/Private-beta/Waste-movements/V1/API/next-activity-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var Nextactivity = req.session.data['Next activity']
+  
+  // Check whether the variable matches
+
+  if (Nextactivity == "View my API details"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/Waste-movements/V1/API/view-your-API')
+
+  } else {
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/API/send-waste')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Waste-movements/V1/API/delete-API-code-answer'
+router.post('/layouts/Private-beta/Waste-movements/V1/API/delete-API-code-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var Apidelete = req.session.data['Apidelete']
+  
+  // Check whether the variable matches
+
+  if (Apidelete == "Yes"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/Waste-movements/V1/API/API-deleted')
+
+  } else {
+    
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/API/view-your-API')
+  }
+
+})
+
+
+
