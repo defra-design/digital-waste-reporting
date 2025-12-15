@@ -772,6 +772,22 @@ router.post('/layouts/Private-beta/Waste-movements/V1/API/send-waste-answer', fu
 })
 
 
+// Run this code when a form is submitted to '/layouts/Private-beta/Waste-movements/V1/API/view-your-API-answer'
+router.post('/layouts/Private-beta/Waste-movements/V1/API/view-your-API-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var buttonChoice = req.session.data['buttonChoice']
+
+  // Check whether the variable matches
+  if (buttonChoice == "Delete"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/API/delete-API-code')
+  }
+
+})
+
+
 // Run this code when a form is submitted to '/layouts/Private-beta/Waste-movements/V1/Spreadsheet/next-activity-answer'
 router.post('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/next-activity-answer', function (req, res) {
 

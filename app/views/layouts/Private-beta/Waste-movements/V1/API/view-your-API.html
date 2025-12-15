@@ -26,7 +26,7 @@
   tag: {
     text: "Beta"
   },
-  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Web-form/Idea-A/J1/waste-sites-paid">give your feedback (opens in new tab)</a>.'
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
 }) }}
 
   <a class="govuk-back-link" href="javascript:history.back()">Back</a>
@@ -39,15 +39,13 @@
     <div class="govuk-form-group">
 
       <div class="govuk-grid-column-two-thirds">
-        
-        <span class="govuk-caption-l">Waste receiver name</span>    
+
+        <span class="govuk-caption-l">Waste receiver name</span>
         <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Your API code</h1>
 
       </div>
 
       <div class="govuk-grid-column-full">
-        
-        <form method="post" action="/layouts/Private-beta/Waste-movements/V1/API/delete-API-code">
 
         <div class="govuk-summary-card govuk-!-margin-top-4 govuk-!-padding-bottom-4">
 
@@ -62,12 +60,17 @@
                   af552bd3-f929-4924-a86d-d8e4f0cb8d61
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <button type="submit" class="govuk-button" data-module="govuk-button">
+
+                  <form method="post" action="/layouts/Private-beta/Waste-movements/V1/API/view-your-API-answer">
+
+                    <button type="submit" class="govuk-button"  id="copybutton" data-module="govuk-button" name="buttonChoice" value="Copy">
                       Copy
                   </button>
-                  <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-left-3" data-module="govuk-button">
+                    <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-left-3" id="deletebutton" data-module="govuk-button" name="buttonChoice" value="Delete">
                       Delete
                   </button>
+
+                  </form>
                 </dd>
               </div>
 
@@ -87,8 +90,6 @@
           </div>
         </div>
 
-        </form>
-
         <h3 class="govuk-!-padding-top-4 govuk-heading-m">Do you need to create an additional API code?</h3>
 
         <p class="govuk-body">
@@ -98,11 +99,10 @@
         <button type="submit" class=" govuk-button govuk-button--secondary" data-module="govuk-button">
             Create additional code
         </button>
-        
+
         <p class="govuk-body govuk-!-padding-top-4">
           <a href="/layouts/Private-beta/Waste-movements/V1/API/waste-receivers-API-selected" class="govuk-link govuk-link--no-visited-state">Return to your waste receivers</a>
         </p>
-
 
       </div>
 
