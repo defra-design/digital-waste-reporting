@@ -36,14 +36,42 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Sorry, you cannot add [Business or organisation Name] to your account</h1>
-      <p class="govuk-body">You can only add a business or organisation that receives waste.</p>
 
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
+      <form class="form" action="/layouts/Private-beta/MVP-Registration/V1/Scenario-1/permit-uk-answer" method="post">
 
+      <span class="govuk-caption-l">[Waste receiver name]</span>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "UK permit",
+          value: data['UK permit'],
+          fieldset: {
+          legend: {
+          text: "Does your organisation have an environmental permit to receive waste in the UK?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+              }
+              ]
+              }) }}
+
+        {{ govukButton({
+                  text: "Continue"
+                  }) }}
+
+      </div>
     </div>
-  </div>
+
 
 {% endblock %}

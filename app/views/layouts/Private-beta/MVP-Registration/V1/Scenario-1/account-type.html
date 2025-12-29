@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-form-group">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+        </span>
+
+
+      <form method="post" action="/layouts/Private-beta/MVP-Registration/V1/Scenario-1/account-type-answer">
+
+
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+        Are you registering as a business or organisation?
+      </h1>
+        </legend>
+
+        <p class="govuk-!-padding-top-4 govuk-!-padding-bottom-2">This includes if you are a sole trader or registered charity.</p>
+
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="registrationAccountType-1" name="registrationAccountType" type="radio" value="Yes create an account">
+            <label class="govuk-label govuk-radios__label" for="registrationAccountType-1">
+          Yes, and I have permission to create an account
+        </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="registrationAccountType-2" name="registrationAccountType" type="radio" value="No I don't have permission">
+            <label class="govuk-label govuk-radios__label" for="registrationAccountType-2">
+          No, as an individual for personal use
+        </label>
+          </div>
+        </div>
+      </fieldset>
+
+        <button type="submit" class="govuk-!-margin-top-6 govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+    </div>
+  </form>
+
+
+
+</div>
+
+{% endblock %}

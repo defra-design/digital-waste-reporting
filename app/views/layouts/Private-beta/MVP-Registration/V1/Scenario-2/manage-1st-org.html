@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+			
+						
+				Your name |</li>
+
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/MVP-Registration/V1/Scenario-2/2-orgs-added" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <span class="govuk-caption-xl">
+                <span class="govuk-visually-hidden">This section is: </span>Account for
+    </span>
+            <h1 class="govuk-heading-xl">[Waste receiver name 1]</h1>
+
+        </div>
+
+        <div class="govuk-grid-column-full">
+
+            <div class="govuk-grid-row">
+
+                <div class="govuk-grid-column-one-third">
+                    <div class="govuk-card govuk-card--contained govuk-card--selectable">
+                        <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet"></a>
+                        <div class="govuk-card__content">
+                            <h3 class="govuk-heading-m">
+                                <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link--no-visited-state">Manage team access</a>
+                            </h3>
+                            <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-font-weight-bold">1</p>
+                        </div>
+                        <div class="govuk-card__actions">
+                            <ul class="govuk-list govuk-!-mb-r0">
+                                <li>
+                                    <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link--no-visited-state">Add a team member</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-grid-column-one-third ">
+                    <div class="govuk-card govuk-card--contained govuk-card--selectable">
+                        <a href=""></a>
+                        <div class="govuk-card__content">
+                            <h3 class="govuk-heading-m">
+                                <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link--no-visited-state">Manage intermediary access</a>
+                            </h3>
+                            <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-font-weight-bold">0</p>
+                        </div>
+                        <div class="govuk-card__actions">
+                            <ul class="govuk-list govuk-!-mb-r0">
+                                <li>
+                                    <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link--no-visited-state">Add an intermediary</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-grid-column-one-third ">
+                    <div class="govuk-card govuk-card--contained govuk-card--selectable">
+                        <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet"></a>
+                        <div class="govuk-card__content">
+                            <h3 class="govuk-heading-m">
+                                <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link--no-visited-state">Manage your organisation</a>
+                            </h3>
+
+                            <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-font-weight-bold">0</p>
+
+                        </div>
+
+                        <div class="govuk-card__actions">
+                            <ul class="govuk-list govuk-!-mb-r0">
+                                <li>
+                                    <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link--no-visited-state">Add related organisation</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+                                <h2 class="govuk-heading-l govuk-!-margin-top-7">Your registered services</h2>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-third">
+                            <div class="govuk-card govuk-card--contained govuk-card--selectable">
+                                <a href="/layouts/Private-beta/Onboarding/V2/J2/start-page"></a>
+                                <div class="govuk-card__content">
+                                    <h3 class="govuk-heading-m">Report receipt of waste</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="/layouts/Private-beta/MVP-Registration/V1/Scenario-2/register-for-services" method="post">
+
+                        <button type="submit" class="govuk-button" data-module="govuk-button">
+                        Register for more services
+                    </button>
+
+                    </form>
+
+        </div>
+    </div>
+
+{% endblock %}

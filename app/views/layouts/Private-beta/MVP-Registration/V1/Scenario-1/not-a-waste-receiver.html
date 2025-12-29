@@ -28,22 +28,23 @@
   html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
 }) }}
 
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  {# <a class="govuk-back-link" href="javascript:history.back()">Back</a> #}
 
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Sorry, you cannot add [Business or organisation Name] to your account</h1>
-      <p class="govuk-body">You can only add a business or organisation that receives waste.</p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
+        <h1 class="govuk-heading-l">Sorry, you cannot use the service</h1>
 
+        <p class="govuk-body">Based on your answers, you cannot use this service as you do not operate any businesses or organisations that receive waste.</p>
+        
+        <p class="govuk-body">
+          <a class="govuk-link" href="#">Find out more about Digital waste tracking</a>
+        </p>
+      </div>
     </div>
-  </div>
 
 {% endblock %}

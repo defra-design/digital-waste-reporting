@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/layouts/Private-beta/MVP-Registration/V1/Scenario-2/next-activity-answer" method="post">
+
+        <span class="govuk-caption-l">[Waste receiver name 2]</span>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "Next activity",
+          value: data['Next activity'],
+          fieldset: {
+          legend: {
+          text: "What do you want to do next?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+            value: "Connect your software",
+            text: "Connect your software"
+            },
+            {
+              value: "Submit via the spreadsheet",
+              text: "Submit via the spreadsheet"
+              },
+              {
+              value: "Choose another organisation from my account",
+              text: "Choose another organisation from my account"
+              },
+              {
+              divider: "or"
+              },
+              {
+              value: "Add another waste receiver to my account",
+              text: "Add another waste receiver to my account"
+              }
+              ]
+              }) }}
+
+        {{ govukButton({
+                  text: "Continue"
+                  }) }}
+
+      </div>
+    </div>
+
+  {% endblock %}

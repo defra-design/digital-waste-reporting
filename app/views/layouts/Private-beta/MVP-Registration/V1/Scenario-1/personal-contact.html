@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+      </span>
+      <h1 class="govuk-heading-l">What's your telephone number?</h1>
+
+      <form method="post" action="/layouts/Private-beta/MVP-Registration/V1/Scenario-1/personal-security">
+
+        <p>We ask for this in case we need to call you directly with any queries about your registration.</p>
+
+        <div class="govuk-form-group">
+
+          <div id="registrationContactPhonePersonal-hint" class="govuk-hint">
+            For example, 01632 960 000 or 07700 900 982.
+          </div>
+
+          <input class="govuk-input govuk-!-width-two-thirds" id="registrationContactPhonePersonal" name="registrationContactPhonePersonal" type="tel" aria-describedby="registrationContactPhonePersonal-hint">
+
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -908,4 +908,230 @@ router.post('/layouts/Private-beta/Waste-movements/V1/API/delete-API-code-answer
 })
 
 
+// MVP – Registration V1 routes //
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/permit-uk-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/permit-uk-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var UKpermit = req.session.data['UK permit']
+
+  // Check whether the variable matches
+  if (UKpermit == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/sign-in')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/not-a-waste-receiver')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/sign-in-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/sign-in-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var oneorgovgateway = req.session.data['signIn']
+
+  // Check whether the variable matches
+  if (oneorgovgateway == "One Login"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/onelogin-sign-in')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/govgateway-sign-in')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/account-type-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/account-type-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var registrationAccountType = req.session.data['registrationAccountType']
+
+  // Check whether the variable matches
+  if (registrationAccountType == "Yes create an account"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/uk-org')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/uk-org-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/uk-org-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var tradeuk = req.session.data['trade-uk']
+
+  // Check whether the variable matches
+  if (tradeuk == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/companies-house')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/companies-house-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/companies-house-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var companiesHouse = req.session.data['companiesHouse']
+
+  // Check whether the variable matches
+  if (companiesHouse == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/companies-house-number')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/next-activity-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/next-activity-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var nextActivity = req.session.data['Next activity']
+
+  // Check whether the variable matches
+  if (nextActivity == "Connect your software"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/view-your-API')
+
+  } else if (nextActivity == "Submit via the spreadsheet"){
+    
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/spreadsheet-upload')
+
+  } else {
+    
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/permit-uk-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/permit-uk-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var UKpermit = req.session.data['UK permit']
+
+  // Check whether the variable matches
+  if (UKpermit == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/sign-in')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/not-a-waste-receiver')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var registrationAccountType = req.session.data['registrationAccountType']
+
+  // Check whether the variable matches
+  if (registrationAccountType == "Yes create an account"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/uk-org')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/uk-org-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/uk-org-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var tradeuk = req.session.data['trade-uk']
+
+  // Check whether the variable matches
+  if (tradeuk == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/companies-house')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/companies-house-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/companies-house-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var companiesHouse = req.session.data['companiesHouse']
+
+  // Check whether the variable matches
+  if (companiesHouse == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/companies-house-number')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/next-activity-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/next-activity-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var nextActivity = req.session.data['Next activity']
+
+  // Check whether the variable matches
+  if (nextActivity == "Connect your software"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/view-your-API')
+
+  } else if (nextActivity == "Submit via the spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/spreadsheet-upload')
+  
+  } else if (nextActivity == "Choose another organisation from my account"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/who-2-represent')
+
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type')
+    
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/who-2-represent-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/who-2-represent-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var who2represent = req.session.data['Who-2-represent']
+
+  // Check whether the variable matches
+  if (who2represent == "[Waste receiver name 1]"){
+
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/next-activity-org-1')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/next-activity-org-2')
+  }
+
+})
+
 
