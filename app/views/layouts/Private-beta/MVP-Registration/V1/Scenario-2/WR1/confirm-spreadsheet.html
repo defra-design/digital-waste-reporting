@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">[Waste receiver name 1]</span>
+
+        <h1 class="govuk-heading-l">Confirm your file</h1>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <h2 class="govuk-heading-m">File added</h2>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    File 1
+                  </dt>
+                <dd class="govuk-summary-list__value">
+                  <a download href="/" class="govuk-link">WR-Oct-WK-1.xlsx</a>, 3MB
+                  </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> file 1</span></a>
+                </dd>
+              </div>
+
+            </dl>
+          </div>
+        </div>
+
+        <form class="form" action="/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/confirm-spreadsheet-answer" method="post">
+
+
+        <div class="govuk-form-group govuk-!-margin-top-4">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Is this file correct?
+              </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="another-file-1" name="another-file" type="radio" value="Yes, add this file">
+                <label class="govuk-label govuk-radios__label" for="another-file-1">
+                    Yes, add this file
+                  </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="another-file-2" name="another-file" type="radio" value="No, I want to choose a different file">
+                <label class="govuk-label govuk-radios__label" for="another-file-2">
+                    No, I want to choose a different file
+                  </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+          <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+      </div>
+    </div>
+
+  {% endblock %}

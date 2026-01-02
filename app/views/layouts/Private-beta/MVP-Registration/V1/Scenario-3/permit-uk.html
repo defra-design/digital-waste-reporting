@@ -1,0 +1,75 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/layouts/Private-beta/MVP-Registration/V1/Scenario-3/permit-uk-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "UK permit",
+          value: data['UK permit'],
+          fieldset: {
+          legend: {
+          text: "Does your organisation have an environmental permit to receive waste in the UK?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+              }
+              ]
+              }) }}
+
+        {{ govukButton({
+                  text: "Continue"
+                  }) }}
+
+      </div>
+    </div>
+
+
+{% endblock %}

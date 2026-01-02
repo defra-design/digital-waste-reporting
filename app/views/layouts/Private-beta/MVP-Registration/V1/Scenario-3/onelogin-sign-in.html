@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+
+{% endset%}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/MVP-Registration/designs">give your feedback &#40;opens in new tab&#41;</a>.'
+}) }}
+
+  <nav class="language-select " aria-label="Choose Language" role="navigation">
+    <ul class="govuk-list language-select__list govuk-body-s govuk-!-margin-0" role="list">
+
+      <li class="language-select__list-item" role="listitem">
+
+        <span aria-current="true">English | </span>
+
+      </li>
+
+      <li class="language-select__list-item" role="listitem">
+
+        <a class="govuk-link govuk-link--no-visited-state" href="/sign-in-or-create?lng=cy" data-journey-click="link - click:lang-select:cy" rel="alternate" hreflang="cy" lang="cy" role="link">Cymraeg<div class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</div>
+        </a>
+
+      </li>
+
+    </ul>
+  </nav>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Create your GOV.UK One Login or <br>sign in</h1>
+
+      <p class="govuk-body">You can use your GOV.UK One Login to access some government services.</p>
+
+      <p class="govuk-body">In the future, you'll be able to use it to access all services on GOV.UK.</p>
+
+      <p class="govuk-body">You'll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an email address</li>
+        <li>a way to get security codes - this can be a mobile phone number or an authenticator app</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+            You can also <a href="#">use GOV.UK One Login in Welsh &#40;Cymraeg&#41;</a>.
+        </div>
+
+      <div class="govuk-button-group">
+
+        <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Create a GOV.UK One Login
+        </a>
+      </div>
+
+      <div class="govuk-button-group">
+
+        <a href="/layouts/Private-beta/MVP-Registration/V1/Scenario-3/onelogin-email-address" role="button" draggable="false" class="govuk-button govuk-button--secondary govuk" data-module="govuk-button">
+          Sign in
+        </a>
+
+      </div>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+            Services you can use with GOV.UK One Login &#40;opens in new tab&#41;
+        </a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+
+{% endset%}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/MVP-Registration/designs">give your feedback &#40;opens in new tab&#41;</a>.'
+}) }}
+
+  <nav class="language-select " aria-label="Choose Language" role="navigation">
+    <ul class="govuk-list language-select__list govuk-body-s govuk-!-margin-0" role="list">
+
+      <li class="language-select__list-item" role="listitem">
+
+        <span aria-current="true">English | </span>
+
+      </li>
+
+      <li class="language-select__list-item" role="listitem">
+
+        <a class="govuk-link govuk-link--no-visited-state" href="/sign-in-or-create?lng=cy" data-journey-click="link - click:lang-select:cy" rel="alternate" hreflang="cy" lang="cy" role="link">Cymraeg<div class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</div>
+        </a>
+
+      </li>
+
+    </ul>
+  </nav>
+
+    <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    
+    <div class="govuk-grid-column-two-thirds">
+        
+        <h1 class="govuk-heading-l">Check your phone</h1>
+
+        <div class="govuk-inset-text">
+            We have sent a code to your phone number ending with <strong>137</strong>
+        </div>
+        
+        
+        <p>It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
+        
+        <form action="/layouts/Private-beta/MVP-Registration/V1/Scenario-3/who-2-represent" method="post">
+        
+        <div class="govuk-form-group">
+            
+            <label class="govuk-label" for="govOneLoginCode">
+                Enter the 6 digit security code
+                </label>
+                
+                <input class="govuk-input govuk-input--width-10" id="govOneLoginCode" name="govOneLoginCode" type="text">
+                
+        </div>
+        
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+                                
+
+
+        </form>
+
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Problems with the code?
+                    </span>
+            </summary>
+            
+            <div class="govuk-details__text">
+                <p>We can <a href="#">send the code again</a> if the code is not working or you did not receive it.</p>
+                </div>
+        </details>
+
+    </div>
+</div>
+
+
+{% endblock %}
