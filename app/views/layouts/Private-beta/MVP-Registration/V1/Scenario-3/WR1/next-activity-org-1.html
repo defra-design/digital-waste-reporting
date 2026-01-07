@@ -40,7 +40,7 @@
 
       <form class="form" action="/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/next-activity-org-1-answer" method="post">
 
-        <span class="govuk-caption-l">[Waste receiver name 1]</span>
+        <span class="govuk-caption-xl">Joe B Waste Services England</span>
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -49,7 +49,7 @@
           value: data['Next activity'],
           fieldset: {
           legend: {
-          text: "What do you want to do next?",
+          text: "What do you want to do?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
           }
@@ -57,15 +57,15 @@
           items: [
           {
             value: "Connect your software",
-            text: "Connect your software"
+            text: "Connect your software to the API"
             },
             {
-              value: "Submit via the spreadsheet",
-              text: "Submit via the spreadsheet"
+              value: "Upload spreadsheet",
+              text: "Upload a new spreadsheet"
               },
               {
-              value: "Choose another organisation from my account",
-              text: "Choose another organisation from my account"
+              value: "Update spreadsheet",
+              text: "Update an existing spreadsheet"
               },
               {
               divider: "or"
@@ -82,6 +82,26 @@
                   }) }}
 
       </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <div class="govuk-card govuk-card--contained">
+          <div class="govuk-card__content govuk-!-margin-bottom-4">
+
+            <p class="govuk-body">
+              <strong>Service charge:</strong>
+            </p>
+            <p class="govuk-body govuk-!-margin-top-1">
+              <strong class="govuk-tag--yellow"> Unpaid</strong>
+            </p>
+
+            <p class="govuk-body govuk-!-padding-top-2">The annual service charge will not apply until October 2026.</strong>
+          </p>
+        </div>
+      </div>
+
     </div>
+  </div>
+
 
   {% endblock %}

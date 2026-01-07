@@ -1327,6 +1327,7 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/next-activ
 })
 
 
+
 // Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR2/confirm-spreadsheet-answer'
 router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR2/confirm-spreadsheet-answer', function (req, res) {
 
@@ -1361,6 +1362,24 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/confirm-sp
   }
 
 })
+
+
+// // Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/upload-spreadsheet-error-2-answer'
+// router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/upload-spreadsheet-error-2-answer', function (req, res) {
+
+//   // Make a variable and give it the value
+//   var buttonChoice = req.session.data['buttonChoice']
+
+//   // Check whether the variable matches
+//   if (buttonChoice == "download"){
+    
+//   // Send user to
+//     res.redirect('/public/files/pig-review-summary.odt')
+
+//   }
+
+// })
+
 
 // Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-4/permit-uk-answer'
 router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/permit-uk-answer', function (req, res) {
