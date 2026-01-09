@@ -1080,33 +1080,6 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/companies-house-an
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity-wr1-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity-wr1-answer', function (req, res) {
-
-  // Make a variable and give it the value
-  var nextActivity = req.session.data['Next activity']
-
-  // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/view-your-API')
-
-  } else if (nextActivity == "Upload spreadsheet"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-upload')
-
-  } else if (nextActivity == "Update spreadsheet"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-update')
-
-  } else if (nextActivity == "Change to a new WR"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/2-orgs-services-added')
-
-  } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/account-type')
-  }
-
-})
-
 
 // Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity'
 router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity-answer', function (req, res) {
