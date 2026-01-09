@@ -1189,8 +1189,8 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/confirm-spreadshee
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/permit-uk-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/S2/permit-uk-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR1/permit-uk-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/permit-uk-answer', function (req, res) {
 
   // Make a variable and give it the value
   var UKpermit = req.session.data['UK permit']
@@ -1199,7 +1199,7 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/permit-uk-answer', fun
   if (UKpermit == "Yes"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/sign-in')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2//sign-in')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/not-a-waste-receiver')
   }
@@ -1241,7 +1241,7 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/who-2-represent-answer
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity'
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity'
 router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity-answer', function (req, res) {
 
   // Make a variable and give it the value
@@ -1268,6 +1268,36 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity-answ
 
 })
 
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var nextActivity = req.session.data['Next activity']
+
+  // Check whether the variable matches
+  if (nextActivity == "Connect your software"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/spreadsheet-upload')
+
+  } else if (nextActivity == "Update spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/spreadsheet-update')
+
+  } else if (nextActivity == "Change to a new WR"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/2-orgs-services-added')
+
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/account-type')
+  }
+
+})
+
+
+
 // Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR1/confirm-spreadsheet-answer'
 router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/confirm-spreadsheet-answer', function (req, res) {
 
@@ -1284,6 +1314,42 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/confirm-spreadshee
   }
 
 })
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/who-2-represent-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/who-2-represent-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var who2represent = req.session.data['Who-2-represent']
+
+  // Check whether the variable matches
+  if (who2represent == "[Waste receiver name 1]"){
+
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/upload-spreadsheet-error')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/who-2-represent-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/who-2-represent-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var who2represent = req.session.data['Who-2-represent']
+
+  // Check whether the variable matches
+  if (who2represent == "[Waste receiver name 1]"){
+
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/upload-spreadsheet-error')
+  }
+
+})
+
 
 // Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity'
 router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity-answer', function (req, res) {
@@ -1329,9 +1395,42 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/confirm-spreadshee
 
 })
 
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/sign-in-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/sign-in-answer', function (req, res) {
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/permit-uk-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/S3/permit-uk-answer', function (req, res) {
+  // Make a variable and give it the value
+  var oneorgovgateway = req.session.data['signIn']
+
+  // Check whether the variable matches
+  if (oneorgovgateway == "One Login"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/onelogin-sign-in')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/govgateway-sign-in')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/sign-in-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/sign-in-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var oneorgovgateway = req.session.data['signIn']
+
+  // Check whether the variable matches
+  if (oneorgovgateway == "One Login"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/onelogin-sign-in')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/govgateway-sign-in')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/WR1/permit-uk-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/permit-uk-answer', function (req, res) {
 
   // Make a variable and give it the value
   var UKpermit = req.session.data['UK permit']
