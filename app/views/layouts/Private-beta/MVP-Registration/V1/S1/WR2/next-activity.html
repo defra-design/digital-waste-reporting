@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity-answer" method="post">
+
+        <span class="govuk-caption-xl">Joe B Waste Services Scotland</span>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "Next activity",
+          value: data['Next activity'],
+          fieldset: {
+          legend: {
+          text: "What do you want to do?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+            value: "Connect your software",
+            text: "Connect your software to the API"
+            },
+            {
+              value: "Upload spreadsheet",
+              text: "Upload a new spreadsheet"
+              },
+              {
+              value: "Update spreadsheet",
+              text: "Update an existing spreadsheet"
+              },              {
+              value: "Change to a new WR",
+              text: "Choose another waste receiver in my account"
+              },
+              {
+              divider: "or"
+              },
+              {
+              value: "Add another waste receiver to my account",
+              text: "Add another waste receiver to my account"
+              }
+              ]
+              }) }}
+
+        {{ govukButton({
+                  text: "Continue"
+                  }) }}
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <div class="govuk-card govuk-card--contained">
+          <div class="govuk-card__content govuk-!-margin-bottom-4">
+
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Service charge:
+            </h3>
+
+            <p class="govuk-body govuk-!-margin-top-1">
+              <strong class="govuk-tag govuk-tag--yellow">Unpaid</strong>
+            </p>
+
+            <p class="govuk-body govuk-!-padding-top-2">The charge is not due until October 2026 but will cost £26 per year for each waste receiver on your account.</p>
+              
+            <p class="govuk-body">You will need a debit or credit card to make your payment online.</p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

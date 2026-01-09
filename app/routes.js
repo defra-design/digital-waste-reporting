@@ -911,8 +911,8 @@ router.post('/layouts/Private-beta/Waste-movements/V1/API/delete-API-code-answer
 // MVP – Registration V1 routes //
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/permit-uk-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/permit-uk-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR1/permit-uk-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/permit-uk-answer', function (req, res) {
 
   // Make a variable and give it the value
   var UKpermit = req.session.data['UK permit']
@@ -921,16 +921,16 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/permit-uk-answ
   if (UKpermit == "Yes"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/sign-in')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/sign-in')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/not-a-waste-receiver')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/not-a-waste-receiver')
   }
 
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/sign-in-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/sign-in-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/sign-in-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/sign-in-answer', function (req, res) {
 
   // Make a variable and give it the value
   var oneorgovgateway = req.session.data['signIn']
@@ -939,16 +939,16 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/sign-in-answer
   if (oneorgovgateway == "One Login"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/onelogin-sign-in')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/onelogin-sign-in')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/govgateway-sign-in')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/govgateway-sign-in')
   }
 
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/account-type-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/account-type-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR1/account-type-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/account-type-answer', function (req, res) {
 
   // Make a variable and give it the value
   var BusinessorOrganisation = req.session.data['Business or organisation']
@@ -957,7 +957,7 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/account-type-a
   if (BusinessorOrganisation == "Business"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/uk-org')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
   }
@@ -965,8 +965,8 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/account-type-a
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/uk-org-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/uk-org-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR1/uk-org-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/uk-org-answer', function (req, res) {
 
   // Make a variable and give it the value
   var tradeuk = req.session.data['trade-uk']
@@ -975,15 +975,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/uk-org-answer'
   if (tradeuk == "Limited company"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/companies-house')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/companies-house-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/companies-house-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR1/companies-house-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/companies-house-answer', function (req, res) {
 
   // Make a variable and give it the value
   var companiesHouse = req.session.data['companiesHouse']
@@ -992,16 +992,16 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/companies-hous
   if (companiesHouse == "Yes"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/companies-house-number')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/companies-house-number')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/no-design-yet')
   }
 
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-1/next-activity-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/next-activity-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity-answer', function (req, res) {
 
   // Make a variable and give it the value
   var nextActivity = req.session.data['Next activity']
@@ -1010,39 +1010,27 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/next-activity-
   if (nextActivity == "Connect your software"){
   
   // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/view-your-API')
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/view-your-API')
 
-  } else if (nextActivity == "Submit via the spreadsheet"){
-    
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/spreadsheet-upload')
+  } else if (nextActivity == "Upload spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-upload')
+
+  } else if (nextActivity == "Update spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-update')
+
+  } else if (nextActivity == "Change to a new WR"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/1-org-service-added')
 
   } else {
-    
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type')
-  }
-
-})
-
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/permit-uk-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/permit-uk-answer', function (req, res) {
-
-  // Make a variable and give it the value
-  var UKpermit = req.session.data['UK permit']
-
-  // Check whether the variable matches
-  if (UKpermit == "Yes"){
-    
-  // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/sign-in')
-  } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/not-a-waste-receiver')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/account-type')
   }
 
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type-answer', function (req, res) {
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR2/account-type-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/account-type-answer', function (req, res) {
 
   // Make a variable and give it the value
   var BusinessorOrganisation2 = req.session.data['Business or organisation 2']
@@ -1051,15 +1039,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type-a
   if (BusinessorOrganisation2 == "Business"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/uk-org')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/uk-org-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/uk-org-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR2/uk-org-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/uk-org-answer', function (req, res) {
 
   // Make a variable and give it the value
   var tradeuk2 = req.session.data['trade-uk-2']
@@ -1068,15 +1056,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/uk-org-answer'
   if (tradeuk2 == "Limited company"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/companies-house')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/companies-house-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/companies-house-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR2/companies-house-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/companies-house-answer', function (req, res) {
 
   // Make a variable and give it the value
   var companiesHouse2 = req.session.data['companiesHouse2']
@@ -1085,15 +1073,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/companies-hous
   if (companiesHouse2 == "Yes"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/companies-house-number')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/companies-house-number')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/next-activity-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/next-activity-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity-wr1-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity-wr1-answer', function (req, res) {
 
   // Make a variable and give it the value
   var nextActivity = req.session.data['Next activity']
@@ -1102,23 +1090,54 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/next-activity-
   if (nextActivity == "Connect your software"){
   
   // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/view-your-API')
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/view-your-API')
 
-  } else if (nextActivity == "Submit via the spreadsheet"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-1/spreadsheet-upload')
-  
-  } else if (nextActivity == "Choose another organisation from my account"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/who-2-represent')
+  } else if (nextActivity == "Upload spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-upload')
+
+  } else if (nextActivity == "Update spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-update')
+
+  } else if (nextActivity == "Change to a new WR"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/2-orgs-services-added')
 
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type')
-    
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/account-type')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/who-2-represent-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/who-2-represent-answer', function (req, res) {
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var nextActivity = req.session.data['Next activity']
+
+  // Check whether the variable matches
+  if (nextActivity == "Connect your software"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/spreadsheet-upload')
+
+  } else if (nextActivity == "Update spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/spreadsheet-update')
+
+  } else if (nextActivity == "Change to a new WR"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/2-orgs-services-added')
+
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/account-type')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/who-2-represent-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/who-2-represent-answer', function (req, res) {
 
   // Make a variable and give it the value
   var who2represent = req.session.data['Who-2-represent']
@@ -1127,68 +1146,16 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/who-2-represen
   if (who2represent == "[Waste receiver name 1]"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/next-activity-org-1')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR2/next-activity-org-2')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity')
   }
 
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/next-activity-org-2-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/next-activity-org-2-answer', function (req, res) {
-
-  // Make a variable and give it the value
-  var nextActivity = req.session.data['Next activity']
-
-  // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR2/view-your-API')
-
-  } else if (nextActivity == "Submit via the spreadsheet"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR2/spreadsheet-upload')
-  
-  } else if (nextActivity == "Choose another organisation from my account"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/who-2-represent')
-
-  } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type')
-    
-  }
-
-})
-
-
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/next-activity-org-1-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/next-activity-org-1-answer', function (req, res) {
-
-  // Make a variable and give it the value
-  var nextActivity = req.session.data['Next activity']
-
-  // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/view-your-API')
-
-  } else if (nextActivity == "Submit via the spreadsheet"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/spreadsheet-upload')
-  
-  } else if (nextActivity == "Choose another organisation from my account"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/who-2-represent')
-
-  } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/account-type')
-    
-  }
-
-})
-
-
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR2/confirm-spreadsheet-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR2/confirm-spreadsheet-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR2/confirm-spreadsheet-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/confirm-spreadsheet-answer', function (req, res) {
 
   // Make a variable and give it the value
   var anotherfile = req.session.data['another-file']
@@ -1197,16 +1164,16 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR2/confirm-sp
   if (anotherfile == "Yes, add this file"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR2/upload-spreadsheet')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/upload-spreadsheet')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR2/spreadsheet-upload')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/spreadsheet-upload')
   }
 
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/confirm-spreadsheet-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/confirm-spreadsheet-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR1/confirm-spreadsheet-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/confirm-spreadsheet-answer', function (req, res) {
 
   // Make a variable and give it the value
   var anotherfile = req.session.data['another-file']
@@ -1215,16 +1182,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/confirm-sp
   if (anotherfile == "Yes, add this file"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/upload-spreadsheet')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/upload-spreadsheet')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-2/WR1/spreadsheet-upload')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-upload')
   }
 
 })
 
-
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-3/permit-uk-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/permit-uk-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/permit-uk-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/permit-uk-answer', function (req, res) {
 
   // Make a variable and give it the value
   var UKpermit = req.session.data['UK permit']
@@ -1233,15 +1199,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/permit-uk-answ
   if (UKpermit == "Yes"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/sign-in')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/sign-in')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/not-a-waste-receiver')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/not-a-waste-receiver')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-3/sign-in-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/sign-in-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/sign-in-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/sign-in-answer', function (req, res) {
 
   // Make a variable and give it the value
   var oneorgovgateway = req.session.data['signIn']
@@ -1250,16 +1216,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/sign-in-answer
   if (oneorgovgateway == "One Login"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/onelogin-sign-in')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/onelogin-sign-in')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/govgateway-sign-in')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/govgateway-sign-in')
   }
 
 })
 
-
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-3/who-2-represent-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/who-2-represent-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/who-2-represent-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/who-2-represent-answer', function (req, res) {
 
   // Make a variable and give it the value
   var who2represent = req.session.data['Who-2-represent']
@@ -1268,15 +1233,16 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/who-2-represen
   if (who2represent == "[Waste receiver name 1]"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/next-activity-org-1')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR2/next-activity-org-2')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-3/next-activity-org-2-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/next-activity-org-2-answer', function (req, res) {
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity-answer', function (req, res) {
 
   // Make a variable and give it the value
   var nextActivity = req.session.data['Next activity']
@@ -1285,24 +1251,42 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/next-activity-
   if (nextActivity == "Connect your software"){
   
   // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR2/view-your-API')
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/view-your-API')
 
-  } else if (nextActivity == "Submit via the spreadsheet"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR2/spreadsheet-upload')
-  
-  } else if (nextActivity == "Choose another organisation from my account"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/who-2-represent')
+  } else if (nextActivity == "Upload spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/spreadsheet-upload')
+
+  } else if (nextActivity == "Update spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/spreadsheet-update')
+
+  } else if (nextActivity == "Change to a new WR"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/2-orgs-services-added')
 
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/account-type')
-    
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/account-type')
   }
 
 })
 
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR1/confirm-spreadsheet-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/confirm-spreadsheet-answer', function (req, res) {
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/next-activity-org-1-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/next-activity-org-1-answer', function (req, res) {
+  // Make a variable and give it the value
+  var anotherfile = req.session.data['another-file']
+
+  // Check whether the variable matches
+  if (anotherfile == "Yes, add this file"){
+
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/upload-spreadsheet')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/spreadsheet-upload')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity-answer', function (req, res) {
 
   // Make a variable and give it the value
   var nextActivity = req.session.data['Next activity']
@@ -1311,25 +1295,25 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/next-activ
   if (nextActivity == "Connect your software"){
   
   // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/view-your-API')
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/view-your-API')
 
-  } else if (nextActivity == "Submit via the spreadsheet"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/spreadsheet-upload')
-  
-  } else if (nextActivity == "Choose another organisation from my account"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/who-2-represent')
+  } else if (nextActivity == "Upload spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/spreadsheet-upload')
+
+  } else if (nextActivity == "Update spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/spreadsheet-update')
+
+  } else if (nextActivity == "Change to a new WR"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/2-orgs-services-added')
 
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/account-type')
-    
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/account-type')
   }
 
 })
 
-
-
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR2/confirm-spreadsheet-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR2/confirm-spreadsheet-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR2/confirm-spreadsheet-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/confirm-spreadsheet-answer', function (req, res) {
 
   // Make a variable and give it the value
   var anotherfile = req.session.data['another-file']
@@ -1338,51 +1322,16 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR2/confirm-sp
   if (anotherfile == "Yes, add this file"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR2/upload-spreadsheet')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/upload-spreadsheet')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR2/spreadsheet-upload')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/spreadsheet-upload')
   }
 
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/confirm-spreadsheet-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/confirm-spreadsheet-answer', function (req, res) {
-
-  // Make a variable and give it the value
-  var anotherfile = req.session.data['another-file']
-
-  // Check whether the variable matches
-  if (anotherfile == "Yes, add this file"){
-
-  // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/upload-spreadsheet')
-  } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/spreadsheet-upload')
-  }
-
-})
-
-
-// // Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/upload-spreadsheet-error-2-answer'
-// router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-3/WR1/upload-spreadsheet-error-2-answer', function (req, res) {
-
-//   // Make a variable and give it the value
-//   var buttonChoice = req.session.data['buttonChoice']
-
-//   // Check whether the variable matches
-//   if (buttonChoice == "download"){
-    
-//   // Send user to
-//     res.redirect('/public/files/pig-review-summary.odt')
-
-//   }
-
-// })
-
-
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-4/permit-uk-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/permit-uk-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/permit-uk-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S3/permit-uk-answer', function (req, res) {
 
   // Make a variable and give it the value
   var UKpermit = req.session.data['UK permit']
@@ -1391,15 +1340,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/permit-uk-answ
   if (UKpermit == "Yes"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/sign-in')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/sign-in')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/not-a-waste-receiver')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/not-a-waste-receiver')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-4/sign-in-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/sign-in-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/sign-in-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S3/sign-in-answer', function (req, res) {
 
   // Make a variable and give it the value
   var oneorgovgateway = req.session.data['signIn']
@@ -1408,15 +1357,16 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/sign-in-answer
   if (oneorgovgateway == "One Login"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/onelogin-sign-in')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/onelogin-sign-in')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/govgateway-sign-in')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/govgateway-sign-in')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-4/who-2-represent-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/who-2-represent-answer', function (req, res) {
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/who-2-represent-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S3/who-2-represent-answer', function (req, res) {
 
   // Make a variable and give it the value
   var who2represent = req.session.data['Who-2-represent']
@@ -1425,15 +1375,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/who-2-represen
   if (who2represent == "[Waste receiver name 1]"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR1/next-activity-org-1')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/next-activity')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR2/next-activity-org-2')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/next-activity')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-4/next-activity-org-1-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/next-activity-org-1-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/WR1/next-activity-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/next-activity-answer', function (req, res) {
 
   // Make a variable and give it the value
   var nextActivity = req.session.data['Next activity']
@@ -1442,23 +1392,44 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/next-activity-
   if (nextActivity == "Connect your software"){
   
   // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR1/view-your-API')
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/view-your-API')
 
-  } else if (nextActivity == "Submit via the spreadsheet"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR1/spreadsheet-upload')
-  
-  } else if (nextActivity == "Choose another organisation from my account"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/who-2-represent')
+  } else if (nextActivity == "Upload spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/spreadsheet-upload')
+
+  } else if (nextActivity == "Update spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/spreadsheet-update')
+
+  } else if (nextActivity == "Change to a new WR"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/2-orgs-services-added')
 
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/account-type')
-    
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/account-type')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-4/next-activity-org-2-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/next-activity-org-2-answer', function (req, res) {
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/WR1/confirm-spreadsheet-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/confirm-spreadsheet-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var anotherfile = req.session.data['another-file']
+
+  // Check whether the variable matches
+  if (anotherfile == "Yes, add this file"){
+
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/upload-spreadsheet')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/spreadsheet-upload')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/WR2/next-activity-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/next-activity-answer', function (req, res) {
 
   // Make a variable and give it the value
   var nextActivity = req.session.data['Next activity']
@@ -1467,23 +1438,25 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/next-activity-
   if (nextActivity == "Connect your software"){
   
   // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR2/view-your-API')
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/view-your-API')
 
-  } else if (nextActivity == "Submit via the spreadsheet"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR2/spreadsheet-upload')
+  } else if (nextActivity == "Upload spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/spreadsheet-upload')
 
-  } else if (nextActivity == "Choose another organisation from my account"){
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/who-2-represent')
+  } else if (nextActivity == "Update spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/spreadsheet-update')
+
+  } else if (nextActivity == "Change to a new WR"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/2-orgs-services-added')
 
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/account-type')
-    
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/account-type')
   }
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR1/confirm-spreadsheet-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR1/confirm-spreadsheet-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/WR2/confirm-spreadsheet-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/confirm-spreadsheet-answer', function (req, res) {
 
   // Make a variable and give it the value
   var anotherfile = req.session.data['another-file']
@@ -1492,26 +1465,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR1/confirm-sp
   if (anotherfile == "Yes, add this file"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR1/upload-spreadsheet')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/upload-spreadsheet')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR1/spreadsheet-upload')
-  }
-
-})
-
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR2/confirm-spreadsheet-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR2/confirm-spreadsheet-answer', function (req, res) {
-
-  // Make a variable and give it the value
-  var anotherfile = req.session.data['another-file']
-
-  // Check whether the variable matches
-  if (anotherfile == "Yes, add this file"){
-
-  // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR2/upload-spreadsheet')
-  } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/Scenario-4/WR2/spreadsheet-upload')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/spreadsheet-upload')
   }
 
 })

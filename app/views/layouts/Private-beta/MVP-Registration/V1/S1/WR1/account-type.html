@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">
+          <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+        </span>
+
+        <form method="post" action="/layouts/Private-beta/MVP-Registration/V1/S1/WR1/account-type-answer">
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+          name: "Business or organisation",
+          value: data['Business or organisation'],
+          fieldset: {
+          legend: {
+          text: "Are you registering as a business or organisation?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+            value: "Business",
+            text: "Yes, and I have permission to create an account"
+            },
+            {
+              value: "individual",
+              text: "No, as an individual for personal use"
+              }
+              ]
+              }) }}
+
+          {{ govukButton({
+            classes: "govuk-!-margin-top-6",
+                  text: "Continue"
+                  }) }}
+
+        </form>
+
+      </div>
+
+    {% endblock %}

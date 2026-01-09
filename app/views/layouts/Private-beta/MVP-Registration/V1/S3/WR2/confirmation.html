@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "/layouts/Private-beta/MVP-Registration/V1/S3/WR2/Email/email-success"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Spreadsheet upload successful
+          </h1>
+      </div>
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-4">What happens next</h2>
+
+      <p class="govuk-body">We have received your receipt of waste spreadsheet.</p>
+
+      <p class="govuk-body">We need to check your spreadsheet for viruses and errors.</p>
+
+      <p class="govuk-body">Once we complete the checks, we will send you a confirmation email.</p>
+
+
+      {# <form class="form" action="/layouts/Private-beta/Waste-movements/V1/Spreadsheet/confirmation" method="post">
+
+        <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+            Download your file
+          </button>
+
+      </form> #}
+
+      <p class="govuk-body govuk-!-padding-top-4">
+        <a href="/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity" class="govuk-link govuk-link--no-visited-state">Return to Joe B Waste Services Scotland</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

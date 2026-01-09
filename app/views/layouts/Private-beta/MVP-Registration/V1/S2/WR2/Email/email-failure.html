@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+{# Defra account #}
+{% endset%}
+
+{% block beforeContent %}
+
+    {# <a class="govuk-back-link" href="javascript:history.back()">Back</a> #}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-form-group">
+
+            <div class="govuk-grid-column-two-thirds">
+
+                <p style="font-family: Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 30px 0 30px 0;">
+                                Dear Joe B Waste Services Scotland,
+                            </p>
+
+                <p style="font-family: Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 30px 0 30px 0;">
+                                We have checked your spreadsheet and found the information you have provided was either missing, incorrect or in the wrong format. 
+                            </p>
+
+                <p style="font-family: Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 30px 0 30px 0;">
+                                You need to check the spreadsheet and correct any errors before uploading it again. 
+                            </p>
+
+                <p class="govuk-body">
+                    <a class="govuk-link" href="/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/upload-spreadsheet-error">View your spreadsheet</a>
+                </p>
+
+                <p style="font-family: Arial, sans-serif; font-size: 19px; margin: 30px 0 30px 0;">
+                                Regards, <br>Digital Waste Tracking team
+                            </p>
+
+
+            </div>
+
+        {% endblock %}

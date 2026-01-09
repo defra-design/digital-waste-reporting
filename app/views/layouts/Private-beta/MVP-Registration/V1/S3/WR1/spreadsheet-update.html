@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        {# <span class="govuk-caption-l">Joe B Waste Services England</span> #}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--l" for="file-upload-1">
+            Update an existing spreadsheet
+          </label>
+
+          <p class="govuk-body">
+            You will only be able to update an existing spreadsheet if you have been given a Waste Tracking ID to reference that waste movement.</p>
+
+          <input class="govuk-file-upload govuk-!-margin-top-2" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+        </div>
+
+        <form class="form" action="/layouts/Private-beta/MVP-Registration/V1/S3/WR1/confirm-spreadsheet" method="post">
+
+          <button type="submit" class="govuk-button govuk-!-margin-top-8" data-module="govuk-button">
+          Continue
+        </button>
+
+        </form>
+
+      </div>
+    </div>
+
+  {% endblock %}
