@@ -1108,6 +1108,33 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity-answ
 
 })
 
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity-wr1-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity-wr1-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var nextActivity = req.session.data['Next activity']
+
+  // Check whether the variable matches
+  if (nextActivity == "Connect your software"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-upload')
+
+  } else if (nextActivity == "Update spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-update')
+
+  } else if (nextActivity == "Change to a new WR"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/2-orgs-added')
+
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/account-type')
+  }
+
+})
+
 
 // Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S1/who-2-represent-answer'
 router.post('/layouts/Private-beta/MVP-Registration/V1/S1/who-2-represent-answer', function (req, res) {
@@ -1206,7 +1233,7 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/who-2-represent-answer
   if (who2represent == "[Waste receiver name 1]"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1//next-activity')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity')
   }
@@ -1214,7 +1241,7 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/who-2-represent-answer
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity'
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity-answer'
 router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity-answer', function (req, res) {
 
   // Make a variable and give it the value
@@ -1231,6 +1258,33 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity-answ
 
   } else if (nextActivity == "Update spreadsheet"){
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/spreadsheet-update')
+
+  } else if (nextActivity == "Choose another waste receiver in my account"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/2-orgs-services-added')
+
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/account-type')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/next-activity-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/next-activity-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var nextActivity = req.session.data['Next activity']
+
+  // Check whether the variable matches
+  if (nextActivity == "Connect your software"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/spreadsheet-upload')
+
+  } else if (nextActivity == "Update spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/spreadsheet-update')
 
   } else if (nextActivity == "Change to a new WR"){
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/2-orgs-services-added')
