@@ -1581,6 +1581,23 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/next-activity-answ
 
 })
 
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/WR1/confirm-spreadsheet-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/confirm-spreadsheet-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var anotherfile = req.session.data['another-file']
+
+  // Check whether the variable matches
+  if (anotherfile == "Yes, add this file"){
+
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/upload-spreadsheet')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/spreadsheet-upload')
+  }
+
+})
+
 // Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V1/S3/WR2/confirm-spreadsheet-answer'
 router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/confirm-spreadsheet-answer', function (req, res) {
 
