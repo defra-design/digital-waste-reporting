@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/layouts/Private-beta/Onboarding/V3/legal-entities-answer" method="post">
+
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#legalentities-1">Select Yes to add another waste receiver to your account?</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-form-group govuk-form-group--error">
+          <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Would you like to add another waste receiver to your account?
+              </h1>
+            </legend>
+
+
+
+            <p id="whereDoYouLive-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select Yes to add another waste receiver to your account?
+              </p>
+
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="legalentities-1" name="legalentities" type="radio" value="Yes add another" aria-describedby="signIn-item-hint">
+                <label class="govuk-label govuk-radios__label" for="legalentities-1">
+                  Yes
+                </label>
+
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="legalentities-2" name="legalentities" type="radio" value="No don't add another" aria-describedby="signIn-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="legalentities-2">
+                  No
+                </label>
+
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </div>
+    </div>
+
+  {% endblock %}
