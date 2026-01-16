@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      We have disabled this code
+    </h3>
+    <p class="govuk-body">The code <strong>af552bd3-f929-4924-a86d-d8e4f0cb8d61</strong> cannot be used to send any new waste movements.</p>
+  </div>
+</div>
+        
+        <span class="govuk-caption-xl">[Waste receiving organisation or business name]</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Your API code</h1>
+
+      </div>
+
+      <div class="govuk-grid-column-full">
+        
+        <p class="govuk-body govuk-!-margin-top-4">You have no API codes </p> 
+
+        <button type="submit" class=" govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+            Create new code
+        </button>
+
+
+        <div class="govuk-summary-card govuk-!-margin-top-4 govuk-!-padding-bottom-4">
+
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  API code 1
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  af552bd3-f929-4924-a86d-d8e4f0cb8d61
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <strong class="govuk-tag govuk-tag--orange">Disabled</strong><a class="govuk-link govuk-!-margin-left-5" href="#">Activate<span class="govuk-visually-hidden"> this API code</span></a>
+                </dd>
+              </div>
+
+            </dl>
+          </div>
+        </div>
+
+
+
+        <p class="govuk-body govuk-!-padding-top-4">
+          <a href="/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity" class="govuk-link govuk-link--no-visited-state">Return to [Waste receiving organisation or business name]</a>
+        </p>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

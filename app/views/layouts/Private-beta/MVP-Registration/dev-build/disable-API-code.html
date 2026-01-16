@@ -1,0 +1,92 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-xl">[Waste receiving organisation or business name]</span>
+
+      <h1 class="govuk-heading-l">Disable this API code?</h1>
+
+      <p class="govuk-body">Once you agree this code <strong>af552bd3-f929-4924-a86d-d8e4f0cb8d61</strong> will no longer work.</p>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+                  You will not be able to use this code to send any new waste movements.
+              </strong>
+      </div>
+
+      <form class="form" action="/layouts/Private-beta/Waste-movements/V1/API/delete-API-code-answer" method="post">
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+                Do you still want to continue?
+              </h2>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yes-delete" name="Apidelete" type="radio" value="Yes" aria-describedby="signIn-item-hint">
+              <label class="govuk-label govuk-radios__label" for="yes-delete">
+                  Yes
+                </label>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="do-not-delete" name="Apidelete" type="radio" value="No" aria-describedby="signIn-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="do-not-delete">
+                  No
+                </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
