@@ -39,22 +39,20 @@
     <div class="govuk-form-group">
 
       <div class="govuk-grid-column-two-thirds">
-        
-        <span class="govuk-caption-l">[Waste receiving organisation or business name]</span>    
+
+        <span class="govuk-caption-l">[Waste receiving organisation or business name]</span>
         <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Your API code</h1>
 
       </div>
 
       <div class="govuk-grid-column-full">
-        
-        <form method="post" action="#">
 
         <div class="govuk-summary-card govuk-!-margin-top-4 govuk-!-padding-bottom-4">
 
           <div class="govuk-summary-card__content">
             <dl class="govuk-summary-list">
 
-              <div class="govuk-summary-list__row">
+                            <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   API code 1
                 </dt>
@@ -62,32 +60,57 @@
                   af552bd3-f929-4924-a86d-d8e4f0cb8d61
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <button type="submit" class="govuk-button" data-module="govuk-button">
-                      Copy
-                  </button>
-                  <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-left-3" data-module="govuk-button">
-                      Disable
-                  </button>
+                  <strong class="govuk-tag govuk-tag--orange">Disabled</strong>
                 </dd>
               </div>
 
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  [Waste receiving organisation or business name]_Code 1
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> the reference for the API code</span></a>
-                </dd>
-              </div>
 
             </dl>
           </div>
         </div>
 
-        </form>
+        <div class="govuk-summary-card govuk-!-margin-top-4 govuk-!-padding-bottom-4">
+
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-padding-top-6">
+                  API code 2
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  ch552fj3-E9456-4924-a86d-X2e4f0cb8d4
+                </dd>
+                <dd class="govuk-summary-list__actions">
+
+                  <form method="post" action="/layouts/Private-beta/Waste-movements/V1/API/view-your-API-answer">
+
+                    <button type="submit" class="govuk-button"  id="copybutton" data-module="govuk-button" name="buttonChoice" value="Copy">
+                      Copy
+                  </button>
+                    <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-left-3" id="deletebutton" data-module="govuk-button" name="buttonChoice" value="Delete">
+                      Disable
+                  </button>
+
+                  </form>
+                </dd>              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-padding-top-6">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [Waste receiving organisation or business name]_code 2
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/layouts/Private-beta/Onboarding/V3/J2/change-ref-1">Change<span class="govuk-visually-hidden"> the reference for the API code</span></a>
+                </dd>
+              </div>
+
+
+            </dl>
+          </div>
+        </div>
 
         <h3 class="govuk-!-padding-top-4 govuk-heading-m">Do you need to create an additional API code?</h3>
 
@@ -102,7 +125,6 @@
         <p class="govuk-body govuk-!-padding-top-4">
           <a href="/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity" class="govuk-link govuk-link--no-visited-state">Return to [Waste receiving organisation or business name]</a>
         </p>
-
 
       </div>
 
