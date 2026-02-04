@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+      classes: "govuk-!-margin-bottom-2",
+      serviceName: "Report receipt of waste",
+      serviceUrl: "#"
+    }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back to Waste receiving account</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">
+          <span class="govuk-caption-l">Joe B Waste Services England</span>
+          <h1 class="govuk-heading-l">
+            Add another organisation 
+            </h1>
+
+          <p class="govuk-body">
+            If you operate more than one organisation that receives waste, you can add them all to the same Defra account.
+            </p>
+
+          <p class="govuk-body">
+            After you have registered your second organisation, you will see a page confirming it has been added to your Defra account.
+            </p>
+
+          <p class="govuk-body">
+            In the 'What you can do next' section, you will be shown two options.
+            </p>
+
+
+          <p class="govuk-body">
+            <strong> You must </strong> select 'Report receipt of waste' to register your organisations.
+            </p>
+
+          <p class="govuk-body">
+            <strong> Do not </strong> select 'Continue without registering a service'.
+            </p>
+
+          <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S1/WR2/account-type">
+
+            <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+              Continue
+              </button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  {% endblock %}

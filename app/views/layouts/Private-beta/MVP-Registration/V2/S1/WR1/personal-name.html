@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+    </span>
+      <h1 class="govuk-heading-l">What's your name?</h1>
+
+
+      <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S1/WR1/personal-contact">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="defaultFirstName">
+            First name
+          </label>
+
+          <input class="govuk-input govuk-!-width-three-quarters" id="defaultFirstName" name="defaultFirstName" type="text">
+
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="defaultSurname">
+            Last name
+          </label>
+
+          <input class="govuk-input govuk-!-width-three-quarters" id="defaultSurname" name="defaultSurname" type="text">
+
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

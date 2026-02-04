@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+        
+        <span class="govuk-caption-l">Joe B Waste Services</span>    
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Your API code</h1>
+
+      </div>
+
+      <div class="govuk-grid-column-full">
+        
+        <form method="post" action="#">
+
+        <div class="govuk-summary-card govuk-!-margin-top-4 govuk-!-padding-bottom-4">
+
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  API code
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  af552bd3-f929-4924-a86d-d8e4f0cb8d61
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <button type="submit" class="govuk-button" data-module="govuk-button">
+                      Copy
+                  </button>
+                  <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-left-3" data-module="govuk-button">
+                      Disable
+                  </button>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Joe B Waste Services_Code 1
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> the reference for the API code</span></a>
+                </dd>
+              </div>
+
+            </dl>
+          </div>
+        </div>
+
+        </form>
+
+        <h3 class="govuk-!-padding-top-4 govuk-heading-m">Do you need to create an additional API code?</h3>
+
+        <p class="govuk-body">
+            If you work with multiple software providers, you should give each one an API code.
+        </p>
+
+        <button type="submit" class=" govuk-button govuk-button--secondary" data-module="govuk-button">
+            Create additional code
+        </button>
+        
+        <p class="govuk-body govuk-!-padding-top-4">
+          <a href="/layouts/Private-beta/MVP-Registration/V2/S1/WR1/wr1-account" class="govuk-link govuk-link--no-visited-state">Return to Joe B Waste Services</a>
+        </p>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

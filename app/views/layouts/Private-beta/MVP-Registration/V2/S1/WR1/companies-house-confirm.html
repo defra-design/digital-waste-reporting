@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+    </span>
+      <h1 class="govuk-heading-l">Is this your business?</h1>
+
+      <div class="govuk-inset-text">
+        <p class="govuk-body">Joe B Waste Services
+			  <br>1 Sample Street	
+			  <br>Sample Town
+			  <br>Sampleshire
+			  <br>United Kingdom
+			  <br>AB12 3CD
+        </div>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">The address is not correct</span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">We must use the address that is registered with Companies House.</p>
+          <p class="govuk-body">If your registered address has changed then you must <a class="govuk-link" rel="noreferrer noopener" href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet">tell Companies House (opens in new tab)</a>.</p>
+          <p class="govuk-body">Once Companies House have updated your details you can return and continue your registration providing it is within 3 days of your last login.</p>
+        </div>
+      </details>
+
+      <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S1/WR1/companies-contact">
+
+        <input type="text" class="govuk-visually-hidden" name="registrationConfirmedAddress" id="registrationConfirmedAddress" value="Yes">
+
+        <div class="govuk-button-group">
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Confirm and continue
+          </button>
+
+          <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link">This is not the right business</a>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

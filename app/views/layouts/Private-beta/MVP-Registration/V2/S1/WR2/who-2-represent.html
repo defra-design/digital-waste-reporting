@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <div class="login-nav">
+    <ul class="login-nav__list">
+      <li class="login-nav__list-item">
+			
+						
+				[Your name] |</li>
+
+      <li class="login-nav__list-item">
+        <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+      <li class="login-nav__list-item">
+        <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+      </li>
+    </ul>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/layouts/Private-beta/MVP-Registration/V1/S1/who-2-represent-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Who do you want to represent?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-2-represent-1" name="Who-2-represent" type="radio" value="[Waste receiver name 1]" aria-describedby="signIn-item-hint">
+                <label class="govuk-label govuk-radios__label" for="who-2-represent-1">
+                  Joe B Waste Services England
+                </label>
+
+              </div>
+              {# <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="who-2-represent-2" name="Who-2-represent" type="radio" value="[Waste receiver name 2]" aria-describedby="signIn-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="who-2-represent-2">
+                  Joe B Recycling Ltd
+                </label>
+              </div> #}
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <a class="govuk-link" href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet">An organisation not listed</a>
+        </div>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Need more help
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Contact [Service name] by phone or email.</p>
+            <p class="govuk-body">Telephone:<br>
+                [Service telephone number]</p>
+            <p class="govuk-body">Email:<br>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">[Service email]</a>
+            </p>
+            <p class="govuk-body">Service opening times:<br>
+               [Service Opening Hours], except public holidays</p>
+            <p class="govuk-body">
+              <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Find out about call charges (opens in new tab)</a>
+            </p>
+            <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener"></a>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+  {% endblock %}
