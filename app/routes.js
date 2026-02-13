@@ -1707,8 +1707,8 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/who-2-represent-an
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S1/WR1/manage-account-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/manage-account-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S2/WR1/manage-account-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/manage-account-answer', function (req, res) {
 
   // Make a variable and give it the value
   var manageAccount = req.session.data['manageAccount']
@@ -1717,9 +1717,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/manage-account-ans
   if (manageAccount == "Add another organisation"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR2/add-organisation')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/add-organisation')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/add-team-member-to-org')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/add-team-member-to-org')
   }
 
 })
@@ -1793,4 +1793,113 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/waste-movements-an
 
 })
 
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S2/WR2/account-type-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/account-type-answer', function (req, res) {
 
+  // Make a variable and give it the value
+  var BusinessorOrganisation = req.session.data['Business or organisation']
+
+  // Check whether the variable matches
+  if (BusinessorOrganisation == "Business"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/uk-org')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/no-design-yet')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S2/WR2/uk-org-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/uk-org-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var tradeuk = req.session.data['trade-uk']
+
+  // Check whether the variable matches
+  if (tradeuk == "Limited company"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/companies-house')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/no-design-yet')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S2/WR2/companies-house-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/companies-house-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var companiesHouse = req.session.data['companiesHouse']
+
+  // Check whether the variable matches
+  if (companiesHouse == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/companies-house-number')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/no-design-yet')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S2/who-2-represent-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V2/S2/who-2-represent-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var who2represent = req.session.data['Who-2-represent']
+
+  // Check whether the variable matches
+  if (who2represent == "[Waste receiver name 1]"){
+
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/wr1-account')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/wr1-account-2')
+  }
+
+})
+
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S2/WR2/waste-movements-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/waste-movements-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var wasteMovements = req.session.data['wasteMovements']
+
+  // Check whether the variable matches
+  if (wasteMovements == "api-code"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/view-your-API')
+
+  } else if (wasteMovements == "upload-spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/spreadsheet-upload')
+
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/spreadsheet-update')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S3/who-2-represent-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V2/S3/who-2-represent-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var who2represent = req.session.data['Who-2-represent']
+
+  // Check whether the variable matches
+  if (who2represent == "[Waste receiver name 1]"){
+
+  // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/wr1-account')
+  } else {
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/wr1-account-2')
+  }
+
+})

@@ -42,32 +42,46 @@
 
         <span class="govuk-caption-l">
           <span class="govuk-caption-l">Joe B Waste Services</span>
-          <h1 class="govuk-heading-l">
-            Add a team member 
-            </h1>
+        </span>
 
-          <p class="govuk-body">
-            If you need to give colleagues access to the organisation's account, you can add them by selecting 'Add team member' from the 'Manage team access' section.  
-            </p>
+        <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S1/WR1/waste-movements-answer">
 
-          <p class="govuk-body">
-            You will need to provide their email address before you start. 
-            </p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-          <p class="govuk-body">
-            To return to our service, select 'Account home' then search for 'Report receipt of waste' under the 'Your services' section. 
-            </p>
+          {{ govukRadios({
+          classes: "govuk-radios",
+          name: "wasteMovements",
+          value: data['wasteMovements'],
+          fieldset: {
+          legend: {
+          text: "Waste movements",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+            value: "connect-api-code",
+            text: "Connect software to the API"
+            },
+            {
+              value: "upload-spreadsheet",
+              text: "Upload a spreadsheet"
+              },
+              {
+            value: "update-spreadsheet",
+            text: "Update a spreadsheet that has a waste tracking ID"
+            }
+              ]
+              }) }}
 
-          <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S1/WR1/manage-1st-org">
+          {{ govukButton({
+            classes: "govuk-!-margin-top-6",
+                  text: "Continue"
+                  }) }}
 
-            <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
-              Continue
-              </button>
+        </form>
 
-          </form>     
-
-        </div>
       </div>
-    </div>
 
-  {% endblock %}
+    {% endblock %}
