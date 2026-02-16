@@ -1776,8 +1776,8 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/added-team-confirm
 
 })
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S1/WR1/waste-movements-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/waste-movements-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S2/WR1/waste-movements-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/waste-movements-answer', function (req, res) {
 
   // Make a variable and give it the value
   var wasteMovements = req.session.data['wasteMovements']
@@ -1786,9 +1786,16 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/waste-movements-an
   if (wasteMovements == "api-code"){
     
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/view-your-API')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/view-your-API')
+
+      } else if (wasteMovements == "download-spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/spreadsheet-download')
+
+      } else if (wasteMovements == "upload-spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/spreadsheet-upload')
+
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/spreadsheet-upload')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/spreadsheet-update')
   }
 
 })
@@ -1846,8 +1853,8 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/companies-house-an
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S2/who-2-represent-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V2/S2/who-2-represent-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S2/WR1/who-2-represent-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/who-2-represent-answer', function (req, res) {
 
   // Make a variable and give it the value
   var who2represent = req.session.data['Who-2-represent']
@@ -1856,9 +1863,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/who-2-represent-answer
   if (who2represent == "[Waste receiver name 1]"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/wr1-account')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/wr1-account')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/wr1-account-2')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/wr-account')
   }
 
 })
@@ -1873,11 +1880,14 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/waste-movements-an
 
   // Check whether the variable matches
   if (wasteMovements == "api-code"){
-  
+    
   // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/view-your-API')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/view-your-API')
 
-  } else if (wasteMovements == "upload-spreadsheet"){
+      } else if (wasteMovements == "download-spreadsheet"){
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/spreadsheet-download')
+
+      } else if (wasteMovements == "upload-spreadsheet"){
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/spreadsheet-upload')
 
   } else {
@@ -1887,8 +1897,8 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/waste-movements-an
 })
 
 
-// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S3/who-2-represent-answer'
-router.post('/layouts/Private-beta/MVP-Registration/V2/S3/who-2-represent-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Private-beta/MVP-Registration/V2/S2/WR2/who-2-represent-answer'
+router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/who-2-represent-answer', function (req, res) {
 
   // Make a variable and give it the value
   var who2represent = req.session.data['Who-2-represent']
@@ -1897,9 +1907,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S3/who-2-represent-answer
   if (who2represent == "[Waste receiver name 1]"){
 
   // Send user to
-    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/wr1-account')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/wr1-account')
   } else {
-    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/wr1-account-2')
+    res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/wr2-account')
   }
 
 })

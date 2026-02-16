@@ -1,3 +1,4 @@
+{% extends "layouts/main.html" %}
 {% extends "/layouts/main.html" %}
 
 {% block header %}
@@ -35,41 +36,24 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
 
-      <form class="form" action="/layouts/Private-beta/MVP-Registration/V1/S1/WR1/permit-uk-answer" method="post">
+      <div class="govuk-grid-column-two-thirds">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        <span class="govuk-caption-l">Joe B Waste Services</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Download Receipt of waste spreadsheet</h1>
 
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "UK permit",
-          value: data['UK permit'],
-          fieldset: {
-          legend: {
-          text: "Do you operate one or more licensed or permitted waste receiving sites?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-          }
-          },
-          items: [
-          {
-            value: "Yes",
-            text: "Yes"
-            },
-            {
-              value: "No",
-              text: "No"
-              }
-              ]
-              }) }}
+        <p class="govuk-body govuk-!-margin-top-4">If you do not have the software needed to use the API, download the spreadsheet to report your waste.</p>
 
-        {{ govukButton({
-                  text: "Continue"
-                  }) }}
+          <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+            Download spreadsheet
+            </button>
+ 
+        <p class="govuk-body govuk-!-padding-top-4">
+          <a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR1/wr1-account" class="govuk-link govuk-link--no-visited-state">Return to Joe B Waste Services</a>
+        </p>
 
       </div>
     </div>
 
-
-{% endblock %}
+  {% endblock %}
