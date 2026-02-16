@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">[Waste receiving organisation or business name]</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Download Receipt of waste spreadsheet</h1>
+
+        <p class="govuk-body govuk-!-margin-top-4">If you do not have the software needed to use the API, download the spreadsheet to report your waste.</p>
+
+          <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+            Download spreadsheet
+            </button>
+ 
+        <p class="govuk-body govuk-!-padding-top-4">
+          <a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR1/wr1-account" class="govuk-link govuk-link--no-visited-state">Return to [Waste receiving organisation or business name]</a>
+        </p>
+
+      </div>
+    </div>
+
+  {% endblock %}

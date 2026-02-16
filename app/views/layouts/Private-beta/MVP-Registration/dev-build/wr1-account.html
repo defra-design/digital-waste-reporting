@@ -29,7 +29,7 @@
     html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
   }) }}
 
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  {# <a class="govuk-back-link" href="javascript:history.back()">Back</a> #}
 
 {% endblock %}
 
@@ -39,15 +39,12 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S1/WR1/who-2-represent">
 
         <button type="submit" class="govuk-button govuk-button--secondary" id="deletebutton" data-module="govuk-button" name="buttonChoice" value="Delete">
             Switch organisation
             </button>
 
-      </form>
-
-      <span class="govuk-caption-l">Joe B Waste Services</span>
+      <span class="govuk-caption-l">[Waste receiving organisation or business name]</span>
       <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Waste receiving account</h1>
 
     </div>
@@ -61,7 +58,7 @@
             <a href=""></a>
             <div class="govuk-card__content">
               <h3 class="govuk-heading-m">
-                <a href="/layouts/Private-beta/MVP-Registration/V2/S1/WR1/waste-movements" class="govuk-link--no-visited-state">Waste movements</a>
+                <a href="#" class="govuk-link--no-visited-state">Report receipt of waste</a>
               </h3>
               {# <p class="govuk-!-font-weight-bold govuk-!-font-size-48 govuk-!-font-weight-bold">0</p> #}
             </div>

@@ -42,10 +42,10 @@
       <div class="govuk-grid-column-two-thirds">
 
         <span class="govuk-caption-l">
-        <span class="govuk-caption-l">Joe B Waste Services</span>
+        <span class="govuk-caption-l">[Waste receiving organisation or business name]</span>
         </span>
 
-        <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S1/WR1/waste-movements-answer">
+        <form method="post" action="#">
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -55,7 +55,7 @@
           value: data['wasteMovements'],
           fieldset: {
           legend: {
-          text: "Waste movements",
+          text: "Report receipt of waste",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
           }
@@ -66,8 +66,16 @@
             text: "Manage my API code"
             },
             {
+              value: "download-spreadsheet",
+              text: "Download spreadsheet template"
+              },
+              {
               value: "upload-spreadsheet",
               text: "Upload a spreadsheet"
+              },
+            {
+              value: "update-spreadsheet",
+              text: "Update a spreadsheet that has a Waste tracking ID"
               }
               ]
               }) }}
