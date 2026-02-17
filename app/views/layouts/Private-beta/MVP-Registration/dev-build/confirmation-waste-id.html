@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Spreadsheet check complete
+          </h1>
+      </div>
+
+      <p class="govuk-body govuk-!-padding-top-5">We have checked your spreadsheet and found no errors.</p>
+
+      <p class="govuk-body">We have added a unique Waste Tracking ID reference to each of your movements inside the spreadsheet.</p>
+
+      <p class="govuk-body">You will need the Waste Tracking ID reference if you need to update a movement.</p>
+
+      <p class="govuk-body">We recommend saving this spreadsheet for your records.</p>
+
+
+
+        <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+            Save your file
+          </button>
+
+
+
+      <p class="govuk-body govuk-!-padding-top-4">
+        <a href="/layouts/Private-beta/MVP-Registration/V1/S3/WR1/next-activity" class="govuk-link govuk-link--no-visited-state">Return to [Waste receiving organisation or business name]</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
