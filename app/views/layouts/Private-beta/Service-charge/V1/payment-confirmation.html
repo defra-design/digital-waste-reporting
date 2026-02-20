@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Payment confirmation
+          </h1>
+        <div class="govuk-panel__body">
+            Your payment reference<br>
+          <strong>HDJ2123F</strong>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-4">Payment summary</h2>
+
+      <table class="govuk-table"></thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Payment for</th>
+          <td class="govuk-table__cell">Report receipt of waste annual service charge</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Organisation</th>
+          <td class="govuk-table__cell">[Waste receiving organisation or business name]</td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total amount</th>
+          <td class="govuk-table__cell">£26.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-4">What happens next</h2>
+
+      <p class="govuk-body">You will receive an email confirming your payment.</p>
+
+
+  <p class="govuk-body">
+      You can now use the service to report your waste movements.
+    </p>
+
+
+
+      <p class="govuk-body govuk-!-padding-top-4">
+        <a href="/layouts/Private-beta/Service-charge/V1/wr1-account-paid" class="govuk-link govuk-link--no-visited-state">Return to [Waste receiving organisation or business name]waste receiving account</a>
+      </p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row govuk-!-padding-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Confirm payment</h1>
+
+      <div class="pay-card govuk-card--contained">
+
+        <h2 class="govuk-heading-m">
+          Payment summary
+        </h2>
+
+        <p class="govuk-body">Annual service charge</p>
+
+        <p class="govuk-body govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">Total amount</p>
+
+        <h3 class="govuk-heading-l govuk-!-padding-top-0 govuk-!-margin-bottom-0">
+          £26.00
+        </h3>
+
+      </div>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Card number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            &#42&#42&#42&#42&#42&#42&#42&#42&#42&#42&#42&#42&#42 123
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expiry date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            05/27
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name on card
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Joe Bloggs
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Billing address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">1 Sample Street<br>
+            Sample town<br>
+            Sampleshire<br>
+            AB12 3CD</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Confirmation email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">jo.bloggs@gmail.com</p>
+          </dd>
+        </div>
+      </dl>
+
+      <form class="form" action="/layouts/Private-beta/Service-charge/V1/payment-confirmation" method="post">
+
+        <div class="govuk-button-group govuk-!-padding-top-3">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Confirm payment
+          </button>
+
+        </div>
+
+        <a class="govuk-link" href="#">Cancel payment</a>
+
+      </form>
+    </div>
+
+  {% endblock %}
