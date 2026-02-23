@@ -20,7 +20,6 @@
   html: 'This is a prototype. It is not a real service.'
 }) }}
 
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
 {% endblock %}
 
@@ -30,16 +29,6 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">Pay the annual report receipt of waste service charge</h1>
-
-      <div class="govuk-warning-text govuk-!-padding-top-2">
-
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-visually-hidden">Warning</span>
-          You will need to pay the annual service charge to report your waste movements.
-        </strong>
-      </div>
 
       <p class="govuk-body">
 
@@ -56,7 +45,17 @@
 
         </ul>
 
-        <form class="form" action="/layouts/Private-beta/Service-charge/V1/pay-service-charge" method="post">
+      <div class="govuk-warning-text govuk-!-padding-top-4">
+
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You will not be able to use this service to report your waste movements until you have paid the service charge.
+        </strong>
+      </div>
+
+        <form class="form" action="/layouts/Private-beta/Service-charge/V1/review-payment" method="post">
 
           <div class="govuk-button-group govuk-!-margin-top-8">
             <button type="submit" class="govuk-button" data-module="govuk-button">
