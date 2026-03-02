@@ -1,0 +1,118 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+      classes: "govuk-!-margin-bottom-2",
+      serviceName: "Report receipt of waste",
+      serviceUrl: "#"
+    }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-!-margin-bottom-6 govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S3/WR1/who-2-represent">
+
+        <button type="submit" class="govuk-button govuk-button--secondary" id="deletebutton" data-module="govuk-button" name="buttonChoice" value="Delete">
+            Switch organisation
+            </button>
+
+      </form>
+
+      <span class="govuk-caption-l">[Waste receiving organisation or business name]</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Waste receiving account</h1>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-grid-row govuk-!-margin-top-8">
+
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-card govuk-card--contained">
+            <a href=""></a>
+            <div class="govuk-card__content">
+              <h3 class="govuk-heading-m">
+                <a href="/layouts/Private-beta/MVP-Registration/V2/S3/WR1/waste-movements" class="govuk-link--no-visited-state">Report receipt of waste</a>
+              </h3>
+            </div>
+            <div class="govuk-card__actions">
+              <ul class="govuk-list">
+                <li>
+                  <a href="/layouts/Private-beta/Web-form/Idea-B/J1/your-templates" class="govuk-link--no-visited-state"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-card govuk-card--contained">
+            <a href=""></a>
+            <div class="govuk-card__content">
+
+              <h3 class="govuk-heading-m">
+                <a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR1/manage-account" class="govuk-link--no-visited-state">Manage account</a>
+              </h3>
+
+            </div>
+            <div class="govuk-card__actions">
+              <ul class="govuk-list">
+                <li>
+                  <a href="/layouts/Private-beta/Web-form/Idea-B/J1/waste-sites-paid" class="govuk-link--no-visited-state"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-card govuk-card--contained">
+            <a href=""></a>
+            <div class="govuk-card__content">
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-3">Service charge
+                                  </h3>
+            </div>
+            <div class="govuk-card__actions">
+              <strong class="first-capital govuk-tag govuk-tag--yellow govuk-!-margin-bottom-2">
+                    Due October 2026
+                    </strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Pay the annual report receipt of waste service charge</h1>
+
+      <p class="govuk-body">
+
+        <p class="govuk-body">
+          The cost is £26 per organisation.</p>
+
+        <p class="govuk-body">To pay for the service charge, you will need:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li>a credit or debit card</li>
+
+          <li>an email address to receive the payment confirmation</li>
+
+        </ul>
+
+      <div class="govuk-warning-text govuk-!-padding-top-4">
+
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You will not be able to use this service to report your waste movements until you have paid the service charge.
+        </strong>
+      </div>
+
+        <form class="form" action="/layouts/Private-beta/Service-charge/V2/review-payment" method="post">
+
+          <div class="govuk-button-group govuk-!-margin-top-8">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Pay service charge
+              </button>
+            <a class="govuk-link" href="/layouts/Private-beta/Service-charge/V2/wr1-account-due">Cancel</a>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  {% endblock %}

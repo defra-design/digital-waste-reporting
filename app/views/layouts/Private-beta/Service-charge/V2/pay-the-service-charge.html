@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Report receipt of waste
+{% endset%}
+
+{# {% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %} #}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">You need to pay the annual service charge</h1>
+
+      <p class="govuk-body">
+          You must pay the service charge before you can report your waste movements.
+          </p>
+
+      <form class="form" action="/layouts/Private-beta/Service-charge/V1/service-charge" method="post">
+
+        <div class="govuk-button-group govuk-!-margin-top-8">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+              Pay service charge
+              </button>
+          <a class="govuk-link" href="/layouts/Private-beta/Service-charge/V1/wr1-account-due">Cancel</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
