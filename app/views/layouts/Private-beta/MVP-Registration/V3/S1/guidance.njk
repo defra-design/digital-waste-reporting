@@ -1,0 +1,340 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Reporting receipt of waste &#8211; Guidance
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Environmemnt</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Waste management</a>
+      </li>
+      {# <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">TBC</a>
+      </li> #}
+    </ol>
+  </nav>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-l">
+        Report receipt of waste 
+      </h1>
+
+      <p class="govuk-body-l govuk-!-margin-bottom-6">
+          From October 2026 &#40;January 2027 in Scotland&#41;, all organisations that are licensed or permitted to receive waste must use the new Report receipt of waste service.        
+          </p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body-s">
+        From: <a href="#">Department for Environment, Food and Rural Affairs</a>
+      </a>
+      <br>Published 25 June 2025<br/>
+        Last updated 10 February 2026 - <a href="#">See all updates</a>
+    </p>
+
+    <!-- Grey box -->
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+    {{ govukButton({
+        text: "Get emails about this page",
+        href: "#",
+        classes: "govuk-button--secondary"
+      }) }}
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+    <!-- Contents -->
+
+    <div id="contents" data-module="contents-list-with-body" class="gem-c-contents-list-with-body" data-contents-list-with-body-module-started="true">
+      <div class="gem-c-contents-list-with-body__list-container">
+        <nav data-module="ga4-link-tracker" aria-label="Contents" class="gem-c-contents-list govuk-!-margin-bottom-4" data-ga4-link-tracker-module-started="true">
+
+          <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+            <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+              <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+            Contents
+          </h2>
+              <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+                  <a href="#Who-can-use-the-service">
+               Who can use the service
+              </a>
+                </li>
+                                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+                  <a href="#Who-can-use-the-service">
+                How to access the service
+              </a>
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#">
+                Sending your data   
+              </a>
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#">
+                Timeline for reporting  
+              </a>
+                </li>
+
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#">
+                What data to submit 
+              </a>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#">
+                Adding organisations to your account 
+              </a>
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#">
+                How much it will cost 
+              </a>
+                </li>
+              </li>
+              <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                <a href="#Get-help">
+                Get help 
+              </a>
+              </li>
+
+            </ol>
+          </nav>
+        </aside>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+        {{ govukButton({
+        text: "Print this page",
+        href: "#",
+        classes: "govuk-button--secondary"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+        <h2 id="Who-can-use-the-service" class="govuk-heading-m">
+          How to access the service
+          </h2>
+
+        <p class="govuk-body">Your organisation must have a Defra account to use the Report receipt of waste service.</p>
+
+        <p class="govuk-body">You will need to:</p>
+        <ul class="govuk-list govuk-list--number">
+          <li>Create a Government Gateway or OneLogin account for your organisation or sign in if you already have one.</li>
+          <li>Use your organisation's Government Gateway or OneLogin ID to register for a Defra account.</li>
+          <li>Pay the service charge &#40;not due until October 2026&#41;</li>
+        </ul>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+              Do not use a personal Government Gateway account for this service. 
+          </strong>
+        </div>
+        
+        <a href="/layouts/Private-beta/MVP-Registration/V2/S1/sign-in" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+          Start now
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </a>
+
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+        <h2 id="How-to-send-your-data" class="govuk-heading-m">
+          Sending your data
+          </h2>
+
+        <p class="govuk-body">There are two ways you can report your receipt of waste:</p>
+
+        <ul class="govuk-list govuk-list--number">
+          <li>Using an application programming interface &#40;API&#41;.</li>
+          <li>Completing and uploading a spreadsheet.</li>
+        </ul>
+
+        <p class="govuk-body">You do not have to choose one method &#8211; you can submit your data using a combination of the API and spreadsheet.</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+        <h2 id="How-to-send-your-data" class="govuk-heading-m">
+          API
+          </h2>
+
+        <p class="govuk-body">An API allows different software systems to connect to each other so they can securely exchange data.</p>
+
+
+        <h3 id="get-started" class="govuk-heading-s">
+          Connect your waste software to the API 
+          </h3>
+
+        <p class="govuk-body">If you want to use the API, your organisation must have waste specific software. Your software provider will need to connect it to Defra's Receipt of Waste API.</p>
+
+        <p class="govuk-body">There is more information about using and connecting the API in the<a href="https://defra.github.io/waste-tracking-service/api-authentication-guide/" class="govuk-link">software developer guidamce</a>.</p>
+
+        <h3 id="get-started" class="govuk-heading-s">
+         Receiving your API code 
+          </h3>
+
+        <p class="govuk-body">Once you have registered your organisation, you will be given a unique API code. Give this code to your software provider who will apply it to your waste movements.</p>
+
+        <p class="govuk-body">You can use the same API code to send waste movements for every site your organisation operates.</p>
+
+        <p class="govuk-body">If you have more than one organisation on your Defra account, you will receive a unique API code for each one.</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+        <h2 id="get-started" class="govuk-heading-m">
+          Spreadsheet 
+          </h2>
+
+        <p class="govuk-body">If you do not have the software needed to use the API, you can send your data using Defra's Receipt of Waste spreadsheet. </p>
+
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+              You cannot use your own spreadsheet or make format changes to Defra's version. 
+          </strong>
+        </div>
+
+
+        <p class="govuk-body">You will need to:</p>
+
+        <ul class="govuk-list govuk-list--number">
+          <li>Download the spreadsheet template</li>
+          <li>Complete the mandatory data fields</li>
+          <li>Upload the completed spreadsheet</li>
+        </ul>
+
+        <p class="govuk-body">You can add multiple movements to the same spreadsheet - you do not need to download a new spreadsheet for every receipt of waste.
+        </p>
+
+        <p class="govuk-body">If your organisation operates more than one site, you can also add those movements to the same spreadsheet.</p>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+              You cannot use the same spreadsheet for multiple organisations. You will need to download a separate spreadsheet for each one. 
+          </strong>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+        <h2 id="Timeline-for-reporting" class="govuk-heading-m">
+       Timeline for reporting
+      </h2>
+
+        <p class="govuk-body">You must report every receipt of waste. You have two working days from the day after receiving the waste to submit your report.</p>
+
+        <p class="govuk-body">For example, if you receive the waste at 9.00am on Monday you must submit your receipt by the end of Wednesday.</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+        <h2 id="What-data-to-submit" class="govuk-heading-m">
+          What data to submit
+          </h2>
+
+        <p class="govuk-body">For more information on the data you must submit, check the <a href="http://localhost:3000/layouts/Private-beta/MVP-Registration/V2/S1/guidance#">list of data requirements</a>.</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+        <h2 id="Adding-other-waste-receivers-to-your-account" class="govuk-heading-m">
+          Adding other organisations to your account 
+          </h2>
+
+        <p class="govuk-body">If you operate more than one organisation that receives waste &#40;for example a subsidiary business or partnership&#41;, you can add them to the same Defra account.</p>
+
+        <p class="govuk-body">You will need to register each organisation separately before adding them to your account. The annual service charge will apply to each organisation you add.</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+        <h2 id="Pay-the-annual-service-charge" class="govuk-heading-m">
+          How much it will cost
+          </h2>
+
+        <p class="govuk-body">The annual service charge is not due until October 2026. It will cost £26 per year for each organisation on your account.</p>
+
+        <p class="govuk-body">The fee applies to the number of organisations. It does not apply to the number of waste-receiving sites that organisation has.</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+        <h2 id="Report-a-receipt-of-waste" class="govuk-heading-m">
+          Get help 
+          </h2>
+
+        <p class="govuk-body">Contact the support team if you have any questions about the service or if you are having problems using it.</p>
+
+        <p class="govuk-body govuk-!-margin-bottom-2">Email: <a href="mailto:WasteTracking_Testing@defra.gov.uk">WasteTracking_Testing@defra.gov.uk</a>
+        </p>
+
+        <p class="govuk-body">Telephone: 0800 876 6458</p>
+
+        <p class="govuk-body">If you have a question about waste regulation, contact your relevant regulator:</p>
+
+          <h3 id="get-started" class="govuk-heading-s">
+            Regulators
+            </h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li class="govuk-!-padding-bottom-2">
+            <p class="govuk-body govuk-!-margin-bottom-0">England</p>
+            <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link">EA &#38; Environment Agency &#38; business waste and environmental impact</a>
+          </li>
+          <li class="govuk-!-padding-bottom-2">
+            <p class="govuk-body govuk-!-margin-bottom-0">Scotland</p>
+            <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link">SEPA &#38; Scottish Environment Protection Agency &#38; waste information</a>
+          </li>
+          <li class="govuk-!-padding-bottom-2">
+            <p class="govuk-body govuk-!-margin-bottom-0">Wales</p>
+            <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link">Business Cymru Waste Legislation</a>
+          </li>
+          <li class="govuk-!-padding-bottom-2">
+            <p class="govuk-body govuk-!-margin-bottom-0">Northern Ireland</p>
+            <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link">DAERA &#38; Department of Agriculture, Environment and Rural Affairs &#38; waste policy tracker</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="govuk-!-margin-top-8 gem-c-contents-list-with-body__link-container">
+
+        <a class="govuk-link gem-c-back-to-top-link govuk-!-display-none-print" href="#contents">
+          <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+          </svg>
+              Contents
+            </a>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    </div>
+
+  {% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+      classes: "govuk-!-margin-bottom-2",
+      serviceName: "Report receipt of waste",
+      serviceUrl: "#"
+    }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back to Waste receiving account</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">
+          <span class="govuk-caption-l">Joe B Waste Services</span>
+          <h1 class="govuk-heading-l">
+            Add a team member 
+            </h1>
+
+          <p class="govuk-body">
+            If you need to give colleagues access to the organisation's account, you can add them by selecting 'Add team member' from the 'Manage team access' section.  
+            </p>
+
+          <p class="govuk-body">
+            You will need to provide their email address before you start. 
+            </p>
+
+          <p class="govuk-body">
+            To return to our service, select 'Account home' then search for 'Report receipt of waste' under the 'Your services' section. 
+            </p>
+
+          <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S1/WR1/manage-1st-org">
+
+            <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+              Continue
+              </button>
+
+          </form>     
+
+        </div>
+      </div>
+    </div>
+
+  {% endblock %}
