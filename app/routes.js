@@ -1996,3 +1996,7 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S3/WR1/who-2-represent-an
   }
 
 })
+
+// MVP – Registration V3 routes are in a separate file //
+// Load V3 routes
+require('./routes-v3')(router)
