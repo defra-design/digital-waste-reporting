@@ -1,0 +1,127 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+      classes: "govuk-!-margin-bottom-2",
+      serviceName: "Report receipt of waste",
+      serviceUrl: "#"
+    }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-!-margin-bottom-6 govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Joe B Waste Services</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Waste receiving account</h1>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-grid-row govuk-!-margin-top-8">
+
+<div class="govuk-grid-row app-task-cards govuk-!-margin-top-8" data-testid="account-cards">
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card__title-wrapper">
+            <div>
+              <h2 class="govuk-summary-card__title" data-testid="report-waste-heading">
+                Report receipt of waste
+              </h2>
+              <p class="govuk-body-s govuk-!-margin-bottom-0" data-testid="report-waste-description">
+                Upload a spreadsheet or connect your software to report your waste movements
+              </p>
+            </div>
+          </div>
+          <div class="govuk-summary-card__content">
+            <ul class="govuk-list govuk-list--spaced" data-testid="report-waste-links">
+                <li>
+                  <a href="view-your-API" class="govuk-link" data-testid="report-waste-connectYourSoftware-link">
+                    Manage my API code
+                  </a>
+                </li>
+                <li>
+                  <a href="spreadsheet-download" class="govuk-link" data-testid="report-waste-downloadSpreadsheet-link">
+                    Download spreadsheet template
+                  </a>
+                </li>
+                <li>
+                  <a href="spreadsheet-upload" class="govuk-link" data-testid="report-waste-uploadSpreadsheet-link">
+                    Upload a spreadsheet
+                  </a>
+                </li>
+                <li>
+                  <a href="spreadsheet-update" class="govuk-link" data-testid="report-waste-updateSpreadsheet-link">
+                    Upload a spreadsheet that has Waste tracking IDs
+                  </a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card__title-wrapper">
+            <div>
+              <h2 class="govuk-summary-card__title govuk-!-margin-bottom-3" data-testid="service-charge-heading">
+                Service charge
+              </h2>
+              <p class="govuk-body-s govuk-!-margin-bottom-0" data-testid="service-charge-description">
+                Pay your annual service charge to use this service
+              </p>
+            </div>
+            <div class="app-task-cards__status">
+                  <strong class="govuk-tag govuk-tag--yellow" style="white-space: nowrap;" data-testid="service-charge-payment-due">
+                    Due October 2026
+                  </strong>
+            </div>
+          </div>
+          <div class="govuk-summary-card__content">
+                <p class="govuk-body">
+                    The Service charge payment service is not yet available.
+                </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      </div>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">Other registered waste receiving accounts</h2>
+      <p class="govuk-body">You can switch to your other registered waste receiving accounts here</p>
+      <p class="govuk-body"><a href="who-2-represent" class="govuk-link">Switch organisation</a></p>
+      <p class="govuk-body">Or</p>
+      <p class="govuk-body"><a href="add-organisation" class="govuk-link">Add another organisation</a></p>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
