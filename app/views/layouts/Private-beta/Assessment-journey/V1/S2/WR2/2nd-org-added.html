@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">        
+
+        <div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Account has been added
+  </h1>
+  
+</div>
+
+
+        <p class="govuk-body">The account Joe B Recycling Ltd has been added and will now be shown on Your Defra account page.</p>
+
+        <h3 class="govuk-heading-m">Register the account with one of the available services</h3>
+
+        <p class="govuk-body">The following services are available for you to register this account with. To register click the links below.</p>
+
+        <div class="govuk-inset-text">
+        <ul class="govuk-list">
+            <li><a class="govuk-link" href="">IPAFFS</a></li>
+            <li><a class="govuk-link" href="">Exporter Service</a></li>
+            <li><a class="govuk-link" href="">Fish Exports Service</a></li>
+            <li><a class="govuk-link" href="">Record reprocessed or exported packaging waste</a></li>
+            <li><a class="govuk-link" href="">Get permission for marine work</a></li>
+            <li><a class="govuk-link" href="">Apply for a Phytosanitary Certificate</a></li>
+            <li><a class="govuk-link" href="">Certificate Service</a></li>
+            <li><a class="govuk-link" href="">Apply for and manage environmental permissions</a></li>
+            <li><a class="govuk-link" href="">Extended Producer Responsibility Scheme for Packaging</a></li>
+            <li><a class="govuk-link" href="">Nature Restoration Fund Service</a></li>
+            <li><a class="govuk-link" href="/layouts/Private-beta/Assessment-journey/V1/S2/WR1/wr1-account">Report receipt of waste</a></li>
+            <li><a class="govuk-link" href="">Nutrient Management Planning</a></li>
+            <li><a class="govuk-link" href="">Biodiversity Net Gain</a></li>
+            <li><a class="govuk-link" href="">Apply for a CITES Permit</a></li>
+            <li><a class="govuk-link" href="">Core Delivery Platform</a></li>
+            <li><a class="govuk-link" href="">MERMAN+</a></li>
+            <li><a class="govuk-link" href="">Apply for Sustainable Farming INcentive</a></li>
+            <li><a class="govuk-link" href="">Livestock Defra CI</a></li>
+            <li><a class="govuk-link" href="">Test TTP Service</a></li>
+            <li><a class="govuk-link" href="">Taking a pet from great Britain to Northern Ireland</a></li>
+            <li><a class="govuk-link" href="">Surveillance Data Ocrchestration &#40;SDO&#41;</a></li>
+            <li><a class="govuk-link" href="">Spike Intergration Service</a></li>
+            <li><a class="govuk-link" href="">Nutrient Mitagation Scheme</a></li>
+            <li><a class="govuk-link" href="">Livestock Services</a></li>
+            <li><a class="govuk-link" href="">Get permission to move animals under disease controls</a></li>
+        </ul>
+        </div>
+
+
+        <p class="govuk-body"><a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR2/manage-2nd-org" class="govuk-link">Continue without registering this account for a service</a></p>
+ 
+
+  </div>
+</div>
+
+{% endblock %}

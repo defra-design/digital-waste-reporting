@@ -1,0 +1,151 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+    <div class="login-nav">
+        <ul class="login-nav__list">
+            <li class="login-nav__list-item">
+			
+						
+				Your name |</li>
+
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/MVP-Registration/V1/S1/WR1/1-org-service-added" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
+            <li class="login-nav__list-item">
+                <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+{# 
+            <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                        Success
+                        </h2>
+                </div>
+            <div class="govuk-notification-banner__content">
+
+                    <h3 class="govuk-notification-banner__heading">
+                        You have removed Jane Doe.
+                        </h3>
+
+                </div>
+            </div> #}
+
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">Manage team access</h1>
+
+            <a href="/layouts/Private-beta/MVP-Registration/V2/S1/WR1/add-team-member" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+                Add a team member
+                </a>
+
+        </div>
+        
+        <div class="govuk-grid-column-full">
+
+            <table class="govuk-table ">
+
+                <!-- Table header -->
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header column-full" scope="col">Team member</th>
+                        <th class="govuk-table__header column-full" scope="col">Email address</th>
+                        <th class="govuk-table__header column-full" scope="col">Account role</th>
+                        <th class="govuk-table__header column-full" scope="col">Account status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {# <tr class="govuk-table__row no-border">
+                        <td class="govuk-table__cell">Name to be confirmed</td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell">None</td>
+                        <td class="govuk-table__cell">
+                            <strong class="govuk-tag govuk-tag--grey">Invitation email sent</strong>
+                        </td>
+                    </tr> #}
+
+                    <tr class="govuk-table__row no-border">
+                        <td class="govuk-table__cell">
+                            <a href="/account/manage/team/member?teamType=you">&#40;you&#41;</a>
+                        </td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell">Admin</td>
+                        <td class="govuk-table__cell">
+                            <strong class="govuk-tag govuk-tag">Live</strong>
+                        </td>
+                    </tr>
+
+                    <!-- <tr class="govuk-table__row no-border">
+					<td class="govuk-table__cell"><a href="/account/manage/team/member?teamType=other">Sammuel Van Vurren</a></td>
+					<td class="govuk-table__cell">svv@rascals.co.uk</td>
+					<td class="govuk-table__cell">Standard user</td>
+					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag">Active</strong></td>
+				</tr> -->
+
+                </tbody>
+            </table>
+
+            <nav class="govuk-pagination" aria-label="Pagination">
+
+                <ul class="govuk-pagination__list">
+
+                    <li class="govuk-pagination__item govuk-pagination__item--current">
+
+                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+        1
+      </a>
+
+                    </li>
+
+                    <li class="govuk-pagination__item">
+
+                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        2
+      </a>
+
+                    </li>
+
+                    <li class="govuk-pagination__item">
+
+                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+        3
+      </a>
+
+                    </li>
+
+                </ul>
+
+                <div class="govuk-pagination__next">
+                    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+
+                        <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+                        </span>
+
+                        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                        </svg>
+
+                    </a>
+                </div>
+
+            </nav>
+
+        </div>
+    </div>
+
+{% endblock %}
