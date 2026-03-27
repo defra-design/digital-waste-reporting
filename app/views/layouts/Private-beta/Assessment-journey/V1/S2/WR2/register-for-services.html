@@ -1,32 +1,43 @@
-{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
 
-{% set serviceName %}
-  Defra account
-{% endset%}
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Defra account",
+    navigation: [
+    {
+      text: "Joe Bloggs"
+    },
+    {
+      href: "/layouts/Private-beta/MVP-Registration/V2/S2/WR2/2-orgs-added",
+      text: "Manage account",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
 
 {% block beforeContent %}
 
-    <div class="login-nav">
-        <ul class="login-nav__list">
-            <li class="login-nav__list-item">
-			
-						
-				Joe Bloggs |</li>
-
-            <li class="login-nav__list-item">
-                <a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR2/2-orgs-added" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
-            <li class="login-nav__list-item">
-                <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
-            </li>
-        </ul>
-
-    </div>
-
-    <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
 {% endblock %}
 
 {% block content %}
+
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -39,7 +50,7 @@
 
             <ul class="govuk-list govuk-list--bullet">
                 <li>
-                    <a class="govuk-link" href="/layouts/Private-beta/MVP-Registration/V2/S2/WR2/manage-2nd-org-service-added">Report receipt of waste</a>
+                    <a class="govuk-link" href="/layouts/Private-beta/Assessment-journey/V1/S2/WR2/manage-2nd-org-service-added">Report receipt of waste</a>
                 </li>
             </ul>
 

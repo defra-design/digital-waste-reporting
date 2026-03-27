@@ -1,8 +1,21 @@
-{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
 
-{% set serviceName %}
-  Defra account
-{% endset%}
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Defra account",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
 
 {% block beforeContent %}
 
@@ -60,7 +73,7 @@
         </div>
 
 
-        <p class="govuk-body"><a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR2/manage-2nd-org" class="govuk-link">Continue without registering this account for a service</a></p>
+        <p class="govuk-body"><a href="/layouts/Private-beta/Assessment-journey/V1/S2/WR2/manage-2nd-org" class="govuk-link">Continue without registering this account for a service</a></p>
  
 
   </div>

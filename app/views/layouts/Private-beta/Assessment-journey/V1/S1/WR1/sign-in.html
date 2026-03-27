@@ -1,19 +1,23 @@
-{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
 
-{% set serviceName %}
-  Defra account
-{% endset%}
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Defra account",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
 
 {% block beforeContent %}
-
-  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-  {{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype. It is not a real service.'
-}) }}
 
 {% endblock %}
 

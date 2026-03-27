@@ -1,37 +1,36 @@
-{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
 
-{% set serviceName %}
-  Defra account
-{% endset%}
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
 
-{% block beforeContent %}
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
 
-  {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-    {{ govukPhaseBanner({
-    tag: {
-        text: "Prototype"
-        },
-        html: 'This is a prototype. It is not a real service.'
-        }) }} #}
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Defra account",
+    navigation: [
+    {
+      text: "Joe Bloggs"
+    },
+    {
+      href: "/layouts/Private-beta/Assessment-journey/V1/S2/WR2/2-orgs-added",
+      text: "Manage account",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
 
-  <div class="login-nav">
-    <ul class="login-nav__list">
-      <li class="login-nav__list-item">
-			
-						
-				Joe Bloggs |</li>
-
-      <li class="login-nav__list-item">
-        <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
-      <li class="login-nav__list-item">
-        <a href="/layouts/Private-beta/Onboarding/V2/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
-      </li>
-    </ul>
-  </div>
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -40,7 +39,7 @@
 
       <!-- Macro for showing the H1 and section -->
 
-      <h1 class="govuk-heading-xl">Your Defra account</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-top-8">Your Defra account</h1>
 
       <!-- Third party layout -->
 
@@ -136,7 +135,7 @@
 
             <td class="govuk-table__cell">
 
-              <a href="/layouts/Private-beta/Onboarding/V2/defra-id/manage-related-org" class="govuk-link govuk-link--no-visited-state">Manage<span class="govuk-visually-hidden td-header"></span>
+              <a href="/layouts/Private-beta/Assessment-journey/V1/S2/WR2/manage-2nd-org-service-added" class="govuk-link govuk-link--no-visited-state">Manage<span class="govuk-visually-hidden td-header"></span>
               </a>
 
             </td>
@@ -160,7 +159,7 @@
         <div class="govuk-card__content">
           <div class="govuk-grid-column-one-third">
             <div class="govuk-card govuk-card--contained govuk-card--selectable">
-              <a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR2/who-2-represent"></a>
+              <a href="/layouts/Private-beta/Assessment-journey/V1/S2/WR2/who-2-represent"></a>
               <div class="govuk-card__content">
                 <h3 class="govuk-heading-m">Report receipt of waste</h3>
               </div>

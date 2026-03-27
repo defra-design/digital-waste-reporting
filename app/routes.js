@@ -2222,3 +2222,22 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/waste-movements-
   }
 
 })
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Assessment-journey/V1/S2/WR2/who-2-represent-answer'
+router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/who-2-represent-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var who2represent = req.session.data['Who-2-represent']
+
+  // Check whether the variable matches
+  if (who2represent == "[Waste receiver name 1]"){
+
+    // Send user to
+    res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR1/wr1-account')
+
+  } else {
+    res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/wr2-account')
+  }
+
+
+})

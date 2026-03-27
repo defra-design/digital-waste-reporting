@@ -1,25 +1,39 @@
-{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
 
-{% set serviceName %}
-  Defra account
-{% endset%}
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Defra account",
+    navigation: [
+    {
+      text: "Joe Bloggs"
+    },
+    {
+      href: "/layouts/Private-beta/Assessment-journey/V1/S2/WR2/2-orgs-added",
+      text: "Manage account",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
 
 {% block beforeContent %}
 
-    <div class="login-nav">
-        <ul class="login-nav__list">
-            <li class="login-nav__list-item">
-			
-						
-				Your name |</li>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
-            <li class="login-nav__list-item">
-                <a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR2/2-orgs-added" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
-            <li class="login-nav__list-item">
-                <a href="/layouts/Private-beta/MVP-Registration/V2/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
-            </li>
-        </ul>
-    </div>
 {% endblock %}
 
 {% block content %}
@@ -123,7 +137,7 @@
 
                     <h2 class="govuk-heading-l govuk-!-margin-top-7">Your registered services</h2>
 
-                    <form action="/layouts/Private-beta/MVP-Registration/V2/S2/WR2/register-for-services" method="post">
+                    <form action="/layouts/Private-beta/Assessment-journey/V1/S2/WR2/register-for-services" method="post">
 
                         <button type="submit" class="govuk-button" data-module="govuk-button">
                         Register for more services
