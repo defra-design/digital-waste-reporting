@@ -1,20 +1,25 @@
-{% extends "layouts/main.html" %}
 {% extends "/layouts/main.html" %}
 
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
 
   {{ govukHeader({
-    homepageUrl: "#"
-  }) }}
+  homepageUrl: "#"
+}) }}
 
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
   {{ govukServiceNavigation({
-      classes: "govuk-!-margin-bottom-2",
-      serviceName: "Report receipt of waste",
-      serviceUrl: "#"
-    }) }}
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    navigation: [
+    
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
 
 {% endblock %}
 
@@ -32,6 +37,7 @@
 {% endblock %}
 
 {% block content %}
+
 
   <div class="govuk-!-margin-bottom-6 govuk-grid-row">
 
