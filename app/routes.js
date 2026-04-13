@@ -2241,3 +2241,38 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/who-2-represent-
 
 
 })
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Assessment-journey/V1/S2/WR2/view-your-API-answer'
+router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/view-your-API-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var buttonChoice = req.session.data['buttonChoice']
+
+  // Check whether the variable matches
+  if (buttonChoice == "Disable"){
+    
+  // Send user to
+    res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/disable-API-code')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Private-beta/Assessment-journey/V1/S2/WR2/disable-API-code-answer'
+router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/disable-API-code-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var Apidisable = req.session.data['Apidisable']
+  
+  // Check whether the variable matches
+
+  if (Apidisable == "Yes"){
+  
+  // Send user to
+  res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/API-disabled')
+
+  } else {
+    
+    res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/view-your-API')
+  }
+
+})
