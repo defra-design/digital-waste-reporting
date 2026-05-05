@@ -1,0 +1,115 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Digital waste tracking",
+    navigation: [
+    {
+      href: "#",
+      text: "Manage account"
+    },
+
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-!-margin-bottom-6 govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Joe B Waste Services</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Waste tracking account</h1>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-grid-row govuk-!-margin-top-8">
+
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-card govuk-card--contained">
+            <a href=""></a>
+            <div class="govuk-card__content">
+              <h3 class="govuk-heading-m">
+                <a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR1/waste-movements" class="govuk-link--no-visited-state">Report my waste</a>
+              </h3>
+
+              <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-padding-bottom-2">Report your waste collections and receipt of waste via our API.</p>
+
+              <h4 class="govuk-heading-s">
+                <a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR1/waste-movements" class="govuk-link--no-visited-state">Receipt of waste spreadsheet</a>
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-card govuk-card--contained">
+            <a href=""></a>
+            <div class="govuk-card__content">
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-3">Waste records
+              </h3>
+
+              <p class="govuk-body govuk-!-margin-bottom-1 govuk-!-padding-bottom-8">This is where you will be able to view all the movements you have submitted to the Regulators.</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-card govuk-card--contained">
+            <a href=""></a>
+            <div class="govuk-card__content">
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-3">Service charge
+              </h3>
+
+            </div>
+            <div class="govuk-card__actions">
+              <strong class="first-capital govuk-tag govuk-tag--yellow ">
+                    Due October 2026
+                    </strong>
+
+              <p class="govuk-body govuk-!-padding-top-5 govuk-!-margin-bottom-6 govuk-!-padding-bottom-6">The Service charge is currently not available.
+
+            </div>
+
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

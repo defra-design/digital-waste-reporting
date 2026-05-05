@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
+        <span class="govuk-caption-xl">Alpha</span>
+      Collections of waste
+    </h1>
+
+      <p class="govuk-body-l govuk-!-padding-bottom-5">
+        <span class="govuk-body-l govuk-!-font-weight-bold">User group:</span>
+      Carriers, Brokers and Dealers
+    </p>
+      
+      <div class="govuk-card govuk-card--contained govuk-!-margin-top-3">
+
+        <h2 class="govuk-heading-m govuk-!-padding-top-0 govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+        Registration
+      </h2>
+
+        <ul class="govuk-list">
+          <li>
+            <a href="/layouts/Collections/Alpha/Registration/designs" class="govuk-link--no-visited-state">View designs</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  {% endblock %}

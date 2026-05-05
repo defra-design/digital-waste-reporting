@@ -1,0 +1,92 @@
+  {% extends "layouts/main.html" %}
+  {% extends "/layouts/main.html" %}
+
+  {% block header %}
+    {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+    {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+    {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+    {{ govukServiceNavigation({
+      classes: "govuk-!-margin-bottom-2",
+      serviceName: "Report receipt of waste",
+      serviceUrl: "#"
+    }) }}
+
+  {% endblock %}
+
+  {% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+    <a class="govuk-back-link" href="javascript:history.back()">Back to Waste receiving account</a>
+
+  {% endblock %}
+
+  {% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">
+        <span class="govuk-caption-l">Joe B Waste Services</span>
+        </span>
+
+        <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S3/WR1/waste-movements-answer">
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+          classes: "govuk-radios",
+          name: "wasteMovements",
+          value: data['wasteMovements'],
+          fieldset: {
+          legend: {
+          text: "Report receipt of waste",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+            value: "api-code",
+            text: "Manage my API code"
+            },
+            {
+              value: "download-spreadsheet",
+              text: "Download spreadsheet template"
+              },
+              {
+              value: "upload-spreadsheet",
+              text: "Upload a spreadsheet"
+              },
+            {
+              value: "update-spreadsheet",
+              text: "Update a spreadsheet that has a Waste tracking ID"
+              }
+              ]
+              }) }}
+
+          {{ govukButton({
+            classes: "govuk-!-margin-top-6",
+                  text: "Continue"
+                  }) }}
+
+        </form>
+
+      </div>
+
+    {% endblock %}

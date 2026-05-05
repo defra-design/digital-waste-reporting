@@ -2276,3 +2276,81 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/disable-API-code
   }
 
 })
+
+
+
+
+
+// Collections – Alpha //
+
+// V1 routes //
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S1/sign-in-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S1/sign-in-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var oneorgovgateway = req.session.data['signIn']
+
+  // Check whether the variable matches
+  if (oneorgovgateway == "One Login"){
+    
+  // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/onelogin-sign-in')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/govgateway-sign-in')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S1/WR1/account-type-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/account-type-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var BusinessorOrganisation = req.session.data['Business or organisation']
+
+  // Check whether the variable matches
+  if (BusinessorOrganisation == "Business"){
+    
+  // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/uk-org')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/no-design-yet')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S1/WR1/uk-org-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/uk-org-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var tradeuk = req.session.data['trade-uk']
+
+  // Check whether the variable matches
+  if (tradeuk == "Limited company"){
+    
+  // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/companies-house')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/no-design-yet')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S1/WR1/companies-house-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/companies-house-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var companiesHouse = req.session.data['companiesHouse']
+
+  // Check whether the variable matches
+  if (companiesHouse == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/companies-house-number')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/no-design-yet')
+  }
+
+})
