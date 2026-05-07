@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/select-address-charity">
+
+        <span class="govuk-caption-xl">
+          <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+        </span>
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+      What's the postcode for the charity's registered address?
+    </h1>
+        </legend>
+        
+
+        <div class="govuk-form-group">
+
+    <div class="govuk-!-margin-top-8">
+          <input class="govuk-input govuk-input--width-10 govuk-!-display-block" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+        </div>
+
+<div class="govuk-button-group govuk-!-margin-top-6">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Find address
+  </button>
+  <a class="govuk-link" href="#">Enter your address manually
+
+  </a>
+</div>
+
+      </form>
+
+    </div>
+
+  {% endblock %}

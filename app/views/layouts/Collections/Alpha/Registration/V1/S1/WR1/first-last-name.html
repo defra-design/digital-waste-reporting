@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-xl">
+          <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+        </span>
+
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/telephone">
+
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+          {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+          {% call govukFieldset({
+            legend: {
+              text: "What's your name?",
+              classes: "govuk-fieldset__legend--xl",
+              isPageHeading: true
+              }
+              }) %}
+              
+              {{ govukInput({
+    
+                label: {
+                  text: "First name"
+                  },classes: "govuk-!-width-two-thirds",
+                  id: "first-name",
+                  name: "firstName"
+                  }) }}
+                  
+                  {{ govukInput({
+                    
+                    label: {
+                      text: "Last name"
+                      },
+                      classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-2",
+                      id: "last-name",
+                      name: "lastName"
+                      }) }}
+                      
+                      {{ govukButton({
+                        classes: "govuk-!-margin-top-6",
+                        text: "Continue"
+                        }) }}
+                        
+                        {% endcall %}
+
+        </form>
+
+      </div>
+
+    {% endblock %}

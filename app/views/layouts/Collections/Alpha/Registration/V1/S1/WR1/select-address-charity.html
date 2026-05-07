@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/bus-tel-email-charity">
+
+          <span class="govuk-caption-xl">
+            <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+        </span>
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+      Select your address?
+    </h1>
+          </legend>
+
+          <div class="govuk-inset-text">
+            <p class="govuk-body">We found the following addresses for postcode <span class="govuk-!-font-weight-bold">SW19 5JA</span>.</p>
+            <p>
+              <a href="/register/address/postcode" class="govuk-link govuk-link--no-visited-state">Change postcode</a>
+            </p>
+          </div>
+
+          <form action="/register/personal-security" method="post" class="form">
+
+            <!-- Business Account -->
+
+            <div class="govuk-form-group">
+
+              <select class="govuk-select" id="" name="registrationIndividualAddress">
+
+                <option value="">3 addresses found</option>
+
+                <option value="15 Kensington Palace Gardens,&lt;br&gt;London,&lt;br&gt;W8 4QG">15 Kensington Palace Gardens, London, W8 4QG</option>
+
+                <option value="15A Kensington Palace Gardens,&lt;br&gt;London,&lt;br&gt;W8 4QG">15A Kensington Palace Gardens, London, W8 4QG</option>
+
+                <option value="15B Kensington Palace Gardens,&lt;br&gt;London,&lt;br&gt;W8 4QG">15B Kensington Palace Gardens, London, W8 4QG</option>
+
+              </select>
+
+            </div>
+
+            <div class="govuk-button-group govuk-!-margin-top-6">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Find address
+                </button>
+
+              <a class="govuk-link" href="#">Enter the address manually</a>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  {% endblock %}

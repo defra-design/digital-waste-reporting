@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/personal-security">
+
+          <span class="govuk-caption-xl">
+            <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+        </span>
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What's your telephone number?
+              </h1>
+          </legend>
+
+          <p class="govuk-body govuk-!-margin-top-6">We ask for this in case we need to call you directly with any queries about your registration.</p>
+
+          <div class="govuk-form-group">
+            <label class="govuk-hint" for="">
+              For international numbers include the country code.
+              </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+          </div>
+
+          <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                Continue
+                </button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/business-postcode">
+
+          <span class="govuk-caption-xl">
+            <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+        </span>
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
+              What is the name of your business?
+              </h1>
+          </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-hint govuk-!-padding-bottom-6" for="">
+              You may trade under your own name, or a name you have given to your business.
+              </label>
+            <div class="govuk-!-margin-top-2">
+              <input class="govuk-input govuk-!-width-two-thirds  govuk-!-display-block" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+            </div>
+
+            <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                Continue
+                </button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  {% endblock %}

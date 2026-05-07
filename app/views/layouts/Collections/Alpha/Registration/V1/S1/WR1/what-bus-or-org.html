@@ -21,30 +21,29 @@
           <span class="govuk-visually-hidden">This section is: </span>Register Defra account
         </span>
 
-        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/uk-org-answer">
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/what-bus-or-org-answer">
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "trade-uk",
-          value: data['trade-uk'],
+          name: "What Business or organisation",
+          value: data['What Business or organisation'],
           fieldset: {
           legend: {
-          text: "Is the business registered to trade in the UK?",
+          text: "What kind of business or organisation are you?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
           }
           },
           items: [
           {
-            value: "Limited company",
-            text: "Yes"
+            value: "Charity",
+            text: "Charity"
             },
             {
-              value: "Non-UK",
-              text: "No"
-              }
+              value: "Sole-trader",
+              text: "Sole trader"
+            }
               ]
               }) }}
 

@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Defra account
+{% endset%}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/business-postcode-charity">
+
+          <span class="govuk-caption-xl">
+            <span class="govuk-visually-hidden">This section is: </span>Register Defra account
+        </span>
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What's the registered name of the charity?
+              </h1>
+          </legend>
+
+          <p class="govuk-body govuk-!-margin-top-6">This is the name registered with <a href="" class="govuk-link govuk-link--no-visited-state">the Charity Commission Service (opens in new tab)</a>.</p>
+
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+
+          <div class="govuk-form-group">
+            <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+              Continue
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
