@@ -1,24 +1,38 @@
-{% extends "layouts/main.html" %}
+  {% extends "layouts/main.html" %}
 
-{% set serviceName %}
-  Government Gateway
-{% endset%}
+  {% block header %}
+    {% from "govuk/components/header/macro.njk" import govukHeader %}
 
+    {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
 
-{% block beforeContent %}
+    {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-  {# {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukServiceNavigation({
+      classes: "govuk-!-margin-bottom-2",
+      serviceName: "Government Gateway",
+      serviceUrl: "#"
+    }) }}
 
-  {{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype. It is not a real service.'
-}) }} #}
+  {% endblock %}
 
-{% endblock %}
+  {% block beforeContent %}
 
-{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-1"></div>
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-3">
+     <nav aria-label="Language switcher">
+      <ul class="language-toggle govuk-list govuk-!-margin-bottom-0">
+       <li><span aria-current="true">English</span></li>
+       <li><a href="?lang=cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link"> <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span> <span aria-hidden="true">Cymraeg</span> </a></li>
+      </ul>
+     </nav>
+    </div>
+   </div>
+  {% endblock %}
+
+  {% block content %}
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
