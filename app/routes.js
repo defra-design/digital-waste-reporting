@@ -2311,7 +2311,7 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/account-type-answ
 
   // Check whether the variable matches
   if (BusinessorOrganisation == "Business"){
-    
+    req.session.data['What Business or organisation'] = "Limited company"
   // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/uk-org')
   } else {

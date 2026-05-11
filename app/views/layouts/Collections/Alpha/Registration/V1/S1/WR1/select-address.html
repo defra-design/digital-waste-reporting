@@ -1,12 +1,30 @@
-{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
 
-{% set serviceName %}
-  Defra account
-{% endset%}
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    navigation: [
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
 
 {% block beforeContent %}
 
   <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
 
 {% endblock %}
 
@@ -17,7 +35,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/personal-security">
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/personal-security-individual">
 
           <span class="govuk-caption-xl">
             <span class="govuk-visually-hidden">This section is: </span>Register Defra account
@@ -58,7 +76,7 @@
 
             <div class="govuk-button-group govuk-!-margin-top-6">
               <button type="submit" class="govuk-button" data-module="govuk-button">
-                Find address
+                Continue
                 </button>
 
               <a class="govuk-link" href="#">Enter the address manually</a>

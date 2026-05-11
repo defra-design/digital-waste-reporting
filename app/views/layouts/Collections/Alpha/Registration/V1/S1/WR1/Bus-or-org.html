@@ -1,38 +1,34 @@
-  {% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
 
-  {% block header %}
-    {% from "govuk/components/header/macro.njk" import govukHeader %}
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
 
-    {{ govukHeader({
-    homepageUrl: "#"
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    navigation: [
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
   }) }}
 
-    {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% endblock %}
 
-    {{ govukServiceNavigation({
-      classes: "govuk-!-margin-bottom-2",
-      serviceName: "Report receipt of waste",
-      serviceUrl: "#"
-    }) }}
+{% block beforeContent %}
 
-  {% endblock %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
-  {% block beforeContent %}
 
-    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% endblock %}
 
-    {{ govukPhaseBanner({
-    tag: {
-      text: "Beta"
-    },
-    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
-  }) }}
-
-    <a class="govuk-back-link" href="javascript:history.back()">Back to Waste receiving account</a>
-
-  {% endblock %}
-
-  {% block content %}
+{% block content %}
 
 
   <div class="govuk-grid-row">

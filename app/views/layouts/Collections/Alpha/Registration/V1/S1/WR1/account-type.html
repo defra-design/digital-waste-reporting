@@ -1,16 +1,35 @@
-{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
 
-{% set serviceName %}
-  Defra account
-{% endset%}
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    navigation: [
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
 
 {% block beforeContent %}
 
   <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
+
 {% endblock %}
 
 {% block content %}
+
 
   <div class="govuk-grid-row">
     <div class="govuk-form-group">
