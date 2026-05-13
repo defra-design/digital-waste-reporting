@@ -29,7 +29,7 @@
     html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
   }) }}
 
-    <a class="govuk-back-link" href="javascript:history.back()">Back to Waste receiving account</a>
+    <a class="govuk-back-link" href="javascript:history.back()">Back to account</a>
 
   {% endblock %}
 
@@ -55,17 +55,13 @@
           value: data['wasteMovements'],
           fieldset: {
           legend: {
-          text: "Report receipt of waste",
+          text: "Receipt of waste spreadsheet",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
           }
           },
           items: [
           {
-            value: "api-code",
-            text: "Manage my API code"
-            },
-            {
               value: "download-spreadsheet",
               text: "Download spreadsheet template"
               },

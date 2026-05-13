@@ -2315,7 +2315,7 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/account-type-answ
   // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/uk-org')
   } else {
-    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/first-last-name')
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/Individual/first-last-name')
   }
 
 })
@@ -2366,9 +2366,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/what-bus-or-org-a
   if (WhatBusinessororganisation == "Charity"){
     
   // Send user to
-    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/where-charity-registered')
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/Charity/where-charity-registered')
   } else {
-    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/name-of-business')
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/Sole-trader/name-of-business')
   }
 
 })

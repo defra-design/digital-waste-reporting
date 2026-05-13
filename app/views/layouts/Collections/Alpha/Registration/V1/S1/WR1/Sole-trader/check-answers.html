@@ -93,10 +93,10 @@
     },
     {
       key: {
-        text: "Name"
+        text: "Trading name"
       },
       value: {
-        text: 'Joe B Waste Services'
+        text: data['businessName']
       },
       actions: {
         items: [
@@ -110,24 +110,7 @@
     },
     {
       key: {
-        text: "Company number"
-      },
-      value: {
-        text: data['registrationCompanyNumber']
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "age"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Registered address"
+        text: "Trading address"
       },
       value: {
         text: '1 Sample Street,
@@ -148,7 +131,7 @@
     },
     {
       key: {
-        text:"Telephone number"
+        text:"Telephone"
       },
       value: {
         text: data['registrationTel']
@@ -165,7 +148,7 @@
     },
     {
       key: {
-        text: "Email address"
+        text: "Email"
       },
       value: {
         text: data['registrationEmail']
@@ -195,8 +178,7 @@
         text: "Name"
       },
       value: {
-        text: data['defaultFirstName']
-          +' '+ data['defaultSurname']
+        text: data['first-Name-ST'] + ' ' + data['last-Name-ST']
       },
       actions: {
         items: [
@@ -207,13 +189,13 @@
           }
         ]
       }
-    },
+    },    
     {
       key: {
         text: "Telephone number"
       },
       value: {
-        text: data['registrationContactPhonePersonal']
+        text: data['personalTelephonenumber']
       },
       actions: {
         items: [

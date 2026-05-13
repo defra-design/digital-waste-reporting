@@ -25,6 +25,7 @@
 
   <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
+
 {% endblock %}
 
 {% block content %}
@@ -38,43 +39,43 @@
           <span class="govuk-visually-hidden">This section is: </span>Register Defra account
         </span>
 
-        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/telephone">
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/Sole-trader/telephone">
 
           {% from "govuk/components/input/macro.njk" import govukInput %}
           {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
           {% call govukFieldset({
             legend: {
-              text: "What's your name?",
-              classes: "govuk-fieldset__legend--xl",
-              isPageHeading: true
-              }
-              }) %}
+            text: "What's your name?",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+            }
+            }) %}
+
+          {{ govukInput({
+              label: {
+                value: data['first-Name-ST'],
+                text: "First name"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "first-name",
+                name: "first-Name-ST"
+                }) }}
 
           {{ govukInput({
                 label: {
-                  value: data['first-name'],
-                  text: "First name"
-                  },
-                  classes: "govuk-!-width-two-thirds",
-                  id: "first-name",
-                  name: "first-Name"
-                  }) }}
-
-          {{ govukInput({
-                label: {
-                  value: data['last-name'],
+                  value: data['last-Name-ST'],
                   text: "Last name"
                   },
                   classes: "govuk-!-width-two-thirds",
                   id: "last-name",
-                  name: "last-Name"
+                  name: "last-Name-ST"
                   }) }}
 
           {{ govukButton({
-                      classes: "govuk-!-margin-top-6",
-                      text: "Continue"
-                      }) }}
+                    classes: "govuk-!-margin-top-6",
+                    text: "Continue"
+                    }) }}
 
           {% endcall %}
 

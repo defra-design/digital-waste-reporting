@@ -67,6 +67,121 @@
   ]
 }) }}
 
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Business details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Type"
+      },
+      value: {
+        text: data['What Business or organisation']
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "whether details are known"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['charityName']
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "relationship to lead tenant"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Charity number"
+      },
+      value: {
+        text: data['registrationCharityNumber']
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "charity number"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Registered address"
+      },
+      value: {
+        text: '1 Sample Street,
+        Sample Town,
+        Sampleshire,
+        United Kingdom,
+        AB12 3CD'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "working situation"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text:"Telephone number"
+      },
+      value: {
+        text: data['registrationTel']
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "working situation"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+      value: {
+        text: data['registrationEmail']
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "working situation"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
 
 {{ govukSummaryList({
   card: {
@@ -80,8 +195,7 @@
         text: "Name"
       },
       value: {
-        text: data['defaultFirstName']
-          +' '+ data['defaultSurname']
+        text: data['first-Name-ST'] + ' ' + data['last-Name-ST']
       },
       actions: {
         items: [
@@ -92,35 +206,13 @@
           }
         ]
       }
-    },
+    },    
     {
       key: {
         text: "Telephone number"
       },
       value: {
-        text: data['registrationContactPhonePersonal']
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "relationship to lead tenant"
-          }
-        ]
-      }
-    },
-
-    {
-      key: {
-        text: "Address"
-      },
-      value: {
-        text: '1 Sample Street,
-        Sample Town,
-        Sampleshire,
-        United Kingdom,
-        AB12 3CD'
+        text: data['personalTelephonenumber']
       },
       actions: {
         items: [
