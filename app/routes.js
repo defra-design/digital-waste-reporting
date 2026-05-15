@@ -2285,6 +2285,23 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/disable-API-code
 
 // V1 routes //
 
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S1/WR1local-authority-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/local-authority-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var localAuthority = req.session.data['Local authority']
+
+  // Check whether the variable matches
+  if (localAuthority == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/cannot-use-service')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/sign-in')
+  }
+
+})
+
 // Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S1/sign-in-answer'
 router.post('/layouts/Collections/Alpha/Registration/V1/S1/sign-in-answer', function (req, res) {
 
@@ -2333,7 +2350,7 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/uk-org-answer', f
   // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/companies-house')
   } else {
-    res.redirect('/layouts/Collections/Alpha/Registration/V1/no-design-yet')
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/non-UK/business-name')
   }
 
 })
@@ -2372,3 +2389,93 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/what-bus-or-org-a
   }
 
 })
+
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var manageAccount = req.session.data['Manage Account']
+
+  // Check whether the variable matches
+  if (manageAccount == "Add a team member"){
+    
+  // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/add-team-member-to-org')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/add-organisation')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S2/WR1/account-type-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/account-type-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var BusinessorOrganisation = req.session.data['Business or organisation']
+
+  // Check whether the variable matches
+  if (BusinessorOrganisation == "Business"){
+    req.session.data['What Business or organisation'] = "Limited company"
+  // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/uk-org')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/Individual/first-last-name')
+  }
+
+})
+
+
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S2/WR1/uk-org-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/uk-org-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var tradeuk = req.session.data['trade-uk']
+
+  // Check whether the variable matches
+  if (tradeuk == "Limited company"){
+    
+  // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/companies-house')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/no-design-yet')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S2/WR1/companies-house-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/companies-house-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var companiesHouse = req.session.data['companiesHouse']
+
+  // Check whether the variable matches
+  if (companiesHouse == "Yes"){
+    
+  // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/companies-house-number')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/what-bus-or-org')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S2/WR1/what-bus-or-org-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/what-bus-or-org-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var WhatBusinessororganisation = req.session.data['What Business or organisation']
+
+  // Check whether the variable matches
+  if (WhatBusinessororganisation == "Charity"){
+    
+  // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/Charity/where-charity-registered')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/Sole-trader/name-of-business')
+  }
+
+})
+

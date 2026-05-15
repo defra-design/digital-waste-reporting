@@ -1,20 +1,29 @@
-{% extends "layouts/main.html" %}
 {% extends "/layouts/main.html" %}
 
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
 
   {{ govukHeader({
-    homepageUrl: "#"
-  }) }}
+  homepageUrl: "#"
+}) }}
 
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
   {{ govukServiceNavigation({
-      classes: "govuk-!-margin-bottom-2",
-      serviceName: "Report receipt of waste",
-      serviceUrl: "#"
-    }) }}
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Digital waste tracking",
+    navigation: [
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account",
+      text: "Manage account"
+    },
+
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
 
 {% endblock %}
 
@@ -29,7 +38,8 @@
     html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
   }) }}
 
-  <a class="govuk-back-link" href="javascript:history.back()">Back to Waste receiving account</a>
+    <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
 
 {% endblock %}
 

@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+      classes: "govuk-!-margin-bottom-2",
+      serviceName: "Digital waste tracking",
+      serviceUrl: "#"
+    }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S1/WR1/local-authority-answer">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+          name: "Local authority",
+          value: data['Local authority'],
+          fieldset: {
+          legend: {
+          text: "Are you registering as a local authority?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+              }
+              ]
+              }) }}
+
+        {{ govukButton({
+                  text: "Continue"
+                  }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

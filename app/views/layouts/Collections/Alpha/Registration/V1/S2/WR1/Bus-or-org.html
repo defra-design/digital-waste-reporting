@@ -11,13 +11,7 @@
 
   {{ govukServiceNavigation({
     classes: "govuk-!-margin-bottom-2",
-    serviceName: "Digital waste tracking",
     navigation: [
-    {
-      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account",
-      text: "Manage account"
-    },
-
     {
       href: "#",
       text: "Sign out"
@@ -29,16 +23,7 @@
 
 {% block beforeContent %}
 
-  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Beta"
-    },
-    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
-  }) }}
-
-    <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
 
 {% endblock %}
@@ -51,32 +36,32 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <span class="govuk-caption-l">
-        <span class="govuk-caption-l">Joe B Waste Services</span>
+        <span class="govuk-caption-xl">Joe B Waste Services England</span>
         </span>
 
-        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account-answer">
+        <form method="post" action="/layouts/Private-beta/MVP-Registration/V1/S1/WR1/uk-org-answer">
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
           classes: "govuk-radios",
-          name: "Manage Account",
+          name: "trade-uk",
+          value: data['trade-uk'],
           fieldset: {
           legend: {
-          text: "Manage account",
+          text: "Waste movements",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          classes: "govuk-fieldset__legend--xl"
           }
           },
           items: [
           {
-            value: "Add a team member",
-            text: "Add a team member to represent as [Organisation Name]"
+            value: "api-code",
+            text: "Manage my API code"
             },
             {
-            value: "Add another organisation",
-            text: "Register as another associated organisation"
+              value: "upload-spreadsheet",
+              text: "Upload a spreadsheet"
               }
               ]
               }) }}
