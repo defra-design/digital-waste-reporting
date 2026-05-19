@@ -19,9 +19,9 @@ router.post('/layouts/Private-beta/Onboarding/V1/defra-id/sign-in-answer', funct
   var oneorgovgateway = req.session.data['one-or-gov-gateway']
 
   // Check whether the variable matches
-  if (oneorgovgateway == "Sign in with One Login"){
-    
-  // Send user to
+  if (oneorgovgateway == "Sign in with One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V1/oneLogin/start')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V1/gov-gateway/start')
@@ -37,9 +37,9 @@ router.post('/layouts/Private-beta/Onboarding/V1/oneLogin/start-answer', functio
   var createorsignin = req.session.data['create-or-sign-in']
 
   // Check whether the variable matches
-  if (createorsignin == "Create a GOV.UK One Login"){
-    
-  // Send user to
+  if (createorsignin == "Create a GOV.UK One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V1/oneLogin/create-acccount')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V1/oneLogin/email-address')
@@ -55,9 +55,9 @@ router.post('/layouts/Private-beta/Onboarding/V1/defra-id/verify-single-number-a
   var verifyidentity = req.session.data['verify-your-identity']
 
   // Check whether the variable matches
-  if (verifyidentity == "Text message"){
-    
-  // Send user to
+  if (verifyidentity == "Text message") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V1/defra-id/verify-text')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V1/defra-id/verify-email')
@@ -73,9 +73,9 @@ router.post('/layouts/Private-beta/Onboarding/V1/what-activity-answer', function
   var whatactivity = req.session.data['what-activity']
 
   // Check whether the variable matches
-  if (whatactivity == "Pay my annual service charge"){
-    
-  // Send user to
+  if (whatactivity == "Pay my annual service charge") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V1/payment/why-service-charge')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V1/site-details/postcode')
@@ -91,9 +91,9 @@ router.post('/layouts/Private-beta/Onboarding/V1/payment/why-service-charge-answ
   var paycharge = req.session.data['pay-charge']
 
   // Check whether the variable matches
-  if (paycharge == "Pay service charge"){
-    
-  // Send user to
+  if (paycharge == "Pay service charge") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V1/payment/pay-service-charge')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V1/waste-account-not-paid')
@@ -109,9 +109,9 @@ router.post('/layouts/Private-beta/Onboarding/V1/api-info-answer', function (req
   var apicredentials = req.session.data['api-credentials']
 
   // Check whether the variable matches
-  if (apicredentials == "Yes"){
-    
-  // Send user to
+  if (apicredentials == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V1/api-details-yes')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V1/waste-account-2-sites-paid')
@@ -127,9 +127,9 @@ router.post('/layouts/Private-beta/Onboarding/V1/check-site-details-answer', fun
   var addanothersite = req.session.data['add-another-site']
 
   // Check whether the variable matches
-  if (addanothersite == "Yes"){
-    
-  // Send user to
+  if (addanothersite == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V1/site-details/address-details-2')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V1/waste-account-1-site-paid')
@@ -145,9 +145,9 @@ router.post('/layouts/Private-beta/Onboarding/V1/check-site-details-additional-s
   var addanothersite2 = req.session.data['add-another-site-2']
 
   // Check whether the variable matches
-  if (addanothersite2 == "Yes"){
-    
-  // Send user to
+  if (addanothersite2 == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V1/site-details/address-details-3')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V1/waste-account-2-sites-paid')
@@ -165,9 +165,9 @@ router.post('/layouts/Private-beta/Onboarding/V2/defra-id/sign-in-answer', funct
   var signin = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (signin == "One Login"){
-    
-  // Send user to
+  if (signin == "One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V2/oneLogin/sign-in')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V2/gov-gateway/start')
@@ -182,9 +182,9 @@ router.post('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-address-an
   var relatedorgaddress = req.session.data['relatedCompanySameAddress']
 
   // Check whether the variable matches
-  if (relatedorgaddress == "Yes"){
-    
-  // Send user to
+  if (relatedorgaddress == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-contact-details')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-postcode')
@@ -200,9 +200,9 @@ router.post('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-contact-de
   var relatedorgcontact = req.session.data['relatedCompanySameContact']
 
   // Check whether the variable matches
-  if (relatedorgcontact == "Yes"){
-    
-  // Send user to
+  if (relatedorgcontact == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-check-details')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/related-org-new-contact-details')
@@ -218,9 +218,9 @@ router.post('/layouts/Private-beta/Onboarding/V2/what-activity-answer', function
   var whatactivity = req.session.data['what-activity']
 
   // Check whether the variable matches
-  if (whatactivity == "Yes to my defra account"){
-    
-  // Send user to
+  if (whatactivity == "Yes to my defra account") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/id-account')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V2/service-charge')
@@ -236,9 +236,9 @@ router.post('/layouts/Private-beta/Onboarding/V2/service-charge-answer', functio
   var servicecharge = req.session.data['service-charge']
 
   // Check whether the variable matches
-  if (servicecharge == "Yes"){
-    
-  // Send user to
+  if (servicecharge == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V2/why-service-charge')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V2/waste-account')
@@ -254,9 +254,9 @@ router.post('/layouts/Private-beta/Onboarding/V2/site-details/check-site-details
   var addanothersite = req.session.data['add-another-site']
 
   // Check whether the variable matches
-  if (addanothersite == "Yes"){
-    
-  // Send user to
+  if (addanothersite == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V2/site-details/site-name-2')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V2/service-charge')
@@ -271,9 +271,9 @@ router.post('/layouts/Private-beta/Onboarding/V2/J2/what-activity-answer', funct
   var whatactivity = req.session.data['what-activity']
 
   // Check whether the variable matches
-  if (whatactivity == "Yes to my defra account"){
-    
-  // Send user to
+  if (whatactivity == "Yes to my defra account") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V2/defra-id/id-account-2-accounts-+-service')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V2/J2/service-charge')
@@ -288,9 +288,9 @@ router.post('/layouts/Private-beta/Onboarding/V2/J2/service-charge-answer', func
   var servicecharge = req.session.data['service-charge']
 
   // Check whether the variable matches
-  if (servicecharge == "Yes"){
-    
-  // Send user to
+  if (servicecharge == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V2/J2/why-service-charge')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V2/waste-account-2-+-service')
@@ -308,9 +308,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/defra-id/sign-in-answer', funct
   var signin = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (signin == "One Login"){
-    
-  // Send user to
+  if (signin == "One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/oneLogin/sign-in')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/gov-gateway/start')
@@ -326,9 +326,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/defra-id/account-type-answer', 
   var registrationAccountType = req.session.data['registrationAccountType']
 
   // Check whether the variable matches
-  if (registrationAccountType == "Yes create an account"){
-    
-  // Send user to
+  if (registrationAccountType == "Yes create an account") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/no-design-yet')
@@ -344,9 +344,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/defra-id/uk-org-answer', functi
   var registrationAccountType = req.session.data['registrationAccountType']
 
   // Check whether the variable matches
-  if (registrationAccountType == "Yes create an account"){
-    
-  // Send user to
+  if (registrationAccountType == "Yes create an account") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/no-design-yet')
@@ -362,9 +362,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/defra-id/companies-house-answer
   var companiesHouse = req.session.data['companiesHouse']
 
   // Check whether the variable matches
-  if (companiesHouse == "Yes Companies House number"){
-    
-  // Send user to
+  if (companiesHouse == "Yes Companies House number") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/companies-house-number')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/sole-trader-or-charity')
@@ -380,9 +380,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/legal-entities-answer', functio
   var legalentities = req.session.data['legalentities']
 
   // Check whether the variable matches
-  if (legalentities == "Yes add another"){
-    
-  // Send user to
+  if (legalentities == "Yes add another") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/defra-id/id-account')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/waste-account-1')
@@ -398,9 +398,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/waste-account-answer', function
   var buttonChoice = req.session.data['buttonChoice']
 
   // Check whether the variable matches
-  if (buttonChoice == "Pay service charge"){
-    
-  // Send user to
+  if (buttonChoice == "Pay service charge") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/why-service-charge')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type')
@@ -415,9 +415,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-answer
   var registrationAccountType = req.session.data['registrationAccountType']
 
   // Check whether the variable matches
-  if (registrationAccountType == "Yes create an account"){
-    
-  // Send user to
+  if (registrationAccountType == "Yes create an account") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/no-design-yet')
@@ -433,9 +433,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org-answer', fun
   var registrationAccountType = req.session.data['registrationAccountType']
 
   // Check whether the variable matches
-  if (registrationAccountType == "Yes create an account"){
-    
-  // Send user to
+  if (registrationAccountType == "Yes create an account") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/no-design-yet')
@@ -451,9 +451,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house-ans
   var companiesHouse = req.session.data['companiesHouse']
 
   // Check whether the variable matches
-  if (companiesHouse == "Yes Companies House number"){
-    
-  // Send user to
+  if (companiesHouse == "Yes Companies House number") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house-number')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/sole-trader-or-charity')
@@ -468,9 +468,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/J2/legal-entities-answer', func
   var legalentities = req.session.data['legalentities']
 
   // Check whether the variable matches
-  if (legalentities == "Yes add another"){
-    
-  // Send user to
+  if (legalentities == "Yes add another") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/waste-account-1')
@@ -485,9 +485,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-answer
   var registrationAccountType = req.session.data['registrationAccountType']
 
   // Check whether the variable matches
-  if (registrationAccountType == "Yes create an account"){
-    
-  // Send user to
+  if (registrationAccountType == "Yes create an account") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3//J2/defra-id/postcode')
@@ -502,9 +502,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/uk-org-answer', fun
   var registrationAccountType = req.session.data['registrationAccountType']
 
   // Check whether the variable matches
-  if (registrationAccountType == "Yes create an account"){
-    
-  // Send user to
+  if (registrationAccountType == "Yes create an account") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2defra-id/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2defra-id/business-name')
@@ -519,9 +519,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house-ans
   var companiesHouse = req.session.data['companiesHouse']
 
   // Check whether the variable matches
-  if (companiesHouse == "Yes Companies House number"){
-    
-  // Send user to
+  if (companiesHouse == "Yes Companies House number") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/companies-house-number')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/sole-trader-or-charity')
@@ -537,9 +537,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/J2/legal-entities-1-answer', fu
   var legalentities = req.session.data['legalentities']
 
   // Check whether the variable matches
-  if (legalentities == "Yes add another"){
-    
-  // Send user to
+  if (legalentities == "Yes add another") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type-1')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/waste-account-2')
@@ -554,9 +554,9 @@ router.post('/layouts/Private-beta/Onboarding/V3/waste-account-2-answer', functi
   var buttonChoice = req.session.data['buttonChoice']
 
   // Check whether the variable matches
-  if (buttonChoice == "Pay service charge"){
-    
-  // Send user to
+  if (buttonChoice == "Pay service charge") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/why-service-charge')
   } else {
     res.redirect('/layouts/Private-beta/Onboarding/V3/J2/defra-id/account-type')
@@ -575,9 +575,9 @@ router.post('/layouts/Private-beta/Web-form/Idea-A/J1/man-what-format-answer', f
   var format = req.session.data['format']
 
   // Check whether the variable matches
-  if (format == "Spreadsheet"){
-    
-  // Send user to
+  if (format == "Spreadsheet") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Web-form/Idea-A/J1/no-design-yet')
   } else {
     res.redirect('/layouts/Private-beta/Web-form/Idea-A/J1/waste-activities')
@@ -592,9 +592,9 @@ router.post('/layouts/Private-beta/Web-form/Idea-A/J1/previous-movement-answer',
   var previousWaste = req.session.data['previousWaste']
 
   // Check whether the variable matches
-  if (previousWaste == "Yes"){
-    
-  // Send user to
+  if (previousWaste == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Web-form/Idea-A/J1/same-waste')
   } else {
     res.redirect('/layouts/Private-beta/Web-form/Idea-A/J1/different-waste')
@@ -614,9 +614,9 @@ router.post('/layouts/Private-beta/Web-form/Idea-A/J2/manage-business-movements-
   var manageMovements = req.session.data['manageMovements']
 
   // Check whether the variable matches
-  if (manageMovements == "Yes"){
-    
-  // Send user to
+  if (manageMovements == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Web-form/Idea-A/J2/how-to-send-waste-movements')
   } else {
     res.redirect('/layouts/Private-beta/Web-form/Idea-A/J2/your-waste-movements')
@@ -639,9 +639,9 @@ router.post('/layouts/Private-beta/Web-form/Idea-B/J1/save-template-answer', fun
   var saveTemplate = req.session.data['saveTemplate']
 
   // Check whether the variable matches
-  if (saveTemplate == "Yes"){
-    
-  // Send user to
+  if (saveTemplate == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/your-templates-1')
   } else {
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J1/your-waste-movements')
@@ -660,9 +660,9 @@ router.post('/layouts/Private-beta/Web-form/Idea-B/J2/manage-template-answer', f
   var manageTemplate = req.session.data['manageTemplate']
 
   // Check whether the variable matches
-  if (manageTemplate == "Use to send waste movement"){
-    
-  // Send user to
+  if (manageTemplate == "Use to send waste movement") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/use-for-same-waste')
   } else {
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/edit-template')
@@ -677,9 +677,9 @@ router.post('/layouts/Private-beta/Web-form/Idea-B/J2/save-template-answer', fun
   var saveTemplate = req.session.data['saveTemplate']
 
   // Check whether the variable matches
-  if (saveTemplate == "Yes"){
-    
-  // Send user to
+  if (saveTemplate == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/your-templates-2')
   } else {
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/your-waste-movements-2')
@@ -694,9 +694,9 @@ router.post('/layouts/Private-beta/Web-form/Idea-B/J2/save-template-2-answer', f
   var saveTemplate = req.session.data['saveTemplate']
 
   // Check whether the variable matches
-  if (saveTemplate == "Yes"){
-    
-  // Send user to
+  if (saveTemplate == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/your-templates-3')
   } else {
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J2/your-waste-movements-3')
@@ -715,9 +715,9 @@ router.post('/layouts/Private-beta/Web-form/Idea-B/J3/previous-movement-answer',
   var previousWaste = req.session.data['previousWaste']
 
   // Check whether the variable matches
-  if (previousWaste == "Yes"){
-    
-  // Send user to
+  if (previousWaste == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J3/same-waste')
   } else {
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J3/different-waste')
@@ -732,11 +732,11 @@ router.post('/layouts/Private-beta/Web-form/Idea-B/J3/save-template-2-answer', f
   var saveTemplate = req.session.data['saveTemplate']
 
   // Check whether the variable matches
-  if (saveTemplate == "Yes"){
-    
-  // Send user to
+  if (saveTemplate == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J3/your-templates-3')
-    
+
   } else {
     res.redirect('/layouts/Private-beta/Web-form/Idea-B/J3/your-waste-movements-3')
   }
@@ -752,20 +752,20 @@ router.post('/layouts/Private-beta/Waste-movements/V1/API/send-waste-answer', fu
 
   // Make a variable and give it the value
   var sendWaste = req.session.data['sendWaste']
-  
+
   // Check whether the variable matches
 
-  if (sendWaste == "Automatically"){
-   
-  // Send user to
-  res.redirect('/layouts/Private-beta/Waste-movements/V1/API/API-terms')
+  if (sendWaste == "Automatically") {
 
-  } else if (sendWaste == "Manually"){
-    
+    // Send user to
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/API/API-terms')
+
+  } else if (sendWaste == "Manually") {
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/POPs')
-    
+
   } else {
-    
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/both')
   }
 
@@ -779,9 +779,9 @@ router.post('/layouts/Private-beta/Waste-movements/V1/API/view-your-API-answer',
   var buttonChoice = req.session.data['buttonChoice']
 
   // Check whether the variable matches
-  if (buttonChoice == "Delete"){
-    
-  // Send user to
+  if (buttonChoice == "Delete") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Waste-movements/V1/API/delete-API-code')
   }
 
@@ -793,20 +793,20 @@ router.post('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/next-activity-
 
   // Make a variable and give it the value
   var Nextactivity = req.session.data['Next activity']
-  
+
   // Check whether the variable matches
 
-  if (Nextactivity == "Upload spreadsheet"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/spreadsheet-upload')
+  if (Nextactivity == "Upload spreadsheet") {
 
-  } else if (Nextactivity == "Download spreadsheet template"){
-    
+    // Send user to
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/spreadsheet-upload')
+
+  } else if (Nextactivity == "Download spreadsheet template") {
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/spreadsheet-download')
 
   } else {
-    
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/send-waste')
   }
 
@@ -818,24 +818,24 @@ router.post('/layouts/Private-beta/Waste-movements/V1/Both/next-activity-answer'
 
   // Make a variable and give it the value
   var APIorSpreadsheet = req.session.data['API or Spreadsheet']
-  
+
   // Check whether the variable matches
 
-  if (APIorSpreadsheet == "View my API details"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/API-terms')
+  if (APIorSpreadsheet == "View my API details") {
 
-  } else if (APIorSpreadsheet == "Upload spreadsheet"){
-    
+    // Send user to
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/API-terms')
+
+  } else if (APIorSpreadsheet == "Upload spreadsheet") {
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/spreadsheet-upload')
 
-  } else if (APIorSpreadsheet == "Download spreadsheet template"){
-    
+  } else if (APIorSpreadsheet == "Download spreadsheet template") {
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/spreadsheet-download')
 
   } else {
-    
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/send-waste')
   }
 
@@ -847,20 +847,20 @@ router.post('/layouts/Private-beta/Waste-movements/V1/change-format/send-waste-a
 
   // Make a variable and give it the value
   var sendWaste2 = req.session.data['sendWaste2']
-  
+
   // Check whether the variable matches
 
-  if (sendWaste2 == "Api"){
-   
-  // Send user to
-  res.redirect('/layouts/Private-beta/Waste-movements/V1/change-format/API-terms')
+  if (sendWaste2 == "Api") {
 
-  } else if (sendWaste == "Manually"){
-    
+    // Send user to
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/change-format/API-terms')
+
+  } else if (sendWaste == "Manually") {
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/Spreadsheet/POPs')
-    
+
   } else {
-    
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/Both/both')
   }
 
@@ -871,16 +871,16 @@ router.post('/layouts/Private-beta/Waste-movements/V1/API/next-activity-answer',
 
   // Make a variable and give it the value
   var Nextactivity = req.session.data['Next activity']
-  
+
   // Check whether the variable matches
 
-  if (Nextactivity == "View my API details"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/Waste-movements/V1/API/view-your-API')
+  if (Nextactivity == "View my API details") {
+
+    // Send user to
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/API/view-your-API')
 
   } else {
-    
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/API/send-waste')
   }
 
@@ -892,16 +892,16 @@ router.post('/layouts/Private-beta/Waste-movements/V1/API/delete-API-code-answer
 
   // Make a variable and give it the value
   var Apidelete = req.session.data['Apidelete']
-  
+
   // Check whether the variable matches
 
-  if (Apidelete == "Yes"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/Waste-movements/V1/API/API-deleted')
+  if (Apidelete == "Yes") {
+
+    // Send user to
+    res.redirect('/layouts/Private-beta/Waste-movements/V1/API/API-deleted')
 
   } else {
-    
+
     res.redirect('/layouts/Private-beta/Waste-movements/V1/API/view-your-API')
   }
 
@@ -918,9 +918,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/permit-uk-answer',
   var UKpermit = req.session.data['UK permit']
 
   // Check whether the variable matches
-  if (UKpermit == "Yes"){
-    
-  // Send user to
+  if (UKpermit == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/sign-in')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/not-a-waste-receiver')
@@ -936,9 +936,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/sign-in-answer', funct
   var oneorgovgateway = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (oneorgovgateway == "One Login"){
-    
-  // Send user to
+  if (oneorgovgateway == "One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/onelogin-sign-in')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/govgateway-sign-in')
@@ -954,9 +954,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/account-type-answe
   var BusinessorOrganisation = req.session.data['Business or organisation']
 
   // Check whether the variable matches
-  if (BusinessorOrganisation == "Business"){
-    
-  // Send user to
+  if (BusinessorOrganisation == "Business") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
@@ -972,9 +972,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/uk-org-answer', fu
   var tradeuk = req.session.data['trade-uk']
 
   // Check whether the variable matches
-  if (tradeuk == "Limited company"){
-    
-  // Send user to
+  if (tradeuk == "Limited company") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
@@ -989,9 +989,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/companies-house-an
   var companiesHouse = req.session.data['companiesHouse']
 
   // Check whether the variable matches
-  if (companiesHouse == "Yes"){
-    
-  // Send user to
+  if (companiesHouse == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/companies-house-number')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/no-design-yet')
@@ -1007,18 +1007,18 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity-answ
   var nextActivity = req.session.data['Next activity']
 
   // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/view-your-API')
+  if (nextActivity == "Connect your software") {
 
-  } else if (nextActivity == "Upload spreadsheet"){
+    // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-upload')
 
-  } else if (nextActivity == "Update spreadsheet"){
+  } else if (nextActivity == "Update spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-update')
 
-  } else if (nextActivity == "Change to a new WR"){
+  } else if (nextActivity == "Change to a new WR") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/1-org-service-added')
 
   } else {
@@ -1036,9 +1036,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/account-type-answe
   var BusinessorOrganisation2 = req.session.data['Business or organisation 2']
 
   // Check whether the variable matches
-  if (BusinessorOrganisation2 == "Business"){
-    
-  // Send user to
+  if (BusinessorOrganisation2 == "Business") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
@@ -1053,9 +1053,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/uk-org-answer', fu
   var tradeuk2 = req.session.data['trade-uk-2']
 
   // Check whether the variable matches
-  if (tradeuk2 == "Limited company"){
+  if (tradeuk2 == "Limited company") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
@@ -1070,9 +1070,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/companies-house-an
   var companiesHouse2 = req.session.data['companiesHouse2']
 
   // Check whether the variable matches
-  if (companiesHouse2 == "Yes"){
+  if (companiesHouse2 == "Yes") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/companies-house-number')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/no-design-yet')
@@ -1088,18 +1088,18 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity-answ
   var nextActivity = req.session.data['Next activity']
 
   // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/view-your-API')
+  if (nextActivity == "Connect your software") {
 
-  } else if (nextActivity == "Upload spreadsheet"){
+    // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/spreadsheet-upload')
 
-  } else if (nextActivity == "Update spreadsheet"){
+  } else if (nextActivity == "Update spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/spreadsheet-update')
 
-  } else if (nextActivity == "Change to a new WR"){
+  } else if (nextActivity == "Change to a new WR") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/2-orgs-services-added')
 
   } else {
@@ -1115,18 +1115,18 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity-wr1-
   var nextActivity = req.session.data['Next activity']
 
   // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/view-your-API')
+  if (nextActivity == "Connect your software") {
 
-  } else if (nextActivity == "Upload spreadsheet"){
+    // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-upload')
 
-  } else if (nextActivity == "Update spreadsheet"){
+  } else if (nextActivity == "Update spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-update')
 
-  } else if (nextActivity == "Change to a new WR"){
+  } else if (nextActivity == "Change to a new WR") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/2-orgs-added')
 
   } else {
@@ -1143,9 +1143,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/who-2-represent-answer
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/next-activity')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/next-activity')
@@ -1161,9 +1161,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/confirm-spreadshee
   var anotherfile = req.session.data['another-file']
 
   // Check whether the variable matches
-  if (anotherfile == "Yes, add this file"){
+  if (anotherfile == "Yes, add this file") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/upload-spreadsheet')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/spreadsheet-upload')
@@ -1179,9 +1179,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/confirm-spreadshee
   var anotherfile = req.session.data['another-file']
 
   // Check whether the variable matches
-  if (anotherfile == "Yes, add this file"){
+  if (anotherfile == "Yes, add this file") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/upload-spreadsheet')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S1/WR1/spreadsheet-upload')
@@ -1196,9 +1196,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/permit-uk-answer',
   var UKpermit = req.session.data['UK permit']
 
   // Check whether the variable matches
-  if (UKpermit == "Yes"){
-    
-  // Send user to
+  if (UKpermit == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2//sign-in')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/not-a-waste-receiver')
@@ -1213,9 +1213,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/sign-in-answer', funct
   var oneorgovgateway = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (oneorgovgateway == "One Login"){
-    
-  // Send user to
+  if (oneorgovgateway == "One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/onelogin-sign-in')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/govgateway-sign-in')
@@ -1230,9 +1230,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/who-2-represent-answer
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1//next-activity')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity')
@@ -1248,18 +1248,18 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity-answ
   var nextActivity = req.session.data['Next activity']
 
   // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/view-your-API')
+  if (nextActivity == "Connect your software") {
 
-  } else if (nextActivity == "Upload spreadsheet"){
+    // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/spreadsheet-upload')
 
-  } else if (nextActivity == "Update spreadsheet"){
+  } else if (nextActivity == "Update spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/spreadsheet-update')
 
-  } else if (nextActivity == "Choose another waste receiver in my account"){
+  } else if (nextActivity == "Choose another waste receiver in my account") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/2-orgs-services-added')
 
   } else {
@@ -1275,18 +1275,18 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/next-activit
   var nextActivity = req.session.data['Next activity']
 
   // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/view-your-API')
+  if (nextActivity == "Connect your software") {
 
-  } else if (nextActivity == "Upload spreadsheet"){
+    // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/spreadsheet-upload')
 
-  } else if (nextActivity == "Update spreadsheet"){
+  } else if (nextActivity == "Update spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/spreadsheet-update')
 
-  } else if (nextActivity == "Change to a new WR"){
+  } else if (nextActivity == "Change to a new WR") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/2-orgs-services-added')
 
   } else {
@@ -1303,18 +1303,18 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity-answ
   var nextActivity = req.session.data['Next activity']
 
   // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/view-your-API')
+  if (nextActivity == "Connect your software") {
 
-  } else if (nextActivity == "Upload spreadsheet"){
+    // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/spreadsheet-upload')
 
-  } else if (nextActivity == "Update spreadsheet"){
+  } else if (nextActivity == "Update spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/spreadsheet-update')
 
-  } else if (nextActivity == "Change to a new WR"){
+  } else if (nextActivity == "Change to a new WR") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/2-orgs-services-added')
 
   } else {
@@ -1332,9 +1332,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/confirm-spreadshee
   var anotherfile = req.session.data['another-file']
 
   // Check whether the variable matches
-  if (anotherfile == "Yes, add this file"){
+  if (anotherfile == "Yes, add this file") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/upload-spreadsheet')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/spreadsheet-upload')
@@ -1349,9 +1349,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/who-2-repres
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/upload-spreadsheet-error')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity')
@@ -1367,9 +1367,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/who-2-repres
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/next-activity')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/upload-spreadsheet-error')
@@ -1385,18 +1385,18 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/next-activity-answ
   var nextActivity = req.session.data['Next activity']
 
   // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/view-your-API')
+  if (nextActivity == "Connect your software") {
 
-  } else if (nextActivity == "Upload spreadsheet"){
+    // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/spreadsheet-upload')
 
-  } else if (nextActivity == "Update spreadsheet"){
+  } else if (nextActivity == "Update spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/spreadsheet-update')
 
-  } else if (nextActivity == "Change to a new WR"){
+  } else if (nextActivity == "Change to a new WR") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/2-orgs-services-added')
 
   } else {
@@ -1412,9 +1412,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/confirm-spreadshee
   var anotherfile = req.session.data['another-file']
 
   // Check whether the variable matches
-  if (anotherfile == "Yes, add this file"){
+  if (anotherfile == "Yes, add this file") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/upload-spreadsheet')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/spreadsheet-upload')
@@ -1429,9 +1429,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/sign-in-answ
   var oneorgovgateway = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (oneorgovgateway == "One Login"){
-    
-  // Send user to
+  if (oneorgovgateway == "One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/onelogin-sign-in')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR1/Email/govgateway-sign-in')
@@ -1446,9 +1446,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/sign-in-answ
   var oneorgovgateway = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (oneorgovgateway == "One Login"){
-    
-  // Send user to
+  if (oneorgovgateway == "One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/onelogin-sign-in')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S2/WR2/Email/govgateway-sign-in')
@@ -1463,9 +1463,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/permit-uk-answer',
   var UKpermit = req.session.data['UK permit']
 
   // Check whether the variable matches
-  if (UKpermit == "Yes"){
-    
-  // Send user to
+  if (UKpermit == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/sign-in')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/not-a-waste-receiver')
@@ -1480,9 +1480,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S3/sign-in-answer', funct
   var oneorgovgateway = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (oneorgovgateway == "One Login"){
-    
-  // Send user to
+  if (oneorgovgateway == "One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/onelogin-sign-in')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/govgateway-sign-in')
@@ -1498,9 +1498,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S3/who-2-represent-answer
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/next-activity')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/next-activity')
@@ -1515,18 +1515,18 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/next-activity-answ
   var nextActivity = req.session.data['Next activity']
 
   // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/view-your-API')
+  if (nextActivity == "Connect your software") {
 
-  } else if (nextActivity == "Upload spreadsheet"){
+    // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/spreadsheet-upload')
 
-  } else if (nextActivity == "Update spreadsheet"){
+  } else if (nextActivity == "Update spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/spreadsheet-update')
 
-  } else if (nextActivity == "Change to a new WR"){
+  } else if (nextActivity == "Change to a new WR") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/2-orgs-services-added')
 
   } else {
@@ -1544,9 +1544,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/confirm-spreadshee
   var anotherfile = req.session.data['another-file']
 
   // Check whether the variable matches
-  if (anotherfile == "Yes, add this file"){
+  if (anotherfile == "Yes, add this file") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/upload-spreadsheet')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/spreadsheet-upload')
@@ -1561,18 +1561,18 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/next-activity-answ
   var nextActivity = req.session.data['Next activity']
 
   // Check whether the variable matches
-  if (nextActivity == "Connect your software"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/view-your-API')
+  if (nextActivity == "Connect your software") {
 
-  } else if (nextActivity == "Upload spreadsheet"){
+    // Send user to
+    res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/view-your-API')
+
+  } else if (nextActivity == "Upload spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/spreadsheet-upload')
 
-  } else if (nextActivity == "Update spreadsheet"){
+  } else if (nextActivity == "Update spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/spreadsheet-update')
 
-  } else if (nextActivity == "Change to a new WR"){
+  } else if (nextActivity == "Change to a new WR") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/2-orgs-services-added')
 
   } else {
@@ -1588,9 +1588,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/confirm-spreadshee
   var anotherfile = req.session.data['another-file']
 
   // Check whether the variable matches
-  if (anotherfile == "Yes, add this file"){
+  if (anotherfile == "Yes, add this file") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/upload-spreadsheet')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR1/spreadsheet-upload')
@@ -1605,9 +1605,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/confirm-spreadshee
   var anotherfile = req.session.data['another-file']
 
   // Check whether the variable matches
-  if (anotherfile == "Yes, add this file"){
+  if (anotherfile == "Yes, add this file") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/upload-spreadsheet')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V1/S3/WR2/spreadsheet-upload')
@@ -1627,9 +1627,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/sign-in-answer', funct
   var oneorgovgateway = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (oneorgovgateway == "One Login"){
-    
-  // Send user to
+  if (oneorgovgateway == "One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/onelogin-sign-in')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/govgateway-sign-in')
@@ -1645,9 +1645,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/account-type-answe
   var BusinessorOrganisation = req.session.data['Business or organisation']
 
   // Check whether the variable matches
-  if (BusinessorOrganisation == "Business"){
-    
-  // Send user to
+  if (BusinessorOrganisation == "Business") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/no-design-yet')
@@ -1663,9 +1663,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/uk-org-answer', fu
   var tradeuk = req.session.data['trade-uk']
 
   // Check whether the variable matches
-  if (tradeuk == "Limited company"){
-    
-  // Send user to
+  if (tradeuk == "Limited company") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/no-design-yet')
@@ -1680,9 +1680,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/companies-house-an
   var companiesHouse = req.session.data['companiesHouse']
 
   // Check whether the variable matches
-  if (companiesHouse == "Yes"){
-    
-  // Send user to
+  if (companiesHouse == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/companies-house-number')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/no-design-yet')
@@ -1698,9 +1698,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/who-2-represent-an
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/wr1-account')
   }
 
@@ -1714,9 +1714,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/manage-account-ans
   var manageAccount = req.session.data['manageAccount']
 
   // Check whether the variable matches
-  if (manageAccount == "Add another organisation"){
-    
-  // Send user to
+  if (manageAccount == "Add another organisation") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/add-organisation')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/add-team-member-to-org')
@@ -1731,9 +1731,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/added-inter-confir
   var buttonChoice = req.session.data['buttonChoice']
 
   // Check whether the variable matches
-  if (buttonChoice == "Done"){
-    
-  // Send user to
+  if (buttonChoice == "Done") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/intermediary-access-1')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/add-inter-member-1')
@@ -1749,9 +1749,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/added-team-confirm
   var buttonChoice = req.session.data['buttonChoice']
 
   // Check whether the variable matches
-  if (buttonChoice == "Done"){
-    
-  // Send user to
+  if (buttonChoice == "Done") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/manage-access-1')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/add-team-member-1')
@@ -1766,9 +1766,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/added-team-confirm
   var buttonChoice = req.session.data['buttonChoice']
 
   // Check whether the variable matches
-  if (buttonChoice == "Done"){
-    
-  // Send user to
+  if (buttonChoice == "Done") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/manage-access-1')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S1/WR1/add-organisation')
@@ -1783,15 +1783,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/waste-movements-an
   var wasteMovements = req.session.data['wasteMovements']
 
   // Check whether the variable matches
-  if (wasteMovements == "api-code"){
-    
-  // Send user to
+  if (wasteMovements == "api-code") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/view-your-API')
 
-      } else if (wasteMovements == "download-spreadsheet"){
+  } else if (wasteMovements == "download-spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/spreadsheet-download')
 
-      } else if (wasteMovements == "upload-spreadsheet"){
+  } else if (wasteMovements == "upload-spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/spreadsheet-upload')
 
   } else {
@@ -1807,9 +1807,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/account-type-answe
   var BusinessorOrganisation = req.session.data['Business or organisation']
 
   // Check whether the variable matches
-  if (BusinessorOrganisation == "Business"){
-    
-  // Send user to
+  if (BusinessorOrganisation == "Business") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/no-design-yet')
@@ -1825,9 +1825,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/uk-org-answer', fu
   var tradeuk = req.session.data['trade-uk']
 
   // Check whether the variable matches
-  if (tradeuk == "Limited company"){
-    
-  // Send user to
+  if (tradeuk == "Limited company") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/no-design-yet')
@@ -1842,9 +1842,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/companies-house-an
   var companiesHouse = req.session.data['companiesHouse']
 
   // Check whether the variable matches
-  if (companiesHouse == "Yes"){
-    
-  // Send user to
+  if (companiesHouse == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/companies-house-number')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/no-design-yet')
@@ -1860,9 +1860,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/who-2-represent-an
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/wr1-account')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/wr-account')
@@ -1879,15 +1879,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/waste-movements-an
   var wasteMovements = req.session.data['wasteMovements']
 
   // Check whether the variable matches
-  if (wasteMovements == "api-code"){
-    
-  // Send user to
+  if (wasteMovements == "api-code") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/view-your-API')
 
-      } else if (wasteMovements == "download-spreadsheet"){
+  } else if (wasteMovements == "download-spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/spreadsheet-download')
 
-      } else if (wasteMovements == "upload-spreadsheet"){
+  } else if (wasteMovements == "upload-spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/spreadsheet-upload')
 
   } else {
@@ -1904,9 +1904,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/who-2-represent-an
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR1/wr1-account')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S2/WR2/wr2-account')
@@ -1922,9 +1922,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/who-2-represent-an
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR1/wr1-account')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/wr2-account')
@@ -1939,15 +1939,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S3/WR1/waste-movements-an
   var wasteMovements = req.session.data['wasteMovements']
 
   // Check whether the variable matches
-  if (wasteMovements == "api-code"){
-    
-  // Send user to
+  if (wasteMovements == "api-code") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR1/view-your-API')
 
-      } else if (wasteMovements == "download-spreadsheet"){
+  } else if (wasteMovements == "download-spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR1/spreadsheet-download')
 
-      } else if (wasteMovements == "upload-spreadsheet"){
+  } else if (wasteMovements == "upload-spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR1/spreadsheet-upload')
 
   } else {
@@ -1963,15 +1963,15 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/waste-movements-an
   var wasteMovements = req.session.data['wasteMovements']
 
   // Check whether the variable matches
-  if (wasteMovements == "api-code"){
-    
-  // Send user to
+  if (wasteMovements == "api-code") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/view-your-API')
 
-      } else if (wasteMovements == "download-spreadsheet"){
+  } else if (wasteMovements == "download-spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/spreadsheet-download')
 
-      } else if (wasteMovements == "upload-spreadsheet"){
+  } else if (wasteMovements == "upload-spreadsheet") {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/spreadsheet-upload')
 
   } else {
@@ -1987,9 +1987,9 @@ router.post('/layouts/Private-beta/MVP-Registration/V2/S3/WR1/who-2-represent-an
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR1/wr1-account')
   } else {
     res.redirect('/layouts/Private-beta/MVP-Registration/V2/S3/WR2/wr2-account')
@@ -2008,9 +2008,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/permit-uk-answer
   var UKpermit = req.session.data['UK permit']
 
   // Check whether the variable matches
-  if (UKpermit == "Yes"){
-    
-  // Send user to
+  if (UKpermit == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/sign-in')
   } else {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/not-a-waste-receiver')
@@ -2025,9 +2025,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/sign-in-answer',
   var oneorgovgateway = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (oneorgovgateway == "One Login"){
-    
-  // Send user to
+  if (oneorgovgateway == "One Login") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/onelogin-sign-in')
   } else {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/govgateway-sign-in')
@@ -2042,9 +2042,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/account-type-ans
   var BusinessorOrganisation = req.session.data['Business or organisation']
 
   // Check whether the variable matches
-  if (BusinessorOrganisation == "Business"){
-    
-  // Send user to
+  if (BusinessorOrganisation == "Business") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/no-design-yet')
@@ -2060,9 +2060,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/uk-org-answer', 
   var tradeuk = req.session.data['trade-uk']
 
   // Check whether the variable matches
-  if (tradeuk == "Limited company"){
-    
-  // Send user to
+  if (tradeuk == "Limited company") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/no-design-yet')
@@ -2077,9 +2077,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/companies-house-
   var companiesHouse = req.session.data['companiesHouse']
 
   // Check whether the variable matches
-  if (companiesHouse == "Yes"){
-    
-  // Send user to
+  if (companiesHouse == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/companies-house-number')
   } else {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/no-design-yet')
@@ -2094,9 +2094,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR1/who-2-represent-
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR1/wr1-account')
   } else {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/wr2-account')
@@ -2112,9 +2112,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/account-type-ans
   var BusinessorOrganisation = req.session.data['Business or organisation']
 
   // Check whether the variable matches
-  if (BusinessorOrganisation == "Business"){
-    
-  // Send user to
+  if (BusinessorOrganisation == "Business") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/uk-org')
   } else {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/no-design-yet')
@@ -2130,9 +2130,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/uk-org-answer', 
   var tradeuk = req.session.data['trade-uk']
 
   // Check whether the variable matches
-  if (tradeuk == "Limited company"){
-    
-  // Send user to
+  if (tradeuk == "Limited company") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/companies-house')
   } else {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/no-design-yet')
@@ -2147,9 +2147,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/companies-house-
   var companiesHouse = req.session.data['companiesHouse']
 
   // Check whether the variable matches
-  if (companiesHouse == "Yes"){
-    
-  // Send user to
+  if (companiesHouse == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/companies-house-number')
   } else {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/no-design-yet')
@@ -2165,15 +2165,15 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR1/waste-movements-
   var wasteMovements = req.session.data['wasteMovements']
 
   // Check whether the variable matches
-  if (wasteMovements == "api-code"){
-    
-  // Send user to
+  if (wasteMovements == "api-code") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR1/view-your-API')
 
-      } else if (wasteMovements == "download-spreadsheet"){
+  } else if (wasteMovements == "download-spreadsheet") {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR1/spreadsheet-download')
 
-      } else if (wasteMovements == "upload-spreadsheet"){
+  } else if (wasteMovements == "upload-spreadsheet") {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR1/spreadsheet-upload')
 
   } else {
@@ -2190,9 +2190,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/who-2-represent-
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S1/WR1/wr1-account')
   }
 
@@ -2206,15 +2206,15 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/waste-movements-
   var wasteMovements = req.session.data['wasteMovements']
 
   // Check whether the variable matches
-  if (wasteMovements == "api-code"){
-    
-  // Send user to
+  if (wasteMovements == "api-code") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/view-your-API')
 
-      } else if (wasteMovements == "download-spreadsheet"){
+  } else if (wasteMovements == "download-spreadsheet") {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/spreadsheet-download')
 
-      } else if (wasteMovements == "upload-spreadsheet"){
+  } else if (wasteMovements == "upload-spreadsheet") {
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/spreadsheet-upload')
 
   } else {
@@ -2230,7 +2230,7 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/who-2-represent-
   var who2represent = req.session.data['Who-2-represent']
 
   // Check whether the variable matches
-  if (who2represent == "[Waste receiver name 1]"){
+  if (who2represent == "[Waste receiver name 1]") {
 
     // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR1/wr1-account')
@@ -2249,9 +2249,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/view-your-API-an
   var buttonChoice = req.session.data['buttonChoice']
 
   // Check whether the variable matches
-  if (buttonChoice == "Disable"){
-    
-  // Send user to
+  if (buttonChoice == "Disable") {
+
+    // Send user to
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/disable-API-code')
   }
 
@@ -2262,16 +2262,16 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/disable-API-code
 
   // Make a variable and give it the value
   var Apidisable = req.session.data['Apidisable']
-  
+
   // Check whether the variable matches
 
-  if (Apidisable == "Yes"){
-  
-  // Send user to
-  res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/API-disabled')
+  if (Apidisable == "Yes") {
+
+    // Send user to
+    res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/API-disabled')
 
   } else {
-    
+
     res.redirect('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/view-your-API')
   }
 
@@ -2292,9 +2292,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/local-authority-a
   var localAuthority = req.session.data['Local authority']
 
   // Check whether the variable matches
-  if (localAuthority == "Yes"){
-    
-  // Send user to
+  if (localAuthority == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/cannot-use-service')
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/sign-in')
@@ -2309,9 +2309,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/sign-in-answer', func
   var oneorgovgateway = req.session.data['signIn']
 
   // Check whether the variable matches
-  if (oneorgovgateway == "One Login"){
-    
-  // Send user to
+  if (oneorgovgateway == "One Login") {
+
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/onelogin-sign-in')
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/govgateway-sign-in')
@@ -2327,9 +2327,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/account-type-answ
   var BusinessorOrganisation = req.session.data['Business or organisation']
 
   // Check whether the variable matches
-  if (BusinessorOrganisation == "Business"){
+  if (BusinessorOrganisation == "Business") {
     req.session.data['What Business or organisation'] = "Limited company"
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/uk-org')
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/Individual/first-last-name')
@@ -2345,9 +2345,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/uk-org-answer', f
   var tradeuk = req.session.data['trade-uk']
 
   // Check whether the variable matches
-  if (tradeuk == "Limited company"){
-    
-  // Send user to
+  if (tradeuk == "Limited company") {
+
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/companies-house')
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/non-UK/business-name')
@@ -2362,9 +2362,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/companies-house-a
   var companiesHouse = req.session.data['companiesHouse']
 
   // Check whether the variable matches
-  if (companiesHouse == "Yes"){
-    
-  // Send user to
+  if (companiesHouse == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/companies-house-number')
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/what-bus-or-org')
@@ -2380,9 +2380,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/what-bus-or-org-a
   var WhatBusinessororganisation = req.session.data['What Business or organisation']
 
   // Check whether the variable matches
-  if (WhatBusinessororganisation == "Charity"){
-    
-  // Send user to
+  if (WhatBusinessororganisation == "Charity") {
+
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/Charity/where-charity-registered')
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S1/WR1/Sole-trader/name-of-business')
@@ -2398,9 +2398,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account-an
   var manageAccount = req.session.data['Manage Account']
 
   // Check whether the variable matches
-  if (manageAccount == "Add a team member"){
-    
-  // Send user to
+  if (manageAccount == "Add a team member") {
+
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/add-team-member-to-org')
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/add-organisation')
@@ -2415,9 +2415,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/account-type-answ
   var BusinessorOrganisation = req.session.data['Business or organisation']
 
   // Check whether the variable matches
-  if (BusinessorOrganisation == "Business"){
+  if (BusinessorOrganisation == "Business") {
     req.session.data['What Business or organisation'] = "Limited company"
-  // Send user to
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/uk-org')
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/Individual/first-last-name')
@@ -2434,12 +2434,12 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/uk-org-answer', f
   var tradeuk = req.session.data['trade-uk']
 
   // Check whether the variable matches
-  if (tradeuk == "Limited company"){
-    
-  // Send user to
+  if (tradeuk == "Limited company") {
+
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/companies-house')
   } else {
-    res.redirect('/layouts/Collections/Alpha/Registration/V1/no-design-yet')
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/non-UK/business-name')
   }
 
 })
@@ -2451,9 +2451,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/companies-house-a
   var companiesHouse = req.session.data['companiesHouse']
 
   // Check whether the variable matches
-  if (companiesHouse == "Yes"){
-    
-  // Send user to
+  if (companiesHouse == "Yes") {
+
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/companies-house-number')
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/what-bus-or-org')
@@ -2469,9 +2469,9 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/what-bus-or-org-a
   var WhatBusinessororganisation = req.session.data['What Business or organisation']
 
   // Check whether the variable matches
-  if (WhatBusinessororganisation == "Charity"){
-    
-  // Send user to
+  if (WhatBusinessororganisation == "Charity") {
+
+    // Send user to
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/Charity/where-charity-registered')
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/Sole-trader/name-of-business')
@@ -2479,3 +2479,62 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/what-bus-or-org-a
 
 })
 
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account-2-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account-2-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var manageAccount = req.session.data['Manage Account']
+
+  // Check whether the variable matches
+  if (manageAccount == "Add a team member") {
+
+    // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/add-team-member-to-org')
+
+  } else if (manageAccount == "Add another organisation") {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/add-organisation')
+    
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR2/who-2-represent')
+  }
+
+})
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S2/WR2/who-2-represent-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR2/who-2-represent-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var who2represent = req.session.data['Who-2-represent']
+
+  // Check whether the variable matches
+  if (who2represent == "[Waste receiver name 1]") {
+
+    // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR1/wr1-account-2-orgs')
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR2/wr1-account-2-orgs')
+  }
+
+})
+
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S2/WR2/manage-account-2-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR2/manage-account-2-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var manageAccount = req.session.data['Manage Account']
+
+  // Check whether the variable matches
+  if (manageAccount == "Add a team member") {
+
+    // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR2/add-team-member-to-org')
+
+  } else if (manageAccount == "Add another organisation") {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR2/add-organisation')
+    
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR2/who-2-represent')
+  }
+
+})

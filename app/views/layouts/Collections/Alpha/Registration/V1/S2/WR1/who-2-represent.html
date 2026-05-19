@@ -1,25 +1,46 @@
-{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
 
-{% set serviceName %}
-  Defra account
-{% endset%}
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Digital waste tracking",
+    navigation: [
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR1/wr1-account",
+      text: "Waste tracking account"
+    },
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account-2",
+      text: "Manage account",
+            active: true
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
 
 {% block beforeContent %}
 
-  <div class="login-nav">
-    <ul class="login-nav__list">
-      <li class="login-nav__list-item">
-			
-						
-				[Your name] |</li>
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
-      <li class="login-nav__list-item">
-        <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Account home</a>|</li>
-      <li class="login-nav__list-item">
-        <a href="/layouts/Private-beta/MVP-Registration/V1/no-design-yet" class="govuk-link login-nav__link govuk-link--no-visited-state">Sign out</a>
-      </li>
-    </ul>
-  </div>
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
 
 {% endblock %}
 

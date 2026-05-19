@@ -30,38 +30,38 @@
 
 {% block content %}
 
-
   <div class="govuk-grid-row">
     <div class="govuk-form-group">
 
       <div class="govuk-grid-column-two-thirds">
 
-        <span class="govuk-caption-xl">Joe B Waste Services England</span>
+        <span class="govuk-caption-xl">
+          <span class="govuk-visually-hidden">This section is: </span>Register Defra account
         </span>
 
-        <form method="post" action="/layouts/Private-beta/MVP-Registration/V1/S1/WR1/uk-org-answer">
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S2/WR1/uk-org-answer">
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
-          classes: "govuk-radios",
+          classes: "govuk-radios--inline",
           name: "trade-uk",
           value: data['trade-uk'],
           fieldset: {
           legend: {
-          text: "Waste movements",
+          text: "Is the business registered to trade in the UK?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
           }
           },
           items: [
           {
-            value: "api-code",
-            text: "Manage my API code"
+            value: "Limited company",
+            text: "Yes"
             },
             {
-              value: "upload-spreadsheet",
-              text: "Upload a spreadsheet"
+              value: "Non-UK",
+              text: "No"
               }
               ]
               }) }}

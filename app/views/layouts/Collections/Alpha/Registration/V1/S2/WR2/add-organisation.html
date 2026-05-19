@@ -1,0 +1,96 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Digital waste tracking",
+    navigation: [
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR1/wr1-account",
+      text: "Waste tracking account"
+    },
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account",
+      text: "Manage account",
+            active: true
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+    <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">
+          <span class="govuk-caption-l">Joe B Recycling Ltd</span>
+          <h1 class="govuk-heading-l">
+            Add another organisation 
+            </h1>
+
+          <p class="govuk-body">
+            If you operate more than one organisation that receives waste, you can add them all to the same Defra account.
+            </p>
+
+          <p class="govuk-body">
+            After you have registered your second organisation, you will see a page confirming it has been added to your Defra account.
+            </p>
+
+          <p class="govuk-body">
+            In the 'What you can do next' section, you will be shown two options.
+            </p>
+
+
+          <p class="govuk-body">
+            You must select 'Report receipt of waste' to register your organisations.
+            </p>
+
+          <p class="govuk-body">
+            Do not select 'Continue without registering a service'.
+            </p>
+
+          <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S2/WR2/account-type">
+
+            <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+              Continue
+              </button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  {% endblock %}

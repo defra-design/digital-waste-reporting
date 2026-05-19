@@ -1,0 +1,95 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    navigation: [
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S2/WR1/non-UK/business-contacts">
+
+          <span class="govuk-caption-xl">
+            <span class="govuk-visually-hidden">This section is: </span>Register new Defra account
+        </span>
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+      What's the business's address?
+    </h1>
+            </legend>
+            <div class="govuk-form-group govuk-!-margin-top-6">
+              <label class="govuk-label" for="address-line-1">
+      Address line 1
+    </label>
+    <div class="govuk-hint">
+      For example, building name or sub-building name
+    </div>
+              <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-2">
+      Address line 2 (optional)
+    </label>
+              <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-town">
+      Town or city
+    </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-county">
+      County (optional)
+    </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-postcode">
+      Postcode
+    </label>
+              <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
+            </div>
+
+            <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+    Continue
+  </button>
+
+          </fieldset>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
