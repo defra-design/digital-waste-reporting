@@ -1,20 +1,33 @@
-  {% extends "layouts/main.html" %}
-  {% extends "/layouts/main.html" %}
+{% extends "/layouts/main.html" %}
 
-  {% block header %}
-    {% from "govuk/components/header/macro.njk" import govukHeader %}
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
 
-    {{ govukHeader({
-    homepageUrl: "#"
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Digital waste tracking",
+    navigation: [
+    {
+      href: "#",
+      text: "Waste tracking account",
+      active: true
+    },
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account",
+      text: "Manage account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
   }) }}
-
-    {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
-
-    {{ govukServiceNavigation({
-      classes: "govuk-!-margin-bottom-2",
-      serviceName: "Report receipt of waste",
-      serviceUrl: "#"
-    }) }}
 
   {% endblock %}
 
@@ -29,7 +42,7 @@
     html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
   }) }}
 
-    <a class="govuk-back-link" href="javascript:history.back()">Back to Waste receiving account</a>
+    <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
   {% endblock %}
 
@@ -42,10 +55,12 @@
       <div class="govuk-grid-column-two-thirds">
 
         <span class="govuk-caption-l">
-        <span class="govuk-caption-l">Joe B Waste Services</span>
+        <span class="govuk-caption-l">Joe B Recycling Ltd</span>
         </span>
 
-        <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S3/WR1/waste-movements-answer">
+        <h1 class="govuk-heading-l">Receipt of waste spreadsheet</h1>
+
+        <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S2/WR1/waste-movements-answer">
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -55,17 +70,12 @@
           value: data['wasteMovements'],
           fieldset: {
           legend: {
-          text: "Report receipt of waste",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          text: "What would you like to do?",          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
           }
           },
           items: [
           {
-            value: "api-code",
-            text: "Manage my API code"
-            },
-            {
               value: "download-spreadsheet",
               text: "Download spreadsheet template"
               },

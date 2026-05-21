@@ -2283,7 +2283,9 @@ router.post('/layouts/Private-beta/Assessment-journey/V1/S2/WR2/disable-API-code
 
 // Collections – Alpha //
 
-// V1 routes //
+// Registration V1 routes //
+
+// SC1 – Only one organisation //
 
 // Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S1/WR1local-authority-answer'
 router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/local-authority-answer', function (req, res) {
@@ -2389,6 +2391,10 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S1/WR1/what-bus-or-org-a
   }
 
 })
+
+
+
+// SC2 – More than one organisation //
 
 
 // Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account-answer'
@@ -2535,6 +2541,31 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR2/manage-account-2-
     
   } else {
     res.redirect('/layouts/Collections/Alpha/Registration/V1/S2/WR2/who-2-represent')
+  }
+
+})
+
+
+// SC3 – View a submitted waste movement //
+
+
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S3/WR1/waste-records-answer'
+router.post('/layouts/Collections/Alpha/Registration/V1/S3/WR1/waste-records-answer', function (req, res) {
+
+  // Make a variable and give it the value
+  var wasteMovement = req.session.data['Waste Movements']
+
+  // Check whether the variable matches
+  if (wasteMovement == "Collections") {
+
+    // Send user to
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S3/WR1/collections-waste-movement-date')
+
+  } else if (wasteMovement == "Receipt API") {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S3/WR1/receipt-API-waste-movements')
+    
+  } else {
+    res.redirect('/layouts/Collections/Alpha/Registration/V1/S3/WR1/receipt-spreadsheet-waste-movements')
   }
 
 })

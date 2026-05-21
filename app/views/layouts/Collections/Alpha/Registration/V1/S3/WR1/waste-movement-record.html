@@ -1,0 +1,274 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Digital waste tracking",
+    navigation: [
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S3/WR1/wr1-account",
+      text: "Waste tracking account",
+      active: true
+    },
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account",
+      text: "Manage account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-three-quarters">
+
+        <span class="govuk-caption-l">
+          <span class="govuk-visually-hidden">This section is: </span>Joe B Recycling Ltd
+        </span>
+
+        <h1 class="govuk-heading-l">Collections of waste API record</h1>
+
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S3/WR1/collections-waste-movement-records">
+
+          {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+          {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Waste details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Date received"
+      },
+      value: {
+        html: " [Day}, [Month] and [Year]"
+      }
+    },
+    {
+      key: {
+        text: "Time received"
+      },
+      value: {
+        html: "10:47"
+      }
+    },
+    {
+      key: {
+        text: "Waste description"
+      },
+      value: {
+        html: "Basic mixed construction and demolition waste, this includes recyclable house bricks, gypsum plaster and slates."
+      }
+    },
+    {
+      key: {
+        text: "EWC codes"
+      },
+      value: {
+        html: "10306, 010306"
+      }
+    },
+    {
+      key: {
+        text: "Special handling requirements"
+      },
+      value: {
+        html: "The waste must be fully inspected by the waste handler according to the Hazardous waste consignment and or EWC codes provided."
+      }
+    },
+    {
+      key: {
+        text: "Physical form"
+      },
+      value: {
+        html: "Solid"
+      }
+    }
+  ]
+}) }}
+
+          {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Storage of the waste"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Type of container"
+      },
+      value: {
+        html: "Skip"
+      }
+      },
+      {
+      key: {
+        text: "Number of containers"
+      },
+      value: {
+        html: "5"
+      }
+    },
+    {
+      key: {
+        text: "Weight of container"
+      },
+      value: {
+        html: "150kg"
+      }
+    },
+    {
+      key: {
+        text: "Disposal or Recovery codes"
+      },
+      value: {
+        html: "R1, D1"
+      }
+    },
+    {
+      key: {
+        text: "Weight for each code"
+      },
+      value: {
+        html: "75kg, 81kg"
+      }
+    }
+  ]
+}) }}
+
+          {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Persistent organic pollutants (POPs) waste"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Contains POPs"
+      },
+      value: {
+        html: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Name of POPs"
+      },
+      value: {
+        html: "Dicofol, Beta hexachlorocyclohexane"
+      }
+    },
+    {
+      key: {
+        text: "Source of POPs"
+      },
+      value: {
+        html: "Carrier provided"
+      }
+    },
+    {
+      key: {
+        text: "Concentration of POPs (mg per kg)"
+      },
+      value: {
+        html: "23, 34"
+      }
+    }
+  ]
+}) }}
+
+          {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Hazardous waste"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Hazardous"
+      },
+      value: {
+        html: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Hazardous component"
+      },
+      value: {
+        html: "Lead, Mercury"
+      }
+    },
+    {
+      key: {
+        text: "Hazardous property codes"
+      },
+      value: {
+        html: "Hp_5, Hp_10"
+      }
+    },
+    {
+      key: {
+        text: "Source of hazardous"
+      },
+      value: {
+        html: "Carrier provided"
+      }
+    },
+    {
+      key: {
+        text: "Concentration of hazardous component (mg per kg)"
+      },
+      value: {
+        html: "50, 12.5"
+      }
+    }
+  ]
+}) }}
+        </form>
+
+<button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+  Search for another waste movement record
+</button>
+
+
+      </div>
+
+    {% endblock %}

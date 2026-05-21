@@ -1,0 +1,133 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Digital waste tracking",
+    navigation: [
+    {
+      href: "#",
+      text: "Waste tracking account",
+      active: true
+    },
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account",
+      text: "Manage account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">
+          <span class="govuk-visually-hidden">This section is: </span>Joe B Recycling Ltd
+        </span>
+
+        <h1 class="govuk-heading-l">Collections of waste API records</h1>
+
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S3/WR1/waste-movement-record">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" value="Waste Movement Record">
+                <h1 class="govuk-fieldset__heading">Waste movement records for [Day], [Month] and [Year]"</h1>
+              </legend>
+              <div id="changedName-hint" class="govuk-hint govuk-!-margin-top-2">
+                Select which waste activity you want to view
+                </div>
+              <div class="govuk-radios govuk-!-padding-top-3" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="record-1" name="record-1" type="radio" value="Time: 10:47">
+                  <label class="govuk-label govuk-radios__label" for="record-1">
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      <strong>Time:</strong> 10:47
+                      </p>
+                    <p class="govuk-body">Basic mixed construction and demolition waste, this includes recyclable house bricks, gypsum plaster and slates
+                      </p>
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="record-2" name="record-2" type="radio" value="Time: 12:22">
+                  <label class="govuk-label govuk-radios__label" for="record-2">
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      <strong>Time:</strong> 12:22
+                  </p>
+                    <p class="govuk-body">Mixtures of, or separate fractions of concrete, bricks, tiles and ceramics
+                  </p>
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="record-3" name="record-3" type="radio" value="Time: 14:16">
+                  <label class="govuk-label govuk-radios__label" for="record-3">
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      <strong>Time:</strong> 14:16
+                  </p>
+                    <p class="govuk-body">Sawdust, shavings, cuttings, wood, particle board and veneer containing hazardous substances
+                  </p>
+                  </label>
+                </div>
+                <div class="govuk-radios__item govuk-!-padding-bottom-6">
+                  <input class="govuk-radios__input" id="record-4" name="record-4" type="radio" value="Time: 16:52">
+                  <label class="govuk-label govuk-radios__label" for="record-4">
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      <strong>Time:</strong> 16:52
+                  </p>
+                    <p class="govuk-body">Mixtures of concrete, bricks, tiles and ceramics
+                  </p>
+                  </label>
+                </div>
+              </div>
+
+              <div class="govuk-button-group">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Continue
+                  </button>
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Search again
+                    </button>
+              </div>
+            </fieldset>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -58,6 +58,8 @@
         <span class="govuk-caption-l">Joe B Waste Services</span>
         </span>
 
+        <h1 class="govuk-heading-l">Receipt of waste spreadsheet</h1>
+
         <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S2/WR1/waste-movements-answer">
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -68,9 +70,9 @@
           value: data['wasteMovements'],
           fieldset: {
           legend: {
-          text: "Receipt of waste spreadsheet",
+          text: "What would you like to do?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          classes: "govuk-fieldset__legend--m"
           }
           },
           items: [

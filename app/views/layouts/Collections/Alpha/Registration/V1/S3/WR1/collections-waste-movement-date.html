@@ -1,0 +1,89 @@
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Digital waste tracking",
+    navigation: [
+    {
+      href: "#",
+      text: "Waste tracking account",
+      active: true
+    },
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account",
+      text: "Manage account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-three-quarters">
+
+        <span class="govuk-caption-l">
+          <span class="govuk-visually-hidden">This section is: </span>Joe B Recycling Ltd
+        </span>
+
+        <h1 class="govuk-heading-l">Collections of waste API records</h1>
+
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S3/WR1/collections-waste-movement-records">
+
+          {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+          {{ govukDateInput({
+            id: "date-of-waste-movement",
+            namePrefix: "date-of-waste-movement",
+            fieldset: {
+              legend: {
+                text: "What is the date of the waste movement you are looking for?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+                }
+                },
+                hint: {
+                  text: "For example, 27 3 2007"
+                  }
+                  }) }}
+                  {{ govukButton({
+                    classes: "govuk-!-margin-top-6",
+                    text: "Continue"
+                    }) }}
+
+        </form>
+
+      </div>
+
+    {% endblock %}

@@ -29,25 +29,24 @@
   ]
   }) }}
 
-  {% endblock %}
+{% endblock %}
 
-  {% block beforeContent %}
+{% block beforeContent %}
 
-    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
-    {{ govukPhaseBanner({
+  {{ govukPhaseBanner({
     tag: {
       text: "Beta"
     },
     html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
   }) }}
 
-    <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
-  {% endblock %}
+{% endblock %}
 
-  {% block content %}
-
+{% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-form-group">
@@ -55,38 +54,38 @@
       <div class="govuk-grid-column-two-thirds">
 
         <span class="govuk-caption-l">
-        <span class="govuk-caption-l">Joe B Recycling Ltd</span>
+          <span class="govuk-visually-hidden">This section is: </span>Joe B Recycling Ltd
         </span>
 
-        <h1 class="govuk-heading-l">Receipt of waste spreadsheet</h1>
-
-        <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S2/WR1/waste-movements-answer">
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S3/WR1/waste-records-answer">
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
-          classes: "govuk-radios",
-          name: "wasteMovements",
-          value: data['wasteMovements'],
+          name: "Waste Movements",
+          value: "Waste Movements",
           fieldset: {
           legend: {
-          text: "What would you like to do?",
+          text: "View waste records",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
+          classes: "govuk-fieldset__legend--l"
           }
           },
-          items: [
-          {
-              value: "download-spreadsheet",
-              text: "Download spreadsheet template"
+          hint: {
+            text: "Select which waste activity you want to view"
+            },
+            items: [
+            {
+            value: "Collections",
+            text: "Collections of waste API"
+            },
+            {
+              value: "Receipt API",
+              text: "Receipt of waste API"
               },
               {
-              value: "upload-spreadsheet",
-              text: "Upload a spreadsheet"
-              },
-            {
-              value: "update-spreadsheet",
-              text: "Update a spreadsheet that has a Waste tracking ID"
+              value: "Spreadsheet",
+              text: "Receipt of waste spreadsheet"
               }
               ]
               }) }}

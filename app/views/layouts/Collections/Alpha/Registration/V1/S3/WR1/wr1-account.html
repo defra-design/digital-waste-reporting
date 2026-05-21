@@ -1,20 +1,33 @@
-{% extends "layouts/main.html" %}
 {% extends "/layouts/main.html" %}
 
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
 
   {{ govukHeader({
-    homepageUrl: "#"
-  }) }}
+  homepageUrl: "#"
+}) }}
 
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
   {{ govukServiceNavigation({
-      classes: "govuk-!-margin-bottom-2",
-      serviceName: "Report receipt of waste",
-      serviceUrl: "#"
-    }) }}
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Digital waste tracking",
+    navigation: [
+    {
+      href: "#",
+      text: "Waste tracking account",
+      active: true
+    },
+    {
+      href: "/layouts/Collections/Alpha/Registration/V1/S2/WR2/manage-account-2",
+      text: "Manage account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+  }) }}
 
 {% endblock %}
 
@@ -37,16 +50,8 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="/layouts/Private-beta/MVP-Registration/V2/S3/WR1/who-2-represent">
-
-        <button type="submit" class="govuk-button govuk-button--secondary" id="deletebutton" data-module="govuk-button" name="buttonChoice" value="Delete">
-            Switch organisation
-            </button>
-            
-      </form>
-
-      <span class="govuk-caption-l">Joe B Waste Services</span>
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Waste receiving account</h1>
+      <span class="govuk-caption-l">Joe B Recycling Ltd</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Waste tracking account</h1>
 
     </div>
 
@@ -59,35 +64,14 @@
             <a href=""></a>
             <div class="govuk-card__content">
               <h3 class="govuk-heading-m">
-                <a href="/layouts/Private-beta/MVP-Registration/V2/S3/WR1/waste-movements" class="govuk-link--no-visited-state">Report receipt of waste</a>
-              </h3>
-            </div>
-            <div class="govuk-card__actions">
-              <ul class="govuk-list">
-                <li>
-                  <a href="/layouts/Private-beta/Web-form/Idea-B/J1/your-templates" class="govuk-link--no-visited-state"></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-                <div class="govuk-grid-column-one-third">
-          <div class="govuk-card govuk-card--contained">
-            <a href=""></a>
-            <div class="govuk-card__content">
-
-              <h3 class="govuk-heading-m">
-                <a href="/layouts/Private-beta/MVP-Registration/V2/S2/WR1/manage-account" class="govuk-link--no-visited-state">Manage account</a>
+                <a href="/layouts/Collections/Alpha/Registration/V1/S3/WR1/waste-records" class="govuk-link--no-visited-state">Report my waste</a>
               </h3>
 
-            </div>
-            <div class="govuk-card__actions">
-              <ul class="govuk-list">
-                <li>
-                  <a href="/layouts/Private-beta/Web-form/Idea-B/J1/waste-sites-paid" class="govuk-link--no-visited-state"></a>
-                </li>
-              </ul>
+              <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-padding-bottom-2">Report your waste collections and receipt of waste via our API.</p>
+
+              <h4 class="govuk-heading-s">
+                <a href="/layouts/Collections/Alpha/Registration/V1/S3/WR1/spreadsheet" class="govuk-link--no-visited-state">Receipt of waste spreadsheet</a>
+              </h4>
             </div>
           </div>
         </div>
@@ -96,14 +80,35 @@
           <div class="govuk-card govuk-card--contained">
             <a href=""></a>
             <div class="govuk-card__content">
-              <h3 class="govuk-heading-m govuk-!-margin-bottom-3">Service charge
-                                  </h3>
+              <h3 class="govuk-heading-m">
+                <a href="/layouts/Collections/Alpha/Registration/V1/S3/WR1/waste-records" class="govuk-link--no-visited-state">View waste records</a>
+              </h3>
+
+              <p class="govuk-body govuk-!-margin-bottom-1 govuk-!-padding-bottom-8">This is where you will be able to view all the movements you have submitted to the Regulators.</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-card govuk-card--contained">
+            <a href=""></a>
+            <div class="govuk-card__content">
+              <h3 class="govuk-heading-m">
+                <a href="/layouts/Collections/Alpha/Registration/V1/S3/WR1/service-charge-paid" class="govuk-link--no-visited-state">Pay service charge</a>
+              </h3>
+
             </div>
             <div class="govuk-card__actions">
-              <strong class="first-capital govuk-tag govuk-tag--yellow ">
-                    Due October 2026
+              <strong class="first-capital govuk-tag govuk-tag--green">
+                    Paid
                     </strong>
+
+              <p class="govuk-body govuk-!-padding-top-5 govuk-!-margin-bottom-6 govuk-!-padding-bottom-6">Next payment due October 2027.
+
             </div>
+
+            </p>
           </div>
         </div>
 
@@ -112,7 +117,5 @@
     </div>
 
   </div>
-
-</div>
 
 {% endblock %}
