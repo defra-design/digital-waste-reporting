@@ -2549,8 +2549,8 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S2/WR2/manage-account-2-
 // SC3 – View a submitted waste movement //
 
 
-// Run this code when a form is submitted to '/layouts/Collections/Alpha/Registration/V1/S3/WR1/waste-records-answer'
-router.post('/layouts/Collections/Alpha/Registration/V1/S3/WR1/waste-records-answer', function (req, res) {
+// Run this code when a form is submitted to '/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/waste-records-answer'
+router.post('/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/waste-records-answer', function (req, res) {
 
   // Make a variable and give it the value
   var wasteMovement = req.session.data['Waste Movements']
@@ -2559,13 +2559,13 @@ router.post('/layouts/Collections/Alpha/Registration/V1/S3/WR1/waste-records-ans
   if (wasteMovement == "Collections") {
 
     // Send user to
-    res.redirect('/layouts/Collections/Alpha/Registration/V1/S3/WR1/collections-waste-movement-date')
+    res.redirect('/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/collections-waste-movement-date')
 
   } else if (wasteMovement == "Receipt API") {
-    res.redirect('/layouts/Collections/Alpha/Registration/V1/S3/WR1/receipt-API-waste-movements')
+    res.redirect('/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/receipt-API-waste-movements')
     
   } else {
-    res.redirect('/layouts/Collections/Alpha/Registration/V1/S3/WR1/receipt-spreadsheet-waste-movements')
+    res.redirect('/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/receipt-spreadsheet-waste-movements')
   }
 
 })
