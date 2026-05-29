@@ -36,33 +36,32 @@
       <div class="govuk-grid-column-two-thirds">
 
         <span class="govuk-caption-xl">
-          <span class="govuk-visually-hidden">This section is: </span>Register new Defra account
+          <span class="govuk-visually-hidden">This section is: </span>Register Defra account
         </span>
 
-        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S2/WR1/companies-house-answer">
+        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S2/WR1/what-bus-or-org-answer">
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "companiesHouse",
-          value: data['companiesHouse'],
+          name: "What Business or organisation",
+          value: data['What Business or organisation'],
           fieldset: {
           legend: {
-          text: "Do you have a company registration number?",
+          text: "What kind of business or organisation are you?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
           }
           },
           items: [
           {
-            value: "Yes",
-            text: "Yes"
+            value: "Charity",
+            text: "Charity"
             },
             {
-              value: "No",
-              text: "No"
-              }
+              value: "Sole-trader",
+              text: "Sole trader"
+            }
               ]
               }) }}
 
