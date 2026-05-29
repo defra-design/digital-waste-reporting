@@ -14,12 +14,12 @@
     serviceName: "Digital waste tracking",
     navigation: [
     {
-      href: "/layouts/Collections/Alpha/Registration/V1/S3/WR1/wr1-account",
+      href: "/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/wr1-account",
       text: "Waste tracking account",
       active: true
     },
     {
-      href: "/layouts/Collections/Alpha/Registration/V1/S3/WR1/manage-account-2",
+      href: "/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/manage-account-2",
       text: "Manage account"
     },
     {
@@ -59,18 +59,16 @@
 
         <h1 class="govuk-heading-l govuk-!-padding-bottom-4">Collection of waste &#40;API&#41;</h1>
 
-        <h2 class="govuk-heading-m govuk-!-padding-bottom-4">Waste movement record</h2>
+        {# <h2 class="govuk-heading-m govuk-!-padding-bottom-4">Waste movement details</h2> #}
 
-
-
-        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S3/WR1/collections-waste-movement-records">
+        <form method="post" action="/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/collections-waste-movement-records">
 
           {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
           {{ govukSummaryList({
   card: {
     title: {
-      text: "Waste details"
+      text: "Waste movement details"
     }
   },
   rows: [
@@ -92,13 +90,32 @@
     },
     {
       key: {
-        text: "Waste description"
+        text: "Special handling requirements"
       },
       value: {
-        html: "Basic mixed construction and demolition waste, this includes recyclable house bricks, gypsum plaster and slates."
+        html: "The waste must be fully inspected by the waste handler according to the Hazardous waste consignment and or EWC codes provided."
       }
-    },
-    {
+    }
+  ]
+}) }}
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+          {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Waste item details"
+    }
+  },
+  rows: [
+  {
+      key: {
+        text: "Your unique reference"
+      },
+      value: {
+        html: "2000181"
+      }
+    },{
       key: {
         text: "EWC codes"
       },
@@ -108,10 +125,10 @@
     },
     {
       key: {
-        text: "Special handling requirements"
+        text: "Waste description"
       },
       value: {
-        html: "The waste must be fully inspected by the waste handler according to the Hazardous waste consignment and or EWC codes provided."
+        html: "Basic mixed construction and demolition waste, this includes recyclable house bricks, gypsum plaster and slates."
       }
     },
     {
@@ -121,39 +138,101 @@
       value: {
         html: "Solid"
       }
-    }
-  ]
-}) }}
-
-          {{ govukSummaryList({
-  card: {
-    title: {
-      text: "Storage of the waste"
-    }
-  },
-  rows: [
+    }, 
     {
       key: {
-        text: "Type of container"
+        text: "Number of containers used"
       },
       value: {
-        html: "Skip"
-      }
-      },
-      {
-      key: {
-        text: "Number of containers"
-      },
-      value: {
-        html: "5"
+        html: "1"
       }
     },
     {
       key: {
-        text: "Weight of container"
+        text: "Type of containers"
+      },
+      value: {
+        html: "Skip"
+      }
+    },
+    {
+      key: {
+        text: "Weight unit of measurement"
       },
       value: {
         html: "150kg"
+      }
+    },
+    {
+      key: {
+        text: "Total weight of waste"
+      },
+      value: {
+        html: "150kg"
+      }
+      },
+    {
+      key: {
+        text: "Is the weight estimated"
+      },
+      value: {
+        html: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Does the waste contain persistent organic pollutants (POPs)?"
+      },
+      value: {
+        html: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "POP name & concentration value"
+      },
+      value: {
+        html: "Dicofol 23, Beta hexachlorocyclohexane 34"
+      }
+    },
+    {
+      key: {
+        text: "How did you determine the POPs components?"
+      },
+      value: {
+        html: "Tested"
+      }
+    },
+    {
+      key: {
+        text: "Is the waste hazardous?"
+      },
+      value: {
+        html: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Hazardous property codes (Haz code)"
+      },
+      value: {
+        html: "Hp_5, Hp_10"
+      }
+    },
+    {
+      key: {
+        text: "Component name & concentration value"
+      },
+      value: {
+        html: "Lead 50, Mercury 12.5"
+      }
+    },
+    {
+      key: {
+        text: "How did you determine the Hazardous components?"
+      },
+      value: {
+        html: "Tested"
       }
     },
     {
@@ -163,115 +242,15 @@
       value: {
         html: "R1, D1"
       }
-    },
-    {
-      key: {
-        text: "Weight for each code"
-      },
-      value: {
-        html: "75kg, 81kg"
-      }
     }
   ]
 }) }}
 
-          {{ govukSummaryList({
-  card: {
-    title: {
-      text: "Persistent organic pollutants (POPs) waste"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Contains POPs"
-      },
-      value: {
-        html: "Yes"
-      }
-    },
-    {
-      key: {
-        text: "Name of POPs"
-      },
-      value: {
-        html: "Dicofol, Beta hexachlorocyclohexane"
-      }
-    },
-    {
-      key: {
-        text: "Source of POPs"
-      },
-      value: {
-        html: "Carrier provided"
-      }
-    },
-    {
-      key: {
-        text: "Concentration of POPs (mg per kg)"
-      },
-      value: {
-        html: "23, 34"
-      }
-    }
-  ]
-}) }}
-
-          {{ govukSummaryList({
-  card: {
-    title: {
-      text: "Hazardous waste"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Hazardous"
-      },
-      value: {
-        html: "Yes"
-      }
-    },
-    {
-      key: {
-        text: "Hazardous component"
-      },
-      value: {
-        html: "Lead, Mercury"
-      }
-    },
-    {
-      key: {
-        text: "Hazardous property codes"
-      },
-      value: {
-        html: "Hp_5, Hp_10"
-      }
-    },
-    {
-      key: {
-        text: "Source of hazardous"
-      },
-      value: {
-        html: "Carrier provided"
-      }
-    },
-    {
-      key: {
-        text: "Concentration of hazardous component (mg per kg)"
-      },
-      value: {
-        html: "50, 12.5"
-      }
-    }
-  ]
-}) }}
         </form>
 
-<button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+        <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
   Search for another waste movement record
 </button>
-
 
       </div>
 

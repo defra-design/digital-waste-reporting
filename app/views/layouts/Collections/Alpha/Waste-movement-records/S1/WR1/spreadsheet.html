@@ -14,12 +14,12 @@
     serviceName: "Digital waste tracking",
     navigation: [
     {
-      href: "/layouts/Collections/Alpha/Registration/V1/S3/WR1/wr1-account",
+      href: "/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/wr1-account",
       text: "Waste tracking account",
       active: true
     },
     {
-      href: "/layouts/Collections/Alpha/Registration/V1/S3/WR1/manage-account-2",
+      href: "/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/manage-account-2",
       text: "Manage account"
     },
     {
@@ -29,24 +29,25 @@
   ]
   }) }}
 
-{% endblock %}
+  {% endblock %}
 
-{% block beforeContent %}
+  {% block beforeContent %}
 
-  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
-  {{ govukPhaseBanner({
+    {{ govukPhaseBanner({
     tag: {
       text: "Beta"
     },
     html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
   }) }}
 
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+    <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
-{% endblock %}
+  {% endblock %}
 
-{% block content %}
+  {% block content %}
+
 
   <div class="govuk-grid-row">
     <div class="govuk-form-group">
@@ -54,38 +55,37 @@
       <div class="govuk-grid-column-two-thirds">
 
         <span class="govuk-caption-l">
-          <span class="govuk-visually-hidden">This section is: </span>Joe B Recycling Ltd
+        <span class="govuk-caption-l">Joe B Recycling Ltd</span>
         </span>
 
-        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S3/WR1/waste-records-answer">
+        <h1 class="govuk-heading-l">Report receipt of waste <br>by spreadsheet</h1>
+
+        <form method="post" action="/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/waste-movements-answer">
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
-          name: "Waste Movements",
-          value: "Waste Movements",
+          classes: "govuk-radios",
+          name: "wasteMovements",
+          value: data['wasteMovements'],
           fieldset: {
           legend: {
-          text: "View waste records",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          text: "What would you like to do?",          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
           }
           },
-          hint: {
-            text: "Select which waste activity you want to view"
-            },
-            items: [
-            {
-            value: "Collections",
-            text: "Collection of waste (API) "
-            },
-            {
-              value: "Receipt API",
-              text: "Receipt of waste (API)"
+          items: [
+          {
+              value: "download-spreadsheet",
+              text: "Download spreadsheet template"
               },
               {
-              value: "Spreadsheet",
-              text: "Receipt of waste (spreadsheet)"
+              value: "upload-spreadsheet",
+              text: "Upload a spreadsheet"
+              },
+            {
+              value: "update-spreadsheet",
+              text: "Update a spreadsheet that has a Waste tracking ID"
               }
               ]
               }) }}

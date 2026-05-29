@@ -14,13 +14,13 @@
     serviceName: "Digital waste tracking",
     navigation: [
     {
-      href: "/layouts/Collections/Alpha/Registration/V1/S3/WR1/wr1-account",
-      text: "Waste tracking account"
+      href: "/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/wr1-account",
+      text: "Waste tracking account",
+      active: true
     },
     {
-      href: "/layouts/Collections/Alpha/Registration/V1/S3/WR1/manage-account-2",
-      text: "Manage account",
-            active: true
+      href: "/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/manage-account-2",
+      text: "Manage account"
     },
     {
       href: "#",
@@ -54,36 +54,39 @@
       <div class="govuk-grid-column-two-thirds">
 
         <span class="govuk-caption-l">
-          <span class="govuk-caption-l">Joe B Waste Services</span>
+          <span class="govuk-visually-hidden">This section is: </span>Joe B Recycling Ltd
         </span>
 
-        <form method="post" action="/layouts/Collections/Alpha/Registration/V1/S2/WR1/manage-account-2-answer">
+        <form method="post" action="/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/receipt-API-waste-movements-answer">
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
-          classes: "govuk-radios",
-          name: "Manage Account",
+          name: "Business or organisation",
+          value: data['Business or organisation'],
           fieldset: {
           legend: {
-          text: "Manage account",
+          text: "Waste records",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
           }
           },
-          items: [
-          {
-            value: "Add a team member",
-            text: "Add a team member to this organisation"
+          hint: {
+            text: "Select which waste activity you want to view"
+            },
+            items: [
+            {
+            value: "Collections",
+            text: "Collections of waste API"
             },
             {
-            value: "Add another organisation",
-            text: "Register another organisation with Defra"
+              value: "Receipt API",
+              text: "Receipt of waste API"
               },
               {
-            value: "Switch organisation",
-            text: "Switch to another waste organisation"
-              } 
+              value: "Spreadsheet",
+              text: "Receipt of waste spreadsheet"
+              }
               ]
               }) }}
 
