@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+
+{{ govukServiceNavigation({
+  classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "account-home",
+  navigation: [
+    {
+      href: "../account-home",
+      text: "Waste account",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Manage Defra account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../account-home"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form method="post" action="/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/vehicle-registration">
+
+{{ govukDateInput({
+  fieldset: {
+    legend: {
+      text: "When was the waste received?",
+      classes: "govuk-fieldset__legend--l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "For example, 2 June 2026"
+  },
+  id: "date-received",
+  namePrefix: "date-received",
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: data['date-received-day'] or currentDay
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: data['date-received-month'] or currentMonth
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: data['date-received-year'] or currentYear
+    }
+  ]
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Time received"
+  },
+  hint: {
+    text: "Use the 24 hour clock, for example 14:30"
+  },
+  id: "time-received",
+  name: "time-received",
+  classes: "govuk-input--width-3",
+  value: data['time-received'] or currentTime
+}) }}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+</form> 
+
+{% endblock %}

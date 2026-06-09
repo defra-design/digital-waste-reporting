@@ -8,13 +8,27 @@
     homepageUrl: "#"
   }) }}
 
-  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-  {{ govukServiceNavigation({
-      classes: "govuk-!-margin-bottom-2",
-      serviceName: "Report receipt of waste",
-      serviceUrl: "#"
-    }) }}
+{{ govukServiceNavigation({
+  classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "account-home",
+  navigation: [
+    {
+      href: "#",
+      text: "Waste account",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Manage Defra account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+}) }}
 
 {% endblock %}
 
@@ -82,8 +96,8 @@
                   </a>
                 </li>
                 <li>
-                  <a href="weighbridge-recording" class="govuk-link" data-testid="weighbridge-recording-link">
-                    Record a weighbridge arrival
+                  <a href="weighbridge-recording/start" class="govuk-link" data-testid="weighbridge-recording-link">
+                    Record a weighbridge delivery
                   </a>
                 </li>
               </ul>

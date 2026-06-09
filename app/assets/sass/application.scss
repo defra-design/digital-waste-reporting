@@ -210,3 +210,21 @@ ul.language-toggle li {
     padding: 15px;
     height: 314px !important;
 }
+
+@font-face {
+    font-family: "UK-VRM";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/public/fonts/uk-vrm-dd1d98d59251114df9001e5b0e40c3c2.woff2") format("woff2")
+}
+
+.dvsa-vrm {
+    display: inline-block;
+    min-width: 150px;
+    font: 30px "UK-VRM", Verdana, sans-serif;
+    padding: .4em .2em;
+    text-align: center;
+    background-color: #fd0;
+    border-radius: .25em;
+    text-transform: uppercase
+}

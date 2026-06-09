@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+
+{{ govukServiceNavigation({
+  classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "account-home",
+  navigation: [
+    {
+      href: "../account-home",
+      text: "Waste account",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Manage Defra account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "vehicle-registration-confirm"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<form method="post" action="/weighbridge-recording/waste-description/add">
+
+  {{ govukTextarea({
+    label: {
+      text: "Describe the waste delivery",
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    hint: {
+      text: "For example, soil, timber or manure"
+    },
+    id: "waste-description",
+    name: "waste-description",
+    value: data['waste-description'] or ""
+  }) }}
+
+  {{ govukButton({
+    text: "Add",
+    classes: "govuk-button--secondary"
+  }) }}
+
+</form>
+
+{% if data['ewc-matches'] and data['ewc-matches'].length %}
+
+  <h2 class="govuk-heading-m">Waste items added</h2>
+  <p class="govuk-body">We’ve identified these materials from your description</p>
+
+  <dl class="govuk-summary-list">
+
+  {% for item in data['ewc-matches'] %}
+
+    <div class="govuk-summary-list__row">
+
+      <dt class="govuk-summary-list__key">
+        {{ item.material | capitalize }}
+      </dt>
+
+      <dd class="govuk-summary-list__value">
+        {{ item.code.slice(0,2) }} {{ item.code.slice(2,4) }} {{ item.code.slice(4) }}
+        ({{ item.description }})
+      </dd>
+
+      <dd class="govuk-summary-list__actions">
+        <a href="/weighbridge-recording/remove-item?code={{ item.code }}" class="govuk-link">
+          Remove<span class="govuk-visually-hidden"> {{ item.material }}</span>
+        </a>
+      </dd>
+
+    </div>
+
+  {% endfor %}
+
+</dl>
+
+{% endif %}
+
+
+<form method="post" action="/weighbridge-recording/waste-description/continue">
+
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+
+</form>
+
+
+  </div>
+</div>
+
+{% endblock %}
+

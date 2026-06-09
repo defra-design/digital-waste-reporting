@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+      classes: "govuk-!-margin-bottom-2",
+      serviceName: "Report receipt of waste",
+      serviceUrl: "#"
+    }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back to Waste receiving account</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l">
+            You cannot switch organisation  
+            </h1>
+
+          <p class="govuk-body">You cannot switch organisations because there is only one registered on your account.</p>
+          <p class="govuk-body">You can <a href="add-organisation" class="govuk-link">add an organisation</a> or contact the support team if you think this is an error.</p>
+          <p class="govuk-body">Telephone: 03000 203 781</p>
+          <p class="govuk-body">Monday to Friday, 8am to 5pm (except public holidays)</p>
+
+        </div>
+      </div>
+    </div>
+
+  {% endblock %}

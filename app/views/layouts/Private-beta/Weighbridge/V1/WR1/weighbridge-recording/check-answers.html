@@ -1,0 +1,270 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% set months = [
+  "January","February","March","April","May","June",
+  "July","August","September","October","November","December"
+] %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+
+{{ govukServiceNavigation({
+  classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "account-home",
+  navigation: [
+    {
+      href: "../account-home",
+      text: "Waste account",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Manage Defra account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "vehicle-registration-confirm"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Confirm waste movement details</h1>
+
+      <h2 class="govuk-heading-m">Date and time received</h2>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [      
+          {
+            key: {
+              text: "Date received"
+            },
+            value: {
+              text: data['date-received-day'] + " "
+                  + months[data['date-received-month'] - 1] + " "
+                  + data['date-received-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/weighbridge-recording/start",
+                  text: "Change",
+                  visuallyHiddenText: "date received"
+                }
+              ]
+            }
+          },
+          {
+  key: {
+    text: "Time received"
+  },
+  value: {
+    text: data['time-received']
+  },
+  actions: {
+    items: [
+      {
+        href: "/weighbridge-recording/start",
+        text: "Change",
+        visuallyHiddenText: "time received"
+      }
+    ]
+  }
+}
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Vehicle details</h2>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+          {
+            key: {
+              text: "Registration number"
+            },
+            value: {
+              text: (data['vehicle-registration'] or '').toUpperCase()
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "registration number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Make and model"
+            },
+            value: {
+              text: "Ford Transit"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "make and model"
+                }
+              ]
+            }
+          },
+
+    {
+      key: {
+        text: "Year of manufacture"
+      },
+      value: {
+        text: "2016"
+      },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "year of manufacture"
+                }
+              ]
+            }
+    },
+    {
+      key: {
+        text: "CO₂ emissions"
+      },
+      value: {
+        html: "116 g/km"
+      },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "CO₂ emissions"
+                }
+              ]
+            }
+    },
+    {
+      key: {
+        text: "Fuel type"
+      },
+      value: {
+        html: 'PETROL'
+      },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "fuel type"
+                }
+              ]
+            }
+    },
+    {
+      key: {
+        text: "Euro status"
+      },
+      value: {
+        html: 'Not available'
+      },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "euro status"
+                }
+              ]
+            }
+    },
+    {
+      key: {
+        text: "Revenue weight"
+      },
+      value: {
+        html: '2780 kg'
+      },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "revenue weight"
+                }
+              ]
+            }
+    },
+    {
+      key: {
+        text: "Wheelplan"
+      },
+      value: {
+        html: '2 AXLE RIGID BODY'
+      },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "wheelplan"
+                }
+              ]
+            }
+    }
+        ]
+      }) }}
+
+
+      <h2 class="govuk-heading-m">Save waste movement record</h2>
+
+      <p class="govuk-body">By submitting this movement you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="/form-handler" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

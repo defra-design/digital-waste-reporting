@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+
+{{ govukServiceNavigation({
+  classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "account-home",
+  navigation: [
+    {
+      href: "../account-home",
+      text: "Waste account",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Manage Defra account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "start"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/vehicle-registration-confirm">
+
+    {{ govukInput({
+      label: {
+        text: "Enter vehicle registration number (number plate)",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      hint: {
+        text: "For example, CU57ABC or ABC1234"
+      },
+      id: "vehicle-registration",
+      name: "vehicle-registration",
+      classes: "govuk-input--width-10",
+      value: data['vehicle-registration']
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+

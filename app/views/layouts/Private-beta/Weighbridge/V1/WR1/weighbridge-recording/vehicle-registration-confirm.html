@@ -1,0 +1,151 @@
+{% extends "layouts/main.html" %}
+{% extends "/layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+
+{{ govukServiceNavigation({
+  classes: "govuk-!-margin-bottom-2",
+  serviceName: "Report receipt of waste",
+  serviceUrl: "account-home",
+  navigation: [
+    {
+      href: "../account-home",
+      text: "Waste account",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Manage Defra account"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "vehicle-registration"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<div class="dvsa-vrm govuk-!-margin-bottom-1" data-test-id="vehicle-registration">
+  {{ data['vehicle-registration'] or "Not provided" }}
+</div>
+
+  <h1 class="govuk-heading-xl" data-test-id="vehicle-make-model">FORD TRANSIT</h1>
+  
+  <h2 class="govuk-heading-m">
+    Vehicle Details
+  </h2>
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Vehicle make"
+      },
+      value: {
+        text: "FORD"
+      }
+    },
+    {
+      key: {
+        text: "Year of manufacture"
+      },
+      value: {
+        text: "2016"
+      }
+    },
+    {
+      key: {
+        text: "CO₂ emissions"
+      },
+      value: {
+        html: "116 g/km"
+      }
+    },
+    {
+      key: {
+        text: "Fuel type"
+      },
+      value: {
+        html: 'PETROL'
+      }
+    },
+    {
+      key: {
+        text: "Euro status"
+      },
+      value: {
+        html: 'Not available'
+      }
+    },
+    {
+      key: {
+        text: "Revenue weight"
+      },
+      value: {
+        html: '2780 kg'
+      }
+    },
+    {
+      key: {
+        text: "Wheelplan"
+      },
+      value: {
+        html: '2 AXLE RIGID BODY'
+      }
+    }
+  ]
+}) }}
+  
+
+  </div>
+
+</div>
+
+<p class="govuk-body" data-test-id="confirm-vehicle-registration">Is this the correct vehicle?</p>
+
+<form method="post" action="/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/waste-description">
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Yes, save and continue"
+  }) }}
+
+  <a class="govuk-link" href="vehicle-registration">No, cancel and go back</a>
+</div>
+
+</form>
+
+{% endblock %}
+
