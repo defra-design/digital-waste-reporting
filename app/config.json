@@ -1,5 +1,5 @@
 {
-  "serviceName": "Digital waste tracking",
+  "serviceName": "Report a commercial waste movement",
   "plugins": {
   "govuk-frontend": {
 	"rebrand": true
