@@ -10,11 +10,11 @@
 
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-  {{ govukServiceNavigation({
-    classes: "govuk-!-margin-bottom-2",
-    serviceName: "Report receipt of waste",
-    serviceUrl: "#"
-  }) }}
+    {{ govukServiceNavigation({
+      classes: "govuk-!-margin-bottom-2",
+      serviceName: serviceName,
+      serviceUrl: "wr2-account"
+    }) }}
 
 {% endblock %}
 
