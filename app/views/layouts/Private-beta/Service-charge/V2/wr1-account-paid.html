@@ -1,4 +1,3 @@
-{% extends "layouts/main.html" %}
 {% extends "/layouts/main.html" %}
 
 {% block header %}
@@ -12,9 +11,9 @@
 
   {{ govukServiceNavigation({
       classes: "govuk-!-margin-bottom-2",
-      serviceName: "Report receipt of waste",
-      serviceUrl: "#"
-    }) }}
+      serviceName: serviceName,
+      serviceUrl: "../designs"
+  }) }}
 
 {% endblock %}
 
