@@ -1,0 +1,97 @@
+  {% extends "layouts/main.html" %}
+  {% extends "/layouts/main.html" %}
+
+  {% block header %}
+    {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+    {{ govukHeader({
+    homepageUrl: "#"
+  }) }}
+
+    {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+    {{ govukServiceNavigation({
+      classes: "govuk-!-margin-bottom-2",
+      serviceName: serviceName,
+      serviceUrl: "wr1-account"
+    }) }}
+
+  {% endblock %}
+
+  {% block beforeContent %}
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+    {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+    <a class="govuk-back-link" href="javascript:history.back()">Back to Waste receiving account</a>
+
+  {% endblock %}
+
+  {% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            You need to pay your annual service charge for [Waste receiving organisation or business name] before you can
+            report your waste movements.
+          </p>
+          <p class="govuk-body">If you need help or have a question about the service charge, call 03000 203 781.</p>
+        </div>
+      </div>
+
+        <span class="govuk-caption-l">
+        <span class="govuk-caption-l">[Waste receiving organisation or business name]</span>
+        </span>
+
+        <form method="post" action="">
+        
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        
+          {{ govukRadios({
+          classes: "govuk-radios",
+          name: "wasteMovements",
+          value: data['wasteMovements'],
+          fieldset: {
+          legend: {
+          text: "Report receipt of waste",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+          }
+          },
+          items: [
+          {
+          value: "download-spreadsheet",
+          text: "Download spreadsheet template"
+          }
+          ]
+          }) }}
+        
+          {{ govukButton({
+          classes: "govuk-!-margin-top-6",
+          text: "Continue",
+          href: "spreadsheet-download"
+          }) }}
+        
+        </form>
+
+      </div>
+
+    {% endblock %}
