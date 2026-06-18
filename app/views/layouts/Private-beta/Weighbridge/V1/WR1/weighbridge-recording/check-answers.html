@@ -59,7 +59,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-l">Check your answers before saving</h1>
+      <h1 class="govuk-heading-l">Check your answers before submitting</h1>
 
       <h2 class="govuk-heading-m">Date and time received</h2>
 
@@ -161,25 +161,39 @@
 
       <h2 class="govuk-heading-m">Waste details</h2>
 
+      {% set wasteTypesHtml %}
+      <ul class="govuk-list">
+        {% for item in data['ewc-matches'] %}
+        <li>{{ item.material | capitalize }} – {{ item.code.slice(0,2) }} {{ item.code.slice(2,4) }} {{ item.code.slice(4) }}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endset %}
+
+
+
       {{ govukSummaryList({
         classes: "govuk-!-margin-bottom-9",
         rows: [
-          {
-            key: { text: "Description" },
-            value: { text: data['waste-description'] },
-            actions: {
-              items: [
-                {
-                  href: "waste-description",
-                  text: "Change",
-                  visuallyHiddenText: "waste description"
-                }
-              ]
-            }
-          },
+                  {
+          key: { text: "Waste types" },
+          value: { html: wasteTypesHtml },
+          actions: {
+            items: [
+              {
+                href: "waste-description",
+                text: "Change",
+                visuallyHiddenText: "waste types"
+              }
+            ]
+          }
+        },
           {
             key: { text: "Weight" },
-            value: { text: data['waste-weight'] + " tonnes" },
+            value: {
+              html: data['waste-weight'] + " " + (data['waste-weight-unit'] or "tonnes")
+                + ("<strong class='govuk-tag govuk-tag--yellow govuk-!-margin-left-2'>Estimated</strong>" if data['waste-weight-estimated'] == "yes" else "")
+            },
             actions: {
               items: [
                 {
@@ -200,7 +214,7 @@
         rows: [
           {
             key: { text: "Company name" },
-            value: { text: data['carrier-name'] },
+            value: { text: data['carrier-name'] or "Not provided" },
             actions: {
               items: [
                 {
@@ -213,7 +227,7 @@
           },
           {
             key: { text: "Carrier permit number" },
-            value: { text: data['carrier-permit-number'] },
+            value: { text: data['carrier-permit-number'] or "Not provided" },
             actions: {
               items: [
                 {

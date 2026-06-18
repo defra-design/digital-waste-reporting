@@ -54,7 +54,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="carrier-details">
+      <form method="post" action="/weighbridge-recording/carrier-details">
 
         {{ govukInput({
           label: {
@@ -63,15 +63,54 @@
             isPageHeading: true
           },
           hint: {
-            text: "Enter the net weight in tonnes, for example 12.5"
+            text: "Enter the net weight as a number"
           },
           id: "waste-weight",
           name: "waste-weight",
           classes: "govuk-input--width-5",
-          suffix: {
-            text: "tonnes"
-          },
           value: data['waste-weight']
+        }) }}
+
+        {{ govukRadios({
+          name: "waste-weight-unit",
+          fieldset: {
+            legend: {
+              text: "Unit of measurement"
+            }
+          },
+          items: [
+            {
+              value: "tonnes",
+              text: "Tonnes",
+              checked: data['waste-weight-unit'] == "tonnes" or not data['waste-weight-unit']
+            },
+            {
+              value: "kilograms",
+              text: "Kilograms",
+              checked: data['waste-weight-unit'] == "kilograms"
+            },
+            {
+              value: "grams",
+              text: "Grams",
+              checked: data['waste-weight-unit'] == "grams"
+            }
+          ]
+        }) }}
+
+        {{ govukCheckboxes({
+          name: "waste-weight-estimated",
+          fieldset: {
+            legend: {
+              text: "Estimated weight"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Is the waste weight estimated?",
+              checked: data['waste-weight-estimated'] == "yes"
+            }
+          ]
         }) }}
 
         {{ govukButton({

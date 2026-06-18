@@ -1,7 +1,27 @@
 module.exports = function (router) {
 
+// Save and continue from waste-description → waste-weight
+router.post("/weighbridge-recording/waste-weight", function (req, res) {
+  res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/waste-weight");
+});
+
+// waste-weight → carrier-details
+router.post("/weighbridge-recording/carrier-details", function (req, res) {
+  res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/carrier-details");
+});
+
+// carrier-details → check-answers
+router.post("/weighbridge-recording/check-answers", function (req, res) {
+  res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/check-answers");
+});
+
+// check-answers → confirmation
+router.post("/weighbridge-recording/confirmation", function (req, res) {
+  res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/confirmation");
+});
+
 // EWC code look up fakery //
-router.post("/weighbridge-recording/waste-description", function (req, res) {
+router.post("/weighbridge-recording/waste-description-old", function (req, res) {
 
   const description = req.session.data["waste-description"] || "";
 
@@ -52,7 +72,7 @@ router.post("/weighbridge-recording/waste-description", function (req, res) {
 
 
 // Add items to list
-router.post("/weighbridge-recording/waste-description/add", function (req, res) {
+router.post("/weighbridge-recording/waste-description-add", function (req, res) {
 
   const description = req.session.data["waste-description"] || "";
 
@@ -60,15 +80,75 @@ router.post("/weighbridge-recording/waste-description/add", function (req, res) 
   console.log("description:", description);
 
   const materialLookup = {
-    soil: { code: "170504", description: "Soil and stones other than those mentioned in 17 05 03" },
-    timber: { code: "170201", description: "Wood" },
-    wood: { code: "170201", description: "Wood" },
-    manure: { code: "020106", description: "Animal faeces, urine and manure (including spoiled straw), effluent, collected separately and treated off-site" },
-    metal: { code: "200140", description: "Metals" },
-    plastics: { code: "200139", description: "Plastics" },
-    fruit: { code: "020302", description: "Wastes from preserving agents" },
-    vegetables: { code: "020302", description: "Wastes from preserving agents" }
-  };
+  // Soil / excavation
+  soil:         { code: "170504", description: "Soil and stones other than those mentioned in 17 05 03" },
+  earth:        { code: "170504", description: "Soil and stones other than those mentioned in 17 05 03" },
+  clay:         { code: "170504", description: "Soil and stones other than those mentioned in 17 05 03" },
+  stones:       { code: "170504", description: "Soil and stones other than those mentioned in 17 05 03" },
+  gravel:       { code: "010408", description: "Waste gravel and crushed rocks" },
+  sand:         { code: "010409", description: "Waste sand and clays" },
+
+  // Wood / timber
+  timber:       { code: "170201", description: "Wood" },
+  wood:         { code: "170201", description: "Wood" },
+  lumber:       { code: "170201", description: "Wood" },
+  bark:         { code: "030101", description: "Waste bark and cork" },
+  sawdust:      { code: "030105", description: "Sawdust, shavings and cuttings" },
+
+  // Metals
+  metal:        { code: "200140", description: "Metals" },
+  metals:       { code: "200140", description: "Metals" },
+  steel:        { code: "191001", description: "Iron and steel waste" },
+  iron:         { code: "191001", description: "Iron and steel waste" },
+  copper:       { code: "191002", description: "Non-ferrous waste" },
+  aluminium:    { code: "191002", description: "Non-ferrous waste" },
+  aluminum:     { code: "191002", description: "Non-ferrous waste" },
+
+  // Plastics
+  plastic:      { code: "200139", description: "Plastics" },
+  plastics:     { code: "200139", description: "Plastics" },
+  rubber:       { code: "191204", description: "Plastic and rubber" },
+
+  // Organic / agricultural
+  manure:       { code: "020106", description: "Animal faeces, urine and manure (including spoiled straw), effluent, collected separately and treated off-site" },
+  slurry:       { code: "020106", description: "Animal faeces, urine and manure (including spoiled straw), effluent, collected separately and treated off-site" },
+  straw:        { code: "020106", description: "Animal faeces, urine and manure (including spoiled straw), effluent, collected separately and treated off-site" },
+  compost:      { code: "190503", description: "Off-specification compost" },
+  vegetation:   { code: "020103", description: "Plant tissue waste" },
+  plants:       { code: "020103", description: "Plant tissue waste" },
+  grass:        { code: "200201", description: "Biodegradable waste" },
+  leaves:       { code: "200201", description: "Biodegradable waste" },
+  garden:       { code: "200201", description: "Biodegradable waste" },
+
+  // Paper / cardboard
+  paper:        { code: "191201", description: "Paper and cardboard" },
+  cardboard:    { code: "191201", description: "Paper and cardboard" },
+
+  // Glass
+  glass:        { code: "191205", description: "Glass" },
+
+  // Food / kitchen
+  food:         { code: "200108", description: "Biodegradable kitchen and canteen waste" },
+  kitchen:      { code: "200108", description: "Biodegradable kitchen and canteen waste" },
+  fruit:        { code: "020302", description: "Wastes from preserving agents" },
+  vegetables:   { code: "020302", description: "Wastes from preserving agents" },
+
+  // Textiles
+  textiles:     { code: "191208", description: "Textiles" },
+  clothing:     { code: "200110", description: "Clothes" },
+  clothes:      { code: "200110", description: "Clothes" },
+
+  // Construction / demolition
+  concrete:     { code: "170101", description: "Concrete" },
+  bricks:       { code: "170102", description: "Bricks" },
+  brick:        { code: "170102", description: "Bricks" },
+  tiles:        { code: "170103", description: "Tiles and ceramics" },
+  ceramics:     { code: "170103", description: "Tiles and ceramics" },
+  plasterboard: { code: "170802", description: "Gypsum-based construction materials" },
+  gypsum:       { code: "170802", description: "Gypsum-based construction materials" },
+  asphalt:      { code: "170301", description: "Bituminous mixtures" },
+  tarmac:       { code: "170301", description: "Bituminous mixtures" }
+};
 
   // clean input
   const cleaned = description.toLowerCase()

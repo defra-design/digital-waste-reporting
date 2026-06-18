@@ -2608,11 +2608,6 @@ router.post("/weighbridge-recording/vehicle-registration", function (req, res) {
   res.redirect("/weighbridge-recording/vehicle-registration-confirm");
 });
 
-// Check answers //
-router.post("/weighbridge-recording/vehicle-registration-confirm", function (req, res) {
-  res.redirect("/weighbridge-recording/check-answers");
-});
-
 
 // S
 require('./routes/weighbridge')(router);

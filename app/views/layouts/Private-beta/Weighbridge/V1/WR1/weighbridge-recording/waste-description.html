@@ -54,7 +54,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" action="waste-description-add">
+      <form method="post" action="/weighbridge-recording/waste-description-add">
 
         {{ govukTextarea({
           label: {
@@ -94,9 +94,10 @@
                 ({{ item.description }})
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a href="remove-item?code={{ item.code }}" class="govuk-link">
+                <a href="/weighbridge-recording/remove-item?code={{ item.code }}" class="govuk-link">
                   Remove<span class="govuk-visually-hidden"> {{ item.material }}</span>
                 </a>
+                
               </dd>
             </div>
           {% endfor %}
@@ -105,7 +106,7 @@
 
       {% endif %}
 
-      <form method="post" action="waste-weight">
+      <form method="post" action="/weighbridge-recording/waste-weight">
         {{ govukButton({
           text: "Save and continue"
         }) }}
