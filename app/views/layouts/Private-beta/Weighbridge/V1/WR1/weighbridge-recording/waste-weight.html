@@ -11,7 +11,22 @@
   {{ govukServiceNavigation({
     classes: "govuk-!-margin-bottom-2",
     serviceName: "Report receipt of waste",
-    serviceUrl: "account-home"
+    serviceUrl: "../account-home",
+    navigation: [
+      {
+        href: "../account-home",
+        text: "Waste account",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Manage Defra account"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
   }) }}
 
 {% endblock %}
@@ -29,7 +44,7 @@
 
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:history.back()"
+    href: "waste-description"
   }) }}
 
 {% endblock %}
@@ -39,26 +54,28 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Joe B Waste Services</span>
+      <form method="post" action="carrier-details">
 
-      <form method="post" action="confirm-spreadsheet" enctype="multipart/form-data">
-
-        {{ govukFileUpload({
-          id: "file-upload",
-          name: "file-upload",
+        {{ govukInput({
           label: {
-            text: "Upload your spreadsheet",
+            text: "What is the weight of the waste?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "The file must be an .xlsx spreadsheet"
-          }
+            text: "Enter the net weight in tonnes, for example 12.5"
+          },
+          id: "waste-weight",
+          name: "waste-weight",
+          classes: "govuk-input--width-5",
+          suffix: {
+            text: "tonnes"
+          },
+          value: data['waste-weight']
         }) }}
 
         {{ govukButton({
-          text: "Continue",
-          classes: "govuk-!-margin-top-4"
+          text: "Save and continue"
         }) }}
 
       </form>

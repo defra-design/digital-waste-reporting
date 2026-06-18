@@ -1,5 +1,4 @@
 {% extends "layouts/main.html" %}
-{% extends "/layouts/main.html" %}
 
 {% set months = [
   "January","February","March","April","May","June",
@@ -8,32 +7,32 @@
 
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
   {{ govukHeader({
     homepageUrl: "#"
   }) }}
 
-
-{{ govukServiceNavigation({
-  classes: "govuk-!-margin-bottom-2",
-  serviceName: "Report receipt of waste",
-  serviceUrl: "account-home",
-  navigation: [
-    {
-      href: "../account-home",
-      text: "Waste account",
-      active: true
-    },
-    {
-      href: "#",
-      text: "Manage Defra account"
-    },
-    {
-      href: "#",
-      text: "Sign out"
-    }
-  ]
-}) }}
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "../account-home",
+    navigation: [
+      {
+        href: "../account-home",
+        text: "Waste account",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Manage Defra account"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
 
 {% endblock %}
 
@@ -45,31 +44,30 @@
     tag: {
       text: "Beta"
     },
-    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/not-yet-built">give your feedback (opens in new tab)</a>.'
   }) }}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "vehicle-registration-confirm"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "carrier-details"
+  }) }}
 
 {% endblock %}
 
 {% block content %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-l">Confirm waste movement details</h1>
+      <h1 class="govuk-heading-l">Check your answers before saving</h1>
 
       <h2 class="govuk-heading-m">Date and time received</h2>
 
       {{ govukSummaryList({
         classes: "govuk-!-margin-bottom-9",
-        rows: [      
+        rows: [
           {
-            key: {
-              text: "Date received"
-            },
+            key: { text: "Date received" },
             value: {
               text: data['date-received-day'] + " "
                   + months[data['date-received-month'] - 1] + " "
@@ -78,7 +76,7 @@
             actions: {
               items: [
                 {
-                  href: "/weighbridge-recording/start",
+                  href: "start",
                   text: "Change",
                   visuallyHiddenText: "date received"
                 }
@@ -86,22 +84,18 @@
             }
           },
           {
-  key: {
-    text: "Time received"
-  },
-  value: {
-    text: data['time-received']
-  },
-  actions: {
-    items: [
-      {
-        href: "/weighbridge-recording/start",
-        text: "Change",
-        visuallyHiddenText: "time received"
-      }
-    ]
-  }
-}
+            key: { text: "Time received" },
+            value: { text: data['time-received'] },
+            actions: {
+              items: [
+                {
+                  href: "start",
+                  text: "Change",
+                  visuallyHiddenText: "time received"
+                }
+              ]
+            }
+          }
         ]
       }) }}
 
@@ -111,16 +105,12 @@
         classes: "govuk-!-margin-bottom-9",
         rows: [
           {
-            key: {
-              text: "Registration number"
-            },
-            value: {
-              text: (data['vehicle-registration'] or '').toUpperCase()
-            },
+            key: { text: "Registration number" },
+            value: { text: (data['vehicle-registration'] or '').toUpperCase() },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "vehicle-registration",
                   text: "Change",
                   visuallyHiddenText: "registration number"
                 }
@@ -128,143 +118,127 @@
             }
           },
           {
-            key: {
-              text: "Make and model"
-            },
-            value: {
-              text: "Ford Transit"
-            },
+            key: { text: "Make and model" },
+            value: { text: "Ford Transit" },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "vehicle-registration",
                   text: "Change",
                   visuallyHiddenText: "make and model"
                 }
               ]
             }
           },
-
-    {
-      key: {
-        text: "Year of manufacture"
-      },
-      value: {
-        text: "2016"
-      },
+          {
+            key: { text: "Year of manufacture" },
+            value: { text: "2016" },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "vehicle-registration",
                   text: "Change",
                   visuallyHiddenText: "year of manufacture"
                 }
               ]
             }
-    },
-    {
-      key: {
-        text: "CO₂ emissions"
-      },
-      value: {
-        html: "116 g/km"
-      },
+          },
+          {
+            key: { text: "Fuel type" },
+            value: { text: "Petrol" },
             actions: {
               items: [
                 {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "CO₂ emissions"
-                }
-              ]
-            }
-    },
-    {
-      key: {
-        text: "Fuel type"
-      },
-      value: {
-        html: 'PETROL'
-      },
-            actions: {
-              items: [
-                {
-                  href: "#",
+                  href: "vehicle-registration",
                   text: "Change",
                   visuallyHiddenText: "fuel type"
                 }
               ]
             }
-    },
-    {
-      key: {
-        text: "Euro status"
-      },
-      value: {
-        html: 'Not available'
-      },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "euro status"
-                }
-              ]
-            }
-    },
-    {
-      key: {
-        text: "Revenue weight"
-      },
-      value: {
-        html: '2780 kg'
-      },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "revenue weight"
-                }
-              ]
-            }
-    },
-    {
-      key: {
-        text: "Wheelplan"
-      },
-      value: {
-        html: '2 AXLE RIGID BODY'
-      },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "wheelplan"
-                }
-              ]
-            }
-    }
+          }
         ]
       }) }}
 
+      <h2 class="govuk-heading-m">Waste details</h2>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+          {
+            key: { text: "Description" },
+            value: { text: data['waste-description'] },
+            actions: {
+              items: [
+                {
+                  href: "waste-description",
+                  text: "Change",
+                  visuallyHiddenText: "waste description"
+                }
+              ]
+            }
+          },
+          {
+            key: { text: "Weight" },
+            value: { text: data['waste-weight'] + " tonnes" },
+            actions: {
+              items: [
+                {
+                  href: "waste-weight",
+                  text: "Change",
+                  visuallyHiddenText: "waste weight"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Carrier details</h2>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+          {
+            key: { text: "Company name" },
+            value: { text: data['carrier-name'] },
+            actions: {
+              items: [
+                {
+                  href: "carrier-details",
+                  text: "Change",
+                  visuallyHiddenText: "carrier company name"
+                }
+              ]
+            }
+          },
+          {
+            key: { text: "Carrier permit number" },
+            value: { text: data['carrier-permit-number'] },
+            actions: {
+              items: [
+                {
+                  href: "carrier-details",
+                  text: "Change",
+                  visuallyHiddenText: "carrier permit number"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
 
       <h2 class="govuk-heading-m">Save waste movement record</h2>
 
-      <p class="govuk-body">By submitting this movement you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <p class="govuk-body">By saving this record you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
-      <form action="/form-handler" method="post" novalidate>
-
+      <form action="confirmation" method="post" novalidate>
         <input type="hidden" name="answers-checked" value="true">
-
         {{ govukButton({
-          text: "Accept and send"
+          text: "Accept and save"
         }) }}
-
       </form>
 
     </div>
   </div>
+
 {% endblock %}
