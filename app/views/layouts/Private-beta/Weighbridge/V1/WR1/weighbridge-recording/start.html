@@ -78,17 +78,17 @@
             {
               name: "day",
               classes: "govuk-input--width-2",
-              value: data['date-received-day'] or currentDay
+              value: currentDay
             },
             {
               name: "month",
               classes: "govuk-input--width-2",
-              value: data['date-received-month'] or currentMonth
+              value: currentMonth
             },
             {
               name: "year",
               classes: "govuk-input--width-4",
-              value: data['date-received-year'] or currentYear
+              value: currentYear
             }
           ]
         }) }}
@@ -103,7 +103,7 @@
           id: "time-received",
           name: "time-received",
           classes: "govuk-input--width-5",
-          value: data['time-received'] or currentTime
+          value: currentTime
         }) }}
 
         {{ govukButton({

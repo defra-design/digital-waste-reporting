@@ -1,5 +1,5 @@
 module.exports = function (router) {
-
+  
 // Save and continue from waste-description → waste-weight
 router.post("/weighbridge-recording/waste-weight", function (req, res) {
   res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/waste-weight");
@@ -19,6 +19,8 @@ router.post("/weighbridge-recording/check-answers", function (req, res) {
 router.post("/weighbridge-recording/confirmation", function (req, res) {
   res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/confirmation");
 });
+
+
 
 // EWC code look up fakery //
 router.post("/weighbridge-recording/waste-description-old", function (req, res) {
@@ -132,6 +134,7 @@ router.post("/weighbridge-recording/waste-description-add", function (req, res) 
   kitchen:      { code: "200108", description: "Biodegradable kitchen and canteen waste" },
   fruit:        { code: "020302", description: "Wastes from preserving agents" },
   vegetables:   { code: "020302", description: "Wastes from preserving agents" },
+  veg:          { code: "020302", description: "Wastes from preserving agents" },
 
   // Textiles
   textiles:     { code: "191208", description: "Textiles" },
