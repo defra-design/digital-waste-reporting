@@ -201,7 +201,7 @@
             key: { text: "Weight" },
             value: {
               html: data['waste-weight'] + " " + (data['waste-weight-unit'] or "tonnes")
-                + ("<strong class='govuk-tag govuk-tag--yellow govuk-!-margin-left-2'>Estimated</strong>" if data['waste-weight-estimated'] == "yes" else "<strong class='govuk-tag govuk-tag--green govuk-!-margin-left-2'>Weighed</strong>")
+                + ('<strong class="govuk-tag govuk-tag--yellow govuk-!-margin-left-2">Estimated</strong>' if data['waste-weight-estimated'] == "yes" else '<strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">Weighed</strong>')
             },
             actions: {
               items: [
@@ -214,18 +214,18 @@
             }
           },
           {
-  key: { text: "Hazardous waste" },
-  value: { html: hazCodesHtml },
-  actions: {
-    items: [
-      {
-        href: "waste-hazardous",
-        text: "Change",
-        visuallyHiddenText: "hazardous waste"
-      }
-    ]
-  }
-}
+            key: { text: "Contains hazardous waste" },
+            value: { html: hazCodesHtml },
+            actions: {
+              items: [
+                {
+                  href: "waste-hazardous",
+                  text: "Change",
+                  visuallyHiddenText: "hazardous waste"
+                }
+              ]
+            }
+          }
         ]
       }) }}
 
