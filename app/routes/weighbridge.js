@@ -1,5 +1,36 @@
 module.exports = function (router) {
   
+// Weighbridge V1 routes //
+router.get("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/start", function (req, res) {
+  const now = new Date();
+
+  const day = now.getDate();
+  const month = now.getMonth() + 1;
+  const year = now.getFullYear();
+
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+
+  // pad minutes
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  const time = hours + ":" + minutes;
+
+  res.render("layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/start", {
+    currentDay: day,
+    currentMonth: month,
+    currentYear: year,
+    currentTime: time
+  });
+});
+
+// Date to vehicle registration page //
+router.post("/weighbridge-recording/start", function (req, res) {
+  res.redirect("/weighbridge-recording/vehicle-registration");
+});
+
 // Save and continue from waste-description → waste-weight
 router.post("/weighbridge-recording/waste-weight", function (req, res) {
   res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/waste-weight");
@@ -20,56 +51,11 @@ router.post("/weighbridge-recording/confirmation", function (req, res) {
   res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/confirmation");
 });
 
-
-
-// EWC code look up fakery //
-router.post("/weighbridge-recording/waste-description-old", function (req, res) {
-
-  const description = req.session.data["waste-description"] || "";
-
-  console.log("Route hit ✅");
-  console.log("description:", description);
-
-  const materialLookup = {
-    soil: { code: "17 05 04", description: "Soil and stones" },
-    timber: { code: "17 02 01", description: "Wood" },
-    wood: { code: "17 02 01", description: "Wood" },
-    manure: { code: "02 01 06", description: "Animal faeces and manure" },
-    metal: { code: "20 01 40", description: "Metals" },
-    plastics: { code: "20 01 39", description: "Plastics" }
-  };
-
-  const cleaned = description.toLowerCase()
-    .replace(/and/g, " ")
-    .replace(/mixed/g, " ")
-    .replace(/lots of/g, " ");
-
-  const parts = cleaned
-    .split(/[\s,]+/)
-    .filter(word => word.length > 2);
-
-  let matches = [];
-
-  parts.forEach(word => {
-    if (materialLookup[word]) {
-      matches.push({
-        material: word,
-        code: materialLookup[word].code,
-        description: materialLookup[word].description
-      });
-    }
-  });
-
-  const uniqueMatches = matches.filter(
-    (item, index, self) =>
-      index === self.findIndex(m => m.code === item.code)
-  );
-
-  req.session.data["ewc-matches"] = uniqueMatches;
-  req.session.data["suggested-ewc"] = uniqueMatches.length ? uniqueMatches[0].code : "";
-  req.session.data["detected-materials"] = uniqueMatches.map(m => m.material);
-
-  res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/waste-description-review");
+// waste-description Save and continue → waste-hazardous (clearing any previous haz data)
+router.post("/weighbridge-recording/waste-hazardous-start", function (req, res) {
+  req.session.data["waste-hazardous"] = "";
+  req.session.data["haz-codes"] = [];
+  res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/waste-hazardous");
 });
 
 

@@ -2571,43 +2571,5 @@ router.post('/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/waste-reco
 })
 
 
-
-// Weighbridge V1 routes //
-router.get("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/start", function (req, res) {
-  const now = new Date();
-
-  const day = now.getDate();
-  const month = now.getMonth() + 1;
-  const year = now.getFullYear();
-
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-
-  // pad minutes
-  if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
-
-  const time = hours + ":" + minutes;
-
-  res.render("layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/start", {
-    currentDay: day,
-    currentMonth: month,
-    currentYear: year,
-    currentTime: time
-  });
-});
-
-// Date to vehicle registration page //
-router.post("/weighbridge-recording/start", function (req, res) {
-  res.redirect("/weighbridge-recording/vehicle-registration");
-});
-
-// Vehicle registration confirmation //
-router.post("/weighbridge-recording/vehicle-registration", function (req, res) {
-  res.redirect("/weighbridge-recording/vehicle-registration-confirm");
-});
-
-
-// S
+// Include new weighbridge router file
 require('./routes/weighbridge')(router);
