@@ -225,6 +225,62 @@ router.get("/weighbridge-recording/remove-item", function (req, res) {
   res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/waste-description");
 });
 
+// waste-hazardous → branch to haz-codes or waste-weight
+router.post("/weighbridge-recording/waste-hazardous", function (req, res) {
+  const answer = req.session.data["waste-hazardous"];
+  if (answer === "yes") {
+    res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/haz-codes");
+  } else {
+    res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/waste-weight");
+  }
+});
 
+// Add a haz code to the list
+router.post("/weighbridge-recording/haz-codes-add", function (req, res) {
+
+  const hazCodeLabels = {
+    HP1:    "HP1 – Explosive",
+    HP2:    "HP2 – Oxidising",
+    HP3:    "HP3 – Flammable",
+    HP4:    "HP4 – Irritant",
+    HP5:    "HP5 – Specific target organ toxicity",
+    HP6:    "HP6 – Acute toxicity",
+    HP7:    "HP7 – Carcinogenic",
+    HP8:    "HP8 – Corrosive",
+    HP9:    "HP9 – Infectious",
+    HP10:   "HP10 – Toxic for reproduction",
+    HP11:   "HP11 – Mutagenic",
+    HP12:   "HP12 – Release of an acute toxic gas",
+    HP13:   "HP13 – Sensitising",
+    HP14:   "HP14 – Ecotoxic",
+    HP15:   "HP15 – Waste capable of exhibiting a hazardous property",
+    HP_POP: "HP POP – Persistent organic pollutants"
+  };
+
+  const selected = req.session.data["haz-code"];
+
+  if (selected && hazCodeLabels[selected]) {
+    if (!req.session.data["haz-codes"]) {
+      req.session.data["haz-codes"] = [];
+    }
+    const existing = req.session.data["haz-codes"];
+    const alreadyAdded = existing.some(item => item.value === selected);
+    if (!alreadyAdded) {
+      existing.push({ value: selected, label: hazCodeLabels[selected] });
+    }
+  }
+
+  req.session.data["haz-code"] = "";
+  res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/haz-codes");
+});
+
+// Remove a haz code
+router.get("/weighbridge-recording/haz-codes-remove", function (req, res) {
+  const codeToRemove = req.query.code;
+  const current = req.session.data["haz-codes"] || [];
+  req.session.data["haz-codes"] = current.filter(item => item.value !== codeToRemove);
+  res.redirect("/layouts/Private-beta/Weighbridge/V1/WR1/weighbridge-recording/haz-codes");
+});
 
 };
+

@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukHeader({ homepageUrl: "#" }) }}
+
+  {{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: "Report receipt of waste",
+    serviceUrl: "../account-home",
+    navigation: [
+      { href: "../account-home", text: "Waste account", active: true },
+      { href: "#", text: "Manage Defra account" },
+      { href: "#", text: "Sign out" }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: { text: "Beta" },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/not-yet-built">give your feedback (opens in new tab)</a>.'
+  }) }}
+  {{ govukBackLink({ text: "Back", href: "waste-hazardous" }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="/weighbridge-recording/haz-codes-add">
+
+        {{ govukSelect({
+          id: "haz-code",
+          name: "haz-code",
+          label: {
+            text: "Add a hazardous property code",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Select the code that applies to this waste"
+          },
+          items: [
+            { value: "", text: "Select a code" },
+            { value: "HP1", text: "HP1 – Explosive" },
+            { value: "HP2", text: "HP2 – Oxidising" },
+            { value: "HP3", text: "HP3 – Flammable" },
+            { value: "HP4", text: "HP4 – Irritant" },
+            { value: "HP5", text: "HP5 – Specific target organ toxicity" },
+            { value: "HP6", text: "HP6 – Acute toxicity" },
+            { value: "HP7", text: "HP7 – Carcinogenic" },
+            { value: "HP8", text: "HP8 – Corrosive" },
+            { value: "HP9", text: "HP9 – Infectious" },
+            { value: "HP10", text: "HP10 – Toxic for reproduction" },
+            { value: "HP11", text: "HP11 – Mutagenic" },
+            { value: "HP12", text: "HP12 – Release of an acute toxic gas" },
+            { value: "HP13", text: "HP13 – Sensitising" },
+            { value: "HP14", text: "HP14 – Ecotoxic" },
+            { value: "HP15", text: "HP15 – Waste capable of exhibiting a hazardous property" },
+            { value: "HP_POP", text: "HP POP – Persistent organic pollutants" }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Add",
+          classes: "govuk-button--secondary"
+        }) }}
+
+      </form>
+
+      {% if data['haz-codes'] and data['haz-codes'].length %}
+
+        <h2 class="govuk-heading-m">Hazardous property codes added</h2>
+
+        <dl class="govuk-summary-list">
+          {% for code in data['haz-codes'] %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                {{ code.value }}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ code.label }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="/weighbridge-recording/haz-codes-remove?code={{ code.value }}" class="govuk-link">
+                  Remove<span class="govuk-visually-hidden"> {{ code.value }}</span>
+                </a>
+              </dd>
+            </div>
+          {% endfor %}
+        </dl>
+
+      {% endif %}
+
+      <form method="post" action="/weighbridge-recording/waste-weight">
+        {{ govukButton({ text: "Save and continue" }) }}
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

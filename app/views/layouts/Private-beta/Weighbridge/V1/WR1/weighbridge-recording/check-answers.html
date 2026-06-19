@@ -20,8 +20,7 @@
     navigation: [
       {
         href: "../account-home",
-        text: "Waste account",
-        active: true
+        text: "Waste account"
       },
       {
         href: "#",
@@ -170,7 +169,17 @@
       </ul>
       {% endset %}
 
-
+{% set hazCodesHtml %}
+  {% if data['waste-hazardous'] == "yes" and data['haz-codes'] and data['haz-codes'].length %}
+    <ul class="govuk-list">
+      {% for code in data['haz-codes'] %}
+        <li>{{ code.label }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    No
+  {% endif %}
+{% endset %}
 
       {{ govukSummaryList({
         classes: "govuk-!-margin-bottom-9",
@@ -203,7 +212,20 @@
                 }
               ]
             }
-          }
+          },
+          {
+  key: { text: "Hazardous waste" },
+  value: { html: hazCodesHtml },
+  actions: {
+    items: [
+      {
+        href: "waste-hazardous",
+        text: "Change",
+        visuallyHiddenText: "hazardous waste"
+      }
+    ]
+  }
+}
         ]
       }) }}
 
