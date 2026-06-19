@@ -41,8 +41,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__header">
           <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
             Important
@@ -60,6 +59,14 @@
         <span class="govuk-caption-l">
         <span class="govuk-caption-l">[Waste receiving organisation or business name]</span>
         </span>
+
+        <!-- 
+        Manage my api radio in case we change our mind and want to add a second option to the radio button.
+          {
+          value: "api-code",
+          text: "Manage my API code"
+          },
+        -->
 
         <form method="post" action="">
         
@@ -83,11 +90,10 @@
           }
           ]
           }) }}
-        
+          
           {{ govukButton({
           classes: "govuk-!-margin-top-6",
-          text: "Continue",
-          href: "spreadsheet-download"
+          text: "Continue"
           }) }}
         
         </form>

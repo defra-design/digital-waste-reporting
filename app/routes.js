@@ -2569,3 +2569,13 @@ router.post('/layouts/Collections/Alpha/Waste-movement-records/S1/WR1/waste-reco
   }
 
 })
+
+// Service charge journey, V3, redirecting to either view-your-api or spreadsheet-download depending on the answer to wasteMovements //
+router.post("/layouts/Private-beta/Service-charge/V3/waste-movements", function (req, res) {
+  const answer = req.session.data["wasteMovements"];
+  if (answer === "api-code") {
+    res.redirect("/layouts/Private-beta/Service-charge/V3/view-your-api");
+  } else {
+    res.redirect("/layouts/Private-beta/Service-charge/V3/spreadsheet-download");
+  }
+});
