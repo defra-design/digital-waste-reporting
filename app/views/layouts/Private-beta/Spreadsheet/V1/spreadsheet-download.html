@@ -10,11 +10,26 @@
 
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-    {{ govukServiceNavigation({
-      classes: "govuk-!-margin-bottom-2",
-      serviceName: serviceName,
-      serviceUrl: "wr1-account"
-    }) }}
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: serviceName,
+    serviceUrl: "account-home",
+    navigation: [
+      {
+        href: "wr1-account-home-new.html",
+        text: "Waste account",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Manage Defra account"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
 
 {% endblock %}
 
@@ -40,33 +55,69 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-              <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-        data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Important
-          </h2>
-        </div>
-        <div class="govuk-notification-banner__content">
-          <p class="govuk-notification-banner__heading">
-            You need to pay your annual service charge for [Waste receiving organisation or business name] before you can
-            report your waste movements.
-          </p>
-          <p class="govuk-body">If you need help or have a question about the service charge, call 03000 203 781.</p>
-        </div>
-      </div>
+        <span class="govuk-caption-l">Joe B Waste Services</span>
+        <h1 class="govuk-heading-l">Download Receipt of waste spreadsheet</h1>
 
-        <span class="govuk-caption-l">[Waste receiving organisation or business name]</span>
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Download Receipt of waste spreadsheet</h1>
+        <p class="govuk-body">If you do not have the software needed to use the API, you can send your data using Defra’s receipt of waste template spreadsheet.</p>
 
-        <p class="govuk-body govuk-!-margin-top-4">If you do not have the software needed to use the API, download the spreadsheet to report your waste.</p>
+        <p class="govuk-body">You will need to:</p>
 
-          <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
-            Download spreadsheet
-            </button>
+        <ol class="govuk-list govuk-list--number">
+          <li>Download the <a href="#" class="govuk-link">spreadsheet template (XLSX, 441KB)</a>.</li>
+          <li>Complete the mandatory data fields.</li>
+          <li>Upload the completed spreadsheet.</li>
+        </ol>
+
+        <p class="govuk-body">Read our <a href="#" class="govuk-link">spreadsheet guidance</a> for further help.</p>
+
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+        {% call govukInsetText() %}
+          You cannot use your own spreadsheet or make format changes to Defra’s version.
+        {% endcall %}
+
+        <p class="govuk-body">You can add multiple movements to the same spreadsheet before you submit it. After you submit it, you will need to use a new spreadsheet for your next submission.</p>
+        <p class="govuk-body">If your organisation operates more than one site, you can also add those movements to the same spreadsheet.</p>
+        <p class="govuk-body">If you operate multiple organisations, you will need to download a separate spreadsheet for each one.</p>
+
+        <h2 class="govuk-heading-m">View example spreadsheet</h2>
+
+        <p class="govuk-body">You can use our example spreadsheet to help you submit your own data. It shows what information you will need and how each section should be completed.</p>
+        <p class="govuk-body"><a href="#" class="govuk-link">Download example spreadsheet (XLSX, 456KB)</a>.</p>
+
+        {% call govukInsetText() %}
+          Do not use the example spreadsheet to send your own waste movements.
+        {% endcall %}
+
+        <h2 class="govuk-heading-m">Spreadsheet change log</h2>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              View spreadsheet change log
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <h3 class="govuk-heading-s">Version 1.2, August 2026</h3>
+            <ul class="govuk-list">
+              <li>improved accessibility, including table structure, descriptive headers and colour contrast</li>
+              <li>moved guidance to dedicated support page</li>
+              <li>removed content that was unnecessary for expert users, including EPC codes</li>
+            </ul>
+            <h3 class="govuk-heading-s">Version 1.1, July 2026</h3>
+            <ul class="govuk-list">
+              <li>small typographic corrections and content improvements</li>
+            </ul>
+            <h3 class="govuk-heading-s">Version 1.0, June 2026</h3>
+            <ul class="govuk-list">
+              <li>initial version</li>
+            </ul>
+
+          </div>
+        </details>
  
         <p class="govuk-body govuk-!-padding-top-4">
-          <a href="wr1-account-due" class="govuk-link govuk-link--no-visited-state">Return to [Waste receiving organisation or business name] waste receiving account</a>
+          <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state">Return to Joe B Waste Services waste receiving account</a>
         </p>
 
       </div>
