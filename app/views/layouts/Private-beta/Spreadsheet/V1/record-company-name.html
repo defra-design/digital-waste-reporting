@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+    homepageUrl: "/layouts/Private-beta/designs"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/layouts/Private-beta/MVP-Registration/V1/S1/WR2/company-name-answer" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Save company or organisation name",
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          hint: {
+            text: "This name will appear on each page of the prototype, to make it feel more real. It will not be stored or used for any other purpose."
+          },
+          id: "companyName",
+          name: "companyName",
+          value: data['companyName']
+        }) }}
+
+        {{ govukButton({
+          text: "Save and return to previous page",
+          classes: "govuk-!-margin-top-6"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

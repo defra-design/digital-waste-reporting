@@ -1,12 +1,11 @@
 {% extends "layouts/main.html" %}
-{% extends "/layouts/main.html" %}
 
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
 
   {{ govukHeader({
-  homepageUrl: "#"
-}) }}
+    homepageUrl: "/layouts/Private-beta/Spreadsheet/designs"
+  }) }}
 
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
@@ -55,7 +54,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <span class="govuk-caption-l">Joe B Waste Services</span>
+        <span class="govuk-caption-l">{{ data['companyName'] }}</span>
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--l" for="file-upload-1">
@@ -75,6 +74,10 @@
         </button>
 
         </form>
+
+        <p class="govuk-body govuk-!-padding-top-4">
+          <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state">Return to {{ data['companyName'] }} waste receiving account</a>
+        </p>
 
       </div>
     </div>

@@ -4,7 +4,7 @@
   {% from "govuk/components/header/macro.njk" import govukHeader %}
 
   {{ govukHeader({
-    homepageUrl: "#"
+    homepageUrl: "/layouts/Private-beta/Spreadsheet/designs"
   }) }}
 
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
@@ -44,7 +44,7 @@
             
       </form>
 
-      <span class="govuk-caption-l">Joe B Waste Services</span>
+      <span class="govuk-caption-l">{{ data['companyName'] }}</span>
       <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Waste receiving account</h1>
 
     </div>

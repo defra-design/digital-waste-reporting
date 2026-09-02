@@ -5,8 +5,8 @@
   {% from "govuk/components/header/macro.njk" import govukHeader %}
 
   {{ govukHeader({
-  homepageUrl: "#"
-}) }}
+    homepageUrl: "/layouts/Private-beta/Spreadsheet/designs"
+  }) }}
 
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
@@ -57,7 +57,7 @@
 
         
         
-        <span class="govuk-caption-l">Joe B Waste Services</span>    
+        <span class="govuk-caption-l">{{ data['companyName'] }}</span>    
         <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Your API code</h1>
 
       </div>
@@ -117,7 +117,7 @@
         </button>
         
         <p class="govuk-body govuk-!-padding-top-4">
-          <a href="/layouts/Private-beta/Service-charge/V2/wr1-account-due" class="govuk-link govuk-link--no-visited-state">Return to Joe B Waste Services waste receiving account</a>
+          <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state">Return to {{ data['companyName'] }} waste receiving account</a>
         </p>
 
 

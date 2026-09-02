@@ -5,7 +5,7 @@
     {% from "govuk/components/header/macro.njk" import govukHeader %}
 
     {{ govukHeader({
-    homepageUrl: "#"
+    homepageUrl: "/layouts/Private-beta/Spreadsheet/designs"
   }) }}
 
     {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
@@ -42,7 +42,7 @@
       <div class="govuk-grid-column-two-thirds">
 
         <span class="govuk-caption-l">
-        <span class="govuk-caption-l">Joe B Waste Services</span>
+        <span class="govuk-caption-l">{{ data['companyName'] }}</span>
         </span>
 
         <form method="post" action="/layouts/Private-beta/Spreadsheet/V1/waste-movements-answer">

@@ -5,8 +5,8 @@
   {% from "govuk/components/header/macro.njk" import govukHeader %}
 
   {{ govukHeader({
-  homepageUrl: "#"
-}) }}
+    homepageUrl: "/layouts/Private-beta/Spreadsheet/designs"
+  }) }}
 
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
@@ -40,7 +40,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <span class="govuk-caption-l">Joe B Waste Services</span>
+        <span class="govuk-caption-l">{{ data['companyName'] }}</span>
         <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Download Receipt of waste spreadsheet</h1>
 
         <p class="govuk-body govuk-!-margin-top-4">If you do not have the software needed to use the API, download the spreadsheet to report your waste.</p>

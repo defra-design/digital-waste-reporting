@@ -2603,3 +2603,8 @@ router.post("/layouts/Private-beta/Service-charge/V3/waste-movements", function 
     res.redirect("/layouts/Private-beta/Service-charge/V3/spreadsheet-download");
   }
 });
+
+// Spreadsheet guidance journey //
+router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/company-name-answer', function (req, res) {
+  res.redirect('/layouts/Private-beta/Spreadsheet/designs')
+})

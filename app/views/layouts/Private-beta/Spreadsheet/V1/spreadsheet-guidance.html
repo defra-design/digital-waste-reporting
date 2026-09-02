@@ -6,8 +6,8 @@
   {% from "govuk/components/header/macro.njk" import govukHeader %}
 
   {{ govukHeader({
-  homepageUrl: "#"
-}) }}
+    homepageUrl: "/layouts/Private-beta/Spreadsheet/designs"
+  }) }}
 
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
@@ -56,7 +56,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <span class="govuk-caption-l">Joe B Waste Services</span>
+        <span class="govuk-caption-l">{{ data['companyName'] }}</span>
         <h1 class="govuk-heading-l">Receipt of waste spreadsheet: guidance</h1>
 
         <p class="govuk-body">You need to complete 2 sections in the spreadsheet:</p>
