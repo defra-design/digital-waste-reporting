@@ -1,0 +1,206 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Receipt of waste spreadsheet: guidance" %}
+
+{% block header %}
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+
+  {{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+    classes: "govuk-!-margin-bottom-2",
+    serviceName: serviceName,
+    serviceUrl: "account-home",
+    navigation: [
+      {
+        href: "wr1-account-home-new.html",
+        text: "Waste account",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Manage Defra account"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/layouts/Private-beta/Waste-movements/designs">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-form-group">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">Joe B Waste Services</span>
+        <h1 class="govuk-heading-l">Receipt of waste spreadsheet: guidance</h1>
+
+        <p class="govuk-body">You need to complete 2 sections in the spreadsheet:</p>
+        <ol class="govuk-list govuk-list--number">
+          <li>Waste movement details</li>
+          <li>Waste item details</li>
+        </ol>
+
+        <p class="govuk-body">Some of the fields you need to complete are self-explanatory (for example, site address and postcode).</p>
+        <p class="govuk-body">In the fields that may need more explanation, we’ve added examples or additional context to help you.</p>
+
+        <h2 class="govuk-heading-m">Waste movement details</h2>
+        <h3 class="govuk-heading-s">Errors found in your waste movements</h3>
+
+        <p class="govuk-body">This column will tell you if we have found any errors in your waste movement.</p>
+        <p class="govuk-body">You will only be able to view these if there have been any issues found when you upload your waste movement spreadsheet.</p>
+
+        <h3 class="govuk-heading-s">Waste Tracking ID</h3>
+        <p class="govuk-body">This column will be populated after submission, and will tell you your  Waste Tracking ID</p>
+
+        <h3 class="govuk-heading-s">Your unique reference</h3>
+        <p class="govuk-body">This is a reference for your waste movement. You will need this to link the waste movement to the associated waste item(s).</p>
+        <p class="govuk-body">After uploading this will be replaced with a Waste Tracking ID, which you can provide to your customers.</p>
+
+        <h3 class="govuk-heading-s">Receiver’s authorisation number</h3>
+        <p class="govuk-body">A permit or exemption number that allows a site to accept waste for recovery or disposal.</p>
+        <p class="govuk-body">For example, EPR/AB1234CD/A001</p>
+
+        <h3 class="govuk-heading-s">Regulatory position statements (RPS)</h3>
+        <p class="govuk-body">Statements that confirm what activities you do not require a permit for.</p>
+        <p class="govuk-body">You can add multiple RPS codes. They must be separated by a semi colon ( ; ).</p>
+        <p class="govuk-body"><a href="https://www.gov.uk/government/collections/basic-rules-environmental-permitting-regulatory-positions" target="_blank" rel="noopener noreferrer">Guidance on Regulatory position statements (opens in new tab)</a></p>
+
+        <h3 class="govuk-heading-s">Date and time received</h3>
+        <p class="govuk-body">The date and time must be in the London/Europe timezone and in the format: dd/mm/yyyy hh:mm:ss.</p>
+        <p class="govuk-body">For example, 01/01/2026 09:30:00</p>
+
+        <h3 class="govuk-heading-s">Hazardous waste consignment code</h3>
+        <p class="govuk-body">For example, HWCN/2026/004582</p>
+
+        <h3 class="govuk-heading-s">Special handling requirement</h3>
+        <p class="govuk-body">Handling instructions for waste that has the potential to cause harm.</p>
+
+        <h3 class="govuk-heading-s">Carrier registration number</h3>
+        <p class="govuk-body">Required for all businesses and organisations that transport, buy, sell or dispose of waste.</p>
+        <p class="govuk-body">For example, CBDU345678</p>
+
+        <h3 class="govuk-heading-s">Carrier address</h3>
+        <p class="govuk-body">The full business location address of the carrier.</p>
+
+        <h3 class="govuk-heading-s">Carrier post code</h3>
+        <p class="govuk-body">The business location post code of the carrier.</p>
+
+        <h3 class="govuk-heading-s">Carrier contact email address</h3>
+        <p class="govuk-body">The email address of the carrier.</p>
+
+        <h3 class="govuk-heading-s">Carrier contact phone number</h3>
+        <p class="govuk-body">The waste carrier business contact number.</p>
+
+        <h3 class="govuk-heading-s">Means of transport</h3>
+        <p class="govuk-body">For example, road, rail, air or sea.</p>
+
+        <h3 class="govuk-heading-s">Broker or dealer registration number</h3>
+        <p class="govuk-body">For example, CBDU000000</p>
+
+        <!-- Waste item level start  -->
+
+        <h2 class="govuk-heading-m">Waste item level</h2>
+        <h3 class="govuk-heading-s">Errors found in your Waste movements</h3>
+        <p class="govuk-body">This column will tell you if we have found any Errors in your waste movement.</p> 
+        <p class="govuk-body">You will only be able to view these if there have been any issues found when you upload your waste movement spreadsheet.</p>
+
+        <h3 class="govuk-heading-s">Your unique reference</h3>
+        <p class="govuk-body">For example, a weighbridge ticket number or waste transfer note number.</p>
+
+        <h3 class="govuk-heading-s">EWC code</h3>
+        <p class="govuk-body">A 6-digit code that classifies and describes the waste.</p> 
+        <p class="govuk-body">You can add multiple EWC codes. They must be separated by a semi colon (;). If you enter only one EWC code, please ensure that Excel does not format the code as a date by prefixing the code with a single quote (‘). No spaces should be added when entering EWC codes.</p>
+        <p class="govuk-body">For example, 180103</p>
+
+        <h3 class="govuk-heading-s">Waste description</h3>
+        <p class="govuk-body">A detailed description of the waste, including physical characteristics, composition and if it’s potentially hazardous.</p>
+        <p class="govuk-body">For example, Infectious healthcare waste such as sharps, contaminated dressings, swabs, and disposable medical equipment from hospitals, GP surgeries, or laboratories.</p>
+
+        <h3 class="govuk-heading-s">Physical form</h3>
+        <p class="govuk-body">For example, gas, liquid, solid, powder, sludge or mixed.</p>
+
+        <h3 class="govuk-heading-s">Type of containers</h3>
+        <p class="govuk-body">For example,<br/>
+        [BAG] Bag / Sack (for example rubble bag, refuse sack)<br/>
+        [PAL] Pallet (for example, shrink‑wrapped items).</p>
+
+        <h3 class="govuk-heading-s">Weight unit of measurement</h3>
+        <p class="govuk-body">For example, kilograms, grams or tonnes</p>
+
+        <h3 class="govuk-heading-s">Does the waste contain persistent organic pollutants (POPs)?</h3>
+        <p class="govuk-body">POPs are poisonous chemical substances that break down slowly and get into food chains.</p>
+
+        <h3 class="govuk-heading-s">POP name &amp; concentration value</h3>
+        <p class="govuk-body">For example, Aldrin, Chlordane or Dieldrin.</p>
+        <p class="govuk-body">Concentration is recorded as mg per kg, please only enter the numeric value.</p>
+        <p class="govuk-body">Enter a POP code and concentration value by separating with an equals sign (=).</p>
+        <p class="govuk-body">You can add multiple POP codes into each individual cell. They must be separated by a semi colon (;).</p>
+        <p class="govuk-body">For example, ALD = 50; PCDD_PCDF = 25</p>
+
+        <h3 class="govuk-heading-s">How did you determine the POPs components?</h3>
+        <p class="govuk-body">Tell us how you determined the hazardous components, examples could be "Provided with the waste", or "Guidance".</p>
+        <p class="govuk-body">If you were not provided with any documentation or relevant guidance, you can submit "Not Provided"</p>
+        <p class="govuk-body">For example, OWN_TESTING or GUIDANCE</p>
+
+        <h3 class="govuk-heading-s">Is the waste hazardous?</h3>
+        <p class="govuk-body">Hazardous waste is any waste that is potentially harmful to human health or the environment.</p>
+
+        <h3 class="govuk-heading-s">Hazardous property codes (Haz code)</h3>
+        <p class="govuk-body">A code used to classify hazardous waste, for example HP_1 (Explosive waste) or HP_2 (Oxidising waste).</p>
+        <p class="govuk-body">If you have multiple Haz codes, separate them by a semi colon (;).</p>
+        <p class="govuk-body">For example, HP_1 ; HP_3</p>
+        <p class="govuk-body"><a href="https://www.gov.uk/guidance/waste-classification-technical-guidance" class="govuk-link govuk-link--no-visited-state" target="_blank">Waste classification technical guidance - GOV.UK  (opens in new tab)</a></p>
+
+        <h3 class="govuk-heading-s">Component name &amp; concentration value</h3>
+        <p class="govuk-body">Concentration is recorded as mg per kg, please only enter the numeric value.</p>
+        <p class="govuk-body">Enter a component name and concentration value by separating with an equals sign (=).</p>
+        <p class="govuk-body">If you have multiple components &amp; concentrations, separate them by a semi colon (;).</p>
+        <p class="govuk-body">For example, Cadmium = 50; Trichloroethylene = 25</p>
+
+        <h3 class="govuk-heading-s">How did you determine the Hazardous components?</h3>
+        <p class="govuk-body">Tell us how you determined the hazardous components, examples could be "Provided with the waste", or "Guidance".</p>
+        <p class="govuk-body">If you were not provided with any documentation or relevant guidance, you can submit "Not Provided"</p>
+        <p class="govuk-body">For example, PROVIDED_WITH_WASTE</p>
+
+        <h3 class="govuk-heading-s">Disposal / Recovery code &amp; Weight</h3>
+        <p class="govuk-body">A code that determines the most appropriate treatment and recovery option for your waste. For each EWC code there must be at least one D or R code.</p>
+        <p class="govuk-body">Choose a D/R code, weight/quantity for each code, unit of measurement and an estimate. You can do this by seperating with an equals sign (=).</p>
+        <p class="govuk-body">You can add multiple Disposal or Recovery codes. They must be separated by a semi colon (;).</p>
+        <p class="govuk-body">For example,<br/>
+        R2 = 400 = Kilograms = Actual <br/>
+        R5 = 130 = Kilograms = Actual; R12 = 130 = Kilograms = Actual</p>
+
+ 
+        <p class="govuk-body govuk-!-padding-top-4">
+          <a href="wr1-account-home-new.html" class="govuk-link govuk-link--no-visited-state">Return to Joe B Waste Services waste receiving account</a>
+        </p>
+
+      </div>
+    </div>
+
+  {% endblock %}

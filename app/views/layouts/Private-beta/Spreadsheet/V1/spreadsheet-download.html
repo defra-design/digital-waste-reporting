@@ -1,5 +1,6 @@
 {% extends "layouts/main.html" %}
-{% extends "/layouts/main.html" %}
+
+{% set pageName = "Download Receipt of waste spreadsheet" %}
 
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -13,7 +14,7 @@
 {{ govukServiceNavigation({
     classes: "govuk-!-margin-bottom-2",
     serviceName: serviceName,
-    serviceUrl: "account-home",
+    serviceUrl: "wr1-account-home-new.html",
     navigation: [
       {
         href: "wr1-account-home-new.html",
@@ -63,12 +64,12 @@
         <p class="govuk-body">You will need to:</p>
 
         <ol class="govuk-list govuk-list--number">
-          <li>Download the <a href="#" class="govuk-link">spreadsheet template (XLSX, 441KB)</a>.</li>
+          <li>Download the <a href="https://report-receipt-of-waste.service.gov.uk/public/receipt-of-waste-template.xlsx" class="govuk-link">spreadsheet template (XLSX, 441KB)</a>.</li>
           <li>Complete the mandatory data fields.</li>
           <li>Upload the completed spreadsheet.</li>
         </ol>
 
-        <p class="govuk-body">Read our <a href="#" class="govuk-link">spreadsheet guidance</a> for further help.</p>
+        <p class="govuk-body">Read our <a href="spreadsheet-guidance" class="govuk-link">spreadsheet guidance</a> for further help.</p>
 
         {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
@@ -83,7 +84,7 @@
         <h2 class="govuk-heading-m">View example spreadsheet</h2>
 
         <p class="govuk-body">You can use our example spreadsheet to help you submit your own data. It shows what information you will need and how each section should be completed.</p>
-        <p class="govuk-body"><a href="#" class="govuk-link">Download example spreadsheet (XLSX, 456KB)</a>.</p>
+        <p class="govuk-body"><a href="/public/files/EXAMPLE-Receipt-of-waste-spreadsheet-template-V1.1.xlsx" class="govuk-link">Download example spreadsheet (XLSX, 264KB)</a>.</p>
 
         {% call govukInsetText() %}
           Do not use the example spreadsheet to send your own waste movements.
