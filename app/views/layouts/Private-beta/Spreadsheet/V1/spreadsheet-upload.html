@@ -55,7 +55,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <span class="govuk-caption-l">{{ data['companyName'] }}</span>
+        <span class="govuk-caption-l">{{ data['companyName'] or "Joe B Waste Services Ltd" }}</span>
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--l" for="file-upload-1">
@@ -74,7 +74,7 @@
         </form>
 
         <p class="govuk-body govuk-!-padding-top-4">
-          <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state">Return to {{ data['companyName'] }} waste receiving account</a>
+          <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state">Return to {{ data['companyName'] or "Joe B Waste Services Ltd" }} waste receiving account</a>
         </p>
 
       </div>

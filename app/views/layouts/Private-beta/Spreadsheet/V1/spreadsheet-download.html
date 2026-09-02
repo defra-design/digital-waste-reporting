@@ -56,7 +56,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <span class="govuk-caption-l">{{ data['companyName'] }}</span>
+        <span class="govuk-caption-l">{{ data['companyName'] or "Joe B Waste Services Ltd" }}</span>
         <h1 class="govuk-heading-l">Download Receipt of waste spreadsheet</h1>
 
         <p class="govuk-body">If you do not have the software needed to use the API, you can send your data using Defra’s receipt of waste template spreadsheet.</p>
@@ -118,7 +118,7 @@
         </details>
  
         <p class="govuk-body govuk-!-padding-top-4">
-          <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state">Return to {{ data['companyName'] }} waste receiving account</a>
+          <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state">Return to {{ data['companyName'] or "Joe B Waste Services Ltd" }} waste receiving account</a>
         </p>
 
       </div>

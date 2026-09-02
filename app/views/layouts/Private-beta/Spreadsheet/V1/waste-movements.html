@@ -42,7 +42,7 @@
       <div class="govuk-grid-column-two-thirds">
 
         <span class="govuk-caption-l">
-        <span class="govuk-caption-l">{{ data['companyName'] }}</span>
+        <span class="govuk-caption-l">{{ data['companyName'] or "Joe B Waste Services Ltd" }}</span>
         </span>
 
         <form method="post" action="/layouts/Private-beta/Spreadsheet/V1/waste-movements-answer">
