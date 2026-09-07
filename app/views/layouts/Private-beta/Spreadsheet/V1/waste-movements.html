@@ -1,5 +1,10 @@
   {% extends "layouts/main.html" %}
-  {% extends "/layouts/main.html" %}
+  
+  {% block pageTitle %}
+    {{ pageName }} – {{ data['companyName'] or "Joe B Waste Services Ltd" }} - {{ serviceName }}
+  {% endblock %}
+
+  {% set pageName = "Report receipt of waste" %}
 
   {% block header %}
     {% from "govuk/components/header/macro.njk" import govukHeader %}

@@ -1,5 +1,10 @@
 {% extends "layouts/main.html" %}
-{% extends "/layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ data['companyName'] or "Joe B Waste Services Ltd" }} - {{ serviceName }}
+{% endblock %}
+
+{% set pageName = "View your API code" %}
 
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -58,7 +63,7 @@
         
         
         <span class="govuk-caption-l">{{ data['companyName'] or "Joe B Waste Services Ltd" }}</span>    
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Your API code</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">{{ pageName }}</h1>
 
       </div>
 

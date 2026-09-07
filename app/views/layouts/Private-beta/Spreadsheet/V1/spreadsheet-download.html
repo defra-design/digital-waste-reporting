@@ -1,5 +1,9 @@
 {% extends "layouts/main.html" %}
 
+{% block pageTitle %}
+  {{ pageName }} – {{ data['companyName'] or "Joe B Waste Services Ltd" }} - {{ serviceName }}
+{% endblock %}
+
 {% set pageName = "Download Receipt of waste spreadsheet" %}
 
 {% block header %}

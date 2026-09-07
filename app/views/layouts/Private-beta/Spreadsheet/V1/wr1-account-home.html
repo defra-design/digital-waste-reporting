@@ -1,5 +1,9 @@
 {% extends "/layouts/main.html" %}
 
+{% block pageTitle %}
+  Waste receiving account – {{ data['companyName'] or "Joe B Waste Services Ltd" }} - {{ serviceName }}
+{% endblock %}
+
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
 
@@ -82,7 +86,7 @@
             <a href=""></a>
             <div class="govuk-card__content">
               <h3 class="govuk-heading-m">
-                <a href="#" class="govuk-link--no-visited-state">Service charge</a>
+                <a href="service-charge" class="govuk-link--no-visited-state">Service charge</a>
               </h3>
             </div>
             <div class="govuk-card__actions">

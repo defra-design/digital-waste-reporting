@@ -1,5 +1,11 @@
 {% extends "layouts/main.html" %}
 
+{% block pageTitle %}
+  {{ pageName }} – {{ data['companyName'] or "Joe B Waste Services Ltd" }} - {{ serviceName }}
+{% endblock %}
+
+{% set pageName = "Waste receiving account" %}
+
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
@@ -49,7 +55,7 @@
   <div class="govuk-grid-row govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">{{ data['companyName'] or "Joe B Waste Services Ltd" }}</span>
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Waste receiving account</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">{{ pageName }}</h1>
     </div>
   </div>
 

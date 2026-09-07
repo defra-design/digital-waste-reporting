@@ -1,5 +1,11 @@
 {% extends "layouts/main.html" %}
 
+{% block pageTitle %}
+  {{ pageName }} – {{ data['companyName'] or "Joe B Waste Services Ltd" }} - {{ serviceName }}
+{% endblock %}
+
+{% set pageName = "Update an existing spreadsheet" %}
+
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
 
@@ -58,7 +64,7 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--l" for="file-upload-1">
-            Update an existing spreadsheet
+            {{ pageName }}
           </label>
 
           <p class="govuk-body">

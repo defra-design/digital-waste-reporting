@@ -1,5 +1,10 @@
 {% extends "layouts/main.html" %}
-{% extends "/layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ pageName }} – {{ data['companyName'] or "Joe B Waste Services Ltd" }} - {{ serviceName }}
+{% endblock %}
+
+{% set pageName = "Download Receipt of waste spreadsheet" %}
 
 {% block header %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -59,7 +64,7 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--l" for="file-upload-1">
-            Upload your spreadsheet
+            {{ pageName }}
           </label>
 
           <input class="govuk-file-upload govuk-!-margin-top-2" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
