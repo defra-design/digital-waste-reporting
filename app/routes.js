@@ -9,6 +9,18 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 
+// Maps a journey key (passed via ?journey=) to that journey's home page, for use on generic pages like cookies.html that is called from any random feature folder
+const journeyNavigation = {
+  spreadsheet: {
+    serviceUrl: "/layouts/Private-beta/Spreadsheet/V1/wr1-account-home-new",
+    label: "Waste account"
+  }
+  // Add more as you replicate this pattern, e.g:
+  // onboarding: { serviceUrl: "...", label: "..." },
+  // 'service-charge': { serviceUrl: "...", label: "..." }
+}
+
+
 
 // Private Beta V1 routes //
 
@@ -2615,11 +2627,14 @@ router.get('/layouts/Private-beta/cookies', function (req, res) {
   req.session.data.cookies = req.session.data.cookies || {}
 
   const showSavedMessage = req.session.data.cookies.saved || false
-
   req.session.data.cookies.saved = false
 
+  const journey = journeyNavigation[req.query.journey] || null
+
   res.render('layouts/Private-beta/cookies', {
-    showSavedMessage: showSavedMessage
+    showSavedMessage: showSavedMessage,
+    journey: journey,
+    journeyKey: req.query.journey
   })
 
 })
@@ -2627,7 +2642,12 @@ router.get('/layouts/Private-beta/cookies', function (req, res) {
 // Save cookie settings
 router.post('/layouts/Private-beta/cookies-answer', function (req, res) {
 
-  req.session.data.cookies.saved = true
+  req.session.data.cookies = req.session.data.cookies || {}
+
+  if (req.session.data.savedFromCookiesPage) {
+    req.session.data.cookies.saved = true
+    delete req.session.data.savedFromCookiesPage
+  }
 
   res.redirect(req.headers.referer || '/layouts/Private-beta/designs')
 

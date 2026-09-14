@@ -10,13 +10,13 @@
     <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
   {% endset %}
 
-  {% set acceptedHtml %}
-    <p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="/layouts/Private-beta/cookies">change your cookie settings</a> at any time.</p>
-  {% endset %}
+{% set acceptedHtml %}
+  <p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="/layouts/Private-beta/cookies?journey={{ journeyKey }}">change your cookie settings</a> at any time.</p>
+{% endset %}
 
-  {% set rejectedHtml %}
-    <p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="/layouts/Private-beta/cookies">change your cookie settings</a> at any time.</p>
-  {% endset %}
+{% set rejectedHtml %}
+  <p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="/layouts/Private-beta/cookies?journey={{ journeyKey }}">change your cookie settings</a> at any time.</p>
+{% endset %}
 
   <form method="post" action="/layouts/Private-beta/cookies-answer">
 
@@ -42,7 +42,7 @@
             },
             {
               text: "View cookies",
-              href: "/layouts/Private-beta/cookies"
+              href: "/layouts/Private-beta/cookies?journey=" + journeyKey
             }
           ]
         },

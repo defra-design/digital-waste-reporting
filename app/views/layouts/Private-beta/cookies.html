@@ -12,6 +12,7 @@
 
   {% from "govuk/components/header/macro.njk" import govukHeader %}
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+  {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
   {{ govukHeader({
     homepageUrl: "/layouts/Private-beta/Spreadsheet/designs"
@@ -20,11 +21,12 @@
   {{ govukServiceNavigation({
     classes: "govuk-!-margin-bottom-2",
     serviceName: serviceName,
-    serviceUrl: "wr1-account-home-new.html",
+    serviceUrl: journey.serviceUrl if journey else "/layouts/Private-beta/designs",
     navigation: [
       {
-        href: "wr1-account-home-new.html",
-        text: "Waste account"
+        href: journey.serviceUrl if journey else "/layouts/Private-beta/designs",
+        text: journey.label if journey else "Waste account",
+        active: true
       },
       {
         href: "#",
@@ -59,8 +61,6 @@
   {% from "govuk/components/table/macro.njk" import govukTable %}
   {% from "govuk/components/radios/macro.njk" import govukRadios %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
-
-
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -123,6 +123,8 @@
 
       <form action="/layouts/Private-beta/cookies-answer" method="post" novalidate>
 
+        <input type="hidden" name="savedFromCookiesPage" value="true">
+
         {{ govukRadios({
           name: "cookies[additional]",
           idPrefix: "cookies-additional",
@@ -135,12 +137,12 @@
           items: [
             {
               value: "yes",
-              text: "Use cookies that measure how I use GOV.UK One Login",
+              text: "Use cookies that measure how I use the " + serviceName + " service",
               checked: data.cookies.additional == "yes"
             },
             {
               value: "no",
-              text: "Do not use cookies that measure how I use GOV.UK One Login",
+              text: "Do not use cookies that measure how I use the " + serviceName + " service",
               checked: data.cookies.additional == "no"
             }
           ]

@@ -8,7 +8,7 @@
 {% set pageName = "Waste receiving account" %}
 
 {% block header %}
-
+  {% set journeyKey = "spreadsheet" %}
   {% include "includes/cookie-banner.html" %}
   {% from "govuk/components/header/macro.njk" import govukHeader %}
   {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
