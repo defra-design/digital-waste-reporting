@@ -2608,3 +2608,27 @@ router.post("/layouts/Private-beta/Service-charge/V3/waste-movements", function 
 router.post('/layouts/Private-beta/MVP-Registration/V1/S1/WR2/company-name-answer', function (req, res) {
   res.redirect('/layouts/Private-beta/Spreadsheet/designs')
 })
+
+// Show the Cookies page
+router.get('/layouts/Private-beta/cookies', function (req, res) {
+
+  req.session.data.cookies = req.session.data.cookies || {}
+
+  const showSavedMessage = req.session.data.cookies.saved || false
+
+  req.session.data.cookies.saved = false
+
+  res.render('layouts/Private-beta/cookies', {
+    showSavedMessage: showSavedMessage
+  })
+
+})
+
+// Save cookie settings
+router.post('/layouts/Private-beta/cookies-answer', function (req, res) {
+
+  req.session.data.cookies.saved = true
+
+  res.redirect(req.headers.referer || '/layouts/Private-beta/designs')
+
+})

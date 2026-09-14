@@ -1,0 +1,78 @@
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set cookiesAnswered = data.cookies.additional == "yes" or data.cookies.additional == "no" %}
+{% set cookiesHidden = data.cookies.hide == "yes" %}
+
+{% if not cookiesHidden %}
+
+  {% set questionHtml %}
+    <p class="govuk-body">We use some essential cookies to make this service work.</p>
+    <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+  {% endset %}
+
+  {% set acceptedHtml %}
+    <p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="/layouts/Private-beta/cookies">change your cookie settings</a> at any time.</p>
+  {% endset %}
+
+  {% set rejectedHtml %}
+    <p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="/layouts/Private-beta/cookies">change your cookie settings</a> at any time.</p>
+  {% endset %}
+
+  <form method="post" action="/layouts/Private-beta/cookies-answer">
+
+    {{ govukCookieBanner({
+      ariaLabel: "Cookies on " + serviceName,
+      messages: [
+        {
+          headingText: "Cookies on " + serviceName,
+          html: questionHtml,
+          hidden: cookiesAnswered,
+          actions: [
+            {
+              text: "Accept analytics cookies",
+              type: "submit",
+              name: "cookies[additional]",
+              value: "yes"
+            },
+            {
+              text: "Reject analytics cookies",
+              type: "submit",
+              name: "cookies[additional]",
+              value: "no"
+            },
+            {
+              text: "View cookies",
+              href: "/layouts/Private-beta/cookies"
+            }
+          ]
+        },
+        {
+          html: acceptedHtml,
+          hidden: not (data.cookies.additional == "yes"),
+          actions: [
+            {
+              text: "Hide cookie message",
+              type: "submit",
+              name: "cookies[hide]",
+              value: "yes"
+            }
+          ]
+        },
+        {
+          html: rejectedHtml,
+          hidden: not (data.cookies.additional == "no"),
+          actions: [
+            {
+              text: "Hide cookie message",
+              type: "submit",
+              name: "cookies[hide]",
+              value: "yes"
+            }
+          ]
+        }
+      ]
+    }) }}
+
+  </form>
+
+{% endif %}
