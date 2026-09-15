@@ -2631,10 +2631,22 @@ router.get('/layouts/Private-beta/cookies', function (req, res) {
 
   const journey = journeyNavigation[req.query.journey] || null
 
+  const referer = req.headers.referer
+  const isReferredFromCookiesPage = referer && referer.includes('/layouts/Private-beta/cookies')
+
+  // Only update the stored return page if we've arrived from somewhere
+  // other than the cookies page itself (e.g. not our own post-save redirect)
+  if (referer && !isReferredFromCookiesPage) {
+    req.session.data.cookiesReturnUrl = referer
+  }
+
+  const returnUrl = req.session.data.cookiesReturnUrl || (journey ? journey.serviceUrl : '/layouts/Private-beta/designs')
+
   res.render('layouts/Private-beta/cookies', {
     showSavedMessage: showSavedMessage,
     journey: journey,
-    journeyKey: req.query.journey
+    journeyKey: req.query.journey,
+    returnUrl: returnUrl
   })
 
 })
