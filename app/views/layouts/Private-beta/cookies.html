@@ -1,164 +1,219 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  {{ pageName }} – {{ serviceName }}
+{{ pageName }} – {{ serviceName }}
 {% endblock %}
 
 {% set pageName = "Cookies" %}
 
 {% block header %}
 
-  {% include "includes/cookie-banner.html" %}
+{% include "includes/cookie-banner.html" %}
 
-  {% from "govuk/components/header/macro.njk" import govukHeader %}
-  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
-  {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-  {{ govukHeader({
-    homepageUrl: "/layouts/Private-beta/Spreadsheet/designs"
-  }) }}
+{{ govukHeader({
+homepageUrl: "/layouts/Private-beta/Spreadsheet/designs"
+}) }}
 
-  {{ govukServiceNavigation({
-    classes: "govuk-!-margin-bottom-2",
-    serviceName: serviceName,
-    serviceUrl: journey.serviceUrl if journey else "/layouts/Private-beta/designs",
-    navigation: [
-      {
-        href: journey.serviceUrl if journey else "/layouts/Private-beta/designs",
-        text: journey.label if journey else "Waste account",
-        active: true
-      },
-      {
-        href: "#",
-        text: "Manage Defra account"
-      },
-      {
-        href: "#",
-        text: "Sign out"
-      }
-    ]
-  }) }}
+{{ govukServiceNavigation({
+classes: "govuk-!-margin-bottom-2",
+serviceName: serviceName,
+serviceUrl: journey.serviceUrl if journey else "/layouts/Private-beta/designs",
+navigation: [
+{
+href: journey.serviceUrl if journey else "/layouts/Private-beta/designs",
+text: journey.label if journey else "Waste account",
+active: true
+},
+{
+href: "#",
+text: "Manage Defra account"
+},
+{
+href: "#",
+text: "Sign out"
+}
+]
+}) }}
 
 {% endblock %}
 
 {% block beforeContent %}
 
-  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Beta"
-    },
-    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/not-yet-built">give your feedback (opens in new tab)</a>.'
-  }) }}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service. Help us improve it and <a class="govuk-link" href="/not-yet-built">give your feedback
+  (opens in new tab)</a>.'
+}) }}
 
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
 
 {% endblock %}
 
 {% block content %}
 
-  {% from "govuk/components/table/macro.njk" import govukTable %}
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
-  {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        {% set savedBannerHtml %}
-          <h3 class="govuk-notification-banner__heading">Your cookie settings were saved</h3>
-          <p class="govuk-body">Other government services may set additional cookies and, if so, will have their own cookie policy and banner.</p>
-          <a class="govuk-notification-banner__link" href="{{ returnUrl }}">Go back to the page you were looking at</a>
-        {% endset %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% set savedBannerHtml %}
+    <h3 class="govuk-notification-banner__heading">Your cookie settings were saved</h3>
+    <p class="govuk-body">Other government services may set additional cookies and, if so, will have their own cookie
+      policy and banner.</p>
+    <a class="govuk-notification-banner__link" href="{{ returnUrl }}">Go back to the page you were looking at</a>
+    {% endset %}
 
-        {% if showSavedMessage %}
+    {% if showSavedMessage %}
 
-          {{ govukNotificationBanner({
-            classes: "govuk-notification-banner--success",
-            titleText: "Success",
-            html: savedBannerHtml
-          }) }}
+    {{ govukNotificationBanner({
+    classes: "govuk-notification-banner--success",
+    titleText: "Success",
+    html: savedBannerHtml
+    }) }}
 
-        {% endif %}
+    {% endif %}
 
-      <h1 class="govuk-heading-l">{{ pageName }}</h1>
+    <h1 class="govuk-heading-l">{{ pageName }}</h1>
 
-      <p class="govuk-body">
-        This service puts small files (known as cookies) onto your computer.
-        These cookies are used to make the service work and cannot be turned off.
-      </p>
+    <p class="govuk-body">
+      This service puts small files (known as cookies) onto your computer.
+      These cookies are used to make the service work and cannot be turned off.
+    </p>
 
-      <h2 class="govuk-heading-m">Essential cookies</h2>
+    <h2 class="govuk-heading-s">Essential cookies</h2>
 
-      <p class="govuk-body">
-        Essential cookies keep your information secure while you use this service.
-        We do not need to ask permission to use them.
-      </p>
+    <p class="govuk-body">
+      Essential cookies keep your information secure while you use this service.
+      We do not need to ask permission to use them.
+    </p>
+
+    {{ govukTable({
+    head: [
+    { text: "Name" },
+    { text: "Purpose" },
+    { text: "Expires" }
+    ],
+    rows: [
+    [
+    { text: "userSession" },
+    { text: "Keeps you signed in" },
+    { text: "4 hours" }
+    ],
+    [
+    { text: "session" },
+    { text: "Stores session data" },
+    { text: "4 hours" }
+    ],
+    [
+    { text: "bell-defraId" },
+    { text: "Used to sign in with Defra ID" },
+    { text: "When you close your browser" }
+    ]
+    ]
+    }) }}
+
+
+    <h2 class="govuk-heading-s">Cookies message</h3>
+      <p class="govuk-body">You may see a banner when you use the {{ serviceName }} service inviting you to accept cookies or review your settings. We’ll set cookies to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>let your computer know you’ve seen this message so you do not get shown it again</li>
+        <li>store your settings</li>
+      </ul>
 
       {{ govukTable({
-        head: [
-          { text: "Name" },
-          { text: "Purpose" },
-          { text: "Expires" }
-        ],
-        rows: [
-          [
-            { text: "userSession" },
-            { text: "Keeps you signed in" },
-            { text: "4 hours" }
-          ],
-          [
-            { text: "session" },
-            { text: "Stores session data" },
-            { text: "4 hours" }
-          ],
-          [
-            { text: "bell-defraId" },
-            { text: "Used to sign in with Defra ID" },
-            { text: "When you close your browser" }
-          ]
-        ]
+      head: [
+      { text: "Name" },
+      { text: "Purpose" },
+      { text: "Expires" }
+      ],
+      rows: [
+      [
+      { text: "cookies_preferences_set" },
+      { text: "Saves your cookie consent settings" },
+      { text: "1 year" }
+      ]
+      ]
       }) }}
 
-    </div>
+<h2 class="govuk-heading-s">Cookies that measure how you use {{ serviceName }}</h2>
+<p class="govuk-body">We use Google Analytics cookies to collect anonymised information about how you use {{ serviceName }}, for example what pages you visit and what you click on.</p>
+<p class="govuk-body">This helps us understand how we can improve {{ serviceName }}</p>
+
+{{ govukTable({
+  attributes: { id: "analytics-cookies" },
+  head: [
+    { text: "Name" },
+    { text: "Purpose" },
+    { text: "Expires" }
+  ],
+  rows: [
+    [
+      { text: "_ga" },
+      { text: "Helps us count how many people visit " + serviceName + " by checking if you’ve visited before" },
+      { text: "2 years" }
+    ],
+    [
+      { text: "_gid" },
+      { text: "Helps us count how many people visit " + serviceName + " by checking if you’ve visited before" },
+      { text: "24 hours" }
+    ],
+    [
+      { text: "_gat_UA-[number]" },
+      { text: "Helps us count how many people visit " + serviceName + " by checking if you’ve visited before" },
+      { text: "When you close your web browser" }
+    ]
+  ]
+}) }}
+
   </div>
+</div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <form action="/layouts/Private-beta/cookies-answer" method="post" novalidate>
+    <form action="/layouts/Private-beta/cookies-answer" method="post" novalidate>
 
-        <input type="hidden" name="savedFromCookiesPage" value="true">
+      <input type="hidden" name="savedFromCookiesPage" value="true">
 
-        {{ govukRadios({
-          name: "cookies[additional]",
-          idPrefix: "cookies-additional",
-          fieldset: {
-            legend: {
-              text: "Change your cookie settings",
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Use cookies that measure how I use the " + serviceName + " service",
-              checked: data.cookies.additional == "yes"
-            },
-            {
-              value: "no",
-              text: "Do not use cookies that measure how I use the " + serviceName + " service",
-              checked: data.cookies.additional == "no"
-            }
-          ]
-        }) }}
+      {{ govukRadios({
+      name: "cookies[additional]",
+      idPrefix: "cookies-additional",
+      fieldset: {
+      legend: {
+      text: "Change your cookie settings",
+      classes: "govuk-fieldset__legend--s"
+      }
+      },
+      items: [
+      {
+      value: "yes",
+      text: "Use cookies that measure how I use the " + serviceName + " service",
+      checked: data.cookies.additional == "yes"
+      },
+      {
+      value: "no",
+      text: "Do not use cookies that measure how I use the " + serviceName + " service",
+      checked: data.cookies.additional == "no"
+      }
+      ]
+      }) }}
 
-        {{ govukButton({
-          text: "Save cookie settings"
-        }) }}
+      {{ govukButton({
+      text: "Save cookie settings"
+      }) }}
 
-      </form>
+    </form>
 
-    </div>
   </div>
+</div>
 
 {% endblock %}
