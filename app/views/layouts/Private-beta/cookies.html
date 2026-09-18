@@ -145,36 +145,37 @@ html: 'This is a new service. Help us improve it and <a class="govuk-link" href=
       ]
       }) }}
 
-      <h2 class="govuk-heading-s">Cookies that measure how you use {{ serviceName }}</h2>
-      <p class="govuk-body">We use Google Analytics cookies to collect anonymised information about how you use {{
-        serviceName }}, for example what pages you visit and what you click on.</p>
-      <p class="govuk-body">This helps us understand how we can improve the {{ serviceName }} service</p>
+      {% from "govuk/components/table/macro.njk" import govukTable %}
 
-      {{ govukTable({
-      attributes: { id: "analytics-cookies" },
-      head: [
-      { text: "Name" },
-      { text: "Purpose" },
-      { text: "Expires" }
-      ],
-      rows: [
-      [
+<h2 class="govuk-heading-s">Cookies that measure how you use this service</h2>
+<p class="govuk-body">We use Google Analytics, loaded via Google Tag Manager, to collect anonymised information about how you use this service, for example what pages you visit and what you click on.</p>
+<p class="govuk-body">This helps us understand how we can improve the service.</p>
+
+{{ govukTable({
+  attributes: { id: "analytics-cookies" },
+  head: [
+    { text: "Name" },
+    { text: "Purpose" },
+    { text: "Expires" }
+  ],
+  rows: [
+    [
       { text: "_ga" },
-      { text: "Helps us count how many people visit " + serviceName + " by checking if you’ve visited before" },
+      { text: "Used to distinguish users" },
       { text: "2 years" }
-      ],
-      [
-      { text: "_gid" },
-      { text: "Helps us count how many people visit " + serviceName + " by checking if you’ve visited before" },
-      { text: "24 hours" }
-      ],
-      [
-      { text: "_gat_UA-[number]" },
-      { text: "Helps us count how many people visit " + serviceName + " by checking if you’ve visited before" },
-      { text: "When you close your web browser" }
-      ]
-      ]
-      }) }}
+    ],
+    [
+      { text: "_ga_<container-id>" },
+      { text: "Used to persist session state" },
+      { text: "2 years" }
+    ],
+    [
+      { text: "_dc_gtm_<property-id>" },
+      { text: "Used to limit the rate of requests to Google Analytics" },
+      { text: "1 minute" }
+    ]
+  ]
+}) }}
 
   </div>
 </div>
