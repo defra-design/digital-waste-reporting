@@ -123,7 +123,8 @@ html: 'This is a new service. Help us improve it and <a class="govuk-link" href=
 
 
     <h2 class="govuk-heading-s">Cookies message</h3>
-      <p class="govuk-body">You may see a banner when you use the {{ serviceName }} service inviting you to accept cookies or review your settings. We’ll set cookies to:</p>
+      <p class="govuk-body">You may see a banner when you use the {{ serviceName }} service inviting you to accept
+        cookies or review your settings. We’ll set cookies to:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>let your computer know you’ve seen this message so you do not get shown it again</li>
         <li>store your settings</li>
@@ -144,35 +145,36 @@ html: 'This is a new service. Help us improve it and <a class="govuk-link" href=
       ]
       }) }}
 
-<h2 class="govuk-heading-s">Cookies that measure how you use {{ serviceName }}</h2>
-<p class="govuk-body">We use Google Analytics cookies to collect anonymised information about how you use {{ serviceName }}, for example what pages you visit and what you click on.</p>
-<p class="govuk-body">This helps us understand how we can improve {{ serviceName }}</p>
+      <h2 class="govuk-heading-s">Cookies that measure how you use {{ serviceName }}</h2>
+      <p class="govuk-body">We use Google Analytics cookies to collect anonymised information about how you use {{
+        serviceName }}, for example what pages you visit and what you click on.</p>
+      <p class="govuk-body">This helps us understand how we can improve the {{ serviceName }} service</p>
 
-{{ govukTable({
-  attributes: { id: "analytics-cookies" },
-  head: [
-    { text: "Name" },
-    { text: "Purpose" },
-    { text: "Expires" }
-  ],
-  rows: [
-    [
+      {{ govukTable({
+      attributes: { id: "analytics-cookies" },
+      head: [
+      { text: "Name" },
+      { text: "Purpose" },
+      { text: "Expires" }
+      ],
+      rows: [
+      [
       { text: "_ga" },
       { text: "Helps us count how many people visit " + serviceName + " by checking if you’ve visited before" },
       { text: "2 years" }
-    ],
-    [
+      ],
+      [
       { text: "_gid" },
       { text: "Helps us count how many people visit " + serviceName + " by checking if you’ve visited before" },
       { text: "24 hours" }
-    ],
-    [
+      ],
+      [
       { text: "_gat_UA-[number]" },
       { text: "Helps us count how many people visit " + serviceName + " by checking if you’ve visited before" },
       { text: "When you close your web browser" }
-    ]
-  ]
-}) }}
+      ]
+      ]
+      }) }}
 
   </div>
 </div>
