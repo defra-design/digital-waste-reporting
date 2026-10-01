@@ -1,5 +1,5 @@
 module.exports = {
 
-  companyName: "DHL EnviroSolutions"
+  companyName: "London Borough of Bexley"
 
 }
