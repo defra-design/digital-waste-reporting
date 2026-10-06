@@ -1,5 +1,5 @@
 module.exports = {
 
-  companyName: "Canal & River Trust"
+  companyName: "Enifinium"
 
 }
